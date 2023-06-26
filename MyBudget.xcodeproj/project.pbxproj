@@ -13,6 +13,19 @@
 		0A1432622A3F50C0007D9509 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A1432602A3F50C0007D9509 /* Main.storyboard */; };
 		0A1432642A3F50C2007D9509 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A1432632A3F50C2007D9509 /* Assets.xcassets */; };
 		0A1432672A3F50C2007D9509 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A1432652A3F50C2007D9509 /* LaunchScreen.storyboard */; };
+		0AF74EDC2A483BEA0038D221 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF74EDB2A483BEA0038D221 /* MainViewController.swift */; };
+		0AF74EDE2A483C670038D221 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF74EDD2A483C670038D221 /* MainViewModel.swift */; };
+		0AF74EE12A483F7D0038D221 /* MyBudgetDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF74EE02A483F7D0038D221 /* MyBudgetDependencyContainer.swift */; };
+		0AF74EE42A4842070038D221 /* MyBudgetTabBarDependecyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF74EE32A4842070038D221 /* MyBudgetTabBarDependecyContainer.swift */; };
+		0AF74EE72A4844C40038D221 /* UiViewController + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF74EE62A4844C40038D221 /* UiViewController + Extensions.swift */; };
+		0AF74EF12A48473F0038D221 /* AddTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF74EF02A48473F0038D221 /* AddTransactionViewController.swift */; };
+		0AF74EF52A4847BF0038D221 /* NiblessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF74EF42A4847BF0038D221 /* NiblessViewController.swift */; };
+		0AF74EF72A4847DD0038D221 /* NiblessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF74EF62A4847DD0038D221 /* NiblessView.swift */; };
+		0AF74EF92A48486D0038D221 /* AddTransactionViewControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF74EF82A48486D0038D221 /* AddTransactionViewControllerView.swift */; };
+		0AF74F002A4849500038D221 /* BankAccountsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF74EFF2A4849500038D221 /* BankAccountsViewController.swift */; };
+		0AF74F022A4849620038D221 /* BankAccountsViewControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF74F012A4849620038D221 /* BankAccountsViewControllerView.swift */; };
+		0AF74F042A484F470038D221 /* BankAccountsTotalBalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF74F032A484F470038D221 /* BankAccountsTotalBalanceView.swift */; };
+		6B71B2AF0256FA9F9F37D883 /* Pods_MyBudget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92C2B0B097A4D0DB65D24E03 /* Pods_MyBudget.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +37,21 @@
 		0A1432632A3F50C2007D9509 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A1432662A3F50C2007D9509 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0A1432682A3F50C2007D9509 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0AF74EDB2A483BEA0038D221 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		0AF74EDD2A483C670038D221 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		0AF74EE02A483F7D0038D221 /* MyBudgetDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBudgetDependencyContainer.swift; sourceTree = "<group>"; };
+		0AF74EE32A4842070038D221 /* MyBudgetTabBarDependecyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBudgetTabBarDependecyContainer.swift; sourceTree = "<group>"; };
+		0AF74EE62A4844C40038D221 /* UiViewController + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiViewController + Extensions.swift"; sourceTree = "<group>"; };
+		0AF74EF02A48473F0038D221 /* AddTransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionViewController.swift; sourceTree = "<group>"; };
+		0AF74EF42A4847BF0038D221 /* NiblessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NiblessViewController.swift; sourceTree = "<group>"; };
+		0AF74EF62A4847DD0038D221 /* NiblessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NiblessView.swift; sourceTree = "<group>"; };
+		0AF74EF82A48486D0038D221 /* AddTransactionViewControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionViewControllerView.swift; sourceTree = "<group>"; };
+		0AF74EFF2A4849500038D221 /* BankAccountsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccountsViewController.swift; sourceTree = "<group>"; };
+		0AF74F012A4849620038D221 /* BankAccountsViewControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccountsViewControllerView.swift; sourceTree = "<group>"; };
+		0AF74F032A484F470038D221 /* BankAccountsTotalBalanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccountsTotalBalanceView.swift; sourceTree = "<group>"; };
+		0F33345119FFD057AEE516C1 /* Pods-MyBudget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyBudget.debug.xcconfig"; path = "Target Support Files/Pods-MyBudget/Pods-MyBudget.debug.xcconfig"; sourceTree = "<group>"; };
+		5120690D59960FE9B649BE48 /* Pods-MyBudget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyBudget.release.xcconfig"; path = "Target Support Files/Pods-MyBudget/Pods-MyBudget.release.xcconfig"; sourceTree = "<group>"; };
+		92C2B0B097A4D0DB65D24E03 /* Pods_MyBudget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyBudget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B71B2AF0256FA9F9F37D883 /* Pods_MyBudget.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +71,8 @@
 			children = (
 				0A1432592A3F50C0007D9509 /* MyBudget */,
 				0A1432582A3F50C0007D9509 /* Products */,
+				659424A8DC5FBA0947070CFF /* Pods */,
+				EE02D5F6E2947507E2CCC669 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,6 +87,14 @@
 		0A1432592A3F50C0007D9509 /* MyBudget */ = {
 			isa = PBXGroup;
 			children = (
+				0AF74EF22A4847950038D221 /* SharedComponets */,
+				0AF74EEC2A4846DB0038D221 /* Settings */,
+				0A16DE002A49D67D00604180 /* Analitics */,
+				0AF74EE92A4846A80038D221 /* BankAccounts */,
+				0AF74EE82A4846840038D221 /* AddTransaction */,
+				0AF74EE52A4844A50038D221 /* Extensions */,
+				0AF74EDF2A483F530038D221 /* Containers */,
+				0AF74EDA2A483BD60038D221 /* Main */,
 				0A14325A2A3F50C0007D9509 /* AppDelegate.swift */,
 				0A14325C2A3F50C0007D9509 /* SceneDelegate.swift */,
 				0A14325E2A3F50C0007D9509 /* ViewController.swift */,
@@ -67,6 +106,163 @@
 			path = MyBudget;
 			sourceTree = "<group>";
 		};
+		0A16DDFE2A49D57C00604180 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		0A16DE002A49D67D00604180 /* Analitics */ = {
+			isa = PBXGroup;
+			children = (
+				0A16DE012A49D69F00604180 /* UI */,
+			);
+			path = Analitics;
+			sourceTree = "<group>";
+		};
+		0A16DE012A49D69F00604180 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		0AF74EDA2A483BD60038D221 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				0AF74EDB2A483BEA0038D221 /* MainViewController.swift */,
+				0AF74EDD2A483C670038D221 /* MainViewModel.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		0AF74EDF2A483F530038D221 /* Containers */ = {
+			isa = PBXGroup;
+			children = (
+				0AF74EE02A483F7D0038D221 /* MyBudgetDependencyContainer.swift */,
+				0AF74EE32A4842070038D221 /* MyBudgetTabBarDependecyContainer.swift */,
+			);
+			path = Containers;
+			sourceTree = "<group>";
+		};
+		0AF74EE52A4844A50038D221 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0AF74EE62A4844C40038D221 /* UiViewController + Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0AF74EE82A4846840038D221 /* AddTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				0AF74EED2A4846FC0038D221 /* UI */,
+			);
+			path = AddTransaction;
+			sourceTree = "<group>";
+		};
+		0AF74EE92A4846A80038D221 /* BankAccounts */ = {
+			isa = PBXGroup;
+			children = (
+				0AF74EFB2A4849290038D221 /* UI */,
+			);
+			path = BankAccounts;
+			sourceTree = "<group>";
+		};
+		0AF74EEC2A4846DB0038D221 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				0A16DDFE2A49D57C00604180 /* UI */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		0AF74EED2A4846FC0038D221 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				0AF74EEF2A48471E0038D221 /* Views */,
+				0AF74EEE2A4847080038D221 /* Controller */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		0AF74EEE2A4847080038D221 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0AF74EF02A48473F0038D221 /* AddTransactionViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0AF74EEF2A48471E0038D221 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0AF74EF82A48486D0038D221 /* AddTransactionViewControllerView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0AF74EF22A4847950038D221 /* SharedComponets */ = {
+			isa = PBXGroup;
+			children = (
+				0AF74EF32A4847A90038D221 /* Nibless */,
+			);
+			path = SharedComponets;
+			sourceTree = "<group>";
+		};
+		0AF74EF32A4847A90038D221 /* Nibless */ = {
+			isa = PBXGroup;
+			children = (
+				0AF74EF42A4847BF0038D221 /* NiblessViewController.swift */,
+				0AF74EF62A4847DD0038D221 /* NiblessView.swift */,
+			);
+			path = Nibless;
+			sourceTree = "<group>";
+		};
+		0AF74EFB2A4849290038D221 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				0AF74EFD2A4849350038D221 /* Views */,
+				0AF74EFC2A4849300038D221 /* Controller */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		0AF74EFC2A4849300038D221 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0AF74EFF2A4849500038D221 /* BankAccountsViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0AF74EFD2A4849350038D221 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0AF74F012A4849620038D221 /* BankAccountsViewControllerView.swift */,
+				0AF74F032A484F470038D221 /* BankAccountsTotalBalanceView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		659424A8DC5FBA0947070CFF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0F33345119FFD057AEE516C1 /* Pods-MyBudget.debug.xcconfig */,
+				5120690D59960FE9B649BE48 /* Pods-MyBudget.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		EE02D5F6E2947507E2CCC669 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				92C2B0B097A4D0DB65D24E03 /* Pods_MyBudget.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +270,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0A14326B2A3F50C2007D9509 /* Build configuration list for PBXNativeTarget "MyBudget" */;
 			buildPhases = (
+				DBDC3AA5451CB6E98F293B00 /* [CP] Check Pods Manifest.lock */,
 				0A1432532A3F50C0007D9509 /* Sources */,
 				0A1432542A3F50C0007D9509 /* Frameworks */,
 				0A1432552A3F50C0007D9509 /* Resources */,
+				72508FE60128D4E878EDEF23 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,14 +331,68 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		72508FE60128D4E878EDEF23 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyBudget/Pods-MyBudget-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyBudget/Pods-MyBudget-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyBudget/Pods-MyBudget-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DBDC3AA5451CB6E98F293B00 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MyBudget-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0A1432532A3F50C0007D9509 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AF74EDE2A483C670038D221 /* MainViewModel.swift in Sources */,
+				0AF74F022A4849620038D221 /* BankAccountsViewControllerView.swift in Sources */,
+				0AF74EE12A483F7D0038D221 /* MyBudgetDependencyContainer.swift in Sources */,
+				0AF74F002A4849500038D221 /* BankAccountsViewController.swift in Sources */,
+				0AF74EF92A48486D0038D221 /* AddTransactionViewControllerView.swift in Sources */,
+				0AF74EF72A4847DD0038D221 /* NiblessView.swift in Sources */,
 				0A14325F2A3F50C0007D9509 /* ViewController.swift in Sources */,
 				0A14325B2A3F50C0007D9509 /* AppDelegate.swift in Sources */,
+				0AF74F042A484F470038D221 /* BankAccountsTotalBalanceView.swift in Sources */,
 				0A14325D2A3F50C0007D9509 /* SceneDelegate.swift in Sources */,
+				0AF74EE42A4842070038D221 /* MyBudgetTabBarDependecyContainer.swift in Sources */,
+				0AF74EF12A48473F0038D221 /* AddTransactionViewController.swift in Sources */,
+				0AF74EF52A4847BF0038D221 /* NiblessViewController.swift in Sources */,
+				0AF74EE72A4844C40038D221 /* UiViewController + Extensions.swift in Sources */,
+				0AF74EDC2A483BEA0038D221 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +534,7 @@
 		};
 		0A14326C2A3F50C2007D9509 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0F33345119FFD057AEE516C1 /* Pods-MyBudget.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -310,6 +563,7 @@
 		};
 		0A14326D2A3F50C2007D9509 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5120690D59960FE9B649BE48 /* Pods-MyBudget.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
