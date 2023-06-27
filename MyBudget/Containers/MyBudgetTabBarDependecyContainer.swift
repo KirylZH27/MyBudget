@@ -12,9 +12,11 @@ final class MyBudgetTabBarDependecyContainer {
         
         let addTtansactionsViewController = createAddTransactionViewController()
         let bankAccountsViewController = createBankAccountsViewController()
+        let analiticsViewController = createAnaliticsViewController()
+        let settingsViewController = createSettingsViewController()
         
         let tabBarController = UITabBarController()
-        tabBarController.viewControllers = [addTtansactionsViewController, bankAccountsViewController]
+        tabBarController.viewControllers = [addTtansactionsViewController, bankAccountsViewController, analiticsViewController, settingsViewController]
         return tabBarController
     }
     
@@ -26,11 +28,27 @@ final class MyBudgetTabBarDependecyContainer {
     }
     
     private func createBankAccountsViewController() -> UINavigationController {
-        let viewController = BankAccountsViewController ()
+        let viewController = BankAccountsViewController()
         viewController.navigationItem.title = "Счета"
         let navigationController = UINavigationController(rootViewController: viewController)
         navigationController.tabBarItem.title = "Счета"
         navigationController.tabBarItem.image = UIImage(systemName: "creditcard.circle")
+        return navigationController
+    }
+    
+    private func createAnaliticsViewController() -> AnaliticsViewController {
+        let viewController = AnaliticsViewController()
+        viewController.tabBarItem.title = "Аналитика"
+        viewController.tabBarItem.image = UIImage(systemName: "chart.pie")
+        return viewController
+    }
+    
+    private func createSettingsViewController() -> UINavigationController {
+        let viewController = SettingsViewController()
+        viewController.navigationItem.title = "Настройки"
+        let navigationController = UINavigationController(rootViewController: viewController)
+        navigationController.tabBarItem.title = "Настройки"
+        navigationController.tabBarItem.image = UIImage(systemName: "gear")
         return navigationController
     }
     

@@ -25,6 +25,10 @@
 		0AF74F002A4849500038D221 /* BankAccountsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF74EFF2A4849500038D221 /* BankAccountsViewController.swift */; };
 		0AF74F022A4849620038D221 /* BankAccountsViewControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF74F012A4849620038D221 /* BankAccountsViewControllerView.swift */; };
 		0AF74F042A484F470038D221 /* BankAccountsTotalBalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF74F032A484F470038D221 /* BankAccountsTotalBalanceView.swift */; };
+		0AFF815B2A4B2D68006ACF1F /* AnaliticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFF815A2A4B2D68006ACF1F /* AnaliticsViewController.swift */; };
+		0AFF815E2A4B30D0006ACF1F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFF815D2A4B30D0006ACF1F /* SettingsViewController.swift */; };
+		0AFF81602A4B3229006ACF1F /* AnaliticsViewControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFF815F2A4B3229006ACF1F /* AnaliticsViewControllerView.swift */; };
+		0AFF81632A4B337D006ACF1F /* SettingsViewControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFF81622A4B337D006ACF1F /* SettingsViewControllerView.swift */; };
 		6B71B2AF0256FA9F9F37D883 /* Pods_MyBudget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92C2B0B097A4D0DB65D24E03 /* Pods_MyBudget.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +53,10 @@
 		0AF74EFF2A4849500038D221 /* BankAccountsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccountsViewController.swift; sourceTree = "<group>"; };
 		0AF74F012A4849620038D221 /* BankAccountsViewControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccountsViewControllerView.swift; sourceTree = "<group>"; };
 		0AF74F032A484F470038D221 /* BankAccountsTotalBalanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccountsTotalBalanceView.swift; sourceTree = "<group>"; };
+		0AFF815A2A4B2D68006ACF1F /* AnaliticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnaliticsViewController.swift; sourceTree = "<group>"; };
+		0AFF815D2A4B30D0006ACF1F /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		0AFF815F2A4B3229006ACF1F /* AnaliticsViewControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnaliticsViewControllerView.swift; sourceTree = "<group>"; };
+		0AFF81622A4B337D006ACF1F /* SettingsViewControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewControllerView.swift; sourceTree = "<group>"; };
 		0F33345119FFD057AEE516C1 /* Pods-MyBudget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyBudget.debug.xcconfig"; path = "Target Support Files/Pods-MyBudget/Pods-MyBudget.debug.xcconfig"; sourceTree = "<group>"; };
 		5120690D59960FE9B649BE48 /* Pods-MyBudget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyBudget.release.xcconfig"; path = "Target Support Files/Pods-MyBudget/Pods-MyBudget.release.xcconfig"; sourceTree = "<group>"; };
 		92C2B0B097A4D0DB65D24E03 /* Pods_MyBudget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyBudget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,6 +117,8 @@
 		0A16DDFE2A49D57C00604180 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				0AFF81612A4B3358006ACF1F /* Views */,
+				0AFF815C2A4B30B9006ACF1F /* Controller */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -124,6 +134,8 @@
 		0A16DE012A49D69F00604180 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				0AFF81592A4B2D14006ACF1F /* Views */,
+				0AFF81582A4B2CE9006ACF1F /* Controller */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -242,6 +254,38 @@
 			children = (
 				0AF74F012A4849620038D221 /* BankAccountsViewControllerView.swift */,
 				0AF74F032A484F470038D221 /* BankAccountsTotalBalanceView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0AFF81582A4B2CE9006ACF1F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0AFF815A2A4B2D68006ACF1F /* AnaliticsViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0AFF81592A4B2D14006ACF1F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0AFF815F2A4B3229006ACF1F /* AnaliticsViewControllerView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0AFF815C2A4B30B9006ACF1F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0AFF815D2A4B30D0006ACF1F /* SettingsViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0AFF81612A4B3358006ACF1F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0AFF81622A4B337D006ACF1F /* SettingsViewControllerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -380,6 +424,7 @@
 			files = (
 				0AF74EDE2A483C670038D221 /* MainViewModel.swift in Sources */,
 				0AF74F022A4849620038D221 /* BankAccountsViewControllerView.swift in Sources */,
+				0AFF81602A4B3229006ACF1F /* AnaliticsViewControllerView.swift in Sources */,
 				0AF74EE12A483F7D0038D221 /* MyBudgetDependencyContainer.swift in Sources */,
 				0AF74F002A4849500038D221 /* BankAccountsViewController.swift in Sources */,
 				0AF74EF92A48486D0038D221 /* AddTransactionViewControllerView.swift in Sources */,
@@ -390,9 +435,12 @@
 				0A14325D2A3F50C0007D9509 /* SceneDelegate.swift in Sources */,
 				0AF74EE42A4842070038D221 /* MyBudgetTabBarDependecyContainer.swift in Sources */,
 				0AF74EF12A48473F0038D221 /* AddTransactionViewController.swift in Sources */,
+				0AFF815E2A4B30D0006ACF1F /* SettingsViewController.swift in Sources */,
 				0AF74EF52A4847BF0038D221 /* NiblessViewController.swift in Sources */,
+				0AFF81632A4B337D006ACF1F /* SettingsViewControllerView.swift in Sources */,
 				0AF74EE72A4844C40038D221 /* UiViewController + Extensions.swift in Sources */,
 				0AF74EDC2A483BEA0038D221 /* MainViewController.swift in Sources */,
+				0AFF815B2A4B2D68006ACF1F /* AnaliticsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

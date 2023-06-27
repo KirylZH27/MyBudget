@@ -8,6 +8,7 @@
 import UIKit
 
 final class AddTransactionViewController: NiblessViewController {
+    
     var contentView: AddTransactionViewControllerView {
         view as! AddTransactionViewControllerView
     }
