@@ -7,4 +7,8 @@ target 'MyBudget' do
 
   # Pods for MyBudget
   pod  'RealmSwift'
+  pod 'Firebase/Analytics'
+  pod 'FirebaseDatabase'
+  pod 'Firebase/Firestore'
+  pod  'Firebase/Auth'
 end
