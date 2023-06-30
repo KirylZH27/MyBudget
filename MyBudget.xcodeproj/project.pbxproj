@@ -18,6 +18,8 @@
 		0A210E5F2A4F425D00D5B750 /* ProfileViewControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A210E5E2A4F425D00D5B750 /* ProfileViewControllerView.swift */; };
 		0A210E622A4F6D2A00D5B750 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A210E612A4F6D2A00D5B750 /* APIManager.swift */; };
 		0A210E672A4F702000D5B750 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A210E662A4F702000D5B750 /* UserModel.swift */; };
+		0A210E6E2A4F772F00D5B750 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A210E6D2A4F772F00D5B750 /* RealmManager.swift */; };
+		0A210E702A4F77A100D5B750 /* UserModelRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A210E6F2A4F77A000D5B750 /* UserModelRealm.swift */; };
 		0AF74EDC2A483BEA0038D221 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF74EDB2A483BEA0038D221 /* MainViewController.swift */; };
 		0AF74EDE2A483C670038D221 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF74EDD2A483C670038D221 /* MainViewModel.swift */; };
 		0AF74EE12A483F7D0038D221 /* MyBudgetDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF74EE02A483F7D0038D221 /* MyBudgetDependencyContainer.swift */; };
@@ -51,6 +53,8 @@
 		0A210E5E2A4F425D00D5B750 /* ProfileViewControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewControllerView.swift; sourceTree = "<group>"; };
 		0A210E612A4F6D2A00D5B750 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		0A210E662A4F702000D5B750 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		0A210E6D2A4F772F00D5B750 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		0A210E6F2A4F77A000D5B750 /* UserModelRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModelRealm.swift; sourceTree = "<group>"; };
 		0AF74EDB2A483BEA0038D221 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		0AF74EDD2A483C670038D221 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		0AF74EE02A483F7D0038D221 /* MyBudgetDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBudgetDependencyContainer.swift; sourceTree = "<group>"; };
@@ -105,6 +109,7 @@
 		0A1432592A3F50C0007D9509 /* MyBudget */ = {
 			isa = PBXGroup;
 			children = (
+				0A210E682A4F767D00D5B750 /* RealmManager */,
 				0A210E632A4F6DB800D5B750 /* Models */,
 				0A210E602A4F697800D5B750 /* APIManager */,
 				0AF74EF22A4847950038D221 /* SharedComponets */,
@@ -198,9 +203,34 @@
 		0A210E632A4F6DB800D5B750 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				0A210E662A4F702000D5B750 /* UserModel.swift */,
+				0A210E6A2A4F76A900D5B750 /* RealmModels */,
+				0A210E692A4F769000D5B750 /* FirebaseModels */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		0A210E682A4F767D00D5B750 /* RealmManager */ = {
+			isa = PBXGroup;
+			children = (
+				0A210E6D2A4F772F00D5B750 /* RealmManager.swift */,
+			);
+			path = RealmManager;
+			sourceTree = "<group>";
+		};
+		0A210E692A4F769000D5B750 /* FirebaseModels */ = {
+			isa = PBXGroup;
+			children = (
+				0A210E662A4F702000D5B750 /* UserModel.swift */,
+			);
+			path = FirebaseModels;
+			sourceTree = "<group>";
+		};
+		0A210E6A2A4F76A900D5B750 /* RealmModels */ = {
+			isa = PBXGroup;
+			children = (
+				0A210E6F2A4F77A000D5B750 /* UserModelRealm.swift */,
+			);
+			path = RealmModels;
 			sourceTree = "<group>";
 		};
 		0AF74EDA2A483BD60038D221 /* Main */ = {
@@ -494,6 +524,7 @@
 				0AF74EE12A483F7D0038D221 /* MyBudgetDependencyContainer.swift in Sources */,
 				0AF74F002A4849500038D221 /* BankAccountsViewController.swift in Sources */,
 				0AF74EF92A48486D0038D221 /* AddTransactionViewControllerView.swift in Sources */,
+				0A210E702A4F77A100D5B750 /* UserModelRealm.swift in Sources */,
 				0A210E5F2A4F425D00D5B750 /* ProfileViewControllerView.swift in Sources */,
 				0AF74EF72A4847DD0038D221 /* NiblessView.swift in Sources */,
 				0A210E672A4F702000D5B750 /* UserModel.swift in Sources */,
@@ -507,6 +538,7 @@
 				0AF74EF52A4847BF0038D221 /* NiblessViewController.swift in Sources */,
 				0AFF81632A4B337D006ACF1F /* SettingsViewControllerView.swift in Sources */,
 				0AF74EE72A4844C40038D221 /* UiViewController + Extensions.swift in Sources */,
+				0A210E6E2A4F772F00D5B750 /* RealmManager.swift in Sources */,
 				0AF74EDC2A483BEA0038D221 /* MainViewController.swift in Sources */,
 				0AFF815B2A4B2D68006ACF1F /* AnaliticsViewController.swift in Sources */,
 			);
