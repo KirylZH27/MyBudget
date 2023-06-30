@@ -14,9 +14,10 @@ final class MyBudgetTabBarDependecyContainer {
         let bankAccountsViewController = createBankAccountsViewController()
         let analiticsViewController = createAnaliticsViewController()
         let settingsViewController = createSettingsViewController()
+        let profileViewController = createProfileViewController()
         
         let tabBarController = UITabBarController()
-        tabBarController.viewControllers = [addTtansactionsViewController, bankAccountsViewController, analiticsViewController, settingsViewController]
+        tabBarController.viewControllers = [addTtansactionsViewController, bankAccountsViewController, analiticsViewController, settingsViewController, profileViewController]
         return tabBarController
     }
     
@@ -49,6 +50,15 @@ final class MyBudgetTabBarDependecyContainer {
         let navigationController = UINavigationController(rootViewController: viewController)
         navigationController.tabBarItem.title = "Настройки"
         navigationController.tabBarItem.image = UIImage(systemName: "gear")
+        return navigationController
+    }
+    
+    private func createProfileViewController() -> UINavigationController {
+        let viewController = ProfileViewController()
+        viewController.navigationItem.title = "Профиль"
+        let navigationController = UINavigationController(rootViewController: viewController)
+        navigationController.tabBarItem.title = "Профиль"
+        navigationController.tabBarItem.image = UIImage(systemName: "person.crop.circle")
         return navigationController
     }
     

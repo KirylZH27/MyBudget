@@ -14,6 +14,8 @@
 		0A1432642A3F50C2007D9509 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A1432632A3F50C2007D9509 /* Assets.xcassets */; };
 		0A1432672A3F50C2007D9509 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A1432652A3F50C2007D9509 /* LaunchScreen.storyboard */; };
 		0A210E562A4F2EB200D5B750 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0A210E552A4F2EB200D5B750 /* GoogleService-Info.plist */; };
+		0A210E5D2A4F423700D5B750 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A210E5C2A4F423700D5B750 /* ProfileViewController.swift */; };
+		0A210E5F2A4F425D00D5B750 /* ProfileViewControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A210E5E2A4F425D00D5B750 /* ProfileViewControllerView.swift */; };
 		0AF74EDC2A483BEA0038D221 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF74EDB2A483BEA0038D221 /* MainViewController.swift */; };
 		0AF74EDE2A483C670038D221 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF74EDD2A483C670038D221 /* MainViewModel.swift */; };
 		0AF74EE12A483F7D0038D221 /* MyBudgetDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF74EE02A483F7D0038D221 /* MyBudgetDependencyContainer.swift */; };
@@ -43,6 +45,8 @@
 		0A1432662A3F50C2007D9509 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0A1432682A3F50C2007D9509 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A210E552A4F2EB200D5B750 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0A210E5C2A4F423700D5B750 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		0A210E5E2A4F425D00D5B750 /* ProfileViewControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewControllerView.swift; sourceTree = "<group>"; };
 		0AF74EDB2A483BEA0038D221 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		0AF74EDD2A483C670038D221 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		0AF74EE02A483F7D0038D221 /* MyBudgetDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBudgetDependencyContainer.swift; sourceTree = "<group>"; };
@@ -98,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				0AF74EF22A4847950038D221 /* SharedComponets */,
+				0A210E572A4F41E600D5B750 /* Profile */,
 				0AF74EEC2A4846DB0038D221 /* Settings */,
 				0A16DE002A49D67D00604180 /* Analitics */,
 				0AF74EE92A4846A80038D221 /* BankAccounts */,
@@ -141,6 +146,39 @@
 				0AFF81582A4B2CE9006ACF1F /* Controller */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		0A210E572A4F41E600D5B750 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				0A210E582A4F41EF00D5B750 /* UI */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		0A210E582A4F41EF00D5B750 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				0A210E5A2A4F421000D5B750 /* Views */,
+				0A210E592A4F420200D5B750 /* Controller */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		0A210E592A4F420200D5B750 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0A210E5C2A4F423700D5B750 /* ProfileViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0A210E5A2A4F421000D5B750 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0A210E5E2A4F425D00D5B750 /* ProfileViewControllerView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		0AF74EDA2A483BD60038D221 /* Main */ = {
@@ -428,10 +466,12 @@
 			files = (
 				0AF74EDE2A483C670038D221 /* MainViewModel.swift in Sources */,
 				0AF74F022A4849620038D221 /* BankAccountsViewControllerView.swift in Sources */,
+				0A210E5D2A4F423700D5B750 /* ProfileViewController.swift in Sources */,
 				0AFF81602A4B3229006ACF1F /* AnaliticsViewControllerView.swift in Sources */,
 				0AF74EE12A483F7D0038D221 /* MyBudgetDependencyContainer.swift in Sources */,
 				0AF74F002A4849500038D221 /* BankAccountsViewController.swift in Sources */,
 				0AF74EF92A48486D0038D221 /* AddTransactionViewControllerView.swift in Sources */,
+				0A210E5F2A4F425D00D5B750 /* ProfileViewControllerView.swift in Sources */,
 				0AF74EF72A4847DD0038D221 /* NiblessView.swift in Sources */,
 				0A14325F2A3F50C0007D9509 /* ViewController.swift in Sources */,
 				0A14325B2A3F50C0007D9509 /* AppDelegate.swift in Sources */,
