@@ -16,6 +16,8 @@
 		0A210E562A4F2EB200D5B750 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0A210E552A4F2EB200D5B750 /* GoogleService-Info.plist */; };
 		0A210E5D2A4F423700D5B750 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A210E5C2A4F423700D5B750 /* ProfileViewController.swift */; };
 		0A210E5F2A4F425D00D5B750 /* ProfileViewControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A210E5E2A4F425D00D5B750 /* ProfileViewControllerView.swift */; };
+		0A210E622A4F6D2A00D5B750 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A210E612A4F6D2A00D5B750 /* APIManager.swift */; };
+		0A210E672A4F702000D5B750 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A210E662A4F702000D5B750 /* UserModel.swift */; };
 		0AF74EDC2A483BEA0038D221 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF74EDB2A483BEA0038D221 /* MainViewController.swift */; };
 		0AF74EDE2A483C670038D221 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF74EDD2A483C670038D221 /* MainViewModel.swift */; };
 		0AF74EE12A483F7D0038D221 /* MyBudgetDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF74EE02A483F7D0038D221 /* MyBudgetDependencyContainer.swift */; };
@@ -47,6 +49,8 @@
 		0A210E552A4F2EB200D5B750 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0A210E5C2A4F423700D5B750 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		0A210E5E2A4F425D00D5B750 /* ProfileViewControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewControllerView.swift; sourceTree = "<group>"; };
+		0A210E612A4F6D2A00D5B750 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		0A210E662A4F702000D5B750 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		0AF74EDB2A483BEA0038D221 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		0AF74EDD2A483C670038D221 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		0AF74EE02A483F7D0038D221 /* MyBudgetDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBudgetDependencyContainer.swift; sourceTree = "<group>"; };
@@ -101,6 +105,8 @@
 		0A1432592A3F50C0007D9509 /* MyBudget */ = {
 			isa = PBXGroup;
 			children = (
+				0A210E632A4F6DB800D5B750 /* Models */,
+				0A210E602A4F697800D5B750 /* APIManager */,
 				0AF74EF22A4847950038D221 /* SharedComponets */,
 				0A210E572A4F41E600D5B750 /* Profile */,
 				0AF74EEC2A4846DB0038D221 /* Settings */,
@@ -179,6 +185,22 @@
 				0A210E5E2A4F425D00D5B750 /* ProfileViewControllerView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		0A210E602A4F697800D5B750 /* APIManager */ = {
+			isa = PBXGroup;
+			children = (
+				0A210E612A4F6D2A00D5B750 /* APIManager.swift */,
+			);
+			path = APIManager;
+			sourceTree = "<group>";
+		};
+		0A210E632A4F6DB800D5B750 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0A210E662A4F702000D5B750 /* UserModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		0AF74EDA2A483BD60038D221 /* Main */ = {
@@ -468,11 +490,13 @@
 				0AF74F022A4849620038D221 /* BankAccountsViewControllerView.swift in Sources */,
 				0A210E5D2A4F423700D5B750 /* ProfileViewController.swift in Sources */,
 				0AFF81602A4B3229006ACF1F /* AnaliticsViewControllerView.swift in Sources */,
+				0A210E622A4F6D2A00D5B750 /* APIManager.swift in Sources */,
 				0AF74EE12A483F7D0038D221 /* MyBudgetDependencyContainer.swift in Sources */,
 				0AF74F002A4849500038D221 /* BankAccountsViewController.swift in Sources */,
 				0AF74EF92A48486D0038D221 /* AddTransactionViewControllerView.swift in Sources */,
 				0A210E5F2A4F425D00D5B750 /* ProfileViewControllerView.swift in Sources */,
 				0AF74EF72A4847DD0038D221 /* NiblessView.swift in Sources */,
+				0A210E672A4F702000D5B750 /* UserModel.swift in Sources */,
 				0A14325F2A3F50C0007D9509 /* ViewController.swift in Sources */,
 				0A14325B2A3F50C0007D9509 /* AppDelegate.swift in Sources */,
 				0AF74F042A484F470038D221 /* BankAccountsTotalBalanceView.swift in Sources */,
