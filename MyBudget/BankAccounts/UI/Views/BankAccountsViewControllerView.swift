@@ -23,6 +23,14 @@ final class BankAccountsViewControllerView: NiblessView {
         return button
     }()
     
+    let tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.backgroundColor = .blue
+        tableView.register(BankAccountsTableViewCell.self, forCellReuseIdentifier: BankAccountsTableViewCell.id)
+        return tableView
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -34,6 +42,7 @@ final class BankAccountsViewControllerView: NiblessView {
     private func laoutElemets() {
         laoutTotalBalanceView()
         laoutBankAccountButton()
+        laoutBankAccountTableView()
     }
     
     private func laoutTotalBalanceView() {
@@ -53,4 +62,13 @@ final class BankAccountsViewControllerView: NiblessView {
         ])
     }
     
+    private func laoutBankAccountTableView() {
+        addSubview(tableView)
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: totalBalanceView.bottomAnchor, constant: 16),
+            tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: addBankAccountButton.topAnchor, constant: -16)
+        ])
+    }
 }

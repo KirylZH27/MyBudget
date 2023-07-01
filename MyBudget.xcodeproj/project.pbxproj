@@ -20,6 +20,10 @@
 		0A210E672A4F702000D5B750 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A210E662A4F702000D5B750 /* UserModel.swift */; };
 		0A210E6E2A4F772F00D5B750 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A210E6D2A4F772F00D5B750 /* RealmManager.swift */; };
 		0A210E702A4F77A100D5B750 /* UserModelRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A210E6F2A4F77A000D5B750 /* UserModelRealm.swift */; };
+		0A210E732A4F880000D5B750 /* BankAccountsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A210E722A4F880000D5B750 /* BankAccountsTableViewCell.swift */; };
+		0AE423CD2A502A3A00311943 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE423CC2A502A3A00311943 /* AuthorizationViewController.swift */; };
+		0AE423CF2A502A6000311943 /* AuthorizationViewControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE423CE2A502A6000311943 /* AuthorizationViewControllerView.swift */; };
+		0AE423D22A502A9C00311943 /* AuthorizationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE423D12A502A9C00311943 /* AuthorizationViewModel.swift */; };
 		0AF74EDC2A483BEA0038D221 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF74EDB2A483BEA0038D221 /* MainViewController.swift */; };
 		0AF74EDE2A483C670038D221 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF74EDD2A483C670038D221 /* MainViewModel.swift */; };
 		0AF74EE12A483F7D0038D221 /* MyBudgetDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF74EE02A483F7D0038D221 /* MyBudgetDependencyContainer.swift */; };
@@ -55,6 +59,10 @@
 		0A210E662A4F702000D5B750 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		0A210E6D2A4F772F00D5B750 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		0A210E6F2A4F77A000D5B750 /* UserModelRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModelRealm.swift; sourceTree = "<group>"; };
+		0A210E722A4F880000D5B750 /* BankAccountsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccountsTableViewCell.swift; sourceTree = "<group>"; };
+		0AE423CC2A502A3A00311943 /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
+		0AE423CE2A502A6000311943 /* AuthorizationViewControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewControllerView.swift; sourceTree = "<group>"; };
+		0AE423D12A502A9C00311943 /* AuthorizationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewModel.swift; sourceTree = "<group>"; };
 		0AF74EDB2A483BEA0038D221 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		0AF74EDD2A483C670038D221 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		0AF74EE02A483F7D0038D221 /* MyBudgetDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBudgetDependencyContainer.swift; sourceTree = "<group>"; };
@@ -109,6 +117,7 @@
 		0A1432592A3F50C0007D9509 /* MyBudget */ = {
 			isa = PBXGroup;
 			children = (
+				0AE423C82A50298300311943 /* Authorization */,
 				0A210E682A4F767D00D5B750 /* RealmManager */,
 				0A210E632A4F6DB800D5B750 /* Models */,
 				0A210E602A4F697800D5B750 /* APIManager */,
@@ -233,6 +242,56 @@
 			path = RealmModels;
 			sourceTree = "<group>";
 		};
+		0A210E712A4F87E100D5B750 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				0A210E722A4F880000D5B750 /* BankAccountsTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		0AE423C82A50298300311943 /* Authorization */ = {
+			isa = PBXGroup;
+			children = (
+				0AE423D02A502A8300311943 /* Presentation */,
+				0AE423C92A5029FA00311943 /* UI */,
+			);
+			path = Authorization;
+			sourceTree = "<group>";
+		};
+		0AE423C92A5029FA00311943 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				0AE423CB2A502A0900311943 /* Views */,
+				0AE423CA2A502A0200311943 /* Controller */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		0AE423CA2A502A0200311943 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0AE423CC2A502A3A00311943 /* AuthorizationViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0AE423CB2A502A0900311943 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0AE423CE2A502A6000311943 /* AuthorizationViewControllerView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0AE423D02A502A8300311943 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				0AE423D12A502A9C00311943 /* AuthorizationViewModel.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
 		0AF74EDA2A483BD60038D221 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -328,6 +387,7 @@
 		0AF74EFB2A4849290038D221 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				0A210E712A4F87E100D5B750 /* Cells */,
 				0AF74EFD2A4849350038D221 /* Views */,
 				0AF74EFC2A4849300038D221 /* Controller */,
 			);
@@ -516,8 +576,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AE423CD2A502A3A00311943 /* AuthorizationViewController.swift in Sources */,
 				0AF74EDE2A483C670038D221 /* MainViewModel.swift in Sources */,
 				0AF74F022A4849620038D221 /* BankAccountsViewControllerView.swift in Sources */,
+				0AE423CF2A502A6000311943 /* AuthorizationViewControllerView.swift in Sources */,
 				0A210E5D2A4F423700D5B750 /* ProfileViewController.swift in Sources */,
 				0AFF81602A4B3229006ACF1F /* AnaliticsViewControllerView.swift in Sources */,
 				0A210E622A4F6D2A00D5B750 /* APIManager.swift in Sources */,
@@ -535,11 +597,13 @@
 				0AF74EE42A4842070038D221 /* MyBudgetTabBarDependecyContainer.swift in Sources */,
 				0AF74EF12A48473F0038D221 /* AddTransactionViewController.swift in Sources */,
 				0AFF815E2A4B30D0006ACF1F /* SettingsViewController.swift in Sources */,
+				0A210E732A4F880000D5B750 /* BankAccountsTableViewCell.swift in Sources */,
 				0AF74EF52A4847BF0038D221 /* NiblessViewController.swift in Sources */,
 				0AFF81632A4B337D006ACF1F /* SettingsViewControllerView.swift in Sources */,
 				0AF74EE72A4844C40038D221 /* UiViewController + Extensions.swift in Sources */,
 				0A210E6E2A4F772F00D5B750 /* RealmManager.swift in Sources */,
 				0AF74EDC2A483BEA0038D221 /* MainViewController.swift in Sources */,
+				0AE423D22A502A9C00311943 /* AuthorizationViewModel.swift in Sources */,
 				0AFF815B2A4B2D68006ACF1F /* AnaliticsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
