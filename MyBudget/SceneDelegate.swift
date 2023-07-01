@@ -15,7 +15,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
-        let rootViewController = MyBudgetDependencyContainer().makeMainViewController()
+        let rootViewController = MyBudgetDependencyContainer(sharedWindow: window!).makeMainViewController()
         window?.rootViewController = rootViewController
         window?.windowScene = windowScene
         window?.makeKeyAndVisible()

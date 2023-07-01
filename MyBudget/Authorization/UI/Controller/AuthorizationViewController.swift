@@ -19,6 +19,11 @@ final class AuthorizationViewController: NiblessViewController {
         super.loadView()
         view = AuthorizationViewControllerView()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        viewModel.requestGoogleAuthorization()
+    }
     init(viewModel: AuthorizationViewModel) {
         self.viewModel = viewModel
         super.init()
