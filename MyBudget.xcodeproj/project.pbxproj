@@ -26,6 +26,7 @@
 		0AE423D22A502A9C00311943 /* AuthorizationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE423D12A502A9C00311943 /* AuthorizationViewModel.swift */; };
 		0AE423D52A502D8A00311943 /* AuthorizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE423D42A502D8A00311943 /* AuthorizationManager.swift */; };
 		0AE423D72A502EEE00311943 /* GoogleAuthorizationClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE423D62A502EEE00311943 /* GoogleAuthorizationClient.swift */; };
+		0AE423DA2A50308C00311943 /* MyBudgetGoogleAuthorizationClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE423D92A50308C00311943 /* MyBudgetGoogleAuthorizationClient.swift */; };
 		0AF74EDC2A483BEA0038D221 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF74EDB2A483BEA0038D221 /* MainViewController.swift */; };
 		0AF74EDE2A483C670038D221 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF74EDD2A483C670038D221 /* MainViewModel.swift */; };
 		0AF74EE12A483F7D0038D221 /* MyBudgetDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF74EE02A483F7D0038D221 /* MyBudgetDependencyContainer.swift */; };
@@ -67,6 +68,7 @@
 		0AE423D12A502A9C00311943 /* AuthorizationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewModel.swift; sourceTree = "<group>"; };
 		0AE423D42A502D8A00311943 /* AuthorizationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationManager.swift; sourceTree = "<group>"; };
 		0AE423D62A502EEE00311943 /* GoogleAuthorizationClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAuthorizationClient.swift; sourceTree = "<group>"; };
+		0AE423D92A50308C00311943 /* MyBudgetGoogleAuthorizationClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBudgetGoogleAuthorizationClient.swift; sourceTree = "<group>"; };
 		0AF74EDB2A483BEA0038D221 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		0AF74EDD2A483C670038D221 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		0AF74EE02A483F7D0038D221 /* MyBudgetDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBudgetDependencyContainer.swift; sourceTree = "<group>"; };
@@ -257,6 +259,7 @@
 		0AE423C82A50298300311943 /* Authorization */ = {
 			isa = PBXGroup;
 			children = (
+				0AE423D82A50307100311943 /* Implementation */,
 				0AE423D32A502D7000311943 /* Protocols */,
 				0AE423D02A502A8300311943 /* Presentation */,
 				0AE423C92A5029FA00311943 /* UI */,
@@ -304,6 +307,14 @@
 				0AE423D62A502EEE00311943 /* GoogleAuthorizationClient.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		0AE423D82A50307100311943 /* Implementation */ = {
+			isa = PBXGroup;
+			children = (
+				0AE423D92A50308C00311943 /* MyBudgetGoogleAuthorizationClient.swift */,
+			);
+			path = Implementation;
 			sourceTree = "<group>";
 		};
 		0AF74EDA2A483BD60038D221 /* Main */ = {
@@ -606,6 +617,7 @@
 				0A210E672A4F702000D5B750 /* UserModel.swift in Sources */,
 				0A14325F2A3F50C0007D9509 /* ViewController.swift in Sources */,
 				0A14325B2A3F50C0007D9509 /* AppDelegate.swift in Sources */,
+				0AE423DA2A50308C00311943 /* MyBudgetGoogleAuthorizationClient.swift in Sources */,
 				0AF74F042A484F470038D221 /* BankAccountsTotalBalanceView.swift in Sources */,
 				0AE423D52A502D8A00311943 /* AuthorizationManager.swift in Sources */,
 				0A14325D2A3F50C0007D9509 /* SceneDelegate.swift in Sources */,
