@@ -27,7 +27,6 @@ final class BankAccountsViewControllerView: NiblessView {
     let tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.backgroundColor = .blue
         tableView.register(BankAccountsTableViewCell.self, forCellReuseIdentifier: BankAccountsTableViewCell.id)
         return tableView
     }()

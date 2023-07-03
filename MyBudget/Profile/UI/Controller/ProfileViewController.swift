@@ -32,6 +32,10 @@ final class ProfileViewController: NiblessViewController {
 extension ProfileViewController {
     @objc private func editProfileButtonWasPressed() {
         print("Изменен")
+        if let navigationController = navigationController {
+            let viewController = EditProfileViewController()
+            navigationController.pushViewController(viewController, animated: true)
+        }
     }
     @objc private func signOutProfileButtonWasPressed() {
         print("Вышел")

@@ -39,13 +39,19 @@ extension BankAccountsViewController {
 
 extension BankAccountsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: BankAccountsTableViewCell.id, for: indexPath)
+        guard let bankAccountCell = cell as? BankAccountsTableViewCell else
+        { return cell }
+        return bankAccountCell
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
+    }
     
 }
 
