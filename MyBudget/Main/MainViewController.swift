@@ -24,8 +24,8 @@ final class MainViewController: NiblessViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        presentAuthorizationViewController()
-      //  presentTabBarController()
+     //   presentAuthorizationViewController()
+      presentTabBarController()
         view.backgroundColor = .red
     }
     

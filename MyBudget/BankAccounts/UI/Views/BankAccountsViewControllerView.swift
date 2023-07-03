@@ -19,6 +19,7 @@ final class BankAccountsViewControllerView: NiblessView {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.backgroundColor = .cyan
         button.setTitle("Добавить счет", for: .normal)
+        button.layer.cornerRadius = 12
         button.setTitleColor(.black, for: .normal)
         return button
     }()

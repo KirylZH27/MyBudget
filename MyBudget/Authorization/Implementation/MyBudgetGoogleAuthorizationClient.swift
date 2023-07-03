@@ -30,8 +30,11 @@ final class MyBudgetGoogleAuthorizationClient: GoogleAuthorizationClient {
                 return completion(.failure(error))
             }
             guard let user = result?.user,
-                    let idToken = user.idToken?.tokenString else {
-                return completion(.failure(Error.invalidGoogleAuthResult))}
+                    let idToken = user.idToken?.tokenString
+            else {
+                return completion(.failure(Error.invalidGoogleAuthResult))
+                
+            }
             completion(.success(GoogleAuthorizationResult(idToken: idToken, accessToken: user.accessToken.tokenString)))
         }
     }
