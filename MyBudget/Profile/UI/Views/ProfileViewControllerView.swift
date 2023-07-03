@@ -133,8 +133,8 @@ final class ProfileViewControllerView: NiblessView {
         scrollView.addSubview(signOutProfileButton)
         NSLayoutConstraint.activate([
             signOutProfileButton.topAnchor.constraint(equalTo: editProfileButton.bottomAnchor, constant: 30),
-            signOutProfileButton.leadingAnchor.constraint(equalTo: scrollView.frameLayoutGuide.leadingAnchor, constant: 72),
-            signOutProfileButton.trailingAnchor.constraint(equalTo: scrollView.frameLayoutGuide.trailingAnchor, constant: -72),
+            signOutProfileButton.leadingAnchor.constraint(equalTo: scrollView.frameLayoutGuide.leadingAnchor, constant: 100),
+            signOutProfileButton.trailingAnchor.constraint(equalTo: scrollView.frameLayoutGuide.trailingAnchor, constant: -100),
             signOutProfileButton.bottomAnchor.constraint(equalTo: scrollView.contentLayoutGuide.bottomAnchor, constant: -10)
         ])
     }

@@ -16,5 +16,25 @@ final class EditProfileViewController: NiblessViewController {
         super.loadView()
         view = EditProfileViewConttrollerView()
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        addTargets()
+    }
+    
+    private func addTargets() {
+        contentView.saveNewProfileInfoButton.addTarget(self, action: #selector(saveNewProfileInfoButtonWasPressed), for: .touchUpInside)
+    }
 }
 
+extension EditProfileViewController {
+    @objc private func saveNewProfileInfoButtonWasPressed() {
+        print("Сохранил новое")
+        
+        if let navigationController = navigationController {
+            // ???
+            let viewController = ProfileViewController()
+            navigationController.popViewController(animated: true)
+        }
+    }
+}

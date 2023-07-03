@@ -58,7 +58,8 @@ final class BankAccountsViewControllerView: NiblessView {
         addSubview(addBankAccountButton)
         NSLayoutConstraint.activate([
             addBankAccountButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -35),
-            addBankAccountButton.centerXAnchor.constraint(equalTo: centerXAnchor)
+            addBankAccountButton.centerXAnchor.constraint(equalTo: centerXAnchor),
+            addBankAccountButton.widthAnchor.constraint(equalToConstant: 200)
         ])
     }
     
