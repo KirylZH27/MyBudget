@@ -23,7 +23,7 @@ final class SettingsViewControllerView: NiblessView {
     }
     
     private func layoutElemets(){
-        
+        layoutSettingsTableView()
     }
     private func layoutSettingsTableView(){
         addSubview(tableView)
