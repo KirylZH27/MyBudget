@@ -33,6 +33,7 @@ final class MyBudgetTabBarDependecyContainer {
         viewController.navigationItem.title = "Счета"
         let navigationController = UINavigationController(rootViewController: viewController)
         navigationController.tabBarItem.title = "Счета"
+        navigationController.navigationBar.tintColor = .black
         navigationController.tabBarItem.image = UIImage(systemName: "creditcard.circle")
         return navigationController
     }
@@ -49,6 +50,7 @@ final class MyBudgetTabBarDependecyContainer {
         viewController.navigationItem.title = "Настройки"
         let navigationController = UINavigationController(rootViewController: viewController)
         navigationController.tabBarItem.title = "Настройки"
+        navigationController.navigationBar.tintColor = .black
         navigationController.tabBarItem.image = UIImage(systemName: "gear")
         return navigationController
     }
@@ -58,6 +60,7 @@ final class MyBudgetTabBarDependecyContainer {
         viewController.navigationItem.title = "Профиль"
         let navigationController = UINavigationController(rootViewController: viewController)
         navigationController.tabBarItem.title = "Профиль"
+        navigationController.navigationBar.tintColor = .black
         navigationController.tabBarItem.image = UIImage(systemName: "person.crop.circle")
         return navigationController
     }

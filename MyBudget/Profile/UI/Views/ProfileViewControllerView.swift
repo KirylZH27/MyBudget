@@ -18,6 +18,7 @@ final class ProfileViewControllerView: NiblessView {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = UIImage(systemName: "person.fill")
+        imageView.tintColor = AppColors.green.value
         return imageView
     }()
     
@@ -26,7 +27,7 @@ final class ProfileViewControllerView: NiblessView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Имя пользователя"
         label.numberOfLines = 0
-        label.font = UIFont(name: "AmericanTypewriter-Bold", size: 30)
+        label.font = UIFont(name: "AmericanTypewriter-Bold", size: 28)
         label.textColor = .black
         label.textAlignment = .center
         return label
@@ -37,7 +38,7 @@ final class ProfileViewControllerView: NiblessView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Email пользователя"
         label.numberOfLines = 0
-        label.font = UIFont(name: "AmericanTypewriter-Bold", size: 30)
+        label.font = UIFont(name: "AmericanTypewriter-Bold", size: 28)
         label.textColor = .black
         label.textAlignment = .center
         return label
@@ -46,7 +47,7 @@ final class ProfileViewControllerView: NiblessView {
     let editProfileButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = .cyan
+        button.backgroundColor = AppColors.green.value
         button.setTitle("Изменить профиль", for: .normal)
         button.layer.cornerRadius = 12
         button.setTitleColor(.black, for: .normal)
@@ -56,7 +57,7 @@ final class ProfileViewControllerView: NiblessView {
     let signOutProfileButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = .cyan
+        button.backgroundColor = AppColors.green.value
         button.setTitle("Выход из аккаунта", for: .normal)
         button.layer.cornerRadius = 12
         button.setTitleColor(.black, for: .normal)
@@ -65,7 +66,7 @@ final class ProfileViewControllerView: NiblessView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .orange
+        backgroundColor = .white
         layoutElements()
     }
     

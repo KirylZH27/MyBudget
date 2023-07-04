@@ -42,6 +42,8 @@
 		0AF74F002A4849500038D221 /* BankAccountsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF74EFF2A4849500038D221 /* BankAccountsViewController.swift */; };
 		0AF74F022A4849620038D221 /* BankAccountsViewControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF74F012A4849620038D221 /* BankAccountsViewControllerView.swift */; };
 		0AF74F042A484F470038D221 /* BankAccountsTotalBalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF74F032A484F470038D221 /* BankAccountsTotalBalanceView.swift */; };
+		0AFE735F2A5493E900E21458 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFE735E2A5493E900E21458 /* AppColors.swift */; };
+		0AFE73642A54996600E21458 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFE73632A54996600E21458 /* SettingsTableViewCell.swift */; };
 		0AFF815B2A4B2D68006ACF1F /* AnaliticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFF815A2A4B2D68006ACF1F /* AnaliticsViewController.swift */; };
 		0AFF815E2A4B30D0006ACF1F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFF815D2A4B30D0006ACF1F /* SettingsViewController.swift */; };
 		0AFF81602A4B3229006ACF1F /* AnaliticsViewControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFF815F2A4B3229006ACF1F /* AnaliticsViewControllerView.swift */; };
@@ -87,6 +89,8 @@
 		0AF74EFF2A4849500038D221 /* BankAccountsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccountsViewController.swift; sourceTree = "<group>"; };
 		0AF74F012A4849620038D221 /* BankAccountsViewControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccountsViewControllerView.swift; sourceTree = "<group>"; };
 		0AF74F032A484F470038D221 /* BankAccountsTotalBalanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccountsTotalBalanceView.swift; sourceTree = "<group>"; };
+		0AFE735E2A5493E900E21458 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
+		0AFE73632A54996600E21458 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		0AFF815A2A4B2D68006ACF1F /* AnaliticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnaliticsViewController.swift; sourceTree = "<group>"; };
 		0AFF815D2A4B30D0006ACF1F /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		0AFF815F2A4B3229006ACF1F /* AnaliticsViewControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnaliticsViewControllerView.swift; sourceTree = "<group>"; };
@@ -159,6 +163,7 @@
 		0A16DDFE2A49D57C00604180 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				0AFE73602A54993C00E21458 /* Cells */,
 				0AFF81612A4B3358006ACF1F /* Views */,
 				0AFF815C2A4B30B9006ACF1F /* Controller */,
 			);
@@ -452,6 +457,7 @@
 		0AF74EF22A4847950038D221 /* SharedComponets */ = {
 			isa = PBXGroup;
 			children = (
+				0AFE735D2A5493C400E21458 /* AppColors */,
 				0AF74EF32A4847A90038D221 /* Nibless */,
 			);
 			path = SharedComponets;
@@ -491,6 +497,22 @@
 				0AF74F032A484F470038D221 /* BankAccountsTotalBalanceView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		0AFE735D2A5493C400E21458 /* AppColors */ = {
+			isa = PBXGroup;
+			children = (
+				0AFE735E2A5493E900E21458 /* AppColors.swift */,
+			);
+			path = AppColors;
+			sourceTree = "<group>";
+		};
+		0AFE73602A54993C00E21458 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				0AFE73632A54996600E21458 /* SettingsTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		0AFF81582A4B2CE9006ACF1F /* Controller */ = {
@@ -666,7 +688,9 @@
 				0AFF81602A4B3229006ACF1F /* AnaliticsViewControllerView.swift in Sources */,
 				0A210E622A4F6D2A00D5B750 /* APIManager.swift in Sources */,
 				0AF74EE12A483F7D0038D221 /* MyBudgetDependencyContainer.swift in Sources */,
+				0AFE73642A54996600E21458 /* SettingsTableViewCell.swift in Sources */,
 				0AF74F002A4849500038D221 /* BankAccountsViewController.swift in Sources */,
+				0AFE735F2A5493E900E21458 /* AppColors.swift in Sources */,
 				0AF74EF92A48486D0038D221 /* AddTransactionViewControllerView.swift in Sources */,
 				0A475E092A52D31100B397AC /* EditProfileViewController.swift in Sources */,
 				0AE423DE2A5033C600311943 /* FirebaseAuthorizationManager.swift in Sources */,

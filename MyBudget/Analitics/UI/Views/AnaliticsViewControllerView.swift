@@ -10,6 +10,6 @@ final class AnaliticsViewControllerView: NiblessView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .orange
+        backgroundColor = .white
     }
 }

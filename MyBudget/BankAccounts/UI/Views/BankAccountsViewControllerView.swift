@@ -17,7 +17,7 @@ final class BankAccountsViewControllerView: NiblessView {
     let addBankAccountButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = .cyan
+        button.backgroundColor = AppColors.green.value
         button.setTitle("Добавить счет", for: .normal)
         button.layer.cornerRadius = 12
         button.setTitleColor(.black, for: .normal)
@@ -36,7 +36,7 @@ final class BankAccountsViewControllerView: NiblessView {
         
         laoutElemets()
         
-        backgroundColor = .yellow
+        backgroundColor = .white
     }
     
     private func laoutElemets() {
@@ -54,15 +54,6 @@ final class BankAccountsViewControllerView: NiblessView {
         ])
     }
     
-    private func laoutBankAccountButton() {
-        addSubview(addBankAccountButton)
-        NSLayoutConstraint.activate([
-            addBankAccountButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -35),
-            addBankAccountButton.centerXAnchor.constraint(equalTo: centerXAnchor),
-            addBankAccountButton.widthAnchor.constraint(equalToConstant: 200)
-        ])
-    }
-    
     private func laoutBankAccountTableView() {
         addSubview(tableView)
         NSLayoutConstraint.activate([
@@ -70,6 +61,15 @@ final class BankAccountsViewControllerView: NiblessView {
             tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: addBankAccountButton.topAnchor, constant: -16)
+        ])
+    }
+    
+    private func laoutBankAccountButton() {
+        addSubview(addBankAccountButton)
+        NSLayoutConstraint.activate([
+            addBankAccountButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -35),
+            addBankAccountButton.centerXAnchor.constraint(equalTo: centerXAnchor),
+            addBankAccountButton.widthAnchor.constraint(equalToConstant: 200)
         ])
     }
 }
