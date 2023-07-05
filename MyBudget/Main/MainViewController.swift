@@ -71,5 +71,6 @@ final class MainViewController: NiblessViewController {
     private func hideAuthorizationViewController(){
         guard let currentAuthorizationNavigationController else { return }
         remove(childViewController: currentAuthorizationNavigationController)
+        self.currentAuthorizationNavigationController = nil
     }
 }

@@ -9,6 +9,7 @@ import Foundation
 
 struct UserModel {
     let email: String
-    var name: String?
+    var name: String
     let imageURLString: String?
+    let id: String
 }

@@ -8,4 +8,9 @@
 import UIKit
 final class AuthorizationViewControllerView: NiblessView {
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        backgroundColor = .brown
+    }
+    
 }
