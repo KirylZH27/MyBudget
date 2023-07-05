@@ -45,7 +45,8 @@ final class MainViewController: NiblessViewController {
     
     private func presentAuthorizationViewController() {
         let authorizationViewController = authorizationViewControllerFactory()
-        addFullScreen(childViewController: authorizationViewController)
+        let naviagtionController = UINavigationController(rootViewController: authorizationViewController)
+        addFullScreen(childViewController: naviagtionController)
     }
     
 }

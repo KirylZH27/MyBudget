@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Combine
+
 final class AuthorizationViewController: NiblessViewController {
     
     var contentView:
@@ -15,10 +17,16 @@ final class AuthorizationViewController: NiblessViewController {
     
     private let viewModel: AuthorizationViewModel
     private let userAdditionalInfoViewControllerFactory: () -> UserAdditionalInfoViewController
+    private var cancelable = Set<AnyCancellable>()
     
     override func loadView() {
         super.loadView()
         view = AuthorizationViewControllerView()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        bindViewModel()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -29,5 +37,16 @@ final class AuthorizationViewController: NiblessViewController {
         self.viewModel = viewModel
         self.userAdditionalInfoViewControllerFactory = userAdditionalInfoViewControllerFactory
         super.init()
+    }
+    
+    private func bindViewModel(){
+        viewModel.isPresentUserAdditional.sink { [weak self] _ in
+            self?.presentUserAdditionalInfo()
+        }.store(in: &cancelable)
+    }
+    
+    private func presentUserAdditionalInfo(){
+        let userAdditionalInfoViewController = userAdditionalInfoViewControllerFactory()
+        navigationController?.pushViewController(userAdditionalInfoViewController, animated: true)
     }
 }
