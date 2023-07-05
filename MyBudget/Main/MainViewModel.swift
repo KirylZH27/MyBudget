@@ -6,6 +6,14 @@
 //
 
 import Foundation
-final class MainViewModel {
+import Combine
+final class MainViewModel: HideAuthorizationNavigationResponder {
+    
+    private (set) var isPresentAuthorization = PassthroughSubject<Bool,Never>()
+    
+    func hideAuthorization() {
+        isPresentAuthorization.send(false)
+    }
+    
     
 }

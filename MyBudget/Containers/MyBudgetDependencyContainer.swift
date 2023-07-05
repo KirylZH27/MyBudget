@@ -25,28 +25,30 @@ final class MyBudgetDependencyContainer {
         }
         
         let authorizationViewControllerFactory = {
-            self.createAuthorizationViewController()
+            self.createAuthorizationViewController(hideAuthorizationNavigationResponder: viewModel)
+            
         }
         
         let viewController = MainViewController(viewModel: viewModel, tabBarControllerFactory: tabBarControllerFactory, authorizationViewControllerFactory: authorizationViewControllerFactory)
         return viewController
     }
     
-    private func createAuthorizationViewController() -> AuthorizationViewController {
+    private func createAuthorizationViewController(hideAuthorizationNavigationResponder: HideAuthorizationNavigationResponder) -> AuthorizationViewController {
         let viewModel = createAuthorizationViewModel()
        
         let userAdditionalInfoViewControllerFactory = {
-            self.createUserAdditionalInfoViewController()
+            self.createUserAdditionalInfoViewController(hideAuthorizationNavigationResponder: hideAuthorizationNavigationResponder)
         }
         let viewController = AuthorizationViewController(viewModel: viewModel, userAdditionalInfoViewControllerFactory: userAdditionalInfoViewControllerFactory)
         return viewController
     }
     
-    private func createUserAdditionalInfoViewController() -> UserAdditionalInfoViewController {
+    private func createUserAdditionalInfoViewController(hideAuthorizationNavigationResponder: HideAuthorizationNavigationResponder) -> UserAdditionalInfoViewController {
         let viewModel = UserAdditionalInfoViewModel()
-        let viewController = UserAdditionalInfoViewController(viewModel: viewModel)
+        let viewController = UserAdditionalInfoViewController(viewModel: viewModel, hideAuthorizationNavigationResponder: hideAuthorizationNavigationResponder)
         return viewController
     }
+    
     
     private func createAuthorizationViewModel() -> AuthorizationViewModel {
         let authorizationManager = createFirebaseAuthorizationManager()
