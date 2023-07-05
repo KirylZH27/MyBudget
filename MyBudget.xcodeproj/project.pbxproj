@@ -44,6 +44,9 @@
 		0AF74F042A484F470038D221 /* BankAccountsTotalBalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF74F032A484F470038D221 /* BankAccountsTotalBalanceView.swift */; };
 		0AFE735F2A5493E900E21458 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFE735E2A5493E900E21458 /* AppColors.swift */; };
 		0AFE73642A54996600E21458 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFE73632A54996600E21458 /* SettingsTableViewCell.swift */; };
+		0AFE736B2A55DFC300E21458 /* UserAdditionalInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFE736A2A55DFC300E21458 /* UserAdditionalInfoViewController.swift */; };
+		0AFE736D2A55DFDA00E21458 /* UserAdditionalInfoViewControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFE736C2A55DFDA00E21458 /* UserAdditionalInfoViewControllerView.swift */; };
+		0AFE73712A55E05400E21458 /* UserAdditionalInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFE73702A55E05400E21458 /* UserAdditionalInfoViewModel.swift */; };
 		0AFF815B2A4B2D68006ACF1F /* AnaliticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFF815A2A4B2D68006ACF1F /* AnaliticsViewController.swift */; };
 		0AFF815E2A4B30D0006ACF1F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFF815D2A4B30D0006ACF1F /* SettingsViewController.swift */; };
 		0AFF81602A4B3229006ACF1F /* AnaliticsViewControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFF815F2A4B3229006ACF1F /* AnaliticsViewControllerView.swift */; };
@@ -91,6 +94,9 @@
 		0AF74F032A484F470038D221 /* BankAccountsTotalBalanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccountsTotalBalanceView.swift; sourceTree = "<group>"; };
 		0AFE735E2A5493E900E21458 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		0AFE73632A54996600E21458 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		0AFE736A2A55DFC300E21458 /* UserAdditionalInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAdditionalInfoViewController.swift; sourceTree = "<group>"; };
+		0AFE736C2A55DFDA00E21458 /* UserAdditionalInfoViewControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAdditionalInfoViewControllerView.swift; sourceTree = "<group>"; };
+		0AFE73702A55E05400E21458 /* UserAdditionalInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAdditionalInfoViewModel.swift; sourceTree = "<group>"; };
 		0AFF815A2A4B2D68006ACF1F /* AnaliticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnaliticsViewController.swift; sourceTree = "<group>"; };
 		0AFF815D2A4B30D0006ACF1F /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		0AFF815F2A4B3229006ACF1F /* AnaliticsViewControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnaliticsViewControllerView.swift; sourceTree = "<group>"; };
@@ -133,6 +139,7 @@
 		0A1432592A3F50C0007D9509 /* MyBudget */ = {
 			isa = PBXGroup;
 			children = (
+				0AFE73662A55DF7F00E21458 /* UserAdditionalInfo */,
 				0AE423DB2A50337E00311943 /* Firebase */,
 				0AE423C82A50298300311943 /* Authorization */,
 				0A210E682A4F767D00D5B750 /* RealmManager */,
@@ -515,6 +522,48 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		0AFE73662A55DF7F00E21458 /* UserAdditionalInfo */ = {
+			isa = PBXGroup;
+			children = (
+				0AFE736F2A55E03D00E21458 /* Presentation */,
+				0AFE73672A55DFA100E21458 /* UI */,
+			);
+			path = UserAdditionalInfo;
+			sourceTree = "<group>";
+		};
+		0AFE73672A55DFA100E21458 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				0AFE73692A55DFAC00E21458 /* Controller */,
+				0AFE73682A55DFA600E21458 /* Views */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		0AFE73682A55DFA600E21458 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0AFE736C2A55DFDA00E21458 /* UserAdditionalInfoViewControllerView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0AFE73692A55DFAC00E21458 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0AFE736A2A55DFC300E21458 /* UserAdditionalInfoViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0AFE736F2A55E03D00E21458 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				0AFE73702A55E05400E21458 /* UserAdditionalInfoViewModel.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
 		0AFF81582A4B2CE9006ACF1F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -686,10 +735,13 @@
 				0AE423CF2A502A6000311943 /* AuthorizationViewControllerView.swift in Sources */,
 				0A210E5D2A4F423700D5B750 /* ProfileViewController.swift in Sources */,
 				0AFF81602A4B3229006ACF1F /* AnaliticsViewControllerView.swift in Sources */,
+				0AFE736D2A55DFDA00E21458 /* UserAdditionalInfoViewControllerView.swift in Sources */,
+				0AFE736B2A55DFC300E21458 /* UserAdditionalInfoViewController.swift in Sources */,
 				0A210E622A4F6D2A00D5B750 /* APIManager.swift in Sources */,
 				0AF74EE12A483F7D0038D221 /* MyBudgetDependencyContainer.swift in Sources */,
 				0AFE73642A54996600E21458 /* SettingsTableViewCell.swift in Sources */,
 				0AF74F002A4849500038D221 /* BankAccountsViewController.swift in Sources */,
+				0AFE73712A55E05400E21458 /* UserAdditionalInfoViewModel.swift in Sources */,
 				0AFE735F2A5493E900E21458 /* AppColors.swift in Sources */,
 				0AF74EF92A48486D0038D221 /* AddTransactionViewControllerView.swift in Sources */,
 				0A475E092A52D31100B397AC /* EditProfileViewController.swift in Sources */,

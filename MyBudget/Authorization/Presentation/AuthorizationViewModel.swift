@@ -16,6 +16,8 @@ final class AuthorizationViewModel {
     func requestGoogleAuthorization() {
         authorizationManager.requestAuthorization(in: .google) { [weak self] result in
             print(result)
+            
+            
         }
     }
 }

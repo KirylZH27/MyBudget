@@ -34,7 +34,17 @@ final class MyBudgetDependencyContainer {
     
     private func createAuthorizationViewController() -> AuthorizationViewController {
         let viewModel = createAuthorizationViewModel()
-        let viewController = AuthorizationViewController(viewModel: viewModel)
+       
+        let userAdditionalInfoViewControllerFactory = {
+            self.createUserAdditionalInfoViewController()
+        }
+        let viewController = AuthorizationViewController(viewModel: viewModel, userAdditionalInfoViewControllerFactory: userAdditionalInfoViewControllerFactory)
+        return viewController
+    }
+    
+    private func createUserAdditionalInfoViewController() -> UserAdditionalInfoViewController {
+        let viewModel = UserAdditionalInfoViewModel()
+        let viewController = UserAdditionalInfoViewController(viewModel: viewModel)
         return viewController
     }
     

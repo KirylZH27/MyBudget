@@ -14,6 +14,7 @@ final class AuthorizationViewController: NiblessViewController {
     }
     
     private let viewModel: AuthorizationViewModel
+    private let userAdditionalInfoViewControllerFactory: () -> UserAdditionalInfoViewController
     
     override func loadView() {
         super.loadView()
@@ -24,8 +25,9 @@ final class AuthorizationViewController: NiblessViewController {
         super.viewDidAppear(animated)
         viewModel.requestGoogleAuthorization()
     }
-    init(viewModel: AuthorizationViewModel) {
+    init(viewModel: AuthorizationViewModel, userAdditionalInfoViewControllerFactory: @escaping () -> UserAdditionalInfoViewController ) {
         self.viewModel = viewModel
+        self.userAdditionalInfoViewControllerFactory = userAdditionalInfoViewControllerFactory
         super.init()
     }
 }
