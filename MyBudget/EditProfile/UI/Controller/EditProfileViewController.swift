@@ -20,10 +20,17 @@ final class EditProfileViewController: NiblessViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addTargets()
+        setupActions()
     }
+    
+   // private func setUserInformation(profile: UserModel) {
+ //   }
     
     private func addTargets() {
         contentView.saveNewProfileInfoButton.addTarget(self, action: #selector(saveNewProfileInfoButtonWasPressed), for: .touchUpInside)
+    }
+    private func setupActions() {
+        contentView.ImageGesture.addTarget(self, action: #selector(imageWasPressed))
     }
 }
 
@@ -36,5 +43,9 @@ extension EditProfileViewController {
             let viewController = ProfileViewController()
             navigationController.popViewController(animated: true)
         }
+    }
+    
+    @objc private func imageWasPressed() {
+        print("Image was pressed")
     }
 }

@@ -8,11 +8,14 @@
 import UIKit
 final class EditProfileViewConttrollerView: NiblessView {
     
+    let ImageGesture = UITapGestureRecognizer()
+    
     private let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = UIImage(systemName: "person.fill")
         imageView.tintColor = AppColors.green.value
+      //  imageView.addGestureRecognizer(ImageGesture)
         return imageView
     }()
     
@@ -101,6 +104,7 @@ final class EditProfileViewConttrollerView: NiblessView {
             saveNewProfileInfoButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 72),
             saveNewProfileInfoButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -72),
          //   saveNewProfileInfoButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10)
+            saveNewProfileInfoButton.heightAnchor.constraint(equalToConstant: 34)
         ])
     }
 }

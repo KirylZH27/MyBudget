@@ -22,25 +22,48 @@ final class ProfileViewControllerView: NiblessView {
         return imageView
     }()
     
+    private let nameSignatureLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Имя пользователя:"
+        label.numberOfLines = 0
+        label.font = UIFont(name: "AmericanTypewriter-Bold", size: 22)
+        label.textColor = .black
+        label.textAlignment = .left
+        return label
+    }()
+    
     private let nameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Имя пользователя"
+        label.text = "Кирилл"
         label.numberOfLines = 0
-        label.font = UIFont(name: "AmericanTypewriter-Bold", size: 28)
+        label.font = UIFont(name: "AmericanTypewriter", size: 25)
         label.textColor = .black
-        label.textAlignment = .center
+        label.textAlignment = .left
         return label
     }()
+    
+    private let emailSignatureLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Email пользователя:"
+        label.numberOfLines = 0
+        label.font = UIFont(name: "AmericanTypewriter-Bold", size: 22)
+        label.textColor = .black
+        label.textAlignment = .left
+        return label
+    }()
+
     
     private let emailLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Email пользователя"
+        label.text = "Kirill27@mail.com"
         label.numberOfLines = 0
-        label.font = UIFont(name: "AmericanTypewriter-Bold", size: 28)
+        label.font = UIFont(name: "AmericanTypewriter", size: 25)
         label.textColor = .black
-        label.textAlignment = .center
+        label.textAlignment = .left
         return label
     }()
    
@@ -73,7 +96,9 @@ final class ProfileViewControllerView: NiblessView {
     private func layoutElements() {
         layoutScrollView()
         layoutImageView()
+        layoutNameSignatureLabel()
         layoutNamelabel()
+        layoutEmailSignatureLabel()
         layoutEmailLabel()
         layoutEditProfileButton()
         layoutSignOutProfileButton()
@@ -99,22 +124,40 @@ final class ProfileViewControllerView: NiblessView {
             imageView.widthAnchor.constraint(equalToConstant: 200)
         ])
     }
+    
+    private func layoutNameSignatureLabel(){
+        scrollView.addSubview(nameSignatureLabel)
+        NSLayoutConstraint.activate([
+            nameSignatureLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 35),
+            nameSignatureLabel.leadingAnchor.constraint(equalTo: scrollView.frameLayoutGuide.leadingAnchor, constant: 20),
+            nameSignatureLabel.trailingAnchor.constraint(equalTo: scrollView.frameLayoutGuide.trailingAnchor, constant: -20)
+        ])
+    }
         private func layoutNamelabel(){
             scrollView.addSubview(nameLabel)
         NSLayoutConstraint.activate([
-            nameLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 50),
-            nameLabel.leadingAnchor.constraint(equalTo: scrollView.frameLayoutGuide.leadingAnchor, constant: 16),
-            nameLabel.trailingAnchor.constraint(equalTo: scrollView.frameLayoutGuide.trailingAnchor, constant: -16)
+            nameLabel.topAnchor.constraint(equalTo: nameSignatureLabel.bottomAnchor, constant: 5),
+            nameLabel.leadingAnchor.constraint(equalTo: scrollView.frameLayoutGuide.leadingAnchor, constant: 20),
+            nameLabel.trailingAnchor.constraint(equalTo: scrollView.frameLayoutGuide.trailingAnchor, constant: -20)
          //   nameLabel.bottomAnchor.constraint(equalTo: scrollView.contentLayoutGuide.bottomAnchor, constant: -10)
+        ])
+    }
+    
+    private func layoutEmailSignatureLabel(){
+        scrollView.addSubview(emailSignatureLabel)
+        NSLayoutConstraint.activate([
+            emailSignatureLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 15),
+            emailSignatureLabel.leadingAnchor.constraint(equalTo: scrollView.frameLayoutGuide.leadingAnchor, constant: 20),
+            emailSignatureLabel.trailingAnchor.constraint(equalTo: scrollView.frameLayoutGuide.trailingAnchor, constant: -20)
         ])
     }
     
     private func layoutEmailLabel(){
         scrollView.addSubview(emailLabel)
         NSLayoutConstraint.activate([
-            emailLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 30),
-            emailLabel.leadingAnchor.constraint(equalTo: scrollView.frameLayoutGuide.leadingAnchor, constant: 16),
-            emailLabel.trailingAnchor.constraint(equalTo: scrollView.frameLayoutGuide.trailingAnchor, constant: -16),
+            emailLabel.topAnchor.constraint(equalTo: emailSignatureLabel.bottomAnchor, constant: 5),
+            emailLabel.leadingAnchor.constraint(equalTo: scrollView.frameLayoutGuide.leadingAnchor, constant: 20),
+            emailLabel.trailingAnchor.constraint(equalTo: scrollView.frameLayoutGuide.trailingAnchor, constant: -20),
         //    emailLabel.bottomAnchor.constraint(equalTo: scrollView.contentLayoutGuide.bottomAnchor, constant: -10)
         ])
     }
@@ -122,10 +165,11 @@ final class ProfileViewControllerView: NiblessView {
     private func layoutEditProfileButton() {
         scrollView.addSubview(editProfileButton)
         NSLayoutConstraint.activate([
-            editProfileButton.topAnchor.constraint(equalTo: emailLabel.bottomAnchor, constant: 70),
+            editProfileButton.topAnchor.constraint(equalTo: emailLabel.bottomAnchor, constant: 75),
             editProfileButton.leadingAnchor.constraint(equalTo: scrollView.frameLayoutGuide.leadingAnchor, constant: 72),
             editProfileButton.trailingAnchor.constraint(equalTo: scrollView.frameLayoutGuide.trailingAnchor, constant: -72),
         //    editProfileButton.bottomAnchor.constraint(equalTo: scrollView.contentLayoutGuide.bottomAnchor, constant: -10)
+            editProfileButton.heightAnchor.constraint(equalToConstant: 34)
         ])
     }
     
@@ -133,10 +177,11 @@ final class ProfileViewControllerView: NiblessView {
     private func layoutSignOutProfileButton() {
         scrollView.addSubview(signOutProfileButton)
         NSLayoutConstraint.activate([
-            signOutProfileButton.topAnchor.constraint(equalTo: editProfileButton.bottomAnchor, constant: 30),
+            signOutProfileButton.topAnchor.constraint(equalTo: editProfileButton.bottomAnchor, constant: 35),
             signOutProfileButton.leadingAnchor.constraint(equalTo: scrollView.frameLayoutGuide.leadingAnchor, constant: 100),
             signOutProfileButton.trailingAnchor.constraint(equalTo: scrollView.frameLayoutGuide.trailingAnchor, constant: -100),
-            signOutProfileButton.bottomAnchor.constraint(equalTo: scrollView.contentLayoutGuide.bottomAnchor, constant: -10)
+            signOutProfileButton.bottomAnchor.constraint(equalTo: scrollView.contentLayoutGuide.bottomAnchor, constant: -10),
+            signOutProfileButton.heightAnchor.constraint(equalToConstant: 34)
         ])
     }
 }
