@@ -11,7 +11,7 @@ import FirebaseFirestore
 
 final class FirebaseUserStore: UserStore {
     
-    private let userCollectionRef = Firestore.firestore().collection("Users")
+    private let userCollectionRef = Firestore.firestore().collection("users")
     
     func checkIfUserExist(by userID: String, completion: @escaping (Bool)->Void) {
         userCollectionRef.document(userID).getDocument { (document, error) in

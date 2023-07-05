@@ -18,6 +18,7 @@ final class AuthorizationViewController: NiblessViewController {
     private let viewModel: AuthorizationViewModel
     private let userAdditionalInfoViewControllerFactory: () -> UserAdditionalInfoViewController
     private var cancelable = Set<AnyCancellable>()
+    private let hideAuthorizationNavigationResponder: HideAuthorizationNavigationResponder
     
     override func loadView() {
         super.loadView()
@@ -33,15 +34,20 @@ final class AuthorizationViewController: NiblessViewController {
         super.viewDidAppear(animated)
         viewModel.requestGoogleAuthorization()
     }
-    init(viewModel: AuthorizationViewModel, userAdditionalInfoViewControllerFactory: @escaping () -> UserAdditionalInfoViewController ) {
+    init(viewModel: AuthorizationViewModel, userAdditionalInfoViewControllerFactory: @escaping () -> UserAdditionalInfoViewController, hideAuthorizationNavigationResponder: HideAuthorizationNavigationResponder ) {
         self.viewModel = viewModel
         self.userAdditionalInfoViewControllerFactory = userAdditionalInfoViewControllerFactory
+        self.hideAuthorizationNavigationResponder = hideAuthorizationNavigationResponder
         super.init()
     }
     
     private func bindViewModel(){
-        viewModel.isPresentUserAdditional.sink { [weak self] _ in
-            self?.presentUserAdditionalInfo()
+        viewModel.isPresentUserAdditional.sink { [weak self] isPresentUserAdditional in
+            if isPresentUserAdditional {
+                self?.presentUserAdditionalInfo()
+            }else {
+                self?.hideAuthorizationNavigationResponder.hideAuthorization()
+            }
         }.store(in: &cancelable)
     }
     

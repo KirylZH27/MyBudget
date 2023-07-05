@@ -8,5 +8,5 @@
 import Foundation
 
 protocol UserCreator{
-    func createUserIfNeeded(with userId: String, completion: @escaping (Result<Void, Error>) -> Void)
+    func createUserIfNeeded(with user: UserModel, completion: @escaping (Result<Void, Error>) -> Void)
 }

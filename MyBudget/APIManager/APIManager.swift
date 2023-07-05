@@ -8,7 +8,7 @@
 import UIKit
 import Firebase
 import FirebaseDatabase
-
+/*
 class APIManager {
     static let shared = APIManager()
     
@@ -64,3 +64,4 @@ class APIManager {
     }
 }
 
+*/

@@ -39,7 +39,7 @@ final class MyBudgetDependencyContainer {
         let userAdditionalInfoViewControllerFactory = {
             self.createUserAdditionalInfoViewController(hideAuthorizationNavigationResponder: hideAuthorizationNavigationResponder)
         }
-        let viewController = AuthorizationViewController(viewModel: viewModel, userAdditionalInfoViewControllerFactory: userAdditionalInfoViewControllerFactory)
+        let viewController = AuthorizationViewController(viewModel: viewModel, userAdditionalInfoViewControllerFactory: userAdditionalInfoViewControllerFactory, hideAuthorizationNavigationResponder: hideAuthorizationNavigationResponder)
         return viewController
     }
     
@@ -51,9 +51,15 @@ final class MyBudgetDependencyContainer {
     
     
     private func createAuthorizationViewModel() -> AuthorizationViewModel {
+        let userStore = createUserStore()
         let authorizationManager = createFirebaseAuthorizationManager()
-        let viewModel = AuthorizationViewModel(authorizationManager: authorizationManager)
+        let viewModel = AuthorizationViewModel(authorizationManager: authorizationManager, userStore: userStore)
         return viewModel
+    }
+    
+    private func createUserStore() -> UserStore {
+        let userStore = FirebaseUserStore()
+        return userStore
     }
     
     private func createFirebaseAuthorizationManager() -> AuthorizationManager {
