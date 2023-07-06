@@ -28,12 +28,13 @@ final class AuthorizationViewController: NiblessViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         bindViewModel()
+        addTargets()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        viewModel.requestGoogleAuthorization()
     }
+    
     init(viewModel: AuthorizationViewModel, userAdditionalInfoViewControllerFactory: @escaping () -> UserAdditionalInfoViewController, hideAuthorizationNavigationResponder: HideAuthorizationNavigationResponder ) {
         self.viewModel = viewModel
         self.userAdditionalInfoViewControllerFactory = userAdditionalInfoViewControllerFactory
@@ -54,5 +55,15 @@ final class AuthorizationViewController: NiblessViewController {
     private func presentUserAdditionalInfo(){
         let userAdditionalInfoViewController = userAdditionalInfoViewControllerFactory()
         navigationController?.pushViewController(userAdditionalInfoViewController, animated: true)
+    }
+    
+    private func addTargets() {
+        contentView.continueWithGoogleButton.addTarget(self, action: #selector(continueWithGoogleButtonWasPressed) , for: .touchUpInside)
+    }
+}
+
+extension AuthorizationViewController {
+    @objc private func continueWithGoogleButtonWasPressed(){
+        viewModel.requestGoogleAuthorization()
     }
 }
