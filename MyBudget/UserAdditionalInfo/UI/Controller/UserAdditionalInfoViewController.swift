@@ -31,5 +31,20 @@ final class UserAdditionalInfoViewController: NiblessViewController {
         view = UserAdditionalInfoViewControllerView()
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        addTargets()
+    }
+    
+    private func addTargets() {
+        contentView.saveProfileInfoButton.addTarget(self, action: #selector(SaveProfileInfoButtonWasPressed), for: .touchUpInside)
+    }
     
 }
+
+extension UserAdditionalInfoViewController {
+    @objc private func SaveProfileInfoButtonWasPressed() {
+        print("SaveProfileInfoButton was pressed")
+    }
+}
+
