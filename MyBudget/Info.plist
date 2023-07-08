@@ -32,5 +32,9 @@
 			</array>
 		</dict>
 	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>Разрешите доступ к фотоальбому, что Вы могли выбрать фотографию для профиля</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Разрешите доступ к камере, что Вы могли сделать фотографию для профиля</string>
 </dict>
 </plist>
