@@ -21,19 +21,17 @@ final class AuthorizationViewController: NiblessViewController {
     private let hideAuthorizationNavigationResponder: HideAuthorizationNavigationResponder
     
     override func loadView() {
-        super.loadView()
+//        super.loadView() // FIXME: not needed
         view = AuthorizationViewControllerView()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    
         bindViewModel()
         addTargets()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    }
     
     init(viewModel: AuthorizationViewModel, userAdditionalInfoViewControllerFactory: @escaping () -> UserAdditionalInfoViewController, hideAuthorizationNavigationResponder: HideAuthorizationNavigationResponder ) {
         self.viewModel = viewModel
@@ -43,18 +41,19 @@ final class AuthorizationViewController: NiblessViewController {
     }
     
     private func bindViewModel(){
-        viewModel.isPresentUserAdditional.sink { [weak self] isPresentUserAdditional in
-            if isPresentUserAdditional {
-                self?.presentUserAdditionalInfo()
-            }else {
-                self?.hideAuthorizationNavigationResponder.hideAuthorization()
-            }
-        }.store(in: &cancelable)
+//        viewModel.isPresentUserAdditional.sink { [weak self] isPresentUserAdditional in
+//            if isPresentUserAdditional {
+//                self?.presentUserAdditionalInfo()
+//            } else {
+//                self?.hideAuthorizationNavigationResponder.hideAuthorization()
+//            }
+//        }.store(in: &cancelable)
     }
     
     private func presentUserAdditionalInfo(){
         let userAdditionalInfoViewController = userAdditionalInfoViewControllerFactory()
-        navigationController?.pushViewController(userAdditionalInfoViewController, animated: true)
+        
+        navigationController?.setViewControllers([userAdditionalInfoViewController], animated: true)
     }
     
     private func addTargets() {

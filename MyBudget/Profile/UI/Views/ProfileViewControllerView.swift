@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import FirebaseAuth
+import SDWebImage
+
 final class ProfileViewControllerView: NiblessView {
    
     private let scrollView: UIScrollView = {
@@ -36,7 +39,6 @@ final class ProfileViewControllerView: NiblessView {
     private let nameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Кирилл"
         label.numberOfLines = 0
         label.font = UIFont(name: "AmericanTypewriter", size: 25)
         label.textColor = .black
@@ -59,7 +61,6 @@ final class ProfileViewControllerView: NiblessView {
     private let emailLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Kirill27@mail.com"
         label.numberOfLines = 0
         label.font = UIFont(name: "AmericanTypewriter", size: 25)
         label.textColor = .black
@@ -87,10 +88,43 @@ final class ProfileViewControllerView: NiblessView {
         return button
     }()
     
+    var userModel: UserModel?
+    
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
         backgroundColor = .white
         layoutElements()
+        setupInit()
+    }
+    
+    private func setupInit() {
+        guard let user = Auth.auth().currentUser else { return }
+
+        let userStore = FirebaseUserStore()
+
+        userStore.getUser(uid: user.uid) { [weak self] result in
+            switch result {
+            case .failure(let error):
+                ()
+                // FIXME: show error
+            case .success(let userModel):
+                self?.userModel = userModel
+                self?.setupUser(userModel: userModel)
+            }
+        }
+    }
+    
+    func setupUser(userModel: UserModel) {
+        nameLabel.text = userModel.name
+        emailLabel.text = userModel.email
+        
+        let url = URL(string: userModel.imageURLString ?? "")
+        let defaultImage = UIImage(systemName: "person.fill")
+        
+        imageView.sd_setImage(with: url,
+                              placeholderImage: defaultImage)
     }
     
     private func layoutElements() {

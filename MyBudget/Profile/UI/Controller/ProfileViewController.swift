@@ -6,14 +6,16 @@
 //
 
 import UIKit
+import FirebaseAuth
+
 final class ProfileViewController: NiblessViewController {
     
     var contentView: ProfileViewControllerView {
         view as! ProfileViewControllerView
     }
     
+    
     override func loadView() {
-        super.loadView()
         view = ProfileViewControllerView()
     }
     
@@ -24,20 +26,36 @@ final class ProfileViewController: NiblessViewController {
     
     private func addTargets() {
         contentView.editProfileButton.addTarget(self, action: #selector(editProfileButtonWasPressed) , for: .touchUpInside)
-        contentView.signOutProfileButton.addTarget(self, action: #selector(signOutProfileButtonWasPressed), for: .touchUpInside)
+   //     contentView.signOutProfileButton.addTarget(self, action: #selector(signOutProfileButtonWasPressed), for: .touchUpInside)
     }
     
 }
 
 extension ProfileViewController {
+    
     @objc private func editProfileButtonWasPressed() {
         print("Изменен")
-        if let navigationController = navigationController {
-            let viewController = EditProfileViewController()
-            navigationController.pushViewController(viewController, animated: true)
+
+        let viewController = EditProfileViewController()
+        
+       // viewController.userModel = contentView.userModel
+        
+        navigationController?.pushViewController(viewController, animated: true)
+        
+      //  viewController.completion = { [weak self] userModel in
+     //       self?.contentView.setupUser(userModel: userModel)
         }
     }
+    /*
     @objc private func signOutProfileButtonWasPressed() {
-        print("Вышел")
+        showAlert(title: "Выход",
+                  message: "Хотите выйти из аккаунту?",
+                  isCancelButton: true,
+                  isOkDestructive: true,
+                  okButtonName: "Выход") {
+            
+            try? Auth.auth().signOut()
+        }
     }
 }
+*/
