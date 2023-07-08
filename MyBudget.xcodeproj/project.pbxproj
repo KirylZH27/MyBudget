@@ -27,6 +27,7 @@
 		0ABBB33C2A5704A700AD1FA6 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABBB33B2A5704A700AD1FA6 /* ProfileViewModel.swift */; };
 		0AC30BA32A59B19B00CA9168 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC30BA22A59B19B00CA9168 /* ImagePicker.swift */; };
 		0AC30BA52A59B1A700CA9168 /* BlockTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC30BA42A59B1A700CA9168 /* BlockTap.swift */; };
+		0AC30BA72A59B88B00CA9168 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC30BA62A59B88B00CA9168 /* UIImage+Extension.swift */; };
 		0AE423CD2A502A3A00311943 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE423CC2A502A3A00311943 /* AuthorizationViewController.swift */; };
 		0AE423CF2A502A6000311943 /* AuthorizationViewControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE423CE2A502A6000311943 /* AuthorizationViewControllerView.swift */; };
 		0AE423D22A502A9C00311943 /* AuthorizationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE423D12A502A9C00311943 /* AuthorizationViewModel.swift */; };
@@ -86,6 +87,7 @@
 		0ABBB33B2A5704A700AD1FA6 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		0AC30BA22A59B19B00CA9168 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		0AC30BA42A59B1A700CA9168 /* BlockTap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockTap.swift; sourceTree = "<group>"; };
+		0AC30BA62A59B88B00CA9168 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		0AE423CC2A502A3A00311943 /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
 		0AE423CE2A502A6000311943 /* AuthorizationViewControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewControllerView.swift; sourceTree = "<group>"; };
 		0AE423D12A502A9C00311943 /* AuthorizationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewModel.swift; sourceTree = "<group>"; };
@@ -451,6 +453,7 @@
 			isa = PBXGroup;
 			children = (
 				0AF74EE62A4844C40038D221 /* UiViewController + Extensions.swift */,
+				0AC30BA62A59B88B00CA9168 /* UIImage+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -797,6 +800,7 @@
 				0AFE735F2A5493E900E21458 /* AppColors.swift in Sources */,
 				0AF74EF92A48486D0038D221 /* AddTransactionViewControllerView.swift in Sources */,
 				0A475E092A52D31100B397AC /* EditProfileViewController.swift in Sources */,
+				0AC30BA72A59B88B00CA9168 /* UIImage+Extension.swift in Sources */,
 				0AE423DE2A5033C600311943 /* FirebaseAuthorizationManager.swift in Sources */,
 				0A210E702A4F77A100D5B750 /* UserModelRealm.swift in Sources */,
 				0A210E5F2A4F425D00D5B750 /* ProfileViewControllerView.swift in Sources */,
