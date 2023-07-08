@@ -25,6 +25,8 @@
 		0A475E0B2A52D32B00B397AC /* EditProfileViewConttrollerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A475E0A2A52D32B00B397AC /* EditProfileViewConttrollerView.swift */; };
 		0ABBB3392A56C6B100AD1FA6 /* UserSignOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABBB3382A56C6B100AD1FA6 /* UserSignOut.swift */; };
 		0ABBB33C2A5704A700AD1FA6 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABBB33B2A5704A700AD1FA6 /* ProfileViewModel.swift */; };
+		0AC30BA32A59B19B00CA9168 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC30BA22A59B19B00CA9168 /* ImagePicker.swift */; };
+		0AC30BA52A59B1A700CA9168 /* BlockTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC30BA42A59B1A700CA9168 /* BlockTap.swift */; };
 		0AE423CD2A502A3A00311943 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE423CC2A502A3A00311943 /* AuthorizationViewController.swift */; };
 		0AE423CF2A502A6000311943 /* AuthorizationViewControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE423CE2A502A6000311943 /* AuthorizationViewControllerView.swift */; };
 		0AE423D22A502A9C00311943 /* AuthorizationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE423D12A502A9C00311943 /* AuthorizationViewModel.swift */; };
@@ -82,6 +84,8 @@
 		0A475E0A2A52D32B00B397AC /* EditProfileViewConttrollerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewConttrollerView.swift; sourceTree = "<group>"; };
 		0ABBB3382A56C6B100AD1FA6 /* UserSignOut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSignOut.swift; sourceTree = "<group>"; };
 		0ABBB33B2A5704A700AD1FA6 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		0AC30BA22A59B19B00CA9168 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		0AC30BA42A59B1A700CA9168 /* BlockTap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockTap.swift; sourceTree = "<group>"; };
 		0AE423CC2A502A3A00311943 /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
 		0AE423CE2A502A6000311943 /* AuthorizationViewControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewControllerView.swift; sourceTree = "<group>"; };
 		0AE423D12A502A9C00311943 /* AuthorizationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewModel.swift; sourceTree = "<group>"; };
@@ -153,6 +157,7 @@
 		0A1432592A3F50C0007D9509 /* MyBudget */ = {
 			isa = PBXGroup;
 			children = (
+				0AC30BA12A59B18100CA9168 /* Helpers */,
 				0AFE73662A55DF7F00E21458 /* UserAdditionalInfo */,
 				0AE423DB2A50337E00311943 /* Firebase */,
 				0AE423C82A50298300311943 /* Authorization */,
@@ -330,6 +335,15 @@
 				0ABBB33B2A5704A700AD1FA6 /* ProfileViewModel.swift */,
 			);
 			path = Presentation;
+			sourceTree = "<group>";
+		};
+		0AC30BA12A59B18100CA9168 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				0AC30BA22A59B19B00CA9168 /* ImagePicker.swift */,
+				0AC30BA42A59B1A700CA9168 /* BlockTap.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		0AE423C82A50298300311943 /* Authorization */ = {
@@ -808,9 +822,11 @@
 				0AFF81632A4B337D006ACF1F /* SettingsViewControllerView.swift in Sources */,
 				0AF74EE72A4844C40038D221 /* UiViewController + Extensions.swift in Sources */,
 				0A210E6E2A4F772F00D5B750 /* RealmManager.swift in Sources */,
+				0AC30BA52A59B1A700CA9168 /* BlockTap.swift in Sources */,
 				0AF74EDC2A483BEA0038D221 /* MainViewController.swift in Sources */,
 				0AE423D72A502EEE00311943 /* GoogleAuthorizationClient.swift in Sources */,
 				0AFE73772A55EF0A00E21458 /* UserCreator.swift in Sources */,
+				0AC30BA32A59B19B00CA9168 /* ImagePicker.swift in Sources */,
 				0AE423D22A502A9C00311943 /* AuthorizationViewModel.swift in Sources */,
 				0AFF815B2A4B2D68006ACF1F /* AnaliticsViewController.swift in Sources */,
 			);

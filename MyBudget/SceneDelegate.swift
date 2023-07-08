@@ -17,7 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
         let rootViewController = MyBudgetDependencyContainer(sharedWindow: window!).makeMainViewController()
-        try? Auth.auth().signOut()
+        //try? Auth.auth().signOut()
         window?.rootViewController = rootViewController
         window?.windowScene = windowScene
         window?.makeKeyAndVisible()
