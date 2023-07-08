@@ -13,4 +13,5 @@ target 'MyBudget' do
   pod  'Firebase/Auth'
   pod 'Firebase/Storage'
   pod 'GoogleSignIn'
+  pod 'SDWebImage'
 end
