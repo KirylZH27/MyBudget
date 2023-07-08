@@ -8,18 +8,16 @@
 import UIKit
 final class EditProfileViewConttrollerView: NiblessView {
     
-    let ImageGesture = UITapGestureRecognizer()
-    
-    private let imageView: UIImageView = {
+     let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = UIImage(systemName: "person.fill")
         imageView.tintColor = AppColors.green.value
-      //  imageView.addGestureRecognizer(ImageGesture)
+         imageView.isUserInteractionEnabled = true
         return imageView
     }()
     
-    private let nameTextField: UITextField = {
+     let nameTextField: UITextField = {
        let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.placeholder = "Введите новое имя"
@@ -32,7 +30,7 @@ final class EditProfileViewConttrollerView: NiblessView {
         return textField
     }()
     
-    private let emailTextField: UITextField = {
+     let emailTextField: UITextField = {
        let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.placeholder = "Введите новый email"

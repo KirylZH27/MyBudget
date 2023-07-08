@@ -26,7 +26,7 @@ final class ProfileViewController: NiblessViewController {
     
     private func addTargets() {
         contentView.editProfileButton.addTarget(self, action: #selector(editProfileButtonWasPressed) , for: .touchUpInside)
-   //     contentView.signOutProfileButton.addTarget(self, action: #selector(signOutProfileButtonWasPressed), for: .touchUpInside)
+        contentView.signOutProfileButton.addTarget(self, action: #selector(signOutProfileButtonWasPressed), for: .touchUpInside)
     }
     
 }
@@ -38,15 +38,15 @@ extension ProfileViewController {
 
         let viewController = EditProfileViewController()
         
-       // viewController.userModel = contentView.userModel
+        viewController.userModel = contentView.userModel
         
         navigationController?.pushViewController(viewController, animated: true)
         
-      //  viewController.completion = { [weak self] userModel in
-     //       self?.contentView.setupUser(userModel: userModel)
+        viewController.completion = { [weak self] userModel in
+            self?.contentView.setupUser(userModel: userModel)
         }
     }
-    /*
+    
     @objc private func signOutProfileButtonWasPressed() {
         showAlert(title: "Выход",
                   message: "Хотите выйти из аккаунту?",
@@ -58,4 +58,4 @@ extension ProfileViewController {
         }
     }
 }
-*/
+
