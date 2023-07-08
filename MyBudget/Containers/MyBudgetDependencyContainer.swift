@@ -6,18 +6,34 @@
 //
 
 import UIKit
-import FirebaseAuth
 import Firebase
+import FirebaseAuth
 
 final class MyBudgetDependencyContainer {
     
+    // MARK: - Private properties
     private let sharedWindow: UIWindow
+    private let navigationController = UINavigationController()
     
+    
+    
+    // MARK: - Inits
     init(sharedWindow: UIWindow) {
         self.sharedWindow = sharedWindow
     }
     
-    func makeMainViewController () -> MainViewController {
+    
+    // MARK: - Public methods
+    func start() {
+        navigationController.isNavigationBarHidden = true
+        
+        setupWindow()
+        addLogoutObserver()
+    }
+    
+    
+    // MARK: - Private properties
+    private func makeMainViewController() -> MainViewController {
         let viewModel = MainViewModel()
         
         let tabBarControllerFactory = {
@@ -26,16 +42,17 @@ final class MyBudgetDependencyContainer {
         
         let authorizationViewControllerFactory = {
             self.createAuthorizationViewController(hideAuthorizationNavigationResponder: viewModel)
-            
         }
         
-        let viewController = MainViewController(viewModel: viewModel, tabBarControllerFactory: tabBarControllerFactory, authorizationViewControllerFactory: authorizationViewControllerFactory)
+        let viewController = MainViewController(viewModel: viewModel,
+                                                tabBarControllerFactory: tabBarControllerFactory)
+        
         return viewController
     }
     
     private func createAuthorizationViewController(hideAuthorizationNavigationResponder: HideAuthorizationNavigationResponder) -> AuthorizationViewController {
         let viewModel = createAuthorizationViewModel()
-       
+        
         let userAdditionalInfoViewControllerFactory = {
             self.createUserAdditionalInfoViewController(hideAuthorizationNavigationResponder: hideAuthorizationNavigationResponder)
         }
@@ -45,7 +62,7 @@ final class MyBudgetDependencyContainer {
     
     private func createUserAdditionalInfoViewController(hideAuthorizationNavigationResponder: HideAuthorizationNavigationResponder) -> UserAdditionalInfoViewController {
         let viewModel = UserAdditionalInfoViewModel()
-        let viewController = UserAdditionalInfoViewController(viewModel: viewModel, hideAuthorizationNavigationResponder: hideAuthorizationNavigationResponder)
+        let viewController = UserAdditionalInfoViewController(viewModel: viewModel)
         return viewController
     }
     
@@ -78,6 +95,37 @@ final class MyBudgetDependencyContainer {
     
     private func createTabBarController() -> UITabBarController {
         MyBudgetTabBarDependecyContainer().makeTabBar()
+    }
+    
+    private func addLogoutObserver() {
+        Auth.auth().addStateDidChangeListener { auth, user in
+            if let user = user {
+                let userStore = self.createUserStore()
+                
+                userStore.checkIfUserExist(by: user.uid) { isUserExist in
+                    if isUserExist {
+                        let vc = self.makeMainViewController()
+                        
+                        self.navigationController.setViewControllers([vc], animated: true)
+                    } else {
+                        let viewModel = UserAdditionalInfoViewModel()
+                        let vc = UserAdditionalInfoViewController(viewModel: viewModel)
+                        
+                        self.navigationController.setViewControllers([vc], animated: true)
+                    }
+                }
+            } else {
+                let viewModel = MainViewModel()
+                let vc = self.createAuthorizationViewController(hideAuthorizationNavigationResponder: viewModel)
+                
+                self.navigationController.setViewControllers([vc], animated: true)
+            }
+        }
+    }
+    
+    private func setupWindow() {
+        sharedWindow.rootViewController = navigationController
+        sharedWindow.makeKeyAndVisible()
     }
     
 }
