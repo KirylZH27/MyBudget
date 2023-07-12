@@ -23,6 +23,8 @@
 		0A210E732A4F880000D5B750 /* BankAccountsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A210E722A4F880000D5B750 /* BankAccountsTableViewCell.swift */; };
 		0A475E092A52D31100B397AC /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A475E082A52D31100B397AC /* EditProfileViewController.swift */; };
 		0A475E0B2A52D32B00B397AC /* EditProfileViewConttrollerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A475E0A2A52D32B00B397AC /* EditProfileViewConttrollerView.swift */; };
+		0A77FF3D2A5ED302005D1615 /* AddTransactionViewControllerKeyBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A77FF3C2A5ED302005D1615 /* AddTransactionViewControllerKeyBoardView.swift */; };
+		0A77FF3F2A5ED4CC005D1615 /* UIStackView+MyStyle .swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A77FF3E2A5ED4CC005D1615 /* UIStackView+MyStyle .swift */; };
 		0ABBB3392A56C6B100AD1FA6 /* UserSignOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABBB3382A56C6B100AD1FA6 /* UserSignOut.swift */; };
 		0ABBB33C2A5704A700AD1FA6 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABBB33B2A5704A700AD1FA6 /* ProfileViewModel.swift */; };
 		0AC30BA32A59B19B00CA9168 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC30BA22A59B19B00CA9168 /* ImagePicker.swift */; };
@@ -83,6 +85,8 @@
 		0A210E722A4F880000D5B750 /* BankAccountsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccountsTableViewCell.swift; sourceTree = "<group>"; };
 		0A475E082A52D31100B397AC /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		0A475E0A2A52D32B00B397AC /* EditProfileViewConttrollerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewConttrollerView.swift; sourceTree = "<group>"; };
+		0A77FF3C2A5ED302005D1615 /* AddTransactionViewControllerKeyBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionViewControllerKeyBoardView.swift; sourceTree = "<group>"; };
+		0A77FF3E2A5ED4CC005D1615 /* UIStackView+MyStyle .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+MyStyle .swift"; sourceTree = "<group>"; };
 		0ABBB3382A56C6B100AD1FA6 /* UserSignOut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSignOut.swift; sourceTree = "<group>"; };
 		0ABBB33B2A5704A700AD1FA6 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		0AC30BA22A59B19B00CA9168 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
@@ -454,6 +458,7 @@
 			children = (
 				0AF74EE62A4844C40038D221 /* UiViewController + Extensions.swift */,
 				0AC30BA62A59B88B00CA9168 /* UIImage+Extension.swift */,
+				0A77FF3E2A5ED4CC005D1615 /* UIStackView+MyStyle .swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -503,6 +508,7 @@
 			isa = PBXGroup;
 			children = (
 				0AF74EF82A48486D0038D221 /* AddTransactionViewControllerView.swift */,
+				0A77FF3C2A5ED302005D1615 /* AddTransactionViewControllerKeyBoardView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -792,6 +798,7 @@
 				0AFF81602A4B3229006ACF1F /* AnaliticsViewControllerView.swift in Sources */,
 				0AFE736D2A55DFDA00E21458 /* UserAdditionalInfoViewControllerView.swift in Sources */,
 				0AFE736B2A55DFC300E21458 /* UserAdditionalInfoViewController.swift in Sources */,
+				0A77FF3D2A5ED302005D1615 /* AddTransactionViewControllerKeyBoardView.swift in Sources */,
 				0A210E622A4F6D2A00D5B750 /* APIManager.swift in Sources */,
 				0AF74EE12A483F7D0038D221 /* MyBudgetDependencyContainer.swift in Sources */,
 				0AFE73642A54996600E21458 /* SettingsTableViewCell.swift in Sources */,
@@ -800,6 +807,7 @@
 				0AFE735F2A5493E900E21458 /* AppColors.swift in Sources */,
 				0AF74EF92A48486D0038D221 /* AddTransactionViewControllerView.swift in Sources */,
 				0A475E092A52D31100B397AC /* EditProfileViewController.swift in Sources */,
+				0A77FF3F2A5ED4CC005D1615 /* UIStackView+MyStyle .swift in Sources */,
 				0AC30BA72A59B88B00CA9168 /* UIImage+Extension.swift in Sources */,
 				0AE423DE2A5033C600311943 /* FirebaseAuthorizationManager.swift in Sources */,
 				0A210E702A4F77A100D5B750 /* UserModelRealm.swift in Sources */,

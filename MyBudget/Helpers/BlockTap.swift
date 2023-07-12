@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+//БлокТап - нужен что бы сделать кликабельной картинку из профиля на экране редактирования профиля.
 class BlockTap: UITapGestureRecognizer {
     fileprivate var tapAction: ((UITapGestureRecognizer) -> Void)?
     

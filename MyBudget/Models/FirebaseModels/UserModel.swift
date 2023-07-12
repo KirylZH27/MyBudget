@@ -32,7 +32,7 @@ class UserModel: Codable {
         self.imageURLString = userProfile.imageURLString
         self.id = userProfile.id
     }
-    
+    //Что бы удобно через инициализатор можно было создать UserModel из данных которые приходят с firebase
     convenience init?(document: [String: Any]?) {
         guard
             let dic = document,

@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+// При выгрузки фотографии что бы уменьшить размер фото. Для аватара большая фотка не нужна, что бы место не занимать в хранилище
 extension UIImage {
     
     func scale(newSize: CGSize, compressionQuality: CGFloat = 1) -> UIImage? {

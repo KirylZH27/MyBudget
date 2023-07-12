@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+//ИмелжПикер - это что бы выбрать фото из альбома или сделать фото на том же экране
 public protocol ImagePickerDelegate: AnyObject {
 
     func didSelect(image: UIImage?)
