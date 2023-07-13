@@ -8,6 +8,8 @@
 import UIKit
 final class AddTransactionViewControllerView: NiblessView {
     
+    let keyBoard = AddTransactionViewControllerKeyBoardView(frame: .zero)
+    
     let segmentedControll: UISegmentedControl = {
         let segmentArray = ["Расходы","Доходы"]
         let segmentedControll = UISegmentedControl(items: segmentArray)
@@ -38,6 +40,12 @@ final class AddTransactionViewControllerView: NiblessView {
     private func layoutElements(){
         layoutSegmentedControll()
         layoutQuantityMoneyTextField()
+        setViewHierarhies()
+        setUpContraints()
+    }
+    
+    private func setViewHierarhies(){
+        self.addSubview(keyBoard)
     }
     
     private func layoutSegmentedControll(){
@@ -57,6 +65,15 @@ final class AddTransactionViewControllerView: NiblessView {
             quantityMoneyTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             quantityMoneyTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             quantityMoneyTextField.heightAnchor.constraint(equalToConstant: 55)
+        ])
+    }
+    
+    private func setUpContraints(){
+        NSLayoutConstraint.activate([
+            keyBoard.widthAnchor.constraint(equalTo: self.widthAnchor),
+            keyBoard.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            keyBoard.topAnchor.constraint(equalTo: quantityMoneyTextField.bottomAnchor, constant: 20),
+            keyBoard.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
 }

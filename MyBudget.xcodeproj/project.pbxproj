@@ -21,10 +21,12 @@
 		0A210E6E2A4F772F00D5B750 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A210E6D2A4F772F00D5B750 /* RealmManager.swift */; };
 		0A210E702A4F77A100D5B750 /* UserModelRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A210E6F2A4F77A000D5B750 /* UserModelRealm.swift */; };
 		0A210E732A4F880000D5B750 /* BankAccountsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A210E722A4F880000D5B750 /* BankAccountsTableViewCell.swift */; };
+		0A34DA3F2A6006F600461D45 /* UIButton+Target.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A34DA3E2A6006F600461D45 /* UIButton+Target.swift */; };
 		0A475E092A52D31100B397AC /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A475E082A52D31100B397AC /* EditProfileViewController.swift */; };
 		0A475E0B2A52D32B00B397AC /* EditProfileViewConttrollerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A475E0A2A52D32B00B397AC /* EditProfileViewConttrollerView.swift */; };
 		0A77FF3D2A5ED302005D1615 /* AddTransactionViewControllerKeyBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A77FF3C2A5ED302005D1615 /* AddTransactionViewControllerKeyBoardView.swift */; };
 		0A77FF3F2A5ED4CC005D1615 /* UIStackView+MyStyle .swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A77FF3E2A5ED4CC005D1615 /* UIStackView+MyStyle .swift */; };
+		0A77FF432A5EDA41005D1615 /* KeyBoardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A77FF422A5EDA41005D1615 /* KeyBoardButton.swift */; };
 		0ABBB3392A56C6B100AD1FA6 /* UserSignOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABBB3382A56C6B100AD1FA6 /* UserSignOut.swift */; };
 		0ABBB33C2A5704A700AD1FA6 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABBB33B2A5704A700AD1FA6 /* ProfileViewModel.swift */; };
 		0AC30BA32A59B19B00CA9168 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC30BA22A59B19B00CA9168 /* ImagePicker.swift */; };
@@ -83,10 +85,12 @@
 		0A210E6D2A4F772F00D5B750 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		0A210E6F2A4F77A000D5B750 /* UserModelRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModelRealm.swift; sourceTree = "<group>"; };
 		0A210E722A4F880000D5B750 /* BankAccountsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccountsTableViewCell.swift; sourceTree = "<group>"; };
+		0A34DA3E2A6006F600461D45 /* UIButton+Target.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Target.swift"; sourceTree = "<group>"; };
 		0A475E082A52D31100B397AC /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		0A475E0A2A52D32B00B397AC /* EditProfileViewConttrollerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewConttrollerView.swift; sourceTree = "<group>"; };
 		0A77FF3C2A5ED302005D1615 /* AddTransactionViewControllerKeyBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionViewControllerKeyBoardView.swift; sourceTree = "<group>"; };
 		0A77FF3E2A5ED4CC005D1615 /* UIStackView+MyStyle .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+MyStyle .swift"; sourceTree = "<group>"; };
+		0A77FF422A5EDA41005D1615 /* KeyBoardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyBoardButton.swift; sourceTree = "<group>"; };
 		0ABBB3382A56C6B100AD1FA6 /* UserSignOut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSignOut.swift; sourceTree = "<group>"; };
 		0ABBB33B2A5704A700AD1FA6 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		0AC30BA22A59B19B00CA9168 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
@@ -335,6 +339,23 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		0A77FF402A5EDA13005D1615 /* UIButton */ = {
+			isa = PBXGroup;
+			children = (
+				0A77FF412A5EDA1E005D1615 /* KeyBoardButton */,
+				0A34DA3E2A6006F600461D45 /* UIButton+Target.swift */,
+			);
+			path = UIButton;
+			sourceTree = "<group>";
+		};
+		0A77FF412A5EDA1E005D1615 /* KeyBoardButton */ = {
+			isa = PBXGroup;
+			children = (
+				0A77FF422A5EDA41005D1615 /* KeyBoardButton.swift */,
+			);
+			path = KeyBoardButton;
+			sourceTree = "<group>";
+		};
 		0ABBB33A2A57048B00AD1FA6 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
@@ -456,6 +477,7 @@
 		0AF74EE52A4844A50038D221 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				0A77FF402A5EDA13005D1615 /* UIButton */,
 				0AF74EE62A4844C40038D221 /* UiViewController + Extensions.swift */,
 				0AC30BA62A59B88B00CA9168 /* UIImage+Extension.swift */,
 				0A77FF3E2A5ED4CC005D1615 /* UIStackView+MyStyle .swift */,
@@ -812,6 +834,7 @@
 				0AE423DE2A5033C600311943 /* FirebaseAuthorizationManager.swift in Sources */,
 				0A210E702A4F77A100D5B750 /* UserModelRealm.swift in Sources */,
 				0A210E5F2A4F425D00D5B750 /* ProfileViewControllerView.swift in Sources */,
+				0A77FF432A5EDA41005D1615 /* KeyBoardButton.swift in Sources */,
 				0AF74EF72A4847DD0038D221 /* NiblessView.swift in Sources */,
 				0A210E672A4F702000D5B750 /* UserModel.swift in Sources */,
 				0ABBB33C2A5704A700AD1FA6 /* ProfileViewModel.swift in Sources */,
@@ -822,6 +845,7 @@
 				0A475E0B2A52D32B00B397AC /* EditProfileViewConttrollerView.swift in Sources */,
 				0AF74F042A484F470038D221 /* BankAccountsTotalBalanceView.swift in Sources */,
 				0AE423D52A502D8A00311943 /* AuthorizationManager.swift in Sources */,
+				0A34DA3F2A6006F600461D45 /* UIButton+Target.swift in Sources */,
 				0A14325D2A3F50C0007D9509 /* SceneDelegate.swift in Sources */,
 				0AF74EE42A4842070038D221 /* MyBudgetTabBarDependecyContainer.swift in Sources */,
 				0AF74EF12A48473F0038D221 /* AddTransactionViewController.swift in Sources */,
