@@ -6,9 +6,19 @@
 //
 
 import UIKit
+
+
+
 final class BankAccountsViewController: NiblessViewController {
     var contentView: BankAccountsViewControllerView {
         view as! BankAccountsViewControllerView
+    }
+    
+    private let viewModel: BankAccountViewModel
+    
+    init(viewModel: BankAccountViewModel) {
+        self.viewModel = viewModel
+        super.init()
     }
     override func loadView() {
         super.loadView()

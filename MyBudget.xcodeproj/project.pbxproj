@@ -34,6 +34,12 @@
 		0AB7D0AA2A628BC5004A9EF9 /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB7D0A92A628BC5004A9EF9 /* Formatter.swift */; };
 		0AB7D0AD2A628F80004A9EF9 /* String+Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB7D0AC2A628F80004A9EF9 /* String+Converter.swift */; };
 		0AB7D0B02A629AEC004A9EF9 /* AppFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB7D0AF2A629AEC004A9EF9 /* AppFonts.swift */; };
+		0AB7D0B32A62B10C004A9EF9 /* BankAccountRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB7D0B22A62B10C004A9EF9 /* BankAccountRealm.swift */; };
+		0AB7D0B62A62B1FB004A9EF9 /* BankAccountCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB7D0B52A62B1FB004A9EF9 /* BankAccountCreator.swift */; };
+		0AB7D0B82A62B2FE004A9EF9 /* BankAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB7D0B72A62B2FE004A9EF9 /* BankAccount.swift */; };
+		0AB7D0BB2A62B425004A9EF9 /* BankAccountRealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB7D0BA2A62B425004A9EF9 /* BankAccountRealmManager.swift */; };
+		0AB7D0BD2A62B5E1004A9EF9 /* BankAccountGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB7D0BC2A62B5E1004A9EF9 /* BankAccountGetter.swift */; };
+		0AB7D0C02A62B780004A9EF9 /* BankAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB7D0BF2A62B780004A9EF9 /* BankAccountViewModel.swift */; };
 		0ABBB3392A56C6B100AD1FA6 /* UserSignOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABBB3382A56C6B100AD1FA6 /* UserSignOut.swift */; };
 		0ABBB33C2A5704A700AD1FA6 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABBB33B2A5704A700AD1FA6 /* ProfileViewModel.swift */; };
 		0AC30BA32A59B19B00CA9168 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC30BA22A59B19B00CA9168 /* ImagePicker.swift */; };
@@ -105,6 +111,12 @@
 		0AB7D0A92A628BC5004A9EF9 /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
 		0AB7D0AC2A628F80004A9EF9 /* String+Converter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Converter.swift"; sourceTree = "<group>"; };
 		0AB7D0AF2A629AEC004A9EF9 /* AppFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFonts.swift; sourceTree = "<group>"; };
+		0AB7D0B22A62B10C004A9EF9 /* BankAccountRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccountRealm.swift; sourceTree = "<group>"; };
+		0AB7D0B52A62B1FB004A9EF9 /* BankAccountCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccountCreator.swift; sourceTree = "<group>"; };
+		0AB7D0B72A62B2FE004A9EF9 /* BankAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccount.swift; sourceTree = "<group>"; };
+		0AB7D0BA2A62B425004A9EF9 /* BankAccountRealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccountRealmManager.swift; sourceTree = "<group>"; };
+		0AB7D0BC2A62B5E1004A9EF9 /* BankAccountGetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccountGetter.swift; sourceTree = "<group>"; };
+		0AB7D0BF2A62B780004A9EF9 /* BankAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccountViewModel.swift; sourceTree = "<group>"; };
 		0ABBB3382A56C6B100AD1FA6 /* UserSignOut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSignOut.swift; sourceTree = "<group>"; };
 		0ABBB33B2A5704A700AD1FA6 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		0AC30BA22A59B19B00CA9168 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
@@ -405,6 +417,40 @@
 			path = AppFonts;
 			sourceTree = "<group>";
 		};
+		0AB7D0B12A62B0F6004A9EF9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0AB7D0B22A62B10C004A9EF9 /* BankAccountRealm.swift */,
+				0AB7D0B72A62B2FE004A9EF9 /* BankAccount.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0AB7D0B42A62B1E2004A9EF9 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				0AB7D0B52A62B1FB004A9EF9 /* BankAccountCreator.swift */,
+				0AB7D0BC2A62B5E1004A9EF9 /* BankAccountGetter.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		0AB7D0B92A62B3D4004A9EF9 /* Implementation */ = {
+			isa = PBXGroup;
+			children = (
+				0AB7D0BA2A62B425004A9EF9 /* BankAccountRealmManager.swift */,
+			);
+			path = Implementation;
+			sourceTree = "<group>";
+		};
+		0AB7D0BE2A62B770004A9EF9 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				0AB7D0BF2A62B780004A9EF9 /* BankAccountViewModel.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
 		0ABBB33A2A57048B00AD1FA6 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
@@ -548,6 +594,10 @@
 		0AF74EE92A4846A80038D221 /* BankAccounts */ = {
 			isa = PBXGroup;
 			children = (
+				0AB7D0BE2A62B770004A9EF9 /* Presentation */,
+				0AB7D0B92A62B3D4004A9EF9 /* Implementation */,
+				0AB7D0B42A62B1E2004A9EF9 /* Protocols */,
+				0AB7D0B12A62B0F6004A9EF9 /* Models */,
 				0AF74EFB2A4849290038D221 /* UI */,
 			);
 			path = BankAccounts;
@@ -883,12 +933,14 @@
 				0AFE735F2A5493E900E21458 /* AppColors.swift in Sources */,
 				0AB7D0AA2A628BC5004A9EF9 /* Formatter.swift in Sources */,
 				0AF74EF92A48486D0038D221 /* AddTransactionViewControllerView.swift in Sources */,
+				0AB7D0C02A62B780004A9EF9 /* BankAccountViewModel.swift in Sources */,
 				0A475E092A52D31100B397AC /* EditProfileViewController.swift in Sources */,
 				0A77FF3F2A5ED4CC005D1615 /* UIStackView+MyStyle .swift in Sources */,
 				0AC30BA72A59B88B00CA9168 /* UIImage+Extension.swift in Sources */,
 				0AE423DE2A5033C600311943 /* FirebaseAuthorizationManager.swift in Sources */,
 				0A210E702A4F77A100D5B750 /* UserModelRealm.swift in Sources */,
 				0A210E5F2A4F425D00D5B750 /* ProfileViewControllerView.swift in Sources */,
+				0AB7D0B32A62B10C004A9EF9 /* BankAccountRealm.swift in Sources */,
 				0A77FF432A5EDA41005D1615 /* KeyBoardButton.swift in Sources */,
 				0AF74EF72A4847DD0038D221 /* NiblessView.swift in Sources */,
 				0A210E672A4F702000D5B750 /* UserModel.swift in Sources */,
@@ -903,6 +955,7 @@
 				0AE423D52A502D8A00311943 /* AuthorizationManager.swift in Sources */,
 				0A34DA3F2A6006F600461D45 /* UIButton+Target.swift in Sources */,
 				0A14325D2A3F50C0007D9509 /* SceneDelegate.swift in Sources */,
+				0AB7D0BD2A62B5E1004A9EF9 /* BankAccountGetter.swift in Sources */,
 				0AF74EE42A4842070038D221 /* MyBudgetTabBarDependecyContainer.swift in Sources */,
 				0AF74EF12A48473F0038D221 /* AddTransactionViewController.swift in Sources */,
 				0AFE737B2A55F01F00E21458 /* FirebaseUserStore.swift in Sources */,
@@ -916,12 +969,15 @@
 				0AB7D0A32A62862E004A9EF9 /* KeyBoardDelegate.swift in Sources */,
 				0AFF81632A4B337D006ACF1F /* SettingsViewControllerView.swift in Sources */,
 				0AF74EE72A4844C40038D221 /* UiViewController + Extensions.swift in Sources */,
+				0AB7D0B82A62B2FE004A9EF9 /* BankAccount.swift in Sources */,
 				0A210E6E2A4F772F00D5B750 /* RealmManager.swift in Sources */,
 				0AC30BA52A59B1A700CA9168 /* BlockTap.swift in Sources */,
+				0AB7D0B62A62B1FB004A9EF9 /* BankAccountCreator.swift in Sources */,
 				0AF74EDC2A483BEA0038D221 /* MainViewController.swift in Sources */,
 				0AB7D0A72A628B49004A9EF9 /* DisplayManager.swift in Sources */,
 				0AE423D72A502EEE00311943 /* GoogleAuthorizationClient.swift in Sources */,
 				0AFE73772A55EF0A00E21458 /* UserCreator.swift in Sources */,
+				0AB7D0BB2A62B425004A9EF9 /* BankAccountRealmManager.swift in Sources */,
 				0AC30BA32A59B19B00CA9168 /* ImagePicker.swift in Sources */,
 				0AE423D22A502A9C00311943 /* AuthorizationViewModel.swift in Sources */,
 				0AFF815B2A4B2D68006ACF1F /* AnaliticsViewController.swift in Sources */,
