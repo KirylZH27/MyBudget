@@ -11,7 +11,6 @@ struct ModelKeyBoardButton {
     let title: String
     let backgroundColor: UIColor
     let titleColor: UIColor
-    
 }
 
 final class KeyBoardButton: UIButton {
@@ -39,7 +38,7 @@ final class KeyBoardButton: UIButton {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.layer.cornerRadius = 12
+        self.layer.cornerRadius = self.frame.height / 4
     }
 }
 

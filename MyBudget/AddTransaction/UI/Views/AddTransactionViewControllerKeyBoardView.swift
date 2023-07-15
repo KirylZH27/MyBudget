@@ -26,6 +26,7 @@ enum KeyBoardSymbol: String, CaseIterable {
 final class AddTransactionViewControllerKeyBoardView: NiblessView {
     
     private var button: [UIButton] = []
+    weak var delegate: KeyBoardDelegate?
     
     private let buttonInRow = 3
     
@@ -45,7 +46,7 @@ final class AddTransactionViewControllerKeyBoardView: NiblessView {
             distribution: .fillEqually,
             userInteraction: true)
         .setLayoutMargins(top: 10, left: 12, right: 12, bottom: 10)
-    
+    /*
     private let lastStackView = UIStackView()
         .myStyleStack(
             spacing: 17,
@@ -53,7 +54,7 @@ final class AddTransactionViewControllerKeyBoardView: NiblessView {
             axis: .horizontal,
             distribution: .fillEqually,
             userInteraction: true)
-    
+    */
     private let zeroStackView = UIStackView()
         .myStyleStack(
             spacing: 0,
@@ -61,6 +62,8 @@ final class AddTransactionViewControllerKeyBoardView: NiblessView {
             axis: .horizontal,
             distribution: .fillEqually,
             userInteraction: true)
+    
+    private lazy var decimalSeparatorButton = KeyBoardButton(model: ModelKeyBoardButton(title: Locale.current.decimalSeparator ?? ".", backgroundColor: .systemPink, titleColor: .black), type: .decimal).setTarget(method: #selector(buttonAction), target: self, event: .touchUpInside)
     
     private lazy var zeroButton = KeyBoardButton(model: ModelKeyBoardButton(title: KeyBoardSymbol.zero.rawValue, backgroundColor: .yellow, titleColor: .black), type: .decimal).setTarget(method: #selector(buttonAction), target: self, event: .touchUpInside)
     
@@ -97,8 +100,8 @@ final class AddTransactionViewControllerKeyBoardView: NiblessView {
         }
     }
     
-    @objc func buttonAction(sender: UIButton){
-        
+    @objc func buttonAction(sender: KeyBoardButton){
+        delegate?.onAction(type: sender.typeButton)
     }
     
     override init(frame: CGRect) {
@@ -113,7 +116,7 @@ final class AddTransactionViewControllerKeyBoardView: NiblessView {
     private func setViewHierarhies(){
         self.addSubview(mainStackView)
         containerStackView.addArrangedSubview(zeroStackView)
-        containerStackView.addArrangedSubview(lastStackView)
+        //containerStackView.addArrangedSubview(lastStackView)
         mainStackView.addArrangedSubview(containerStackView)
         zeroStackView.addArrangedSubview(zeroButton)
     }

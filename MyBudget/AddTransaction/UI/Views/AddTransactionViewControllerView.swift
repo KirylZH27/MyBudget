@@ -77,3 +77,31 @@ final class AddTransactionViewControllerView: NiblessView {
         ])
     }
 }
+
+extension AddTransactionViewControllerView: DisplayManager {
+    func setValue(value: String) {
+        self.quantityMoneyTextField.insertText(value)
+        
+        if value == "-0" {
+            return
+        }
+        
+        guard let currentText = quantityMoneyTextField.text else { return }
+        
+        if currentText.range(of: Locale.current.decimalSeparator ?? ".") == nil {
+            self.quantityMoneyTextField.text = currentText.convertTextInDouble().formatterFrom
+        }
+        
+        let newPosition = quantityMoneyTextField.endOfDocument
+        quantityMoneyTextField.selectedTextRange = quantityMoneyTextField.textRange(from: newPosition, to: newPosition)
+    }
+    
+    func deletee() {
+        self.quantityMoneyTextField.text?.removeAll()
+    }
+    
+    func clear() {
+        self.quantityMoneyTextField.text?.removeAll()
+        self.quantityMoneyTextField.insertText("0")
+    }
+}
