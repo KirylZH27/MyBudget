@@ -16,9 +16,12 @@ final class BankAccountsViewController: NiblessViewController {
     
     private let viewModel: BankAccountViewModel
     private var cancalable = Set<AnyCancellable>()
+    private let addBankAccountViewControllerFactory: () -> AddBankAccountViewController
     
-    init(viewModel: BankAccountViewModel) {
+    init(viewModel: BankAccountViewModel,
+         addBankAccountViewControllerFactory: @escaping ()-> AddBankAccountViewController) {
         self.viewModel = viewModel
+        self.addBankAccountViewControllerFactory = addBankAccountViewControllerFactory
         super.init()
     }
     override func loadView() {
@@ -53,7 +56,11 @@ final class BankAccountsViewController: NiblessViewController {
 
 extension BankAccountsViewController {
     @objc private func addBankAccountButtonWasPressed() {
-        print("Добавить")
+        let addBankAccountViewController = addBankAccountViewControllerFactory()
+        addBankAccountViewController.onDismissBlock = { [weak self] in
+            self?.viewModel.getAllAccounts()
+        }
+        present(addBankAccountViewController, animated: true)
     }
 }
 

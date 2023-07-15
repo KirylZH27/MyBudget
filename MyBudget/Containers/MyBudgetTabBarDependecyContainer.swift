@@ -30,13 +30,23 @@ final class MyBudgetTabBarDependecyContainer {
     
     private func createBankAccountsViewController() -> UINavigationController {
         let viewModel = createBankAccountViewModel()
-        let viewController = BankAccountsViewController(viewModel: viewModel)
+        let addBankAccountViewControllerFactory = {
+            self.createAddBankAccountViewController()
+        }
+        let viewController = BankAccountsViewController(viewModel: viewModel, addBankAccountViewControllerFactory: addBankAccountViewControllerFactory)
         viewController.navigationItem.title = "Счета"
         let navigationController = UINavigationController(rootViewController: viewController)
         navigationController.tabBarItem.title = "Счета"
         navigationController.navigationBar.tintColor = .black
         navigationController.tabBarItem.image = UIImage(systemName: "creditcard.circle")
         return navigationController
+    }
+    
+    private func createAddBankAccountViewController() -> AddBankAccountViewController {
+        let bankAccountCreator = BankAccountRealmManager()
+        let viewModel = AddBankAccountViewModel(bankAccountCreator: bankAccountCreator)
+        let viewController = AddBankAccountViewController(viewModel: viewModel)
+        return viewController
     }
     
     private func createBankAccountViewModel() -> BankAccountViewModel{

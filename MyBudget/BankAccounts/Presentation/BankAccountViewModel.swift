@@ -19,6 +19,7 @@ final class BankAccountViewModel {
     
     func getAllAccounts() {
         bankAccountGetter.getAllBankAccounts { [weak self] bankAccounts in
+            self?.bankAccounts = bankAccounts
             self?.allBankesWasGetted.send(true)
         }
     }
