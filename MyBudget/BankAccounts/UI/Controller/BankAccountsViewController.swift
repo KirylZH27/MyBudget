@@ -6,15 +6,16 @@
 //
 
 import UIKit
-
-
+import Combine
 
 final class BankAccountsViewController: NiblessViewController {
+    
     var contentView: BankAccountsViewControllerView {
         view as! BankAccountsViewControllerView
     }
     
     private let viewModel: BankAccountViewModel
+    private var cancalable = Set<AnyCancellable>()
     
     init(viewModel: BankAccountViewModel) {
         self.viewModel = viewModel
@@ -29,11 +30,20 @@ final class BankAccountsViewController: NiblessViewController {
         super.viewDidLoad()
         addTargets()
         addDelegates()
+        bindViewModel()
+        
+        viewModel.getAllAccounts()
     }
     
     private func addDelegates(){
         contentView.tableView.dataSource = self
         contentView.tableView.delegate = self
+    }
+    
+    private func bindViewModel(){
+        viewModel.allBankesWasGetted.sink { [weak self] _ in
+            self?.contentView.tableView.reloadData()
+        }.store(in: &cancalable)
     }
     
     private func addTargets() {
@@ -49,13 +59,14 @@ extension BankAccountsViewController {
 
 extension BankAccountsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return viewModel.bankAccounts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: BankAccountsTableViewCell.id, for: indexPath)
         guard let bankAccountCell = cell as? BankAccountsTableViewCell else
         { return cell }
+        bankAccountCell.setupCell(bankAccount: viewModel.bankAccounts[indexPath.row])
         return bankAccountCell
     }
     

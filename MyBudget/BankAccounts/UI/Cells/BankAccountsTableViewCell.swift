@@ -37,6 +37,9 @@ class BankAccountsTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func setupCell(bankAccount: BankAccount) {
+        nameLabel.text = bankAccount.name
+    }
     
     private func layoutElemets() {
         layoutPersonImageView()

@@ -6,10 +6,12 @@
 //
 
 import Foundation
+import Combine
 
 final class BankAccountViewModel {
     private let bankAccountGetter: BankAccountGetter
     var bankAccounts: [BankAccount] = []
+    private (set) var allBankesWasGetted = PassthroughSubject<Bool,Never>()
     
     init(bankAccountGetter: BankAccountGetter) {
         self.bankAccountGetter = bankAccountGetter
@@ -17,7 +19,7 @@ final class BankAccountViewModel {
     
     func getAllAccounts() {
         bankAccountGetter.getAllBankAccounts { [weak self] bankAccounts in
-            
+            self?.allBankesWasGetted.send(true)
         }
     }
 }
