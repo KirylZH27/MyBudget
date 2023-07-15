@@ -27,6 +27,7 @@ final class AddTransactionViewControllerView: NiblessView {
        textField.layer.borderWidth = 1
        textField.textAlignment = .center
        textField.font = UIFont(name: "AmericanTypewriter", size: 40)
+        textField.isUserInteractionEnabled = false
        return textField
    }()
     
@@ -72,7 +73,7 @@ final class AddTransactionViewControllerView: NiblessView {
         NSLayoutConstraint.activate([
             keyBoard.widthAnchor.constraint(equalTo: self.widthAnchor),
             keyBoard.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            keyBoard.topAnchor.constraint(equalTo: quantityMoneyTextField.bottomAnchor, constant: 20),
+            keyBoard.topAnchor.constraint(equalTo: quantityMoneyTextField.bottomAnchor, constant: 10),
             keyBoard.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor)
         ])
     }

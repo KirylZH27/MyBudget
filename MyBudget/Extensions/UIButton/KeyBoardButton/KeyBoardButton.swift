@@ -11,6 +11,7 @@ struct ModelKeyBoardButton {
     let title: String
     let backgroundColor: UIColor
     let titleColor: UIColor
+    let font: UIFont?
 }
 
 final class KeyBoardButton: UIButton {
@@ -33,6 +34,7 @@ final class KeyBoardButton: UIButton {
         self.contentMode = .scaleAspectFit
         self.setTitle(model.title, for: state)
         self.setTitleColor(model.titleColor, for: .normal)
+        self.titleLabel?.font = model.font
       //  self.setTitle(model.titleColor.withAlphaComponent(0.7), for: .highlighted)
     }
     

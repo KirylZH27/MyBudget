@@ -33,6 +33,7 @@
 		0AB7D0A72A628B49004A9EF9 /* DisplayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB7D0A62A628B49004A9EF9 /* DisplayManager.swift */; };
 		0AB7D0AA2A628BC5004A9EF9 /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB7D0A92A628BC5004A9EF9 /* Formatter.swift */; };
 		0AB7D0AD2A628F80004A9EF9 /* String+Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB7D0AC2A628F80004A9EF9 /* String+Converter.swift */; };
+		0AB7D0B02A629AEC004A9EF9 /* AppFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB7D0AF2A629AEC004A9EF9 /* AppFonts.swift */; };
 		0ABBB3392A56C6B100AD1FA6 /* UserSignOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABBB3382A56C6B100AD1FA6 /* UserSignOut.swift */; };
 		0ABBB33C2A5704A700AD1FA6 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABBB33B2A5704A700AD1FA6 /* ProfileViewModel.swift */; };
 		0AC30BA32A59B19B00CA9168 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC30BA22A59B19B00CA9168 /* ImagePicker.swift */; };
@@ -103,6 +104,7 @@
 		0AB7D0A62A628B49004A9EF9 /* DisplayManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayManager.swift; sourceTree = "<group>"; };
 		0AB7D0A92A628BC5004A9EF9 /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
 		0AB7D0AC2A628F80004A9EF9 /* String+Converter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Converter.swift"; sourceTree = "<group>"; };
+		0AB7D0AF2A629AEC004A9EF9 /* AppFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFonts.swift; sourceTree = "<group>"; };
 		0ABBB3382A56C6B100AD1FA6 /* UserSignOut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSignOut.swift; sourceTree = "<group>"; };
 		0ABBB33B2A5704A700AD1FA6 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		0AC30BA22A59B19B00CA9168 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
@@ -395,6 +397,14 @@
 			path = String;
 			sourceTree = "<group>";
 		};
+		0AB7D0AE2A629ADC004A9EF9 /* AppFonts */ = {
+			isa = PBXGroup;
+			children = (
+				0AB7D0AF2A629AEC004A9EF9 /* AppFonts.swift */,
+			);
+			path = AppFonts;
+			sourceTree = "<group>";
+		};
 		0ABBB33A2A57048B00AD1FA6 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
@@ -580,6 +590,7 @@
 		0AF74EF22A4847950038D221 /* SharedComponets */ = {
 			isa = PBXGroup;
 			children = (
+				0AB7D0AE2A629ADC004A9EF9 /* AppFonts */,
 				0AFE735D2A5493C400E21458 /* AppColors */,
 				0AF74EF32A4847A90038D221 /* Nibless */,
 			);
@@ -900,6 +911,7 @@
 				0A210E732A4F880000D5B750 /* BankAccountsTableViewCell.swift in Sources */,
 				0AFE73742A55E96500E21458 /* HideAuthorizationNavigationResponder.swift in Sources */,
 				0AFE737D2A55F1D100E21458 /* FirebaseUserManager.swift in Sources */,
+				0AB7D0B02A629AEC004A9EF9 /* AppFonts.swift in Sources */,
 				0AF74EF52A4847BF0038D221 /* NiblessViewController.swift in Sources */,
 				0AB7D0A32A62862E004A9EF9 /* KeyBoardDelegate.swift in Sources */,
 				0AFF81632A4B337D006ACF1F /* SettingsViewControllerView.swift in Sources */,
