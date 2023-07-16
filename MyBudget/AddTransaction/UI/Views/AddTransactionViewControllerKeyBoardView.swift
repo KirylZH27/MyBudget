@@ -46,7 +46,7 @@ final class AddTransactionViewControllerKeyBoardView: NiblessView {
             axis: .vertical,
             distribution: .fillEqually,
             userInteraction: true)
-        .setLayoutMargins(top: 30, left: 30, right: 30, bottom: 30)
+        .setLayoutMargins(top: 40, left: 40, right: 40, bottom: 40)
     /*
     private let lastStackView = UIStackView()
         .myStyleStack(
@@ -70,13 +70,14 @@ final class AddTransactionViewControllerKeyBoardView: NiblessView {
         button.backgroundColor = AppColors.green.value
         button.setTitle("Добавить", for: .normal)
         button.layer.cornerRadius = 12
+        button.titleLabel?.font = AppFonts.AmericanBold.value(size: 22)
         button.setTitleColor(.black, for: .normal)
         return button
     }()
     
     private lazy var decimalSeparatorButton: KeyBoardButton = {
         let model = ModelKeyBoardButton(title: Locale.current.decimalSeparator ?? ".",
-                                        backgroundColor: .systemPink,
+                                        backgroundColor: .brown,
                                         titleColor: .black,
                                         font: AppFonts.AmericanBold.value(size: 28))
         let button = KeyBoardButton(model: model, type: .decimal)
@@ -86,7 +87,7 @@ final class AddTransactionViewControllerKeyBoardView: NiblessView {
     
     private lazy var backspaceButton: KeyBoardButton = {
         let model = ModelKeyBoardButton(title: "",
-                                        backgroundColor: .systemPink,
+                                        backgroundColor: .brown,
                                         titleColor: .black,
                                         font: AppFonts.AmericanBold.value(size: 28))
         let button = KeyBoardButton(model: model, type: .backspace)
@@ -163,8 +164,8 @@ final class AddTransactionViewControllerKeyBoardView: NiblessView {
         containerStackView.addArrangedSubview(zeroStackView)
         //containerStackView.addArrangedSubview(lastStackView)
         mainStackView.addArrangedSubview(containerStackView)
-        zeroStackView.addArrangedSubview(zeroButton)
         zeroStackView.addArrangedSubview(decimalSeparatorButton)
+        zeroStackView.addArrangedSubview(zeroButton)
         zeroStackView.addArrangedSubview(backspaceButton)
     }
     
@@ -172,7 +173,7 @@ final class AddTransactionViewControllerKeyBoardView: NiblessView {
     private func layoutSaveButton() {
         addSubview(saveTransactionButton)
         NSLayoutConstraint.activate([
-            saveTransactionButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
+            saveTransactionButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -20),
             saveTransactionButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             saveTransactionButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             saveTransactionButton.heightAnchor.constraint(equalToConstant: 45)

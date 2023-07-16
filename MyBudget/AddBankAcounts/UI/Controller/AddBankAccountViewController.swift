@@ -31,13 +31,14 @@ final class AddBankAccountViewController: NiblessViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         bindViewModel()
+        addTargets()
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)){
-            let bankAccount = BankAccount(name: "Testname55", type: .cash, value: "500")
-            self.viewModel.createBankAccount(bankAccount: bankAccount)
+         //   let bankAccount = BankAccount(name: "Testname55", type: .cash, value: "500")
+          //  self.viewModel.createBankAccount(bankAccount: bankAccount)
         }
     }
     
@@ -50,5 +51,17 @@ final class AddBankAccountViewController: NiblessViewController {
                 }
             }
         }.store(in: &cancalable)
+    }
+    
+    private func addTargets() {
+        contentView.addAccountButton.addTarget(self, action: #selector(addAccountButtonWasPressed), for: .touchUpInside)
+    }
+}
+
+extension AddBankAccountViewController {
+    @objc private func addAccountButtonWasPressed() {
+        print("LLLLL")
+        let bankAccount = BankAccount(name: "Cash", type: .cash, value: "500")
+        self.viewModel.createBankAccount(bankAccount: bankAccount)
     }
 }

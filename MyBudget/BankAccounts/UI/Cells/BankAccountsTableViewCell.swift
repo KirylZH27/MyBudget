@@ -28,6 +28,16 @@ class BankAccountsTableViewCell: UITableViewCell {
         return label
     }()
     
+    let amountOfMoneyLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont(name: "AmericanTypewriter", size: 20)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "100"
+        label.textColor = .black
+        label.textAlignment = .right
+        return label
+    }()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         layoutElemets()
@@ -39,11 +49,13 @@ class BankAccountsTableViewCell: UITableViewCell {
     
     func setupCell(bankAccount: BankAccount) {
         nameLabel.text = bankAccount.name
+        amountOfMoneyLabel.text = bankAccount.value
     }
     
     private func layoutElemets() {
         layoutPersonImageView()
         layoutNameLabel()
+        layoutAmountOfMoneyLabel()
     }
     
     private func layoutPersonImageView(){
@@ -57,14 +69,25 @@ class BankAccountsTableViewCell: UITableViewCell {
             personImageView.widthAnchor.constraint(equalToConstant: 40)
         ])
     }
-    
+    // ? норм ли (1)
     private func layoutNameLabel(){
         contentView.addSubview(nameLabel)
         NSLayoutConstraint.activate([
             nameLabel.leadingAnchor.constraint(equalTo: personImageView.trailingAnchor, constant: 16),
-            nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+            //nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
             nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
             nameLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
+            nameLabel.widthAnchor.constraint(equalToConstant: 160)
+        ])
+    }
+    //???? (2)
+    private func layoutAmountOfMoneyLabel(){
+        contentView.addSubview(amountOfMoneyLabel)
+        NSLayoutConstraint.activate([
+            amountOfMoneyLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+            amountOfMoneyLabel.leadingAnchor.constraint(equalTo: nameLabel.trailingAnchor, constant: 20),
+            amountOfMoneyLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
+            amountOfMoneyLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10)
         ])
     }
 }
