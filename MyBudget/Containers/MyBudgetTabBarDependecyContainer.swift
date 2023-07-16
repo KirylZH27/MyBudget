@@ -22,9 +22,20 @@ final class MyBudgetTabBarDependecyContainer {
     }
     
     private func createAddTransactionViewController() -> AddTransactionViewController {
-        let viewController = AddTransactionViewController()
+        let transactionDescriptionViewControllerFactory = { type, value in
+            self.createTransactionDescriptionViewController(transactionType: type, transactionValue: value)
+        }
+        let viewController = AddTransactionViewController(transactionDescriptionViewControllerFactory: transactionDescriptionViewControllerFactory)
         viewController.tabBarItem.title = "Добавить"
         viewController.tabBarItem.image = UIImage(systemName: "plus.circle.fill")
+        return viewController
+    }
+    
+    private func createTransactionDescriptionViewController(transactionType: TransactionType, transactionValue: String) -> TransactionDescriptionViewController{
+        let bankAccountGetter = BankAccountRealmManager()
+        let transactionCreator = TransactionRealmManager()
+        let viewModel = TransactionDescriptionViewModel(bankAccountGetter: bankAccountGetter, transactionCreator: transactionCreator)
+        let viewController = TransactionDescriptionViewController(viewModel: viewModel, transactionValue: transactionValue, transactionType: transactionType)
         return viewController
     }
     
@@ -33,7 +44,11 @@ final class MyBudgetTabBarDependecyContainer {
         let addBankAccountViewControllerFactory = {
             self.createAddBankAccountViewController()
         }
-        let viewController = BankAccountsViewController(viewModel: viewModel, addBankAccountViewControllerFactory: addBankAccountViewControllerFactory)
+        let accountDescriptionViewControllerFactory = { bankAccount in
+            self.createAccountDescriptionViewController(bankAccount: bankAccount)
+        }
+        let viewController = BankAccountsViewController(viewModel: viewModel, addBankAccountViewControllerFactory: addBankAccountViewControllerFactory, accountDescriptionViewControllerFactory: accountDescriptionViewControllerFactory)
+        
         viewController.navigationItem.title = "Счета"
         let navigationController = UINavigationController(rootViewController: viewController)
         navigationController.tabBarItem.title = "Счета"
@@ -46,6 +61,13 @@ final class MyBudgetTabBarDependecyContainer {
         let bankAccountCreator = BankAccountRealmManager()
         let viewModel = AddBankAccountViewModel(bankAccountCreator: bankAccountCreator)
         let viewController = AddBankAccountViewController(viewModel: viewModel)
+        return viewController
+    }
+    
+    private func createAccountDescriptionViewController(bankAccount: BankAccount) -> AccountDescriptionViewController {
+       let transactionGetter = TransactionRealmManager()
+        let viewModel = AccountDescriptionViewModel(transactionGetter: transactionGetter, bankAccount: bankAccount)
+        let viewController = AccountDescriptionViewController(viewModel: viewModel)
         return viewController
     }
     

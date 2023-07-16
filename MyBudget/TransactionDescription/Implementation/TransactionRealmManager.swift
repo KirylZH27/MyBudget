@@ -39,7 +39,7 @@ final class TransactionRealmManager: TransactionCreator, TransactionGetter {
     func getBankAccountTransaction(by id: String, completion: @escaping ([TransactionDescription]) -> Void) {
         let transactionsRealmArray = Array(realm.objects(TransactionDescriptionRealm.self))
         let filteredTransactionRealm = transactionsRealmArray.filter { $0.bankAccountId == id }
-        let transactionDesctiptions = filteredTransactionRealm.map { TransactionDescription(id: $0.id, bankAccountId: $0.bankAccountId, value: $0.value, type: $0.type, category: $0.category)}
+        let transactionDesctiptions = filteredTransactionRealm.map { TransactionDescription(id: $0.id, bankAccountId: $0.bankAccountId, value: $0.value, type: $0.typeEnum, category: $0.categoryEnum)}
      completion(transactionDesctiptions)
     }
     

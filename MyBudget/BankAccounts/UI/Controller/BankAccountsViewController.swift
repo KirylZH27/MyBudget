@@ -17,11 +17,13 @@ final class BankAccountsViewController: NiblessViewController {
     private let viewModel: BankAccountViewModel
     private var cancalable = Set<AnyCancellable>()
     private let addBankAccountViewControllerFactory: () -> AddBankAccountViewController
+    private let accountDescriptionViewControllerFactory: (BankAccount) -> AccountDescriptionViewController
     
     init(viewModel: BankAccountViewModel,
-         addBankAccountViewControllerFactory: @escaping ()-> AddBankAccountViewController) {
+         addBankAccountViewControllerFactory: @escaping ()-> AddBankAccountViewController, accountDescriptionViewControllerFactory: @escaping (BankAccount)-> AccountDescriptionViewController ) {
         self.viewModel = viewModel
         self.addBankAccountViewControllerFactory = addBankAccountViewControllerFactory
+        self.accountDescriptionViewControllerFactory = accountDescriptionViewControllerFactory
         super.init()
     }
     override func loadView() {
@@ -82,9 +84,9 @@ extension BankAccountsViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //let account = accounts[indexPath.row]
-        let viewController = AccountDescriptionViewController()
-        navigationController?.pushViewController(viewController, animated: true)
+        let account = viewModel.bankAccounts[indexPath.row]
+        let accountDescriptionViewController = accountDescriptionViewControllerFactory(account)
+        navigationController?.pushViewController(accountDescriptionViewController, animated: true)
     }
 }
 

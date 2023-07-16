@@ -14,17 +14,27 @@ enum TransactionType: String {
 
 final class AddTransactionViewController: NiblessViewController {
     
+    private let transactionDescriptionViewControllerFactory: (TransactionType, String) -> TransactionDescriptionViewController
+    private let transactionType: TransactionType = .income
     
     var contentView: AddTransactionViewControllerView {
         view as! AddTransactionViewControllerView
     }
+    
+    init(transactionDescriptionViewControllerFactory: @escaping (TransactionType, String) -> TransactionDescriptionViewController) {
+        self.transactionDescriptionViewControllerFactory = transactionDescriptionViewControllerFactory
+        super.init()
+    }
+    
     override func loadView() {
         super.loadView()
         view = AddTransactionViewControllerView()
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupDelegates()
+        addTargets()
     }
     
     private func setNumber(type: KeyBoardSymbol) {
@@ -57,6 +67,9 @@ final class AddTransactionViewController: NiblessViewController {
     private func setupDelegates() {
         contentView.keyBoard.delegate = self
     }
+    private func addTargets(){
+        contentView.keyBoard.saveTransactionButton.addTarget(self, action: #selector(saveTransactionButtonWasPressed) , for: .touchUpInside)
+    }
     
 }
 extension AddTransactionViewController: KeyBoardDelegate {
@@ -69,5 +82,13 @@ extension AddTransactionViewController: KeyBoardDelegate {
                 case .decimal:
                     decimalButtonWasPressed()
         }
+    }
+}
+
+extension AddTransactionViewController {
+   @objc private func saveTransactionButtonWasPressed(){
+       guard let transitionValue = contentView.quantityMoneyTextField.text else { return }
+       let transactionDescriptionViewController = transactionDescriptionViewControllerFactory(transactionType, transitionValue)
+       present(transactionDescriptionViewController, animated: true)
     }
 }

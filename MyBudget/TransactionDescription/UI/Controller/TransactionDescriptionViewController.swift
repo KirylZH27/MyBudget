@@ -33,7 +33,7 @@ final class TransactionDescriptionViewController: NiblessViewController {
         super.viewDidAppear(animated)
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)){
             let transaction = TransactionDescription(id: UUID().uuidString,
-                                                     bankAccountId: "5E4F8996-1F64-4990-BEFD-D8E7B352F5B5",
+                                                     bankAccountId: "4735DC2B-A07B-4347-9880-55AB19990629",
                                                      value: self.transactionValue,
                                                      type: self.transactionType,
                                                      category: .car)

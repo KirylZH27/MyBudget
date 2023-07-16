@@ -9,6 +9,8 @@ import UIKit
 
 final class AccountDescriptionViewController: NiblessViewController {
     
+    private let viewModel: AccountDescriptionViewModel
+    
     var contentView: AccountDescriptionViewControllerView {
         view as! AccountDescriptionViewControllerView
     }
@@ -18,4 +20,13 @@ final class AccountDescriptionViewController: NiblessViewController {
         view = AccountDescriptionViewControllerView()
     }
     
+    init(viewModel: AccountDescriptionViewModel) {
+        self.viewModel = viewModel
+        super.init()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        viewModel.getTransaction()
+    }
 }

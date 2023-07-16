@@ -7,10 +7,10 @@
 
 import Foundation
 
-enum TransactionCategory {
-    case trasport
-    case food
-    case car
+enum TransactionCategory: String {
+    case trasport = "transport"
+    case food = "food"
+    case car = "car"
 }
 
 struct TransactionDescription {

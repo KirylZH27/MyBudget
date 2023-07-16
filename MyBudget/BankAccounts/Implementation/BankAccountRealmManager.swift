@@ -24,7 +24,7 @@ final class BankAccountRealmManager: BankAccountCreator, BankAccountGetter {
         }()
     
     func createBankAccount(bankAccount: BankAccount, completion: @escaping (Error?) -> Void) {
-        let bankAccountRealm = BankAccountRealm(name: bankAccount.name, type: bankAccount.type, value: bankAccount.value, id: UUID().uuidString)
+        let bankAccountRealm = BankAccountRealm(name: bankAccount.name, type: bankAccount.type, value: bankAccount.value, id: bankAccount.id)
         realm.writeAsync { [weak self] in
             self?.realm.add(bankAccountRealm)
         } onComplete: { error in
