@@ -69,7 +69,7 @@ extension AddBankAccountViewController {
         print("LLLLL")
         guard let name = contentView.nameAccountTextField.text else { return }
         guard let value = contentView.currentBalanceTextField.text else { return }
-        let bankAccount = BankAccount(name: name, type: .cash, value: value)
+        let bankAccount = BankAccount(name: name, type: .cash, value: value, id: UUID().uuidString)
         self.viewModel.createBankAccount(bankAccount: bankAccount)
     }
 }

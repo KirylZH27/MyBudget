@@ -24,7 +24,7 @@ final class BankAccountRealmManager: BankAccountCreator, BankAccountGetter {
         }()
     
     func createBankAccount(bankAccount: BankAccount, completion: @escaping (Error?) -> Void) {
-        let bankAccountRealm = BankAccountRealm(name: bankAccount.name, type: bankAccount.type, value: bankAccount.value)
+        let bankAccountRealm = BankAccountRealm(name: bankAccount.name, type: bankAccount.type, value: bankAccount.value, id: UUID().uuidString)
         realm.writeAsync { [weak self] in
             self?.realm.add(bankAccountRealm)
         } onComplete: { error in
@@ -34,7 +34,7 @@ final class BankAccountRealmManager: BankAccountCreator, BankAccountGetter {
     
     func getAllBankAccounts(completion: @escaping ([BankAccount]) -> Void) {
         let bankAccountsRealm = Array(realm.objects(BankAccountRealm.self))
-        let bankAccounts = bankAccountsRealm.map { BankAccount(name: $0.name, type: $0.type, value: $0.value) }
+        let bankAccounts = bankAccountsRealm.map { BankAccount(name: $0.name, type: $0.type, value: $0.value, id: $0.id) }
         completion(bankAccounts)
     }
     

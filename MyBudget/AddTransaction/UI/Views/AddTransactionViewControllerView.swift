@@ -11,9 +11,10 @@ final class AddTransactionViewControllerView: NiblessView {
     let keyBoard = AddTransactionViewControllerKeyBoardView(frame: .zero)
     
     let segmentedControll: UISegmentedControl = {
-        let segmentArray = ["Расходы","Доходы"]
+        let segmentArray = [TransactionType.expenditure.rawValue, TransactionType.income.rawValue]
         let segmentedControll = UISegmentedControl(items: segmentArray)
         segmentedControll.translatesAutoresizingMaskIntoConstraints = false
+        segmentedControll.selectedSegmentIndex = 0
         return segmentedControll
     }()
     

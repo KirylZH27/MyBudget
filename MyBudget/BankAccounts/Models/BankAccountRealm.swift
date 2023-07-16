@@ -15,12 +15,14 @@ enum BankAccountType {
 
 class BankAccountRealm: Object {
     
+    @objc dynamic var id: String = ""
     @objc dynamic var name: String = ""
     dynamic var type: BankAccountType = .cash
     @objc dynamic var value: String = ""
     
-    convenience init(name: String, type: BankAccountType, value: String) {
+    convenience init(name: String, type: BankAccountType, value: String, id: String) {
         self.init()
+        self.id = id
         self.name = name
         self.type = type
         self.value = value

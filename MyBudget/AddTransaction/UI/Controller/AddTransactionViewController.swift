@@ -7,14 +7,13 @@
 
 import UIKit
 
+enum TransactionType: String {
+    case income = "Доходы"
+    case expenditure = "Расходы"
+}
+
 final class AddTransactionViewController: NiblessViewController {
     
-    private var previousOperand: String = ""
-    private var currentOperand: String = ""
-    private var operationsType: String = ""
-    private let empty: String = ""
-    private let zero: String = KeyBoardSymbol.zero.rawValue
-    private let decimalSeparator = Locale.current.decimalSeparator
     
     var contentView: AddTransactionViewControllerView {
         view as! AddTransactionViewControllerView

@@ -50,6 +50,11 @@ class BankAccountsTableViewCell: UITableViewCell {
     func setupCell(bankAccount: BankAccount) {
         nameLabel.text = bankAccount.name
         amountOfMoneyLabel.text = bankAccount.value
+        if bankAccount.type == .cash {
+            
+        } else {
+            
+        }
     }
     
     private func layoutElemets() {
