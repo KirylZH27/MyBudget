@@ -52,6 +52,7 @@
 		0AB7D0E62A63FE43004A9EF9 /* TransactionDescriptionRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB7D0E52A63FE43004A9EF9 /* TransactionDescriptionRealm.swift */; };
 		0AB7D0E82A63FF85004A9EF9 /* TransactionCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB7D0E72A63FF85004A9EF9 /* TransactionCreator.swift */; };
 		0AB7D0EA2A63FFF8004A9EF9 /* TransactionGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB7D0E92A63FFF8004A9EF9 /* TransactionGetter.swift */; };
+		0AB7D0ED2A640116004A9EF9 /* TransactionRealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB7D0EC2A640116004A9EF9 /* TransactionRealmManager.swift */; };
 		0ABBB3392A56C6B100AD1FA6 /* UserSignOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABBB3382A56C6B100AD1FA6 /* UserSignOut.swift */; };
 		0ABBB33C2A5704A700AD1FA6 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABBB33B2A5704A700AD1FA6 /* ProfileViewModel.swift */; };
 		0AC30BA32A59B19B00CA9168 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC30BA22A59B19B00CA9168 /* ImagePicker.swift */; };
@@ -141,6 +142,7 @@
 		0AB7D0E52A63FE43004A9EF9 /* TransactionDescriptionRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDescriptionRealm.swift; sourceTree = "<group>"; };
 		0AB7D0E72A63FF85004A9EF9 /* TransactionCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCreator.swift; sourceTree = "<group>"; };
 		0AB7D0E92A63FFF8004A9EF9 /* TransactionGetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionGetter.swift; sourceTree = "<group>"; };
+		0AB7D0EC2A640116004A9EF9 /* TransactionRealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRealmManager.swift; sourceTree = "<group>"; };
 		0ABBB3382A56C6B100AD1FA6 /* UserSignOut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSignOut.swift; sourceTree = "<group>"; };
 		0ABBB33B2A5704A700AD1FA6 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		0AC30BA22A59B19B00CA9168 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
@@ -619,6 +621,7 @@
 		0AB7D0EB2A6400A9004A9EF9 /* Implementation */ = {
 			isa = PBXGroup;
 			children = (
+				0AB7D0EC2A640116004A9EF9 /* TransactionRealmManager.swift */,
 			);
 			path = Implementation;
 			sourceTree = "<group>";
@@ -1144,6 +1147,7 @@
 				0AB7D0DB2A63FA7B004A9EF9 /* TransactionDescriptionViewModel.swift in Sources */,
 				0AB7D0A12A6285A5004A9EF9 /* ConfigurableView.swift in Sources */,
 				0A210E732A4F880000D5B750 /* BankAccountsTableViewCell.swift in Sources */,
+				0AB7D0ED2A640116004A9EF9 /* TransactionRealmManager.swift in Sources */,
 				0AFE73742A55E96500E21458 /* HideAuthorizationNavigationResponder.swift in Sources */,
 				0AFE737D2A55F1D100E21458 /* FirebaseUserManager.swift in Sources */,
 				0AB7D0B02A629AEC004A9EF9 /* AppFonts.swift in Sources */,

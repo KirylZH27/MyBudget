@@ -8,7 +8,7 @@
 import Foundation
 
 protocol TransactionCreator {
-    func createTransaction(transaction: TransactionDescription, completion: @escaping () -> Void)
+    func createTransaction(transaction: TransactionDescription, completion: @escaping (Error?) -> Void)
 }
 
 
