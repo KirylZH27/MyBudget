@@ -78,6 +78,12 @@ final class AddBankAccountViewControllerView: NiblessView {
         return button
     }()
     
+    let accountPickerView: UIPickerView = {
+        let picker = UIPickerView()
+        picker.translatesAutoresizingMaskIntoConstraints = false
+        return picker
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .white
@@ -92,12 +98,13 @@ final class AddBankAccountViewControllerView: NiblessView {
         layoutCurrentBalanceLabel()
         layoutCurrentBalanceTextField()
         layoutaddAccountButton()
+        layoutAccountPickerView()
     }
     
     private func layoutNavigationTittleLabel(){
         addSubview(navigationTittleLabel)
         NSLayoutConstraint.activate([
-            navigationTittleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 10),
+            navigationTittleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 18),
             navigationTittleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             navigationTittleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16)
         ])
@@ -149,6 +156,15 @@ final class AddBankAccountViewControllerView: NiblessView {
             addAccountButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -100),
             addAccountButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -20),
             addAccountButton.heightAnchor.constraint(equalToConstant: 40)
+        ])
+    }
+    
+    private func layoutAccountPickerView(){
+        addSubview(accountPickerView)
+        NSLayoutConstraint.activate([
+            accountPickerView.topAnchor.constraint(equalTo: currentBalanceLabel.bottomAnchor, constant: 70),
+            accountPickerView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
+            accountPickerView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor)
         ])
     }
 }

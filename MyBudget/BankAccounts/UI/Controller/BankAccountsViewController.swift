@@ -81,5 +81,10 @@ extension BankAccountsViewController: UITableViewDelegate, UITableViewDataSource
         return 60
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //let account = accounts[indexPath.row]
+        let viewController = AccountDescriptionViewController()
+        navigationController?.pushViewController(viewController, animated: true)
+    }
 }
 
