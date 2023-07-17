@@ -28,15 +28,15 @@ final class BankAccountsTotalBalanceView: NiblessView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        laoutElemets()
+        layoutElemets()
     }
     
-    private func laoutElemets() {
-        laoutBalanceLabel()
-        laoutTotalBalanceDescriptionLabel()
+    private func layoutElemets() {
+        layoutBalanceLabel()
+        layoutTotalBalanceDescriptionLabel()
     }
     
-    private func laoutBalanceLabel() {
+    private func layoutBalanceLabel() {
         addSubview(balanceLabel)
         NSLayoutConstraint.activate([
             balanceLabel.topAnchor.constraint(equalTo: topAnchor),
@@ -44,7 +44,7 @@ final class BankAccountsTotalBalanceView: NiblessView {
             balanceLabel.trailingAnchor.constraint(equalTo: trailingAnchor)
         ])
     }
-    private func laoutTotalBalanceDescriptionLabel() {
+    private func layoutTotalBalanceDescriptionLabel() {
         addSubview(totalBalanceDescriptionLabel)
         NSLayoutConstraint.activate([
             totalBalanceDescriptionLabel.topAnchor.constraint(equalTo: balanceLabel.bottomAnchor, constant: 5),

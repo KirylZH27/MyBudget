@@ -27,6 +27,7 @@
 		0A77FF3D2A5ED302005D1615 /* AddTransactionViewControllerKeyBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A77FF3C2A5ED302005D1615 /* AddTransactionViewControllerKeyBoardView.swift */; };
 		0A77FF3F2A5ED4CC005D1615 /* UIStackView+MyStyle .swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A77FF3E2A5ED4CC005D1615 /* UIStackView+MyStyle .swift */; };
 		0A77FF432A5EDA41005D1615 /* KeyBoardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A77FF422A5EDA41005D1615 /* KeyBoardButton.swift */; };
+		0AA725CC2A65372A00B408C4 /* AccountDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA725CB2A65372A00B408C4 /* AccountDescriptionTableViewCell.swift */; };
 		0AB7D0A12A6285A5004A9EF9 /* ConfigurableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB7D0A02A6285A5004A9EF9 /* ConfigurableView.swift */; };
 		0AB7D0A32A62862E004A9EF9 /* KeyBoardDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB7D0A22A62862E004A9EF9 /* KeyBoardDelegate.swift */; };
 		0AB7D0A52A628AFF004A9EF9 /* CalculatorWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB7D0A42A628AFF004A9EF9 /* CalculatorWork.swift */; };
@@ -118,6 +119,7 @@
 		0A77FF3C2A5ED302005D1615 /* AddTransactionViewControllerKeyBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionViewControllerKeyBoardView.swift; sourceTree = "<group>"; };
 		0A77FF3E2A5ED4CC005D1615 /* UIStackView+MyStyle .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+MyStyle .swift"; sourceTree = "<group>"; };
 		0A77FF422A5EDA41005D1615 /* KeyBoardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyBoardButton.swift; sourceTree = "<group>"; };
+		0AA725CB2A65372A00B408C4 /* AccountDescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDescriptionTableViewCell.swift; sourceTree = "<group>"; };
 		0AB7D0A02A6285A5004A9EF9 /* ConfigurableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurableView.swift; sourceTree = "<group>"; };
 		0AB7D0A22A62862E004A9EF9 /* KeyBoardDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyBoardDelegate.swift; sourceTree = "<group>"; };
 		0AB7D0A42A628AFF004A9EF9 /* CalculatorWork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorWork.swift; sourceTree = "<group>"; };
@@ -413,6 +415,14 @@
 			path = KeyBoardButton;
 			sourceTree = "<group>";
 		};
+		0AA725CA2A65370B00B408C4 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				0AA725CB2A65372A00B408C4 /* AccountDescriptionTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		0AB7D09F2A628571004A9EF9 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -527,6 +537,7 @@
 		0AB7D0CC2A63F311004A9EF9 /* AccountDescription */ = {
 			isa = PBXGroup;
 			children = (
+				0AA725CA2A65370B00B408C4 /* Cells */,
 				0AB7D0EE2A640A8F004A9EF9 /* Presentation */,
 				0AB7D0CD2A63F337004A9EF9 /* UI */,
 			);
@@ -1154,6 +1165,7 @@
 				0AB7D0BD2A62B5E1004A9EF9 /* BankAccountGetter.swift in Sources */,
 				0AF74EE42A4842070038D221 /* MyBudgetTabBarDependecyContainer.swift in Sources */,
 				0AF74EF12A48473F0038D221 /* AddTransactionViewController.swift in Sources */,
+				0AA725CC2A65372A00B408C4 /* AccountDescriptionTableViewCell.swift in Sources */,
 				0AFE737B2A55F01F00E21458 /* FirebaseUserStore.swift in Sources */,
 				0AFF815E2A4B30D0006ACF1F /* SettingsViewController.swift in Sources */,
 				0AB7D0DB2A63FA7B004A9EF9 /* TransactionDescriptionViewModel.swift in Sources */,
