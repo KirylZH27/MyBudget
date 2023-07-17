@@ -28,6 +28,8 @@
 		0A77FF3F2A5ED4CC005D1615 /* UIStackView+MyStyle .swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A77FF3E2A5ED4CC005D1615 /* UIStackView+MyStyle .swift */; };
 		0A77FF432A5EDA41005D1615 /* KeyBoardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A77FF422A5EDA41005D1615 /* KeyBoardButton.swift */; };
 		0AA725CC2A65372A00B408C4 /* AccountDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA725CB2A65372A00B408C4 /* AccountDescriptionTableViewCell.swift */; };
+		0AA725CF2A656B7300B408C4 /* TransactionDescriptionCollectionVIewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA725CE2A656B7300B408C4 /* TransactionDescriptionCollectionVIewCell.swift */; };
+		0AA725D12A65885100B408C4 /* TransactionDescriptionCollectionViewCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA725D02A65885100B408C4 /* TransactionDescriptionCollectionViewCell2.swift */; };
 		0AB7D0A12A6285A5004A9EF9 /* ConfigurableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB7D0A02A6285A5004A9EF9 /* ConfigurableView.swift */; };
 		0AB7D0A32A62862E004A9EF9 /* KeyBoardDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB7D0A22A62862E004A9EF9 /* KeyBoardDelegate.swift */; };
 		0AB7D0A52A628AFF004A9EF9 /* CalculatorWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB7D0A42A628AFF004A9EF9 /* CalculatorWork.swift */; };
@@ -120,6 +122,8 @@
 		0A77FF3E2A5ED4CC005D1615 /* UIStackView+MyStyle .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+MyStyle .swift"; sourceTree = "<group>"; };
 		0A77FF422A5EDA41005D1615 /* KeyBoardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyBoardButton.swift; sourceTree = "<group>"; };
 		0AA725CB2A65372A00B408C4 /* AccountDescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDescriptionTableViewCell.swift; sourceTree = "<group>"; };
+		0AA725CE2A656B7300B408C4 /* TransactionDescriptionCollectionVIewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDescriptionCollectionVIewCell.swift; sourceTree = "<group>"; };
+		0AA725D02A65885100B408C4 /* TransactionDescriptionCollectionViewCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDescriptionCollectionViewCell2.swift; sourceTree = "<group>"; };
 		0AB7D0A02A6285A5004A9EF9 /* ConfigurableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurableView.swift; sourceTree = "<group>"; };
 		0AB7D0A22A62862E004A9EF9 /* KeyBoardDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyBoardDelegate.swift; sourceTree = "<group>"; };
 		0AB7D0A42A628AFF004A9EF9 /* CalculatorWork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorWork.swift; sourceTree = "<group>"; };
@@ -423,6 +427,15 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		0AA725CD2A656B4900B408C4 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				0AA725CE2A656B7300B408C4 /* TransactionDescriptionCollectionVIewCell.swift */,
+				0AA725D02A65885100B408C4 /* TransactionDescriptionCollectionViewCell2.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		0AB7D09F2A628571004A9EF9 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -572,6 +585,7 @@
 		0AB7D0D52A63FA02004A9EF9 /* TransactionDescription */ = {
 			isa = PBXGroup;
 			children = (
+				0AA725CD2A656B4900B408C4 /* Cells */,
 				0AB7D0EB2A6400A9004A9EF9 /* Implementation */,
 				0AB7D0E22A63FD6C004A9EF9 /* Models */,
 				0AB7D0E12A63FD60004A9EF9 /* Protocols */,
@@ -1160,6 +1174,7 @@
 				0A34DA3F2A6006F600461D45 /* UIButton+Target.swift in Sources */,
 				0AB7D0E42A63FD85004A9EF9 /* TransactionDescription.swift in Sources */,
 				0A14325D2A3F50C0007D9509 /* SceneDelegate.swift in Sources */,
+				0AA725D12A65885100B408C4 /* TransactionDescriptionCollectionViewCell2.swift in Sources */,
 				0AB7D0CB2A62BE3C004A9EF9 /* AddBankAccountViewModel.swift in Sources */,
 				0AB7D0EA2A63FFF8004A9EF9 /* TransactionGetter.swift in Sources */,
 				0AB7D0BD2A62B5E1004A9EF9 /* BankAccountGetter.swift in Sources */,
@@ -1185,6 +1200,7 @@
 				0AB7D0C62A62BDB2004A9EF9 /* AddBankAccountViewController.swift in Sources */,
 				0AB7D0B62A62B1FB004A9EF9 /* BankAccountCreator.swift in Sources */,
 				0AF74EDC2A483BEA0038D221 /* MainViewController.swift in Sources */,
+				0AA725CF2A656B7300B408C4 /* TransactionDescriptionCollectionVIewCell.swift in Sources */,
 				0AB7D0A72A628B49004A9EF9 /* DisplayManager.swift in Sources */,
 				0AE423D72A502EEE00311943 /* GoogleAuthorizationClient.swift in Sources */,
 				0AFE73772A55EF0A00E21458 /* UserCreator.swift in Sources */,

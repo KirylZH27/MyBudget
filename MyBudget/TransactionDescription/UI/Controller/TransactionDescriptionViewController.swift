@@ -26,7 +26,16 @@ final class TransactionDescriptionViewController: NiblessViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addDelegates()
         bindViewModel()
+    }
+    
+    private func addDelegates(){
+        contentView.collectionView.dataSource = self
+        contentView.collectionView.delegate = self
+        
+        contentView.collectionView2.dataSource = self
+        contentView.collectionView2.delegate = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -54,5 +63,34 @@ final class TransactionDescriptionViewController: NiblessViewController {
                 self?.dismiss(animated: true)
             }
         }.store(in: &cancellable)
+    }
+}
+
+extension TransactionDescriptionViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if collectionView == self.contentView.collectionView {
+            return 7
+        }
+        return 3
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if collectionView == self.contentView.collectionView {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TransactionDescriptionCollectionVIewCell.id, for: indexPath)
+            guard let collectionCell = cell as? TransactionDescriptionCollectionVIewCell else { return cell }
+            return collectionCell
+        }  else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TransactionDescriptionCollectionViewCell2.id, for: indexPath)
+            guard let collectionCell = cell as? TransactionDescriptionCollectionViewCell2 else { return cell }
+            return collectionCell
+        }
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if collectionView == self.contentView.collectionView {
+            CGSize(width: 170, height: 160)
+        }
+        return CGSize(width: 170, height: 160)
+        
     }
 }

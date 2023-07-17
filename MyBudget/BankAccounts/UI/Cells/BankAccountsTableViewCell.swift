@@ -51,9 +51,9 @@ class BankAccountsTableViewCell: UITableViewCell {
         nameLabel.text = bankAccount.name
         amountOfMoneyLabel.text = bankAccount.value
         if bankAccount.type == .cash {
-            
+            personImageView.image = UIImage(systemName: "bitcoinsign.circle")
         } else {
-            
+            personImageView.image = UIImage(systemName: "creditcard")
         }
     }
     

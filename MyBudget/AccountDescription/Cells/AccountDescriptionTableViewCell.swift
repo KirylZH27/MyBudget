@@ -31,8 +31,8 @@ class AccountDescriptionTableViewCell: UITableViewCell {
         let label = UILabel()
         label.font = UIFont(name: "AmericanTypewriter", size: 20)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "100"
-        label.textColor = .black
+        label.text = "-100 Br"
+        label.textColor = .red
         label.textAlignment = .right
         return label
     }()
