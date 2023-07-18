@@ -7,9 +7,9 @@
 
 import Foundation
 import RealmSwift
-
-final class BankAccountRealmManager: BankAccountCreator, BankAccountGetter {
-   
+// подписал под протокол BankAccountDeleter - DEL
+final class BankAccountRealmManager: BankAccountCreator, BankAccountGetter, BankAccountDeleter {
+    
     private var realm: Realm = {
             var config = Realm.Configuration(
                 schemaVersion: 1,
@@ -37,7 +37,16 @@ final class BankAccountRealmManager: BankAccountCreator, BankAccountGetter {
         let bankAccounts = bankAccountsRealm.map { BankAccount(name: $0.name, type: $0.type, value: $0.value, id: $0.id) }
         completion(bankAccounts)
     }
-    
-    
-    
+
+    // создал deleteBankAccount - DEL
+    // -----------------------------------------------------------
+    func deleteBankAccount(bankAccount: BankAccount, completion: @escaping (Error?) -> Void) {
+        let bankAccountRealm = BankAccountRealm(name: bankAccount.name, type: bankAccount.type, value: bankAccount.value, id: bankAccount.id)
+        realm.writeAsync { [weak self] in
+            self?.realm.delete(bankAccountRealm)
+        } onComplete: { error in
+            completion(error)
+        }
+    }
+    // -----------------------------------------------------------
 }

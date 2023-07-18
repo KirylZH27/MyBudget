@@ -13,8 +13,18 @@ final class BankAccountViewModel {
     var bankAccounts: [BankAccount] = []
     private (set) var allBankesWasGetted = PassthroughSubject<Bool,Never>()
     
-    init(bankAccountGetter: BankAccountGetter) {
+    // ----------------------------------------------------------- - DEL
+    private let bankAccountDeleter: BankAccountDeleter
+    private (set) var isBankAccountWasDeleted = PassthroughSubject<Bool,Never>()
+    // добавил еще в инициализатор bankAccountDeleter
+    // -----------------------------------------------------------
+    
+    init(bankAccountGetter: BankAccountGetter, bankAccountDeleter: BankAccountDeleter) {
         self.bankAccountGetter = bankAccountGetter
+        
+        // ----------------------------------------------------------- - DEL
+        self.bankAccountDeleter = bankAccountDeleter
+        // -----------------------------------------------------------
     }
     
     func getAllAccounts() {
@@ -23,4 +33,12 @@ final class BankAccountViewModel {
             self?.allBankesWasGetted.send(true)
         }
     }
+    
+    // ----------------------------------------------------------- - DEL
+    func deleteBankAccount(bankAccount: BankAccount){
+        bankAccountDeleter.deleteBankAccount(bankAccount: bankAccount) { [weak self]  error in
+            self?.isBankAccountWasDeleted.send(true)
+        }
+    }
+    // -----------------------------------------------------------
 }

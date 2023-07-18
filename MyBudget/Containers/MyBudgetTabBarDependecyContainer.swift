@@ -73,7 +73,11 @@ final class MyBudgetTabBarDependecyContainer {
     
     private func createBankAccountViewModel() -> BankAccountViewModel{
         let bankAccountGetter = BankAccountRealmManager()
-        let viewModel = BankAccountViewModel(bankAccountGetter: bankAccountGetter)
+        // Добавлен bankAccountDeleter и во viewModel - DEL
+        // -----------------------------------------------------------
+        let bankAccountDeleter = BankAccountRealmManager()
+        let viewModel = BankAccountViewModel(bankAccountGetter: bankAccountGetter, bankAccountDeleter: bankAccountDeleter)
+        // -----------------------------------------------------------
         return viewModel
     }
     
