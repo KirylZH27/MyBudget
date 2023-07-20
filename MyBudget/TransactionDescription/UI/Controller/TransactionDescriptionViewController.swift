@@ -31,11 +31,11 @@ final class TransactionDescriptionViewController: NiblessViewController {
     }
     
     private func addDelegates(){
-        contentView.collectionView.dataSource = self
-        contentView.collectionView.delegate = self
+        contentView.transactionCategoryCollectionView.dataSource = self
+        contentView.transactionCategoryCollectionView.delegate = self
         
-        contentView.collectionView2.dataSource = self
-        contentView.collectionView2.delegate = self
+        contentView.bankAccountsCollectionView.dataSource = self
+        contentView.bankAccountsCollectionView.delegate = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -69,16 +69,17 @@ final class TransactionDescriptionViewController: NiblessViewController {
 extension TransactionDescriptionViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if collectionView == self.contentView.collectionView {
-            return 7
+        if collectionView == contentView.transactionCategoryCollectionView {
+            return viewModel.categories.count
         }
         return 3
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if collectionView == self.contentView.collectionView {
+        if collectionView == self.contentView.transactionCategoryCollectionView {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TransactionDescriptionCollectionVIewCell.id, for: indexPath)
             guard let collectionCell = cell as? TransactionDescriptionCollectionVIewCell else { return cell }
+            collectionCell.setupCell(category: viewModel.categories[indexPath.row])
             return collectionCell
         }  else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TransactionDescriptionCollectionViewCell2.id, for: indexPath)
@@ -87,7 +88,7 @@ extension TransactionDescriptionViewController: UICollectionViewDelegate, UIColl
         }
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if collectionView == self.contentView.collectionView {
+        if collectionView == self.contentView.transactionCategoryCollectionView {
             CGSize(width: 170, height: 160)
         }
         return CGSize(width: 170, height: 160)

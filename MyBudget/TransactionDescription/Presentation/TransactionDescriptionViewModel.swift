@@ -12,6 +12,7 @@ final class TransactionDescriptionViewModel {
     private let bankAccountGetter: BankAccountGetter
     private let transactionCreator: TransactionCreator
     private (set) var transactionWasCreated = PassthroughSubject<Bool,Never>()
+    private (set) var categories: [TransactionCategory] = TransactionCategory.allCases
     
     init(bankAccountGetter: BankAccountGetter, transactionCreator: TransactionCreator) {
         self.bankAccountGetter = bankAccountGetter

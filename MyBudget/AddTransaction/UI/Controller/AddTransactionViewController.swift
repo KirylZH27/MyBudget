@@ -15,7 +15,7 @@ enum TransactionType: String {
 final class AddTransactionViewController: NiblessViewController {
     
     private let transactionDescriptionViewControllerFactory: (TransactionType, String) -> TransactionDescriptionViewController
-    private let transactionType: TransactionType = .income
+    private var transactionType: TransactionType = .income
     
     var contentView: AddTransactionViewControllerView {
         view as! AddTransactionViewControllerView
@@ -69,6 +69,7 @@ final class AddTransactionViewController: NiblessViewController {
     }
     private func addTargets(){
         contentView.keyBoard.saveTransactionButton.addTarget(self, action: #selector(saveTransactionButtonWasPressed) , for: .touchUpInside)
+        contentView.segmentedControll.addTarget(self, action: #selector(transactionTypeWasChanged(_:)), for: .valueChanged)
     }
     
 }
@@ -90,5 +91,13 @@ extension AddTransactionViewController {
        guard let transitionValue = contentView.quantityMoneyTextField.text else { return }
        let transactionDescriptionViewController = transactionDescriptionViewControllerFactory(transactionType, transitionValue)
        present(transactionDescriptionViewController, animated: true)
+    }
+    
+    @objc func transactionTypeWasChanged(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+            case 0: transactionType = .expenditure
+            case 1: transactionType = .income
+            default: break
+        }
     }
 }

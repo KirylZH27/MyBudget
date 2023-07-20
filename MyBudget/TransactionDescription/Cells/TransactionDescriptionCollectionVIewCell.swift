@@ -11,6 +11,7 @@ final class TransactionDescriptionCollectionVIewCell: UICollectionViewCell {
     
     static let id = String(describing: TransactionDescriptionCollectionVIewCell.self)
     
+    
     let spendingElementImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -43,6 +44,23 @@ final class TransactionDescriptionCollectionVIewCell: UICollectionViewCell {
     private func layoutElemets() {
         layoutSpendingElementImageView()
         layoutNameLabel()
+    }
+    
+    func setupCell(category: TransactionCategory){
+        setupIconImage(category: category)
+        nameLabel.text = category.rawValue
+    }
+    
+    private func setupIconImage(category: TransactionCategory){
+        switch category {
+                
+            case .trasport:
+                spendingElementImageView.image = UIImage(systemName: "bus")
+            case .food:
+                spendingElementImageView.image = UIImage(systemName: "basket")
+            case .car:
+                spendingElementImageView.image = UIImage(systemName: "car")
+        }
     }
     
     private func layoutSpendingElementImageView(){

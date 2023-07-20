@@ -20,7 +20,7 @@ final class TransactionDescriptionViewControllerView: NiblessView {
     }()
     
     
-    let collectionView: UICollectionView = {
+    let transactionCategoryCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -40,7 +40,7 @@ final class TransactionDescriptionViewControllerView: NiblessView {
         return label
     }()
     
-    let collectionView2: UICollectionView = {
+    let bankAccountsCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -58,9 +58,9 @@ final class TransactionDescriptionViewControllerView: NiblessView {
     
     private func layoutElements(){
         layoutExpenditureLabel()
-        layoutCollectionView()
+        layoutTransactionCategoryCollectionView()
         layoutIncomeLabel()
-        layoutCollectionView2()
+        layoutBankAccountsCollectionView()
     }
     
     private func layoutExpenditureLabel(){
@@ -71,31 +71,31 @@ final class TransactionDescriptionViewControllerView: NiblessView {
         ])
     }
     
-    private func layoutCollectionView(){
-        addSubview(collectionView)
+    private func layoutTransactionCategoryCollectionView(){
+        addSubview(transactionCategoryCollectionView)
         NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: expenditureLabel.bottomAnchor, constant: 7),
-            collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            collectionView.heightAnchor.constraint(equalToConstant: 180)
+            transactionCategoryCollectionView.topAnchor.constraint(equalTo: expenditureLabel.bottomAnchor, constant: 7),
+            transactionCategoryCollectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            transactionCategoryCollectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            transactionCategoryCollectionView.heightAnchor.constraint(equalToConstant: 180)
         ])
     }
     
     private func layoutIncomeLabel(){
         addSubview(incomeLabel)
         NSLayoutConstraint.activate([
-            incomeLabel.topAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 55),
+            incomeLabel.topAnchor.constraint(equalTo: transactionCategoryCollectionView.bottomAnchor, constant: 55),
             incomeLabel.centerXAnchor.constraint(equalTo: centerXAnchor)
         ])
     }
     
-    private func layoutCollectionView2(){
-        addSubview(collectionView2)
+    private func layoutBankAccountsCollectionView(){
+        addSubview(bankAccountsCollectionView)
         NSLayoutConstraint.activate([
-            collectionView2.topAnchor.constraint(equalTo: incomeLabel.bottomAnchor, constant: 7),
-            collectionView2.leadingAnchor.constraint(equalTo: leadingAnchor),
-            collectionView2.trailingAnchor.constraint(equalTo: trailingAnchor),
-            collectionView2.heightAnchor.constraint(equalToConstant: 180)
+            bankAccountsCollectionView.topAnchor.constraint(equalTo: incomeLabel.bottomAnchor, constant: 7),
+            bankAccountsCollectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            bankAccountsCollectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            bankAccountsCollectionView.heightAnchor.constraint(equalToConstant: 180)
         ])
     }
     

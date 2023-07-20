@@ -38,15 +38,14 @@ final class BankAccountRealmManager: BankAccountCreator, BankAccountGetter, Bank
         completion(bankAccounts)
     }
 
-    // создал deleteBankAccount - DEL
-    // -----------------------------------------------------------
     func deleteBankAccount(bankAccount: BankAccount, completion: @escaping (Error?) -> Void) {
-        let bankAccountRealm = BankAccountRealm(name: bankAccount.name, type: bankAccount.type, value: bankAccount.value, id: bankAccount.id)
+        
+        let bankAccountsRealm = Array(realm.objects(BankAccountRealm.self))
+        guard let bankAccountRealm = bankAccountsRealm.filter({ $0.id == bankAccount.id }).first else { return }
         realm.writeAsync { [weak self] in
             self?.realm.delete(bankAccountRealm)
         } onComplete: { error in
             completion(error)
         }
     }
-    // -----------------------------------------------------------
 }

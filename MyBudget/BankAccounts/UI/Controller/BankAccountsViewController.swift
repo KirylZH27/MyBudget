@@ -19,10 +19,6 @@ final class BankAccountsViewController: NiblessViewController {
     private let addBankAccountViewControllerFactory: () -> AddBankAccountViewController
     private let accountDescriptionViewControllerFactory: (BankAccount) -> AccountDescriptionViewController
     
-    // добавил cancalableDel - DEL
-    // -----------------------------------------------------------
-    private var cancalableDel = Set<AnyCancellable>()
-    // -----------------------------------------------------------
     
     init(viewModel: BankAccountViewModel,
          addBankAccountViewControllerFactory: @escaping ()-> AddBankAccountViewController, accountDescriptionViewControllerFactory: @escaping (BankAccount)-> AccountDescriptionViewController ) {
@@ -44,11 +40,6 @@ final class BankAccountsViewController: NiblessViewController {
         
         viewModel.getAllAccounts()
         
-        // добавлена функция bindViewModelDel - DEL
-        // -----------------------------------------------------------
-        bindViewModelDel()
-        // -----------------------------------------------------------
-        
     }
     
     private func addDelegates(){
@@ -60,16 +51,10 @@ final class BankAccountsViewController: NiblessViewController {
         viewModel.allBankesWasGetted.sink { [weak self] _ in
             self?.contentView.tableView.reloadData()
         }.store(in: &cancalable)
-    }
-    
-    // создана функция bindViewModelDel - DEL
-    // -----------------------------------------------------------
-    private func bindViewModelDel(){
         viewModel.isBankAccountWasDeleted.sink { [weak self] _ in
             self?.contentView.tableView.reloadData()
-        }.store(in: &cancalableDel)
+        }.store(in: &cancalable)
     }
-    // -----------------------------------------------------------
     
     private func addTargets() {
         contentView.addBankAccountButton.addTarget(self, action: #selector(addBankAccountButtonWasPressed) , for: .touchUpInside)
@@ -113,11 +98,10 @@ extension BankAccountsViewController: UITableViewDelegate, UITableViewDataSource
     // -----------------------------------------------------------
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-           
+            
             self.viewModel.deleteBankAccount(bankAccount: viewModel.bankAccounts[indexPath.row])
-                viewModel.bankAccounts.remove(at: indexPath.row)
-            contentView.tableView.deleteRows(at: [indexPath], with: .fade)
-            contentView.tableView.reloadData()
+            viewModel.bankAccounts.remove(at: indexPath.row)
+            contentView.tableView.deleteRows(at: [indexPath], with: .left)
         }
     }
     // -----------------------------------------------------------
