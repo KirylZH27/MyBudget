@@ -6,10 +6,12 @@
 //
 
 import UIKit
+import Combine
 
 final class AccountDescriptionViewController: NiblessViewController {
     
     private let viewModel: AccountDescriptionViewModel
+    private var cancalable = Set<AnyCancellable>()
     
     var contentView: AccountDescriptionViewControllerView {
         view as! AccountDescriptionViewControllerView
@@ -29,6 +31,8 @@ final class AccountDescriptionViewController: NiblessViewController {
         super.viewDidLoad()
         viewModel.getTransaction()
         addDelegates()
+        
+        bindViewModel()
     }
     
     private func addDelegates(){
@@ -36,17 +40,23 @@ final class AccountDescriptionViewController: NiblessViewController {
         contentView.tableView.delegate = self
     }
     
+    private func bindViewModel(){
+        viewModel.allTransactionsWasGetted.sink{ [weak self] _ in
+            self?.contentView.tableView.reloadData()
+        }.store(in: &cancalable)
+    }
 }
 
 extension AccountDescriptionViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        return viewModel.transactions.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: AccountDescriptionTableViewCell.id, for: indexPath)
         guard let accountDescriptionCell = cell as? AccountDescriptionTableViewCell else
         { return cell }
+        accountDescriptionCell.setupCell(accountDescription: viewModel.transactions[indexPath.row])
        // bankAccountCell.setupCell(bankAccount: viewModel.bankAccounts[indexPath.row])
         return accountDescriptionCell
     }

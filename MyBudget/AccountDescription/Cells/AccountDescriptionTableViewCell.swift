@@ -46,6 +46,33 @@ class AccountDescriptionTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func setupCell(accountDescription: TransactionDescription ){
+        nameLabel.text =  accountDescription.category.rawValue
+        amountOfMoneyLabel.text = accountDescription.value
+        setupIconImage(category: accountDescription.category)
+        setupTransactionTypeColor(type: accountDescription.type)
+    }
+    
+    private func setupIconImage(category: TransactionCategory){
+        switch category {
+                
+            case .trasport:
+                spendingElementImageView.image = UIImage(systemName: "bus")
+            case .food:
+                spendingElementImageView.image = UIImage(systemName: "basket")
+            case .car:
+                spendingElementImageView.image = UIImage(systemName: "car")
+        }
+    }
+    
+    private func setupTransactionTypeColor(type: TransactionType){
+        switch type {
+            case .income:
+                amountOfMoneyLabel.textColor = .green
+            case .expenditure:
+                amountOfMoneyLabel.textColor = .red
+        }
+    }
     
     private func layoutElemets() {
         layoutSpendingElementImageView()
@@ -68,7 +95,7 @@ class AccountDescriptionTableViewCell: UITableViewCell {
             nameLabel.leadingAnchor.constraint(equalTo: spendingElementImageView.trailingAnchor, constant: 16),
             nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
             nameLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
-            nameLabel.widthAnchor.constraint(equalToConstant: 160)
+            nameLabel.widthAnchor.constraint(equalToConstant: 140)
         ])
     }
     

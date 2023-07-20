@@ -6,12 +6,17 @@
 //
 
 import Foundation
+import Combine
 
 
 final class AccountDescriptionViewModel {
     
     private let transactionGetter: TransactionGetter
     let bankAccount: BankAccount
+    
+    var transactions: [TransactionDescription] = []
+    private (set) var allTransactionsWasGetted = PassthroughSubject<Bool,Never>()
+    
     
     init(transactionGetter: TransactionGetter, bankAccount: BankAccount) {
         self.transactionGetter = transactionGetter
@@ -20,6 +25,8 @@ final class AccountDescriptionViewModel {
     
     func getTransaction(){
         transactionGetter.getBankAccountTransaction(by: bankAccount.id) { [weak self] transactions in
+            self?.transactions = transactions
+            self?.allTransactionsWasGetted.send(true)
             print(transactions)
         }
     }
