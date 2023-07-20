@@ -28,6 +28,8 @@ final class TransactionDescriptionViewController: NiblessViewController {
         super.viewDidLoad()
         addDelegates()
         bindViewModel()
+        
+        viewModel.getBankAccounts()
     }
     
     private func addDelegates(){
@@ -40,10 +42,11 @@ final class TransactionDescriptionViewController: NiblessViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)){
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(5)){
             guard let category = self.viewModel.selectedCategory else { return }
+            guard let bankAccount = self.viewModel.selectedBankAccount else { return }
             let transaction = TransactionDescription(id: UUID().uuidString,
-                                                     bankAccountId: "4735DC2B-A07B-4347-9880-55AB19990629",
+                                                     bankAccountId: bankAccount.id,
                                                      value: self.transactionValue,
                                                      type: self.transactionType,
                                                      category: category)
@@ -64,6 +67,11 @@ final class TransactionDescriptionViewController: NiblessViewController {
                 self?.dismiss(animated: true)
             }
         }.store(in: &cancellable)
+        viewModel.bankAccountsWasGetted.sink { [weak self] _ in
+            DispatchQueue.main.async { [weak self] in
+                self?.contentView.bankAccountsCollectionView.reloadData()
+            }
+        }.store(in: &cancellable)
     }
     
 }
@@ -74,7 +82,7 @@ extension TransactionDescriptionViewController: UICollectionViewDelegate, UIColl
         if collectionView == contentView.transactionCategoryCollectionView {
             return viewModel.categories.count
         }
-        return 3
+        return viewModel.bankAccounts.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -86,6 +94,7 @@ extension TransactionDescriptionViewController: UICollectionViewDelegate, UIColl
         }  else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TransactionDescriptionCollectionViewCell2.id, for: indexPath)
             guard let collectionCell = cell as? TransactionDescriptionCollectionViewCell2 else { return cell }
+            collectionCell.setupCell(bankAccount: viewModel.bankAccounts[indexPath.row])
             return collectionCell
         }
     }
@@ -100,6 +109,8 @@ extension TransactionDescriptionViewController: UICollectionViewDelegate, UIColl
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == contentView.transactionCategoryCollectionView {
             viewModel.selectedCategory = viewModel.categories[indexPath.row]
+        }else if collectionView == contentView.bankAccountsCollectionView{
+            viewModel.selectedBankAccount = viewModel.bankAccounts[indexPath.row]
         }
     }
 }

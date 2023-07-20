@@ -11,12 +11,16 @@ final class TransactionDescriptionCollectionViewCell2: UICollectionViewCell {
     
     static let id = String(describing: TransactionDescriptionCollectionViewCell2.self)
     
+    override var isSelected: Bool {
+        didSet {
+            contentView.backgroundColor = isSelected ? .green : .brown
+        }
+    }
+    
     let spendingElementImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = UIImage(systemName: "case")
-        imageView.tintColor = .white
-        imageView.backgroundColor = .brown
         imageView.layer.cornerRadius = 12
         return imageView
     }()
@@ -43,6 +47,11 @@ final class TransactionDescriptionCollectionViewCell2: UICollectionViewCell {
     private func layoutElemets() {
         layoutSpendingElementImageView()
         layoutNameLabel()
+    }
+    
+    func setupCell(bankAccount: BankAccount){
+        nameLabel.text = bankAccount.name
+        contentView.backgroundColor = .brown
     }
     
     private func layoutSpendingElementImageView(){

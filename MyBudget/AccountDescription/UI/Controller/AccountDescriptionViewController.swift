@@ -13,6 +13,7 @@ final class AccountDescriptionViewController: NiblessViewController {
     private let viewModel: AccountDescriptionViewModel
     private var cancalable = Set<AnyCancellable>()
     
+    
     var contentView: AccountDescriptionViewControllerView {
         view as! AccountDescriptionViewControllerView
     }
@@ -45,6 +46,7 @@ final class AccountDescriptionViewController: NiblessViewController {
             self?.contentView.tableView.reloadData()
         }.store(in: &cancalable)
     }
+    
 }
 
 extension AccountDescriptionViewController: UITableViewDelegate, UITableViewDataSource {
@@ -57,7 +59,6 @@ extension AccountDescriptionViewController: UITableViewDelegate, UITableViewData
         guard let accountDescriptionCell = cell as? AccountDescriptionTableViewCell else
         { return cell }
         accountDescriptionCell.setupCell(accountDescription: viewModel.transactions[indexPath.row])
-       // bankAccountCell.setupCell(bankAccount: viewModel.bankAccounts[indexPath.row])
         return accountDescriptionCell
     }
     
