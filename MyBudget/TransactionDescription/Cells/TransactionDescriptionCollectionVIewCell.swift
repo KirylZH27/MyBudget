@@ -57,7 +57,8 @@ final class TransactionDescriptionCollectionVIewCell: UICollectionViewCell {
     
     private func setupIconImage(category: TransactionCategory){
         switch category {
-                
+            case .sallary:
+                spendingElementImageView.image = UIImage(systemName: "bitcoinsign")
             case .trasport:
                 spendingElementImageView.image = UIImage(systemName: "bus")
             case .food:

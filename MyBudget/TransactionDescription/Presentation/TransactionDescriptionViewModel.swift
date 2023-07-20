@@ -15,7 +15,7 @@ final class TransactionDescriptionViewModel {
     private (set) var transactionWasCreated = PassthroughSubject<Bool,Never>()
     private (set) var bankAccountsWasGetted = PassthroughSubject<Bool,Never>()
     
-    private (set) var categories: [TransactionCategory] = TransactionCategory.allCases
+   // private (set) var categories: [TransactionCategory] = TransactionCategory.allCases
     private (set) var bankAccounts: [BankAccount] = []
     
     var selectedCategory: TransactionCategory?

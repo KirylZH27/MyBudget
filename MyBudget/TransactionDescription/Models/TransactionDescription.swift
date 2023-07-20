@@ -11,6 +11,17 @@ enum TransactionCategory: String, CaseIterable {
     case trasport = "transport"
     case food = "food"
     case car = "car"
+    case sallary = "sallary"
+    
+  static func getExpemdetureCategories() -> [TransactionCategory]{
+        
+        return [.trasport, .food, .car]
+    }
+    
+ static func getIncomeCategories() -> [TransactionCategory]{
+          
+     return [.sallary]
+      }
 }
 
 struct TransactionDescription {
