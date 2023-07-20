@@ -41,11 +41,12 @@ final class TransactionDescriptionViewController: NiblessViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)){
+            guard let category = self.viewModel.selectedCategory else { return }
             let transaction = TransactionDescription(id: UUID().uuidString,
                                                      bankAccountId: "4735DC2B-A07B-4347-9880-55AB19990629",
                                                      value: self.transactionValue,
                                                      type: self.transactionType,
-                                                     category: .car)
+                                                     category: category)
             self.viewModel.createTransaction(transaction: transaction)
         }
     }
@@ -64,6 +65,7 @@ final class TransactionDescriptionViewController: NiblessViewController {
             }
         }.store(in: &cancellable)
     }
+    
 }
 
 extension TransactionDescriptionViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -88,10 +90,16 @@ extension TransactionDescriptionViewController: UICollectionViewDelegate, UIColl
         }
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if collectionView == self.contentView.transactionCategoryCollectionView {
+        if collectionView == contentView.transactionCategoryCollectionView {
             CGSize(width: 170, height: 160)
         }
         return CGSize(width: 170, height: 160)
         
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == contentView.transactionCategoryCollectionView {
+            viewModel.selectedCategory = viewModel.categories[indexPath.row]
+        }
     }
 }
