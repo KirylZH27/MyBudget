@@ -43,4 +43,9 @@ final class TransactionRealmManager: TransactionCreator, TransactionGetter {
      completion(transactionDesctiptions)
     }
     
+    func getAllTransactions(completion: @escaping ([TransactionDescription]) -> Void) {
+        let transactionsRealmArray = Array(realm.objects(TransactionDescriptionRealm.self))
+        let transactionDesctiptions = transactionsRealmArray.map { TransactionDescription(id: $0.id, bankAccountId: $0.bankAccountId, value: $0.value, type: $0.typeEnum, category: $0.categoryEnum)}
+     completion(transactionDesctiptions)
+    }
 }

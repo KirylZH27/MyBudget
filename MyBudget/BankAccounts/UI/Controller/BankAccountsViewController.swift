@@ -37,9 +37,11 @@ final class BankAccountsViewController: NiblessViewController {
         addTargets()
         addDelegates()
         bindViewModel()
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         viewModel.getAllAccounts()
-        
     }
     
     private func addDelegates(){
@@ -53,6 +55,9 @@ final class BankAccountsViewController: NiblessViewController {
         }.store(in: &cancalable)
         viewModel.isBankAccountWasDeleted.sink { [weak self] _ in
             self?.contentView.tableView.reloadData()
+        }.store(in: &cancalable)
+        viewModel.totalBalanceWasGetted.sink { [weak self] totalBalance in
+            self?.contentView.totalBalanceView.balanceLabel.text = "\(totalBalance) Br"
         }.store(in: &cancalable)
     }
     

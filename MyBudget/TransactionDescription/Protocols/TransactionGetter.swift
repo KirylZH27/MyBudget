@@ -9,4 +9,5 @@ import Foundation
 
 protocol TransactionGetter{
     func getBankAccountTransaction(by id: String, completion: @escaping ([TransactionDescription]) -> Void)
+    func getAllTransactions(completion: @escaping ([TransactionDescription]) -> Void)
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class BankAccount  {
+struct BankAccount  {
     
     let id: String
     let name: String

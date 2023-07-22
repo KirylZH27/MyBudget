@@ -15,7 +15,7 @@ enum TransactionType: String {
 final class AddTransactionViewController: NiblessViewController {
     
     private let transactionDescriptionViewControllerFactory: (TransactionType, String) -> TransactionDescriptionViewController
-    private var transactionType: TransactionType = .income
+    private var transactionType: TransactionType = .expenditure
     
     var contentView: AddTransactionViewControllerView {
         view as! AddTransactionViewControllerView
