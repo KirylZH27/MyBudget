@@ -52,6 +52,7 @@ final class TransactionDescriptionCollectionViewCell2: UICollectionViewCell {
     func setupCell(bankAccount: BankAccount){
         nameLabel.text = bankAccount.name
         contentView.backgroundColor = .brown
+        contentView.layer.cornerRadius = 15
     }
     
     private func layoutSpendingElementImageView(){

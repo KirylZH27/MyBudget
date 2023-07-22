@@ -8,10 +8,10 @@
 import Foundation
 
 enum TransactionCategory: String, CaseIterable {
-    case trasport = "transport"
-    case food = "food"
-    case car = "car"
-    case sallary = "sallary"
+    case trasport = "Транспорт"
+    case food = "Еда"
+    case car = "Машина"
+    case sallary = "Зарплата"
     
   static func getExpemdetureCategories() -> [TransactionCategory]{
         

@@ -30,6 +30,7 @@ final class TransactionDescriptionViewController: NiblessViewController {
         bindViewModel()
         
         viewModel.getBankAccounts()
+        addTargets()
     }
     
     private func addDelegates(){
@@ -40,17 +41,13 @@ final class TransactionDescriptionViewController: NiblessViewController {
         contentView.bankAccountsCollectionView.delegate = self
     }
     
+    private func addTargets() {
+        contentView.saveTransactionButton.addTarget(self, action: #selector(saveTransactionButtonWasPressed), for: .touchUpInside)
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(5)){
-            guard let category = self.viewModel.selectedCategory else { return }
-            guard let bankAccount = self.viewModel.selectedBankAccount else { return }
-            let transaction = TransactionDescription(id: UUID().uuidString,
-                                                     bankAccountId: bankAccount.id,
-                                                     value: self.transactionValue,
-                                                     type: self.transactionType,
-                                                     category: category)
-            self.viewModel.createTransaction(transaction: transaction)
         }
     }
     
@@ -74,6 +71,19 @@ final class TransactionDescriptionViewController: NiblessViewController {
         }.store(in: &cancellable)
     }
     
+}
+
+extension TransactionDescriptionViewController{
+    @objc private func saveTransactionButtonWasPressed() {
+        guard let category = self.viewModel.selectedCategory else { return }
+        guard let bankAccount = self.viewModel.selectedBankAccount else { return }
+        let transaction = TransactionDescription(id: UUID().uuidString,
+                                                 bankAccountId: bankAccount.id,
+                                                 value: self.transactionValue,
+                                                 type: self.transactionType,
+                                                 category: category)
+        self.viewModel.createTransaction(transaction: transaction)
+    }
 }
 
 extension TransactionDescriptionViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {

@@ -12,7 +12,7 @@ final class TransactionDescriptionViewControllerView: NiblessView {
     let expenditureLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Выберите тип расхода"
+        label.text = "Выберите тип"
         label.textAlignment = .center
         label.font = UIFont(name: "AmericanTypewriter-Bold", size: 27)
         label.textColor = .black
@@ -33,7 +33,7 @@ final class TransactionDescriptionViewControllerView: NiblessView {
     let incomeLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Выберите тип дохода"
+        label.text = "Выберите счёт"
         label.textAlignment = .center
         label.font = UIFont(name: "AmericanTypewriter-Bold", size: 27)
         label.textColor = .black
@@ -50,6 +50,17 @@ final class TransactionDescriptionViewControllerView: NiblessView {
         return collectionView
     }()
     
+    let saveTransactionButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = AppColors.green.value
+        button.setTitle("Добавить транзакцию", for: .normal)
+        button.layer.cornerRadius = 12
+        button.titleLabel?.font = AppFonts.AmericanBold.value(size: 22)
+        button.setTitleColor(.black, for: .normal)
+        return button
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .white
@@ -61,6 +72,7 @@ final class TransactionDescriptionViewControllerView: NiblessView {
         layoutTransactionCategoryCollectionView()
         layoutIncomeLabel()
         layoutBankAccountsCollectionView()
+        layoutSaveTransactionButton()
     }
     
     private func layoutExpenditureLabel(){
@@ -99,5 +111,14 @@ final class TransactionDescriptionViewControllerView: NiblessView {
         ])
     }
     
+    private func layoutSaveTransactionButton(){
+        addSubview(saveTransactionButton)
+        NSLayoutConstraint.activate([
+            saveTransactionButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -28),
+            saveTransactionButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            saveTransactionButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            saveTransactionButton.heightAnchor.constraint(equalToConstant: 45)
+        ])
+    }
     
 }

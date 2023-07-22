@@ -53,6 +53,7 @@ final class TransactionDescriptionCollectionVIewCell: UICollectionViewCell {
         setupIconImage(category: category)
         nameLabel.text = category.rawValue
         contentView.backgroundColor = .brown
+        contentView.layer.cornerRadius = 15
     }
     
     private func setupIconImage(category: TransactionCategory){
