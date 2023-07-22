@@ -37,6 +37,10 @@ final class BankAccountViewModel {
         }
     }
     
+    func recalculateTotalBalance(){
+        getAllTransactions()
+    }
+    
     private func getAllTransactions(){
         transactionGetter.getAllTransactions { [weak self] transactions in
             self?.calculateTotalBalance(with: transactions)

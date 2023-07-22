@@ -107,6 +107,7 @@ extension BankAccountsViewController: UITableViewDelegate, UITableViewDataSource
             self.viewModel.deleteBankAccount(bankAccount: viewModel.bankAccounts[indexPath.row])
             viewModel.bankAccounts.remove(at: indexPath.row)
             contentView.tableView.deleteRows(at: [indexPath], with: .left)
+            viewModel.recalculateTotalBalance()
         }
     }
     // -----------------------------------------------------------
