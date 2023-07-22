@@ -47,8 +47,8 @@ final class BankAccountViewModel {
         let bankAccountIds = bankAccounts.map { $0.id } // получили все id аккаунтов, чтобы отображать все транзакции для этих аакаунтов
         let transactionFilter = transactions.filter {bankAccountIds.contains($0.bankAccountId)}
         
-        var incomeTransactions =  transactionFilter.filter{ $0.type == .income }
-        var expenditureTransactions = transactionFilter.filter { $0.type == .expenditure }
+        let incomeTransactions =  transactionFilter.filter{ $0.type == .income }
+        let expenditureTransactions = transactionFilter.filter { $0.type == .expenditure }
         
         let incomeValues = incomeTransactions.compactMap{ Double($0.value) }
         let expenditureValues = expenditureTransactions.compactMap{ Double($0.value) }

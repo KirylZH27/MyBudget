@@ -33,16 +33,7 @@ final class AddBankAccountViewController: NiblessViewController {
         bindViewModel()
         addDelegates()
         addTargets()
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)){
-         //   let bankAccount = BankAccount(name: "Testname55", type: .cash, value: "500")
-          //  self.viewModel.createBankAccount(bankAccount: bankAccount)
-        }
-    }
-    
+    }    
     
     private func bindViewModel() {
         viewModel.isBankAccountCreated.sink { [weak self] _ in

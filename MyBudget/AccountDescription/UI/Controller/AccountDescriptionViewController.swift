@@ -31,9 +31,13 @@ final class AccountDescriptionViewController: NiblessViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         bindViewModel()
-        viewModel.getTransaction()
         addDelegates()
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.getTransaction()
     }
     
     private func addDelegates(){
@@ -49,8 +53,8 @@ final class AccountDescriptionViewController: NiblessViewController {
     }
     
     private func calculateTotalBalanse(){
-        var incomeTransactions = viewModel.transactions.filter{ $0.type == .income }
-        var expenditureTransactions = viewModel.transactions.filter { $0.type == .expenditure }
+        let incomeTransactions = viewModel.transactions.filter{ $0.type == .income }
+        let expenditureTransactions = viewModel.transactions.filter { $0.type == .expenditure }
         
         let incomeValues = incomeTransactions.compactMap{ Double($0.value) }
         let expenditureValues = expenditureTransactions.compactMap{ Double($0.value) }
@@ -58,8 +62,9 @@ final class AccountDescriptionViewController: NiblessViewController {
         let incomeSum = incomeValues.reduce(0,+) //  reduce - складываем все элемеенты массива
         let expenditureSum = expenditureValues.reduce(0,+)
         
-        let totalBalance = incomeSum - expenditureSum
-        
+        let totalTransactionsBalance = incomeSum - expenditureSum
+        let bankAccountValue = Double(viewModel.bankAccount.value) ?? 0.0
+        let totalBalance = totalTransactionsBalance + bankAccountValue
         contentView.balanceLabel.text = "\(totalBalance) Br"
     }
 }

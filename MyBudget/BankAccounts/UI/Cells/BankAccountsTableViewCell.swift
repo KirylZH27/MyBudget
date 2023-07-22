@@ -38,6 +38,9 @@ class BankAccountsTableViewCell: UITableViewCell {
         return label
     }()
     
+    
+    private let transactionGetter: TransactionGetter = TransactionRealmManager()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         layoutElemets()
@@ -49,11 +52,31 @@ class BankAccountsTableViewCell: UITableViewCell {
     
     func setupCell(bankAccount: BankAccount) {
         nameLabel.text = bankAccount.name
-        amountOfMoneyLabel.text = bankAccount.value
+        calculateBankAccountBalance(with: bankAccount)
+        
         if bankAccount.type == .cash {
             personImageView.image = UIImage(systemName: "bitcoinsign.circle")
         } else {
             personImageView.image = UIImage(systemName: "creditcard")
+        }
+    }
+    
+    private func calculateBankAccountBalance(with bankAccount: BankAccount){
+        transactionGetter.getBankAccountTransaction(by: bankAccount.id) { [weak self] transactions in
+            let incomeTransactions =  transactions.filter{ $0.type == .income }
+            let expenditureTransactions = transactions.filter { $0.type == .expenditure }
+            
+            let incomeValues = incomeTransactions.compactMap{ Double($0.value) }
+            let expenditureValues = expenditureTransactions.compactMap{ Double($0.value) }
+            
+            let incomeSum = incomeValues.reduce(0,+) //  reduce - складываем все элемеенты массива
+            let expenditureSum = expenditureValues.reduce(0,+)
+            
+            let totalTransactionBalance = incomeSum - expenditureSum
+            let bankAcocuntValue = Double(bankAccount.value) ?? 0.0
+            
+            let totalBalance = totalTransactionBalance + bankAcocuntValue
+            self?.amountOfMoneyLabel.text = String(totalBalance) 
         }
     }
     
