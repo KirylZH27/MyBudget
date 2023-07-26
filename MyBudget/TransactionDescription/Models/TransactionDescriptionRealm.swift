@@ -15,6 +15,7 @@ class TransactionDescriptionRealm: Object {
     @objc dynamic var value: String = ""
     @objc dynamic var type: String = TransactionType.income.rawValue
     @objc dynamic var category: String = TransactionCategory.car.rawValue
+    @objc dynamic var date: Date = Date()
     
     var typeEnum: TransactionType{
         get{
@@ -27,13 +28,14 @@ class TransactionDescriptionRealm: Object {
         }
     }
     
-    convenience init(id: String, bankAccountId: String, value: String, type: TransactionType, category: TransactionCategory) {
+    convenience init(id: String, bankAccountId: String, value: String, type: TransactionType, category: TransactionCategory, date: Date) {
         self.init()
         self.id = id
         self.bankAccountId = bankAccountId
         self.type = type.rawValue
         self.value = value
         self.category = category.rawValue
+        self.date = date
     }
     
     

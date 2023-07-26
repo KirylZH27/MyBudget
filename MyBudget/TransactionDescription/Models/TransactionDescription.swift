@@ -30,4 +30,5 @@ struct TransactionDescription {
     let value: String
     let type: TransactionType
     let category: TransactionCategory
+    let date: Date
 }

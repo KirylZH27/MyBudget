@@ -37,6 +37,16 @@ class AccountDescriptionTableViewCell: UITableViewCell {
         return label
     }()
     
+   private let dateLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont(name: "AmericanTypewriter", size: 16)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "121"
+        label.textColor = .black
+        label.textAlignment = .right
+        return label
+    }()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         layoutElemets()
@@ -51,6 +61,7 @@ class AccountDescriptionTableViewCell: UITableViewCell {
         amountOfMoneyLabel.text = accountDescription.value
         setupIconImage(category: accountDescription.category)
         setupTransactionTypeColor(type: accountDescription.type)
+        setupDateLabel(date: accountDescription.date)
     }
     
     private func setupIconImage(category: TransactionCategory){
@@ -75,10 +86,18 @@ class AccountDescriptionTableViewCell: UITableViewCell {
         }
     }
     
+    private func setupDateLabel(date: Date){
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd.MM.yyyy HH:mm"
+        let prettyDateString = dateFormatter.string(from: date)
+        dateLabel.text = prettyDateString
+    }
+    
     private func layoutElemets() {
         layoutSpendingElementImageView()
         layoutNameLabel()
         layoutAmountOfMoneyLabel()
+        layoutDateLabel()
     }
     
     private func layoutSpendingElementImageView(){
@@ -95,7 +114,6 @@ class AccountDescriptionTableViewCell: UITableViewCell {
         NSLayoutConstraint.activate([
             nameLabel.leadingAnchor.constraint(equalTo: spendingElementImageView.trailingAnchor, constant: 16),
             nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
-            nameLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
             nameLabel.widthAnchor.constraint(equalToConstant: 140)
         ])
     }
@@ -105,8 +123,17 @@ class AccountDescriptionTableViewCell: UITableViewCell {
         NSLayoutConstraint.activate([
             amountOfMoneyLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
             amountOfMoneyLabel.leadingAnchor.constraint(equalTo: nameLabel.trailingAnchor, constant: 20),
-            amountOfMoneyLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
-            amountOfMoneyLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10)
+            amountOfMoneyLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10)
+        ])
+    }
+    
+    private func layoutDateLabel(){
+        contentView.addSubview(dateLabel)
+        NSLayoutConstraint.activate([
+            dateLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+            dateLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            dateLabel.topAnchor.constraint(equalTo: amountOfMoneyLabel.bottomAnchor, constant: 10),
+            dateLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10)
         ])
     }
 }

@@ -81,7 +81,8 @@ extension TransactionDescriptionViewController{
                                                  bankAccountId: bankAccount.id,
                                                  value: self.transactionValue,
                                                  type: self.transactionType,
-                                                 category: category)
+                                                 category: category,
+                                                 date: Date())
         self.viewModel.createTransaction(transaction: transaction)
     }
 }
