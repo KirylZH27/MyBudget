@@ -80,7 +80,9 @@ final class MyBudgetTabBarDependecyContainer {
     }
     
     private func createAnaliticsViewController() -> AnaliticsViewController {
-        let viewController = AnaliticsViewController()
+        let transactionGetter = TransactionRealmManager()
+        let viewModel = AnaliticsViewModel(transactionGetter: transactionGetter)
+        let viewController = AnaliticsViewController(viewModel: viewModel)
         viewController.tabBarItem.title = "Аналитика"
         viewController.tabBarItem.image = UIImage(systemName: "chart.pie")
         return viewController

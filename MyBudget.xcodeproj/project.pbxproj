@@ -59,6 +59,7 @@
 		0AB7D0F02A640AA3004A9EF9 /* AccountDescriptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB7D0EF2A640AA3004A9EF9 /* AccountDescriptionViewModel.swift */; };
 		0ABBB3392A56C6B100AD1FA6 /* UserSignOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABBB3382A56C6B100AD1FA6 /* UserSignOut.swift */; };
 		0ABBB33C2A5704A700AD1FA6 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABBB33B2A5704A700AD1FA6 /* ProfileViewModel.swift */; };
+		0AC029342A71889E000D7698 /* AnaliticsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC029332A71889E000D7698 /* AnaliticsViewModel.swift */; };
 		0AC30BA32A59B19B00CA9168 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC30BA22A59B19B00CA9168 /* ImagePicker.swift */; };
 		0AC30BA52A59B1A700CA9168 /* BlockTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC30BA42A59B1A700CA9168 /* BlockTap.swift */; };
 		0AC30BA72A59B88B00CA9168 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC30BA62A59B88B00CA9168 /* UIImage+Extension.swift */; };
@@ -154,6 +155,7 @@
 		0AB7D0EF2A640AA3004A9EF9 /* AccountDescriptionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDescriptionViewModel.swift; sourceTree = "<group>"; };
 		0ABBB3382A56C6B100AD1FA6 /* UserSignOut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSignOut.swift; sourceTree = "<group>"; };
 		0ABBB33B2A5704A700AD1FA6 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		0AC029332A71889E000D7698 /* AnaliticsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnaliticsViewModel.swift; sourceTree = "<group>"; };
 		0AC30BA22A59B19B00CA9168 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		0AC30BA42A59B1A700CA9168 /* BlockTap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockTap.swift; sourceTree = "<group>"; };
 		0AC30BA62A59B88B00CA9168 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
@@ -274,6 +276,7 @@
 		0A16DE002A49D67D00604180 /* Analitics */ = {
 			isa = PBXGroup;
 			children = (
+				0AC029322A718873000D7698 /* Presentation */,
 				0A16DE012A49D69F00604180 /* UI */,
 			);
 			path = Analitics;
@@ -669,6 +672,14 @@
 			isa = PBXGroup;
 			children = (
 				0ABBB33B2A5704A700AD1FA6 /* ProfileViewModel.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		0AC029322A718873000D7698 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				0AC029332A71889E000D7698 /* AnaliticsViewModel.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -1211,6 +1222,7 @@
 				0AB7D0E62A63FE43004A9EF9 /* TransactionDescriptionRealm.swift in Sources */,
 				0AB7D0BB2A62B425004A9EF9 /* BankAccountRealmManager.swift in Sources */,
 				0AC30BA32A59B19B00CA9168 /* ImagePicker.swift in Sources */,
+				0AC029342A71889E000D7698 /* AnaliticsViewModel.swift in Sources */,
 				0AE423D22A502A9C00311943 /* AuthorizationViewModel.swift in Sources */,
 				0AFF815B2A4B2D68006ACF1F /* AnaliticsViewController.swift in Sources */,
 			);

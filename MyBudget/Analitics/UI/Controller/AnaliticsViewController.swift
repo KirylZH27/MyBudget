@@ -8,6 +8,8 @@
 import UIKit
 final class AnaliticsViewController: NiblessViewController {
     
+    let viewModel: AnaliticsViewModel
+    
     var contentView:
     AnaliticsViewControllerView {
         view as! AnaliticsViewControllerView
@@ -16,5 +18,10 @@ final class AnaliticsViewController: NiblessViewController {
     override func loadView() {
         super.loadView()
         view = AnaliticsViewControllerView()
+    }
+    
+    init(viewModel: AnaliticsViewModel) {
+        self.viewModel = viewModel
+        super.init()
     }
 }

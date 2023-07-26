@@ -14,5 +14,5 @@ target 'MyBudget' do
   pod 'Firebase/Storage'
   pod 'GoogleSignIn'
   pod 'SDWebImage'
-
+  pod 'DGCharts'
 end
