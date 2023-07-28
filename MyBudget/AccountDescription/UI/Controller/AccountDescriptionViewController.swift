@@ -48,28 +48,16 @@ final class AccountDescriptionViewController: NiblessViewController {
     private func bindViewModel(){
         viewModel.allTransactionsWasGetted.sink{ [weak self] _ in
             self?.contentView.tableView.reloadData()
-            self?.calculateTotalBalanse()
+            self?.viewModel.calculateTotalBalanse()
+        }.store(in: &cancalable)
+        viewModel.totalBalanseWasCalculated.sink { [weak self] totalBalance in
+            self?.contentView.balanceLabel.text = "\(totalBalance) Br"
         }.store(in: &cancalable)
         viewModel.isTransactionWasDeleted.sink { [weak self] _ in
-            self?.contentView.tableView.reloadData()
+            self?.viewModel.calculateTotalBalanse()
         }.store(in: &cancalable)
     }
     
-    private func calculateTotalBalanse(){
-        let incomeTransactions = viewModel.transactions.filter{ $0.type == .income }
-        let expenditureTransactions = viewModel.transactions.filter { $0.type == .expenditure }
-        
-        let incomeValues = incomeTransactions.compactMap{ Double($0.value) }
-        let expenditureValues = expenditureTransactions.compactMap{ Double($0.value) }
-        
-        let incomeSum = incomeValues.reduce(0,+) //  reduce - складываем все элемеенты массива
-        let expenditureSum = expenditureValues.reduce(0,+)
-        
-        let totalTransactionsBalance = incomeSum - expenditureSum
-        let bankAccountValue = Double(viewModel.bankAccount.value) ?? 0.0
-        let totalBalance = totalTransactionsBalance + bankAccountValue
-        contentView.balanceLabel.text = "\(totalBalance) Br"
-    }
 }
 
 extension AccountDescriptionViewController: UITableViewDelegate, UITableViewDataSource {

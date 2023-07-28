@@ -17,6 +17,8 @@ final class AccountDescriptionViewModel {
     private let transactionDeleter: TransactionDeleter
     private (set) var isTransactionWasDeleted = PassthroughSubject<Bool,Never>()
     
+    private (set) var totalBalanseWasCalculated = PassthroughSubject<Double,Never>()
+    
     var transactions: [TransactionDescription] = []
     private (set) var allTransactionsWasGetted = PassthroughSubject<Bool,Never>()
     
@@ -35,8 +37,25 @@ final class AccountDescriptionViewModel {
         }
     }
     
+    func calculateTotalBalanse(){
+        let incomeTransactions = transactions.filter{ $0.type == .income }
+        let expenditureTransactions = transactions.filter { $0.type == .expenditure }
+        
+        let incomeValues = incomeTransactions.compactMap{ Double($0.value) }
+        let expenditureValues = expenditureTransactions.compactMap{ Double($0.value) }
+        
+        let incomeSum = incomeValues.reduce(0,+) //  reduce - складываем все элемеенты массива
+        let expenditureSum = expenditureValues.reduce(0,+)
+        
+        let totalTransactionsBalance = incomeSum - expenditureSum
+        let bankAccountValue = Double(bankAccount.value) ?? 0.0
+        let totalBalance = totalTransactionsBalance + bankAccountValue
+        
+        self.totalBalanseWasCalculated.send(totalBalance)
+    }
+    
     func deleteTransaction(transaction: TransactionDescription){
-        transactionDeleter.deleteTrnasaction(transaction: transaction) { [weak self] error in
+        transactionDeleter.deleteTransaction(transaction: transaction) { [weak self] error in
             self?.isTransactionWasDeleted.send(true)
         }
     }

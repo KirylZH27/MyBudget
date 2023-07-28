@@ -50,13 +50,13 @@ final class TransactionRealmManager: TransactionCreator, TransactionGetter, Tran
      completion(transactionDesctiptions)
     }
     
-    func deleteTrnasaction(transaction: TransactionDescription, completion: @escaping (Error?) -> Void) {
+    func deleteTransaction(transaction: TransactionDescription, completion: @escaping (Error?) -> Void) {
         let transactionsRealmArray = Array(realm.objects(TransactionDescriptionRealm.self))
         guard let transactionsRealmArray = transactionsRealmArray.filter({ $0.id == transaction.id}).first else { return }
         realm.writeAsync { [weak self] in
             self?.realm.delete(transactionsRealmArray)
         }onComplete: { error in
-            self.deleteTrnasaction(transaction: transaction, completion: completion)
+            completion(error)
         }
     }
 }
