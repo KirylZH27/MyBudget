@@ -18,4 +18,11 @@ final class TransactionWasAddedAnimationViewController: NiblessViewController {
         view = TransactionWasAddedAnimationViewControllerView()
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        contentView.startAnimation {
+            self.parent?.remove(childViewController: self)
+        }
+    }
+    
 }
