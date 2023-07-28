@@ -71,6 +71,7 @@
 		0AE423DA2A50308C00311943 /* MyBudgetGoogleAuthorizationClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE423D92A50308C00311943 /* MyBudgetGoogleAuthorizationClient.swift */; };
 		0AE423DE2A5033C600311943 /* FirebaseAuthorizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE423DD2A5033C600311943 /* FirebaseAuthorizationManager.swift */; };
 		0AF382C72A66D4F100992B35 /* BankAccountDeleter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF382C62A66D4F100992B35 /* BankAccountDeleter.swift */; };
+		0AF6A3D42A7406CC0083291C /* TransactionDeleter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF6A3D32A7406CB0083291C /* TransactionDeleter.swift */; };
 		0AF74EDC2A483BEA0038D221 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF74EDB2A483BEA0038D221 /* MainViewController.swift */; };
 		0AF74EDE2A483C670038D221 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF74EDD2A483C670038D221 /* MainViewModel.swift */; };
 		0AF74EE12A483F7D0038D221 /* MyBudgetDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF74EE02A483F7D0038D221 /* MyBudgetDependencyContainer.swift */; };
@@ -167,6 +168,7 @@
 		0AE423D92A50308C00311943 /* MyBudgetGoogleAuthorizationClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBudgetGoogleAuthorizationClient.swift; sourceTree = "<group>"; };
 		0AE423DD2A5033C600311943 /* FirebaseAuthorizationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthorizationManager.swift; sourceTree = "<group>"; };
 		0AF382C62A66D4F100992B35 /* BankAccountDeleter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccountDeleter.swift; sourceTree = "<group>"; };
+		0AF6A3D32A7406CB0083291C /* TransactionDeleter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDeleter.swift; sourceTree = "<group>"; };
 		0AF74EDB2A483BEA0038D221 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		0AF74EDD2A483C670038D221 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		0AF74EE02A483F7D0038D221 /* MyBudgetDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBudgetDependencyContainer.swift; sourceTree = "<group>"; };
@@ -639,6 +641,7 @@
 			children = (
 				0AB7D0E72A63FF85004A9EF9 /* TransactionCreator.swift */,
 				0AB7D0E92A63FFF8004A9EF9 /* TransactionGetter.swift */,
+				0AF6A3D32A7406CB0083291C /* TransactionDeleter.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -1217,6 +1220,7 @@
 				0AF74EDC2A483BEA0038D221 /* MainViewController.swift in Sources */,
 				0AA725CF2A656B7300B408C4 /* TransactionDescriptionCollectionVIewCell.swift in Sources */,
 				0AB7D0A72A628B49004A9EF9 /* DisplayManager.swift in Sources */,
+				0AF6A3D42A7406CC0083291C /* TransactionDeleter.swift in Sources */,
 				0AE423D72A502EEE00311943 /* GoogleAuthorizationClient.swift in Sources */,
 				0AFE73772A55EF0A00E21458 /* UserCreator.swift in Sources */,
 				0AB7D0E62A63FE43004A9EF9 /* TransactionDescriptionRealm.swift in Sources */,

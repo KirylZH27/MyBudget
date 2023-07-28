@@ -50,6 +50,9 @@ final class AccountDescriptionViewController: NiblessViewController {
             self?.contentView.tableView.reloadData()
             self?.calculateTotalBalanse()
         }.store(in: &cancalable)
+        viewModel.isTransactionWasDeleted.sink { [weak self] _ in
+            self?.contentView.tableView.reloadData()
+        }.store(in: &cancalable)
     }
     
     private func calculateTotalBalanse(){
@@ -84,5 +87,12 @@ extension AccountDescriptionViewController: UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 90
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            self.viewModel.deleteTransaction(transaction: viewModel.transactions.remove(at: indexPath.row))
+            contentView.tableView.deleteRows(at: [indexPath], with: .left)
+        }
     }
 }

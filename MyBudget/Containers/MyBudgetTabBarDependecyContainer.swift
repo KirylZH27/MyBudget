@@ -66,7 +66,8 @@ final class MyBudgetTabBarDependecyContainer {
     
     private func createAccountDescriptionViewController(bankAccount: BankAccount) -> AccountDescriptionViewController {
        let transactionGetter = TransactionRealmManager()
-        let viewModel = AccountDescriptionViewModel(transactionGetter: transactionGetter, bankAccount: bankAccount)
+       let transactionDeleter = TransactionRealmManager()
+        let viewModel = AccountDescriptionViewModel(transactionGetter: transactionGetter, bankAccount: bankAccount, transactionDeleter: transactionDeleter)
         let viewController = AccountDescriptionViewController(viewModel: viewModel)
         return viewController
     }

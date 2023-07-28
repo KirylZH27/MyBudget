@@ -8,7 +8,7 @@
 import Foundation
 import RealmSwift
 
-final class TransactionRealmManager: TransactionCreator, TransactionGetter {
+final class TransactionRealmManager: TransactionCreator, TransactionGetter, TransactionDeleter {
    
     private var realm: Realm = {
             var config = Realm.Configuration(
@@ -48,5 +48,15 @@ final class TransactionRealmManager: TransactionCreator, TransactionGetter {
         let transactionsRealmArray = Array(realm.objects(TransactionDescriptionRealm.self))
         let transactionDesctiptions = transactionsRealmArray.map { TransactionDescription(id: $0.id, bankAccountId: $0.bankAccountId, value: $0.value, type: $0.typeEnum, category: $0.categoryEnum, date: $0.date)}
      completion(transactionDesctiptions)
+    }
+    
+    func deleteTrnasaction(transaction: TransactionDescription, completion: @escaping (Error?) -> Void) {
+        let transactionsRealmArray = Array(realm.objects(TransactionDescriptionRealm.self))
+        guard let transactionsRealmArray = transactionsRealmArray.filter({ $0.id == transaction.id}).first else { return }
+        realm.writeAsync { [weak self] in
+            self?.realm.delete(transactionsRealmArray)
+        }onComplete: { error in
+            self.deleteTrnasaction(transaction: transaction, completion: completion)
+        }
     }
 }
