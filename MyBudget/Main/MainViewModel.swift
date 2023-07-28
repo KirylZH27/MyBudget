@@ -7,13 +7,17 @@
 
 import Foundation
 import Combine
-final class MainViewModel: HideAuthorizationNavigationResponder {
+final class MainViewModel: HideAuthorizationNavigationResponder, TransactionWasAddedNavigationResponder {
     
     private (set) var isPresentAuthorization = PassthroughSubject<Bool,Never>()
+    private (set) var showTransactionWasAddedAnimation = PassthroughSubject<Bool, Never>()
     
     func hideAuthorization() {
         isPresentAuthorization.send(false)
     }
     
+    func showTransactionWasAddedNavigationResponder() {
+        showTransactionWasAddedAnimation.send(true)
+    }
     
 }

@@ -37,16 +37,20 @@ final class MyBudgetDependencyContainer {
         let viewModel = MainViewModel()
         
         let tabBarControllerFactory = {
-            self.createTabBarController()
+            self.createTabBarController(mainViewModel: viewModel)
         }
         
         let authorizationViewControllerFactory = {
             self.createAuthorizationViewController(hideAuthorizationNavigationResponder: viewModel)
         }
         
-        let viewController = MainViewController(viewModel: viewModel,
-                                                tabBarControllerFactory: tabBarControllerFactory)
+        let transactionWasAddedAnimationViewControllerFactory = {
+            TransactionWasAddedAnimationViewController()
+        }
         
+        let viewController = MainViewController(viewModel: viewModel,
+                                                tabBarControllerFactory: tabBarControllerFactory,
+                                                transactionWasAddedAnimationViewControllerFactory: transactionWasAddedAnimationViewControllerFactory)
         return viewController
     }
     
@@ -93,8 +97,8 @@ final class MyBudgetDependencyContainer {
         return googleAuthorizationClient
     }
     
-    private func createTabBarController() -> UITabBarController {
-        MyBudgetTabBarDependecyContainer().makeTabBar()
+    private func createTabBarController(mainViewModel: MainViewModel) -> UITabBarController {
+        MyBudgetTabBarDependecyContainer(sharedMainViewModel: mainViewModel).makeTabBar()
     }
     
     private func addLogoutObserver() {

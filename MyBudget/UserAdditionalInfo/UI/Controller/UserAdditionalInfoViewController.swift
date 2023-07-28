@@ -93,11 +93,15 @@ final class UserAdditionalInfoViewController: NiblessViewController {
         let viewModel = MainViewModel()
         
         let tabBarControllerFactory = {
-            MyBudgetTabBarDependecyContainer().makeTabBar()
+            MyBudgetTabBarDependecyContainer(sharedMainViewModel: viewModel).makeTabBar()
+        }
+        
+        let transactionWasAddedAnimationViewControllerFactory = {
+            TransactionWasAddedAnimationViewController()
         }
         
         let viewController = MainViewController(viewModel: viewModel,
-                                                tabBarControllerFactory: tabBarControllerFactory)
+                                                tabBarControllerFactory: tabBarControllerFactory, transactionWasAddedAnimationViewControllerFactory: transactionWasAddedAnimationViewControllerFactory)
         
         return viewController
     }

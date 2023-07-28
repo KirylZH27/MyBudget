@@ -72,6 +72,9 @@
 		0AE423DE2A5033C600311943 /* FirebaseAuthorizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE423DD2A5033C600311943 /* FirebaseAuthorizationManager.swift */; };
 		0AF382C72A66D4F100992B35 /* BankAccountDeleter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF382C62A66D4F100992B35 /* BankAccountDeleter.swift */; };
 		0AF6A3D42A7406CC0083291C /* TransactionDeleter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF6A3D32A7406CB0083291C /* TransactionDeleter.swift */; };
+		0AF6A3DC2A7427660083291C /* TransactionWasAddedAnimationViewControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF6A3DB2A7427660083291C /* TransactionWasAddedAnimationViewControllerView.swift */; };
+		0AF6A3DE2A74277A0083291C /* TransactionWasAddedAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF6A3DD2A74277A0083291C /* TransactionWasAddedAnimationViewController.swift */; };
+		0AF6A3E12A7428EE0083291C /* TransactionWasAddedNavigationResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF6A3E02A7428EE0083291C /* TransactionWasAddedNavigationResponder.swift */; };
 		0AF74EDC2A483BEA0038D221 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF74EDB2A483BEA0038D221 /* MainViewController.swift */; };
 		0AF74EDE2A483C670038D221 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF74EDD2A483C670038D221 /* MainViewModel.swift */; };
 		0AF74EE12A483F7D0038D221 /* MyBudgetDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF74EE02A483F7D0038D221 /* MyBudgetDependencyContainer.swift */; };
@@ -169,6 +172,9 @@
 		0AE423DD2A5033C600311943 /* FirebaseAuthorizationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthorizationManager.swift; sourceTree = "<group>"; };
 		0AF382C62A66D4F100992B35 /* BankAccountDeleter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccountDeleter.swift; sourceTree = "<group>"; };
 		0AF6A3D32A7406CB0083291C /* TransactionDeleter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDeleter.swift; sourceTree = "<group>"; };
+		0AF6A3DB2A7427660083291C /* TransactionWasAddedAnimationViewControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionWasAddedAnimationViewControllerView.swift; sourceTree = "<group>"; };
+		0AF6A3DD2A74277A0083291C /* TransactionWasAddedAnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionWasAddedAnimationViewController.swift; sourceTree = "<group>"; };
+		0AF6A3E02A7428EE0083291C /* TransactionWasAddedNavigationResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionWasAddedNavigationResponder.swift; sourceTree = "<group>"; };
 		0AF74EDB2A483BEA0038D221 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		0AF74EDD2A483C670038D221 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		0AF74EE02A483F7D0038D221 /* MyBudgetDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBudgetDependencyContainer.swift; sourceTree = "<group>"; };
@@ -233,6 +239,7 @@
 		0A1432592A3F50C0007D9509 /* MyBudget */ = {
 			isa = PBXGroup;
 			children = (
+				0AF6A3D52A7426FA0083291C /* TransactionWasAddedAnimation */,
 				0AB7D0D52A63FA02004A9EF9 /* TransactionDescription */,
 				0AB7D0CC2A63F311004A9EF9 /* AccountDescription */,
 				0AB7D0C12A62BD4E004A9EF9 /* AddBankAcounts */,
@@ -779,6 +786,48 @@
 			path = Authorization;
 			sourceTree = "<group>";
 		};
+		0AF6A3D52A7426FA0083291C /* TransactionWasAddedAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				0AF6A3DF2A7428D70083291C /* Responders */,
+				0AF6A3D62A7427200083291C /* UI */,
+			);
+			path = TransactionWasAddedAnimation;
+			sourceTree = "<group>";
+		};
+		0AF6A3D62A7427200083291C /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				0AF6A3D82A7427300083291C /* Views */,
+				0AF6A3D72A74272B0083291C /* Controller */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		0AF6A3D72A74272B0083291C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0AF6A3DD2A74277A0083291C /* TransactionWasAddedAnimationViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0AF6A3D82A7427300083291C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0AF6A3DB2A7427660083291C /* TransactionWasAddedAnimationViewControllerView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0AF6A3DF2A7428D70083291C /* Responders */ = {
+			isa = PBXGroup;
+			children = (
+				0AF6A3E02A7428EE0083291C /* TransactionWasAddedNavigationResponder.swift */,
+			);
+			path = Responders;
+			sourceTree = "<group>";
+		};
 		0AF74EDA2A483BD60038D221 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -1182,6 +1231,8 @@
 				0AFE73792A55EFB200E21458 /* UserStore.swift in Sources */,
 				0A14325F2A3F50C0007D9509 /* ViewController.swift in Sources */,
 				0A14325B2A3F50C0007D9509 /* AppDelegate.swift in Sources */,
+				0AF6A3DE2A74277A0083291C /* TransactionWasAddedAnimationViewController.swift in Sources */,
+				0AF6A3DC2A7427660083291C /* TransactionWasAddedAnimationViewControllerView.swift in Sources */,
 				0AB7D0A52A628AFF004A9EF9 /* CalculatorWork.swift in Sources */,
 				0AE423DA2A50308C00311943 /* MyBudgetGoogleAuthorizationClient.swift in Sources */,
 				0A475E0B2A52D32B00B397AC /* EditProfileViewConttrollerView.swift in Sources */,
@@ -1212,6 +1263,7 @@
 				0AB7D0A32A62862E004A9EF9 /* KeyBoardDelegate.swift in Sources */,
 				0AFF81632A4B337D006ACF1F /* SettingsViewControllerView.swift in Sources */,
 				0AF74EE72A4844C40038D221 /* UiViewController + Extensions.swift in Sources */,
+				0AF6A3E12A7428EE0083291C /* TransactionWasAddedNavigationResponder.swift in Sources */,
 				0AB7D0B82A62B2FE004A9EF9 /* BankAccount.swift in Sources */,
 				0A210E6E2A4F772F00D5B750 /* RealmManager.swift in Sources */,
 				0AC30BA52A59B1A700CA9168 /* BlockTap.swift in Sources */,

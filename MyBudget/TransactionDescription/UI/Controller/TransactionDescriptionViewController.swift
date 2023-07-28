@@ -14,6 +14,7 @@ final class TransactionDescriptionViewController: NiblessViewController {
     private let transactionValue: String
     private let transactionType: TransactionType
     private var cancellable = Set<AnyCancellable>()
+    private let transactionWasAddedAnimationNavigationResponder: TransactionWasAddedNavigationResponder
     
     var contentView: TransactionDescriptionViewControllerView {
         view as! TransactionDescriptionViewControllerView
@@ -51,17 +52,21 @@ final class TransactionDescriptionViewController: NiblessViewController {
         }
     }
     
-    init(viewModel: TransactionDescriptionViewModel,transactionValue: String, transactionType: TransactionType) {
+    init(viewModel: TransactionDescriptionViewModel,transactionValue: String, transactionType: TransactionType,
+         transactionWasAddedAnimationNavigationResponder: TransactionWasAddedNavigationResponder) {
         self.viewModel = viewModel
         self.transactionType = transactionType
         self.transactionValue = transactionValue
+        self.transactionWasAddedAnimationNavigationResponder = transactionWasAddedAnimationNavigationResponder
         super.init()
     }
     
     private func bindViewModel(){
         viewModel.transactionWasCreated.sink { [weak self] _ in
             DispatchQueue.main.async { [weak self] in
-                self?.dismiss(animated: true)
+                self?.dismiss(animated: true, completion: {
+                    self?.transactionWasAddedAnimationNavigationResponder.showTransactionWasAddedNavigationResponder()
+                })
             }
         }.store(in: &cancellable)
         viewModel.bankAccountsWasGetted.sink { [weak self] _ in
