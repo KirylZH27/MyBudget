@@ -121,7 +121,6 @@ extension TransactionDescriptionViewController: UICollectionViewDelegate, UIColl
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == contentView.transactionCategoryCollectionView {
-            CGSize(width: 170, height: 160)
         }
         return CGSize(width: 170, height: 160)
         

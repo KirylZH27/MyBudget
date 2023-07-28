@@ -7,7 +7,7 @@
 
 import Foundation
 import RealmSwift
-// подписал под протокол BankAccountDeleter - DEL
+
 final class BankAccountRealmManager: BankAccountCreator, BankAccountGetter, BankAccountDeleter {
     
     private var realm: Realm = {

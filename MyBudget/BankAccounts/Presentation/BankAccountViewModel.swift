@@ -17,11 +17,8 @@ final class BankAccountViewModel {
     private let transactionGetter: TransactionGetter
     private (set) var totalBalanceWasGetted = PassthroughSubject<Double,Never>()
     
-    // ----------------------------------------------------------- - DEL
     private let bankAccountDeleter: BankAccountDeleter
     private (set) var isBankAccountWasDeleted = PassthroughSubject<Bool,Never>()
-    // добавил еще в инициализатор bankAccountDeleter
-    // -----------------------------------------------------------
     
     init(bankAccountGetter: BankAccountGetter, bankAccountDeleter: BankAccountDeleter, transactionGetter: TransactionGetter) {
         self.bankAccountGetter = bankAccountGetter
@@ -70,11 +67,9 @@ final class BankAccountViewModel {
         totalBalanceWasGetted.send(totalBalance)
     }
     
-    // ----------------------------------------------------------- - DEL
     func deleteBankAccount(bankAccount: BankAccount){
         bankAccountDeleter.deleteBankAccount(bankAccount: bankAccount) { [weak self]  error in
             self?.isBankAccountWasDeleted.send(true)
         }
     }
-    // -----------------------------------------------------------
 }

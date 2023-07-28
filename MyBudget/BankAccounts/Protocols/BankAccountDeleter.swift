@@ -6,9 +6,8 @@
 //
 
 import Foundation
-// - DEL
-// -----------------------------------------------------------
+
 protocol BankAccountDeleter {
     func deleteBankAccount(bankAccount: BankAccount, completion: @escaping (Error?) -> Void)
 }
-// -----------------------------------------------------------
+

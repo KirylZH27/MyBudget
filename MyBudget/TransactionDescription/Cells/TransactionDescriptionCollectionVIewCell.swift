@@ -75,7 +75,6 @@ final class TransactionDescriptionCollectionVIewCell: UICollectionViewCell {
             spendingElementImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
             spendingElementImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,constant: 10),
             spendingElementImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,constant: -10),
-           //spendingElementImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
             spendingElementImageView.heightAnchor.constraint(equalToConstant: 120)
         ])
     }

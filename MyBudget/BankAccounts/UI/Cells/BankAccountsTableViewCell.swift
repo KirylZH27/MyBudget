@@ -91,24 +91,21 @@ class BankAccountsTableViewCell: UITableViewCell {
         NSLayoutConstraint.activate([
             personImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
             personImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-     //       personImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
             personImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
-         // personImageView.heightAnchor.constraint(equalToConstant: 40),
             personImageView.widthAnchor.constraint(equalToConstant: 40)
         ])
     }
-    // ? норм ли (1)
+    
     private func layoutNameLabel(){
         contentView.addSubview(nameLabel)
         NSLayoutConstraint.activate([
             nameLabel.leadingAnchor.constraint(equalTo: personImageView.trailingAnchor, constant: 16),
-            //nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
             nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
             nameLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
             nameLabel.widthAnchor.constraint(equalToConstant: 160)
         ])
     }
-    //???? (2)
+    
     private func layoutAmountOfMoneyLabel(){
         contentView.addSubview(amountOfMoneyLabel)
         NSLayoutConstraint.activate([

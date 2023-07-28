@@ -114,7 +114,7 @@ class AccountDescriptionTableViewCell: UITableViewCell {
         contentView.addSubview(nameLabel)
         NSLayoutConstraint.activate([
             nameLabel.leadingAnchor.constraint(equalTo: spendingElementImageView.trailingAnchor, constant: 16),
-            nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
+            nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 33),
             nameLabel.widthAnchor.constraint(equalToConstant: 140)
         ])
     }

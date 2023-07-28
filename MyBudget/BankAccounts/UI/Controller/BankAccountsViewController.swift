@@ -99,8 +99,6 @@ extension BankAccountsViewController: UITableViewDelegate, UITableViewDataSource
         navigationController?.pushViewController(accountDescriptionViewController, animated: true)
     }
     
-    // создана функция tableView для удаления - DEL
-    // -----------------------------------------------------------
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             
@@ -110,6 +108,5 @@ extension BankAccountsViewController: UITableViewDelegate, UITableViewDataSource
             viewModel.recalculateTotalBalance()
         }
     }
-    // -----------------------------------------------------------
 }
 
