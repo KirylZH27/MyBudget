@@ -102,10 +102,17 @@ extension BankAccountsViewController: UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             
-            self.viewModel.deleteBankAccount(bankAccount: viewModel.bankAccounts[indexPath.row])
-            viewModel.bankAccounts.remove(at: indexPath.row)
-            contentView.tableView.deleteRows(at: [indexPath], with: .left)
-            viewModel.recalculateTotalBalance()
+            showAlert(title: "Удаление",
+                      message: "Хотите удалить счет?",
+                      isCancelButton: true,
+                      isOkDestructive: true,
+                      okButtonName: "Удалить") { [weak self] in
+                guard let self else { return }
+                self.viewModel.deleteBankAccount(bankAccount: self.viewModel.bankAccounts[indexPath.row])
+                self.viewModel.bankAccounts.remove(at: indexPath.row)
+                self.contentView.tableView.deleteRows(at: [indexPath], with: .left)
+                self.viewModel.recalculateTotalBalance()
+            }
         }
     }
 }

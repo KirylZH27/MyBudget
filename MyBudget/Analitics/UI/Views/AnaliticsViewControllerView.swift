@@ -6,16 +6,8 @@
 //
 
 import UIKit
-import DGCharts
-
+import AAInfographics
 final class AnaliticsViewControllerView: NiblessView {
-    
-    let groupBarChart: BarChartView = {
-        let view = BarChartView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        let data = BarChartData()
-        return view
-    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -25,16 +17,8 @@ final class AnaliticsViewControllerView: NiblessView {
     }
     
     private func layoutElemnts(){
-        layoutGroupBarChart()
     }
     
     private func layoutGroupBarChart(){
-        addSubview(groupBarChart)
-        NSLayoutConstraint.activate([
-            groupBarChart.topAnchor.constraint(equalTo: topAnchor),
-            groupBarChart.leadingAnchor.constraint(equalTo: leadingAnchor),
-            groupBarChart.trailingAnchor.constraint(equalTo: trailingAnchor),
-            groupBarChart.heightAnchor.constraint(equalToConstant: 300)
-        ])
     }
 }
