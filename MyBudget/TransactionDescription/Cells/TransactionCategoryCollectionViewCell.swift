@@ -7,9 +7,9 @@
 
 import UIKit
 
-final class TransactionDescriptionCollectionVIewCell: UICollectionViewCell {
+final class TransactionCategoryCollectionViewCell: UICollectionViewCell {
     
-    static let id = String(describing: TransactionDescriptionCollectionVIewCell.self)
+    static let id = String(describing: TransactionCategoryCollectionViewCell.self)
     
     override var isSelected: Bool {
         didSet {
