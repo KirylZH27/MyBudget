@@ -25,7 +25,7 @@ final class TransactionDescriptionViewControllerView: NiblessView {
         layout.scrollDirection = .horizontal
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.register(TransactionDescriptionCollectionVIewCell.self, forCellWithReuseIdentifier: TransactionDescriptionCollectionVIewCell.id)
+        collectionView.register(TransactionCategoryCollectionViewCell.self, forCellWithReuseIdentifier: TransactionCategoryCollectionViewCell.id)
         collectionView.showsHorizontalScrollIndicator = false
         return collectionView
     }()
@@ -45,7 +45,7 @@ final class TransactionDescriptionViewControllerView: NiblessView {
         layout.scrollDirection = .horizontal
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.register(TransactionDescriptionCollectionViewCell2.self, forCellWithReuseIdentifier: TransactionDescriptionCollectionViewCell2.id)
+        collectionView.register(BankAccountsCollectionViewCell.self, forCellWithReuseIdentifier: BankAccountsCollectionViewCell.id)
         collectionView.showsHorizontalScrollIndicator = false
         return collectionView
     }()

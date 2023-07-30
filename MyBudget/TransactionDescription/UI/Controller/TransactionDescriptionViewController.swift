@@ -106,8 +106,8 @@ extension TransactionDescriptionViewController: UICollectionViewDelegate, UIColl
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == self.contentView.transactionCategoryCollectionView {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TransactionDescriptionCollectionVIewCell.id, for: indexPath)
-            guard let collectionCell = cell as? TransactionDescriptionCollectionVIewCell else { return cell }
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TransactionCategoryCollectionViewCell.id, for: indexPath)
+            guard let collectionCell = cell as? TransactionCategoryCollectionViewCell else { return cell }
             switch transactionType {
                 case .income:
                     let categories = TransactionCategory.getIncomeCategories()
@@ -118,8 +118,8 @@ extension TransactionDescriptionViewController: UICollectionViewDelegate, UIColl
             }
             return collectionCell
         }  else {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TransactionDescriptionCollectionViewCell2.id, for: indexPath)
-            guard let collectionCell = cell as? TransactionDescriptionCollectionViewCell2 else { return cell }
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BankAccountsCollectionViewCell.id, for: indexPath)
+            guard let collectionCell = cell as? BankAccountsCollectionViewCell else { return cell }
             collectionCell.setupCell(bankAccount: viewModel.bankAccounts[indexPath.row])
             return collectionCell
         }
