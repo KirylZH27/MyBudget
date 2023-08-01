@@ -79,8 +79,16 @@ extension AccountDescriptionViewController: UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            self.viewModel.deleteTransaction(transaction: viewModel.transactions.remove(at: indexPath.row))
-            contentView.tableView.deleteRows(at: [indexPath], with: .left)
+            
+            showAlert(title: "Удаление",
+                      message: "Хотите удалить данную транзакцию?",
+                      isCancelButton: true,
+                      isOkDestructive: true,
+                      okButtonName: "Удалить") { [weak self] in
+                guard let self else { return }
+                self.viewModel.deleteTransaction(transaction: self.viewModel.transactions.remove(at: indexPath.row))
+                self.contentView.tableView.deleteRows(at: [indexPath], with: .left)
+            }
         }
     }
 }

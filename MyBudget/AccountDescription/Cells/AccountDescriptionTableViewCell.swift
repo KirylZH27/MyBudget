@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Charts
 
 class AccountDescriptionTableViewCell: UITableViewCell {
     
@@ -68,11 +67,13 @@ class AccountDescriptionTableViewCell: UITableViewCell {
     private func setupIconImage(category: TransactionCategory){
         switch category {
             case .sallary:
-                spendingElementImageView.image = UIImage(systemName: "bitcoinsign")
+               // spendingElementImageView.image = UIImage(systemName: "bitcoinsign")
+                spendingElementImageView.image = UIImage(named: "salary")
             case .trasport:
                 spendingElementImageView.image = UIImage(systemName: "bus")
             case .food:
-                spendingElementImageView.image = UIImage(systemName: "basket")
+              //  spendingElementImageView.image = UIImage(systemName: "basket")
+                spendingElementImageView.image = UIImage(named: "burger")
             case .car:
                 spendingElementImageView.image = UIImage(systemName: "car")
         }

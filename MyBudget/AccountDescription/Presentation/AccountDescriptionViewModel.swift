@@ -33,7 +33,6 @@ final class AccountDescriptionViewModel {
         transactionGetter.getBankAccountTransaction(by: bankAccount.id) { [weak self] transactions in
             self?.transactions = transactions.reversed() // первый -> последний
             self?.allTransactionsWasGetted.send(true)
-            print(transactions)
         }
     }
     

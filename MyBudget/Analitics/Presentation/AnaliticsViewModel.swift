@@ -23,7 +23,13 @@ final class AnaliticsViewModel {
         getTransactionsByWeek { transactions in
             let incomeDictionary = self.getTransactionDictionaryValue(transactions: transactions, type: .income, days: 7)
             let expenditureDictionary = self.getTransactionDictionaryValue(transactions: transactions, type: .expenditure, days: 7)
-            let categories = incomeDictionary.keys.sorted { $0 < $1 }
+            let dateForamtter = DateFormatter()
+            dateForamtter.dateFormat = "dd.MM.yyyy"
+            let categories = incomeDictionary.keys.sorted {
+                let currentDate = dateForamtter.date(from: $0) ?? Date()
+                let nextDate = dateForamtter.date(from: $1) ?? Date()
+                return currentDate < nextDate
+            }
             
             var incomeValues: [Double] = []
             var expenditureValues: [Double] = []
