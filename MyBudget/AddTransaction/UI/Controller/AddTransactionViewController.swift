@@ -14,6 +14,9 @@ enum TransactionType: String {
 
 final class AddTransactionViewController: NiblessViewController {
     
+    
+    private let appColorGetter: AppColorGetter
+    
     private let transactionDescriptionViewControllerFactory: (TransactionType, String) -> TransactionDescriptionViewController
     private var transactionType: TransactionType = .expenditure
     
@@ -23,6 +26,7 @@ final class AddTransactionViewController: NiblessViewController {
     
     init(transactionDescriptionViewControllerFactory: @escaping (TransactionType, String) -> TransactionDescriptionViewController) {
         self.transactionDescriptionViewControllerFactory = transactionDescriptionViewControllerFactory
+        self.appColorGetter = UserDefaultAppColorDataSource()
         super.init()
     }
     
@@ -35,6 +39,27 @@ final class AddTransactionViewController: NiblessViewController {
         super.viewDidLoad()
         setupDelegates()
         addTargets()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupMainColor()
+    }
+    
+    private func setupMainColor(){
+        let mainColor = appColorGetter.getMainColor()
+        contentView.keyBoard.saveTransactionButton.backgroundColor = mainColor
+        contentView.keyBoard.zeroStackView.arrangedSubviews.forEach { arrangeView in
+            let buttonView = arrangeView as? KeyBoardButton
+            buttonView?.backgroundColor = mainColor
+        }
+        contentView.keyBoard.mainStackView.arrangedSubviews.forEach { arrangeView in
+            let stackView = arrangeView as? UIStackView
+            stackView?.arrangedSubviews.forEach({ buttonArrangeView in
+                let buttonView = buttonArrangeView as? KeyBoardButton
+                buttonView?.backgroundColor = mainColor
+            })
+        }
     }
     
     private func setNumber(type: KeyBoardSymbol) {

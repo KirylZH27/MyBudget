@@ -9,6 +9,7 @@ import UIKit
 
 final class TransactionWasAddedAnimationViewControllerView: NiblessView {
     
+    
     let outerRingAnimationDuration: Double = 1.5
     let outerRingBorderWidth: CGFloat = 24
     let outerRingViewSide: CGFloat = 220
@@ -18,6 +19,8 @@ final class TransactionWasAddedAnimationViewControllerView: NiblessView {
     
     lazy var dollarImageViewSide: CGFloat = insideViewSide * 0.8
     let dollarImageAnimationDuration: Double = 1.5
+    
+    private let appColorGetter: AppColorGetter
     
    lazy var outerRingView: UIView = {
         let view = UIView()
@@ -37,8 +40,8 @@ final class TransactionWasAddedAnimationViewControllerView: NiblessView {
          let view = UIView()
          view.translatesAutoresizingMaskIntoConstraints = false
          view.layer.cornerRadius = insideViewSide / 2
-        view.backgroundColor = AppColors.green.value
-         return view
+        view.backgroundColor = appColorGetter.getMainColor()
+        return view
      }()
     
     lazy var dollarImageView: UIImageView = {
@@ -51,6 +54,7 @@ final class TransactionWasAddedAnimationViewControllerView: NiblessView {
     
     
     override init(frame: CGRect) {
+        appColorGetter = UserDefaultAppColorDataSource()
         super.init(frame: frame)
         backgroundColor = .clear
         

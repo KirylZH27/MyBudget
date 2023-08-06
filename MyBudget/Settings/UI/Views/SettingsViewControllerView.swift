@@ -15,6 +15,19 @@ final class SettingsViewControllerView: NiblessView {
         return tableView
     }()
     
+    let changeColorButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = .brown
+        button.setTitle("Выбрать цвет", for: .normal)
+        button.layer.cornerRadius = 12
+        button.titleLabel?.font = AppFonts.AmericanBold.value(size: 22)
+        button.setTitleColor(.black, for: .normal)
+        return button
+    }()
+    
+    let colorPickerController = UIColorPickerViewController()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -24,14 +37,23 @@ final class SettingsViewControllerView: NiblessView {
     
     private func layoutElemets(){
         layoutSettingsTableView()
+        layoutChangeColorButton()
     }
     private func layoutSettingsTableView(){
         addSubview(tableView)
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 10),
             tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: bottomAnchor)
+            tableView.trailingAnchor.constraint(equalTo: trailingAnchor)
+        ])
+    }
+    private func layoutChangeColorButton(){
+        addSubview(changeColorButton)
+        NSLayoutConstraint.activate([
+            changeColorButton.topAnchor.constraint(equalTo: tableView.bottomAnchor, constant: 20),
+            changeColorButton.leadingAnchor.constraint(equalTo: leadingAnchor),
+            changeColorButton.trailingAnchor.constraint(equalTo: trailingAnchor),
+            changeColorButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -15)
         ])
     }
 }

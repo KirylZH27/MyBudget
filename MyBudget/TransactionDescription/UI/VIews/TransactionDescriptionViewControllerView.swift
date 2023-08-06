@@ -9,6 +9,8 @@ import UIKit
 
 final class TransactionDescriptionViewControllerView: NiblessView {
     
+    private let appColorGetter: AppColorGetter
+    
     let expenditureLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -50,10 +52,10 @@ final class TransactionDescriptionViewControllerView: NiblessView {
         return collectionView
     }()
     
-    let saveTransactionButton: UIButton = {
+    lazy var saveTransactionButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = AppColors.green.value
+        button.backgroundColor = appColorGetter.getMainColor()
         button.setTitle("Добавить транзакцию", for: .normal)
         button.layer.cornerRadius = 12
         button.titleLabel?.font = AppFonts.AmericanBold.value(size: 22)
@@ -62,6 +64,7 @@ final class TransactionDescriptionViewControllerView: NiblessView {
     }()
     
     override init(frame: CGRect) {
+        appColorGetter = UserDefaultAppColorDataSource()
         super.init(frame: frame)
         backgroundColor = .white
         layoutElements()

@@ -28,18 +28,17 @@ final class SettingsViewController: NiblessViewController {
         super.viewDidLoad()
         
         addDelegates()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        let randomColor = UIColor(red: .random(in: 0...1), green: .random(in: 0...1), blue: .random(in: 0...1), alpha: 1)
-        appColorSetter.saveMainColor(randomColor)
+        addTargets()
     }
     
     private func addDelegates(){
         contentView.tableView.dataSource = self
         contentView.tableView.delegate = self
+        contentView.colorPickerController.delegate = self
+    }
+    
+    private func addTargets(){
+        contentView.changeColorButton.addTarget(self, action: #selector(changeColorButtonWasPressed) , for: .touchUpInside)
     }
 }
 extension SettingsViewController: UITableViewDelegate, UITableViewDataSource{
@@ -58,4 +57,19 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource{
   //  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
   //      return 60
   //  }
+}
+
+extension SettingsViewController {
+    @objc private func changeColorButtonWasPressed(){
+        present(contentView.colorPickerController, animated: true)
+     }
+}
+
+extension SettingsViewController: UIColorPickerViewControllerDelegate {
+    func colorPickerViewController(_ viewController: UIColorPickerViewController, didSelect color: UIColor, continuously: Bool) {
+        
+        appColorSetter.saveMainColor(color)
+        
+        //MARK: - Сделать аллерт
+    }
 }

@@ -8,9 +8,9 @@
 import Foundation
 import RealmSwift
 
-enum BankAccountType {
-    case cash
-    case card
+enum BankAccountType: String, CaseIterable {
+    case cash = "Наличные"
+    case card = "Карта"
 }
 
 class BankAccountRealm: Object {

@@ -32,7 +32,7 @@ final class AddTransactionViewControllerKeyBoardView: NiblessView {
     private let buttonInRow = 3
     private let appColorGetter: AppColorGetter
     
-    private let containerStackView = UIStackView()
+    let containerStackView = UIStackView()
         .myStyleStack(
             spacing: 17,
             aligment: .fill,
@@ -40,7 +40,7 @@ final class AddTransactionViewControllerKeyBoardView: NiblessView {
             distribution: .fillProportionally,
             userInteraction: true)
     
-    private let mainStackView = UIStackView()
+    let mainStackView = UIStackView()
         .myStyleStack(
             spacing: 17,
             aligment: .fill,
@@ -57,7 +57,7 @@ final class AddTransactionViewControllerKeyBoardView: NiblessView {
             distribution: .fillEqually,
             userInteraction: true)
     */
-    private let zeroStackView = UIStackView()
+    let zeroStackView = UIStackView()
         .myStyleStack(
             spacing: 17,
             aligment: .fill,
@@ -116,7 +116,7 @@ final class AddTransactionViewControllerKeyBoardView: NiblessView {
         switch type {
             default:
                 let model = ModelKeyBoardButton(title: title,
-                                                backgroundColor: AppColors.green.value,
+                                                backgroundColor: appColorGetter.getMainColor(),
                                                 titleColor: .black,
                                                 font: AppFonts.AmericanBold.value(size: 28))
                 button = KeyBoardButton(model: model, type: type)
