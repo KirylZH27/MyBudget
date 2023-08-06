@@ -64,13 +64,15 @@ final class AnaliticsViewModel {
     private func getTransactionsByWeek(completion: @escaping([TransactionDescription]) -> Void){
         transactionGetter.getAllTransactions { allTransactions in
             let calendar = Calendar.current
-            guard let weakAgoDate = calendar.date(byAdding: .day, value: -7, to: Date()) else { return }
+            guard let weakAgoDate = calendar.date(byAdding: .day, value: -6, to: Date()) else { return }
             let dateForamtter = DateFormatter()
             dateForamtter.dateFormat = "dd.MM.yyyy"
+            dateForamtter.timeZone = TimeZone(identifier: "GMT")
             let weakAgoDateString = dateForamtter.string(from: weakAgoDate)
+            guard let weekAgoFullDate = dateForamtter.date(from: weakAgoDateString) else { return }
             let filteredTransaction = allTransactions.filter { transaction in
-                let transactionDateString = dateForamtter.string(from: transaction.date)
-                return transactionDateString >= weakAgoDateString
+                
+                return weekAgoFullDate <= transaction.date
             }
             completion(filteredTransaction)
         }
