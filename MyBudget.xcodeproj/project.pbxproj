@@ -27,6 +27,9 @@
 		0A77FF3D2A5ED302005D1615 /* AddTransactionViewControllerKeyBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A77FF3C2A5ED302005D1615 /* AddTransactionViewControllerKeyBoardView.swift */; };
 		0A77FF3F2A5ED4CC005D1615 /* UIStackView+MyStyle .swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A77FF3E2A5ED4CC005D1615 /* UIStackView+MyStyle .swift */; };
 		0A77FF432A5EDA41005D1615 /* KeyBoardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A77FF422A5EDA41005D1615 /* KeyBoardButton.swift */; };
+		0A7C97682A7FAD8800544576 /* AppColorGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7C97672A7FAD8800544576 /* AppColorGetter.swift */; };
+		0A7C976A2A7FAD9800544576 /* AppColorSetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7C97692A7FAD9800544576 /* AppColorSetter.swift */; };
+		0A7C976D2A7FAE1000544576 /* UserDefaultAppColorDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7C976C2A7FAE1000544576 /* UserDefaultAppColorDataSource.swift */; };
 		0AA725CC2A65372A00B408C4 /* AccountDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA725CB2A65372A00B408C4 /* AccountDescriptionTableViewCell.swift */; };
 		0AA725CF2A656B7300B408C4 /* TransactionCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA725CE2A656B7300B408C4 /* TransactionCategoryCollectionViewCell.swift */; };
 		0AA725D12A65885100B408C4 /* BankAccountsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA725D02A65885100B408C4 /* BankAccountsCollectionViewCell.swift */; };
@@ -127,6 +130,9 @@
 		0A77FF3C2A5ED302005D1615 /* AddTransactionViewControllerKeyBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionViewControllerKeyBoardView.swift; sourceTree = "<group>"; };
 		0A77FF3E2A5ED4CC005D1615 /* UIStackView+MyStyle .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+MyStyle .swift"; sourceTree = "<group>"; };
 		0A77FF422A5EDA41005D1615 /* KeyBoardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyBoardButton.swift; sourceTree = "<group>"; };
+		0A7C97672A7FAD8800544576 /* AppColorGetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColorGetter.swift; sourceTree = "<group>"; };
+		0A7C97692A7FAD9800544576 /* AppColorSetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColorSetter.swift; sourceTree = "<group>"; };
+		0A7C976C2A7FAE1000544576 /* UserDefaultAppColorDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultAppColorDataSource.swift; sourceTree = "<group>"; };
 		0AA725CB2A65372A00B408C4 /* AccountDescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDescriptionTableViewCell.swift; sourceTree = "<group>"; };
 		0AA725CE2A656B7300B408C4 /* TransactionCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		0AA725D02A65885100B408C4 /* BankAccountsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccountsCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -239,6 +245,7 @@
 		0A1432592A3F50C0007D9509 /* MyBudget */ = {
 			isa = PBXGroup;
 			children = (
+				0A7C97652A7FAD4B00544576 /* AppColorDataSource */,
 				0AF6A3D52A7426FA0083291C /* TransactionWasAddedAnimation */,
 				0AB7D0D52A63FA02004A9EF9 /* TransactionDescription */,
 				0AB7D0CC2A63F311004A9EF9 /* AccountDescription */,
@@ -431,6 +438,32 @@
 				0A77FF422A5EDA41005D1615 /* KeyBoardButton.swift */,
 			);
 			path = KeyBoardButton;
+			sourceTree = "<group>";
+		};
+		0A7C97652A7FAD4B00544576 /* AppColorDataSource */ = {
+			isa = PBXGroup;
+			children = (
+				0A7C976B2A7FADEF00544576 /* Implementation */,
+				0A7C97662A7FAD6500544576 /* Protocols */,
+			);
+			path = AppColorDataSource;
+			sourceTree = "<group>";
+		};
+		0A7C97662A7FAD6500544576 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				0A7C97672A7FAD8800544576 /* AppColorGetter.swift */,
+				0A7C97692A7FAD9800544576 /* AppColorSetter.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		0A7C976B2A7FADEF00544576 /* Implementation */ = {
+			isa = PBXGroup;
+			children = (
+				0A7C976C2A7FAE1000544576 /* UserDefaultAppColorDataSource.swift */,
+			);
+			path = Implementation;
 			sourceTree = "<group>";
 		};
 		0AA725CA2A65370B00B408C4 /* Cells */ = {
@@ -1240,6 +1273,8 @@
 				0AE423D52A502D8A00311943 /* AuthorizationManager.swift in Sources */,
 				0AB7D0D12A63F35A004A9EF9 /* AccountDescriptionViewController.swift in Sources */,
 				0A34DA3F2A6006F600461D45 /* UIButton+Target.swift in Sources */,
+				0A7C976D2A7FAE1000544576 /* UserDefaultAppColorDataSource.swift in Sources */,
+				0A7C97682A7FAD8800544576 /* AppColorGetter.swift in Sources */,
 				0AB7D0E42A63FD85004A9EF9 /* TransactionDescription.swift in Sources */,
 				0A14325D2A3F50C0007D9509 /* SceneDelegate.swift in Sources */,
 				0AA725D12A65885100B408C4 /* BankAccountsCollectionViewCell.swift in Sources */,
@@ -1280,6 +1315,7 @@
 				0AC30BA32A59B19B00CA9168 /* ImagePicker.swift in Sources */,
 				0AC029342A71889E000D7698 /* AnaliticsViewModel.swift in Sources */,
 				0AE423D22A502A9C00311943 /* AuthorizationViewModel.swift in Sources */,
+				0A7C976A2A7FAD9800544576 /* AppColorSetter.swift in Sources */,
 				0AFF815B2A4B2D68006ACF1F /* AnaliticsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

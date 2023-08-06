@@ -30,6 +30,7 @@ final class AddTransactionViewControllerKeyBoardView: NiblessView {
     weak var delegate: KeyBoardDelegate?
     
     private let buttonInRow = 3
+    private let appColorGetter: AppColorGetter
     
     private let containerStackView = UIStackView()
         .myStyleStack(
@@ -64,10 +65,10 @@ final class AddTransactionViewControllerKeyBoardView: NiblessView {
             distribution: .fillEqually,
             userInteraction: true)
     
-    let saveTransactionButton: UIButton = {
+    lazy var saveTransactionButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = AppColors.green.value
+        button.backgroundColor = appColorGetter.getMainColor()
         button.setTitle("Добавить", for: .normal)
         button.layer.cornerRadius = 12
         button.titleLabel?.font = AppFonts.AmericanBold.value(size: 22)
@@ -150,6 +151,7 @@ final class AddTransactionViewControllerKeyBoardView: NiblessView {
     }
     
     override init(frame: CGRect) {
+        appColorGetter = UserDefaultAppColorDataSource()
         super.init(frame: frame)
         self.translatesAutoresizingMaskIntoConstraints = false
         createPositionButtons()

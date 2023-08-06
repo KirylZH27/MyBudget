@@ -8,8 +8,15 @@
 import UIKit
 final class SettingsViewController: NiblessViewController {
     
+    var appColorSetter: AppColorSetter
+    
     var contentView: SettingsViewControllerView {
         view as! SettingsViewControllerView
+    }
+    
+    init(appColorSetter: AppColorSetter = UserDefaultAppColorDataSource()) {
+        self.appColorSetter = appColorSetter
+        super.init()
     }
     
     override func loadView() {
@@ -22,6 +29,14 @@ final class SettingsViewController: NiblessViewController {
         
         addDelegates()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let randomColor = UIColor(red: .random(in: 0...1), green: .random(in: 0...1), blue: .random(in: 0...1), alpha: 1)
+        appColorSetter.saveMainColor(randomColor)
+    }
+    
     private func addDelegates(){
         contentView.tableView.dataSource = self
         contentView.tableView.delegate = self
