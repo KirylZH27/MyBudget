@@ -18,7 +18,7 @@ final class SettingsViewControllerView: NiblessView {
     let changeColorButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = .brown
+        button.backgroundColor = .white
         button.setTitle("Выбрать цвет", for: .normal)
         button.layer.cornerRadius = 12
         button.titleLabel?.font = AppFonts.AmericanBold.value(size: 22)

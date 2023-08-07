@@ -14,9 +14,10 @@ final class AddBankAccountViewController: NiblessViewController {
         view as! AddBankAccountViewControllerView
     }
     
+    var onDismissBlock: (() -> Void)?
     private let viewModel: AddBankAccountViewModel
     private var cancalable = Set<AnyCancellable>()
-    var onDismissBlock: (() -> Void)?
+    private var bankAccountType: BankAccountType = .cash
     
     init(viewModel: AddBankAccountViewModel) {
         self.viewModel = viewModel
@@ -57,10 +58,10 @@ final class AddBankAccountViewController: NiblessViewController {
 
 extension AddBankAccountViewController {
     @objc private func addAccountButtonWasPressed() {
-        print("LLLLL")
         guard let name = contentView.nameAccountTextField.text else { return }
         guard let value = contentView.currentBalanceTextField.text else { return }
-        let bankAccount = BankAccount(name: name, type: .cash, value: value, id: UUID().uuidString)
+        
+        let bankAccount = BankAccount(name: name, type: bankAccountType, value: value, id: UUID().uuidString)
         self.viewModel.createBankAccount(bankAccount: bankAccount)
     }
 }
@@ -78,4 +79,7 @@ extension AddBankAccountViewController: UIPickerViewDelegate, UIPickerViewDataSo
         BankAccountType.allCases[row].rawValue
     }
     
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        bankAccountType = BankAccountType.allCases[row]
+    }
 }

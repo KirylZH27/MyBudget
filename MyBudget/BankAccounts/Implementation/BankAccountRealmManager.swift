@@ -34,7 +34,7 @@ final class BankAccountRealmManager: BankAccountCreator, BankAccountGetter, Bank
     
     func getAllBankAccounts(completion: @escaping ([BankAccount]) -> Void) {
         let bankAccountsRealm = Array(realm.objects(BankAccountRealm.self))
-        let bankAccounts = bankAccountsRealm.map { BankAccount(name: $0.name, type: $0.type, value: $0.value, id: $0.id) }
+        let bankAccounts = bankAccountsRealm.map { BankAccount(name: $0.name, type: $0.typeEnum, value: $0.value, id: $0.id) }
         completion(bankAccounts)
     }
     

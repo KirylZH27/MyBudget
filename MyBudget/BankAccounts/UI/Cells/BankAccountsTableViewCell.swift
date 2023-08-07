@@ -55,10 +55,11 @@ class BankAccountsTableViewCell: UITableViewCell {
         nameLabel.text = bankAccount.name
         calculateBankAccountBalance(with: bankAccount)
         
-        if bankAccount.type == .cash {
-            personImageView.image = UIImage(systemName: "bitcoinsign.circle")
-        } else {
-            personImageView.image = UIImage(systemName: "creditcard")
+        switch bankAccount.type {
+            case .cash:
+                personImageView.image = UIImage(systemName: "bitcoinsign.circle")
+            case .card:
+                personImageView.image = UIImage(systemName: "creditcard")
         }
     }
     

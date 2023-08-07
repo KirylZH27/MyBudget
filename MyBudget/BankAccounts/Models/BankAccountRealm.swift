@@ -17,14 +17,20 @@ class BankAccountRealm: Object {
     
     @objc dynamic var id: String = ""
     @objc dynamic var name: String = ""
-    dynamic var type: BankAccountType = .cash
+    @objc dynamic var type: String = BankAccountType.cash.rawValue
     @objc dynamic var value: String = ""
+    
+    var typeEnum: BankAccountType{
+        get{
+            return BankAccountType(rawValue: type)!
+        }
+    }
     
     convenience init(name: String, type: BankAccountType, value: String, id: String) {
         self.init()
         self.id = id
         self.name = name
-        self.type = type
+        self.type = type.rawValue
         self.value = value
     }
 }
