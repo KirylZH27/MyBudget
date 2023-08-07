@@ -14,9 +14,11 @@ final class ProfileViewController: NiblessViewController {
         view as! ProfileViewControllerView
     }
     private let appColorGetter: AppColorGetter
+    private let signOutNavigationResponder: SignOutNavigationResponder
     
-    override init() {
+    init(signOutNavigationResponder: SignOutNavigationResponder) {
         self.appColorGetter = UserDefaultAppColorDataSource()
+        self.signOutNavigationResponder = signOutNavigationResponder
         super.init()
     }
     
@@ -73,6 +75,7 @@ extension ProfileViewController {
                   okButtonName: "Выход") {
             
             try? Auth.auth().signOut()
+            self.signOutNavigationResponder.signOut()
         }
     }
 }

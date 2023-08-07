@@ -21,7 +21,7 @@ final class MyBudgetTabBarDependecyContainer {
         let bankAccountsViewController = createBankAccountsViewController()
         let analiticsViewController = createAnaliticsViewController()
         let settingsViewController = createSettingsViewController()
-        let profileViewController = createProfileViewController()
+        let profileViewController = createProfileViewController(signOutNavigationResponder: sharedMainViewModel)
         
         let tabBarController = UITabBarController()
         tabBarController.viewControllers = [addTtansactionsViewController, bankAccountsViewController, analiticsViewController, settingsViewController, profileViewController]
@@ -107,8 +107,8 @@ final class MyBudgetTabBarDependecyContainer {
         return navigationController
     }
     
-    private func createProfileViewController() -> UINavigationController {
-        let viewController = ProfileViewController()
+    private func createProfileViewController(signOutNavigationResponder: SignOutNavigationResponder) -> UINavigationController {
+        let viewController = ProfileViewController(signOutNavigationResponder: signOutNavigationResponder)
         viewController.navigationItem.title = "Профиль"
         let navigationController = UINavigationController(rootViewController: viewController)
         navigationController.tabBarItem.title = "Профиль"

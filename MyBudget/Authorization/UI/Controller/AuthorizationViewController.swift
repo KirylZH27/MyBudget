@@ -16,9 +16,9 @@ final class AuthorizationViewController: NiblessViewController {
     }
     
     private let viewModel: AuthorizationViewModel
-    private let userAdditionalInfoViewControllerFactory: () -> UserAdditionalInfoViewController
     private var cancelable = Set<AnyCancellable>()
     private let hideAuthorizationNavigationResponder: HideAuthorizationNavigationResponder
+    private let showUserAdditionalInfoNavigationResponder: ShowUserAditionalInfoNavigationResponder
     
     override func loadView() {
 //        super.loadView() // FIXME: not needed
@@ -33,27 +33,21 @@ final class AuthorizationViewController: NiblessViewController {
     }
     
     
-    init(viewModel: AuthorizationViewModel, userAdditionalInfoViewControllerFactory: @escaping () -> UserAdditionalInfoViewController, hideAuthorizationNavigationResponder: HideAuthorizationNavigationResponder ) {
+    init(viewModel: AuthorizationViewModel, hideAuthorizationNavigationResponder: HideAuthorizationNavigationResponder, showUserAdditionalInfoNavigationResponder: ShowUserAditionalInfoNavigationResponder) {
         self.viewModel = viewModel
-        self.userAdditionalInfoViewControllerFactory = userAdditionalInfoViewControllerFactory
         self.hideAuthorizationNavigationResponder = hideAuthorizationNavigationResponder
+        self.showUserAdditionalInfoNavigationResponder = showUserAdditionalInfoNavigationResponder
         super.init()
     }
     
     private func bindViewModel(){
-//        viewModel.isPresentUserAdditional.sink { [weak self] isPresentUserAdditional in
-//            if isPresentUserAdditional {
-//                self?.presentUserAdditionalInfo()
-//            } else {
-//                self?.hideAuthorizationNavigationResponder.hideAuthorization()
-//            }
-//        }.store(in: &cancelable)
-    }
-    
-    private func presentUserAdditionalInfo(){
-        let userAdditionalInfoViewController = userAdditionalInfoViewControllerFactory()
-        
-        navigationController?.setViewControllers([userAdditionalInfoViewController], animated: true)
+        viewModel.isPresentUserAdditional.sink { [weak self] isPresentUserAdditional in
+            if isPresentUserAdditional {
+                self?.showUserAdditionalInfoNavigationResponder.showUserAdditionalInfo()
+            } else {
+                self?.hideAuthorizationNavigationResponder.hideAuthorization()
+            }
+        }.store(in: &cancelable)
     }
     
     private func addTargets() {

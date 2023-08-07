@@ -10,41 +10,29 @@ import FirebaseAuth
 
 final class UserAdditionalInfoViewController: NiblessViewController {
     
-    // MARK: - Private properties
     private let viewModel: UserAdditionalInfoViewModel
-    //    private let hideAuthorizationNavigationResponder: HideAuthorizationNavigationResponder?
+    private let hideUserAdditionalInfoNavigationResponder: HideUserAdditionalInfoNavigationResponder
     
-    // MARK: - Public properties
     var contentView: UserAdditionalInfoViewControllerView {
         view as! UserAdditionalInfoViewControllerView
     }
+    
+    override func loadView() {
+        view = UserAdditionalInfoViewControllerView()
+    }
 
-    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupInit()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        //        hideAuthorizationNavigationResponder.hideAuthorization()
-    }
-    
-    init(viewModel: UserAdditionalInfoViewModel) {
+    init(viewModel: UserAdditionalInfoViewModel, hideUserAdditionalInfoNavigationResponder: HideUserAdditionalInfoNavigationResponder) {
         self.viewModel = viewModel
-        //        self.hideAuthorizationNavigationResponder = hideAuthorizationNavigationResponder
-        
+        self.hideUserAdditionalInfoNavigationResponder = hideUserAdditionalInfoNavigationResponder
         super.init()
     }
     
-    override func loadView() {
-        view = UserAdditionalInfoViewControllerView()
-    }
-    
-    
-    // MARK: - IBActions
     @objc private func saveButtonAction() {
         guard
             let user = Auth.auth().currentUser,
@@ -73,7 +61,7 @@ final class UserAdditionalInfoViewController: NiblessViewController {
                 ()
                 // FIXME: show error
             case .success(_):
-                self?.showMainVC()
+                    self?.hideUserAdditionalInfoNavigationResponder.hideUserAdditionalInfo()
             }
         }
     }
@@ -82,7 +70,7 @@ final class UserAdditionalInfoViewController: NiblessViewController {
     private func setupInit() {
         contentView.saveButton.addTarget(self, action: #selector(saveButtonAction), for: .touchUpInside)
     }
-    
+    /*
     private func showMainVC() {
         let vc = makeMainViewController()
         
@@ -100,10 +88,13 @@ final class UserAdditionalInfoViewController: NiblessViewController {
             TransactionWasAddedAnimationViewController()
         }
         
+        let 
+        
         let viewController = MainViewController(viewModel: viewModel,
-                                                tabBarControllerFactory: tabBarControllerFactory, transactionWasAddedAnimationViewControllerFactory: transactionWasAddedAnimationViewControllerFactory)
+                                                tabBarControllerFactory: tabBarControllerFactory, transactionWasAddedAnimationViewControllerFactory: transactionWasAddedAnimationViewControllerFactory, authorizationViewControllerFactory: )
         
         return viewController
     }
+     */
     
 }

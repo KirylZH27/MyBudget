@@ -24,6 +24,9 @@
 		0A34DA3F2A6006F600461D45 /* UIButton+Target.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A34DA3E2A6006F600461D45 /* UIButton+Target.swift */; };
 		0A475E092A52D31100B397AC /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A475E082A52D31100B397AC /* EditProfileViewController.swift */; };
 		0A475E0B2A52D32B00B397AC /* EditProfileViewConttrollerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A475E0A2A52D32B00B397AC /* EditProfileViewConttrollerView.swift */; };
+		0A629C0D2A81611400FD2464 /* SignOutNavigationResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A629C0C2A81611400FD2464 /* SignOutNavigationResponder.swift */; };
+		0A629C102A81636200FD2464 /* ShowUserAditionalInfoNavigationResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A629C0F2A81636200FD2464 /* ShowUserAditionalInfoNavigationResponder.swift */; };
+		0A629C122A81639C00FD2464 /* HideUserAdditionalInfoNavigationResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A629C112A81639C00FD2464 /* HideUserAdditionalInfoNavigationResponder.swift */; };
 		0A77FF3D2A5ED302005D1615 /* AddTransactionViewControllerKeyBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A77FF3C2A5ED302005D1615 /* AddTransactionViewControllerKeyBoardView.swift */; };
 		0A77FF3F2A5ED4CC005D1615 /* UIStackView+MyStyle .swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A77FF3E2A5ED4CC005D1615 /* UIStackView+MyStyle .swift */; };
 		0A77FF432A5EDA41005D1615 /* KeyBoardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A77FF422A5EDA41005D1615 /* KeyBoardButton.swift */; };
@@ -127,6 +130,9 @@
 		0A34DA3E2A6006F600461D45 /* UIButton+Target.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Target.swift"; sourceTree = "<group>"; };
 		0A475E082A52D31100B397AC /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		0A475E0A2A52D32B00B397AC /* EditProfileViewConttrollerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewConttrollerView.swift; sourceTree = "<group>"; };
+		0A629C0C2A81611400FD2464 /* SignOutNavigationResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutNavigationResponder.swift; sourceTree = "<group>"; };
+		0A629C0F2A81636200FD2464 /* ShowUserAditionalInfoNavigationResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowUserAditionalInfoNavigationResponder.swift; sourceTree = "<group>"; };
+		0A629C112A81639C00FD2464 /* HideUserAdditionalInfoNavigationResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideUserAdditionalInfoNavigationResponder.swift; sourceTree = "<group>"; };
 		0A77FF3C2A5ED302005D1615 /* AddTransactionViewControllerKeyBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionViewControllerKeyBoardView.swift; sourceTree = "<group>"; };
 		0A77FF3E2A5ED4CC005D1615 /* UIStackView+MyStyle .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+MyStyle .swift"; sourceTree = "<group>"; };
 		0A77FF422A5EDA41005D1615 /* KeyBoardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyBoardButton.swift; sourceTree = "<group>"; };
@@ -421,6 +427,15 @@
 				0A475E082A52D31100B397AC /* EditProfileViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		0A629C0E2A81633D00FD2464 /* Responders */ = {
+			isa = PBXGroup;
+			children = (
+				0A629C0F2A81636200FD2464 /* ShowUserAditionalInfoNavigationResponder.swift */,
+				0A629C112A81639C00FD2464 /* HideUserAdditionalInfoNavigationResponder.swift */,
+			);
+			path = Responders;
 			sourceTree = "<group>";
 		};
 		0A77FF402A5EDA13005D1615 /* UIButton */ = {
@@ -1012,6 +1027,7 @@
 		0AFE73662A55DF7F00E21458 /* UserAdditionalInfo */ = {
 			isa = PBXGroup;
 			children = (
+				0A629C0E2A81633D00FD2464 /* Responders */,
 				0AFE736F2A55E03D00E21458 /* Presentation */,
 				0AFE73672A55DFA100E21458 /* UI */,
 			);
@@ -1055,6 +1071,7 @@
 			isa = PBXGroup;
 			children = (
 				0AFE73732A55E96500E21458 /* HideAuthorizationNavigationResponder.swift */,
+				0A629C0C2A81611400FD2464 /* SignOutNavigationResponder.swift */,
 			);
 			path = Responders;
 			sourceTree = "<group>";
@@ -1261,10 +1278,12 @@
 				0ABBB33C2A5704A700AD1FA6 /* ProfileViewModel.swift in Sources */,
 				0AB7D0C82A62BDC3004A9EF9 /* AddBankAccountViewControllerView.swift in Sources */,
 				0AB7D0E82A63FF85004A9EF9 /* TransactionCreator.swift in Sources */,
+				0A629C102A81636200FD2464 /* ShowUserAditionalInfoNavigationResponder.swift in Sources */,
 				0AFE73792A55EFB200E21458 /* UserStore.swift in Sources */,
 				0A14325F2A3F50C0007D9509 /* ViewController.swift in Sources */,
 				0A14325B2A3F50C0007D9509 /* AppDelegate.swift in Sources */,
 				0AF6A3DE2A74277A0083291C /* TransactionWasAddedAnimationViewController.swift in Sources */,
+				0A629C122A81639C00FD2464 /* HideUserAdditionalInfoNavigationResponder.swift in Sources */,
 				0AF6A3DC2A7427660083291C /* TransactionWasAddedAnimationViewControllerView.swift in Sources */,
 				0AB7D0A52A628AFF004A9EF9 /* CalculatorWork.swift in Sources */,
 				0AE423DA2A50308C00311943 /* MyBudgetGoogleAuthorizationClient.swift in Sources */,
@@ -1310,6 +1329,7 @@
 				0AF6A3D42A7406CC0083291C /* TransactionDeleter.swift in Sources */,
 				0AE423D72A502EEE00311943 /* GoogleAuthorizationClient.swift in Sources */,
 				0AFE73772A55EF0A00E21458 /* UserCreator.swift in Sources */,
+				0A629C0D2A81611400FD2464 /* SignOutNavigationResponder.swift in Sources */,
 				0AB7D0E62A63FE43004A9EF9 /* TransactionDescriptionRealm.swift in Sources */,
 				0AB7D0BB2A62B425004A9EF9 /* BankAccountRealmManager.swift in Sources */,
 				0AC30BA32A59B19B00CA9168 /* ImagePicker.swift in Sources */,

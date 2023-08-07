@@ -24,24 +24,30 @@ final class MyBudgetDependencyContainer {
     
     
     // MARK: - Public methods
+    /*
     func start() {
         navigationController.isNavigationBarHidden = true
         
         setupWindow()
         addLogoutObserver()
     }
-    
+    */
     
     // MARK: - Private properties
-    private func makeMainViewController() -> MainViewController {
-        let viewModel = MainViewModel()
+    func makeMainViewController() -> MainViewController {
+        let userStore = FirebaseUserStore()
+        let viewModel = MainViewModel(userStore: userStore)
         
         let tabBarControllerFactory = {
             self.createTabBarController(mainViewModel: viewModel)
         }
         
         let authorizationViewControllerFactory = {
-            self.createAuthorizationViewController(hideAuthorizationNavigationResponder: viewModel)
+            self.createAuthorizationViewController(hideUserAdditionalInfoNavigationResponder: viewModel, showUserAdditionalInfoNavigationResponder: viewModel)
+        }
+        
+        let userAdditionalInfoViewControllerFactory = {
+            self.createUserAdditionalInfoViewController(hideUserAdditionalInfoNavigationResponder: viewModel)
         }
         
         let transactionWasAddedAnimationViewControllerFactory = {
@@ -50,23 +56,22 @@ final class MyBudgetDependencyContainer {
         
         let viewController = MainViewController(viewModel: viewModel,
                                                 tabBarControllerFactory: tabBarControllerFactory,
-                                                transactionWasAddedAnimationViewControllerFactory: transactionWasAddedAnimationViewControllerFactory)
+                                                transactionWasAddedAnimationViewControllerFactory: transactionWasAddedAnimationViewControllerFactory,
+                                                authorizationViewControllerFactory: authorizationViewControllerFactory,
+                                                userAdditionalInfoViewControllerFactory: userAdditionalInfoViewControllerFactory)
         return viewController
     }
     
-    private func createAuthorizationViewController(hideAuthorizationNavigationResponder: HideAuthorizationNavigationResponder) -> AuthorizationViewController {
+    private func createAuthorizationViewController(hideUserAdditionalInfoNavigationResponder: HideAuthorizationNavigationResponder, showUserAdditionalInfoNavigationResponder: ShowUserAditionalInfoNavigationResponder) -> AuthorizationViewController {
         let viewModel = createAuthorizationViewModel()
         
-        let userAdditionalInfoViewControllerFactory = {
-            self.createUserAdditionalInfoViewController(hideAuthorizationNavigationResponder: hideAuthorizationNavigationResponder)
-        }
-        let viewController = AuthorizationViewController(viewModel: viewModel, userAdditionalInfoViewControllerFactory: userAdditionalInfoViewControllerFactory, hideAuthorizationNavigationResponder: hideAuthorizationNavigationResponder)
+        let viewController = AuthorizationViewController(viewModel: viewModel, hideAuthorizationNavigationResponder: hideUserAdditionalInfoNavigationResponder, showUserAdditionalInfoNavigationResponder: showUserAdditionalInfoNavigationResponder)
         return viewController
     }
     
-    private func createUserAdditionalInfoViewController(hideAuthorizationNavigationResponder: HideAuthorizationNavigationResponder) -> UserAdditionalInfoViewController {
+    private func createUserAdditionalInfoViewController(hideUserAdditionalInfoNavigationResponder: HideUserAdditionalInfoNavigationResponder) -> UserAdditionalInfoViewController {
         let viewModel = UserAdditionalInfoViewModel()
-        let viewController = UserAdditionalInfoViewController(viewModel: viewModel)
+        let viewController = UserAdditionalInfoViewController(viewModel: viewModel, hideUserAdditionalInfoNavigationResponder: hideUserAdditionalInfoNavigationResponder)
         return viewController
     }
     
@@ -100,7 +105,7 @@ final class MyBudgetDependencyContainer {
     private func createTabBarController(mainViewModel: MainViewModel) -> UITabBarController {
         MyBudgetTabBarDependecyContainer(sharedMainViewModel: mainViewModel).makeTabBar()
     }
-    
+   /*
     private func addLogoutObserver() {
         Auth.auth().addStateDidChangeListener { auth, user in
             if let user = user {
@@ -131,5 +136,5 @@ final class MyBudgetDependencyContainer {
         sharedWindow.rootViewController = navigationController
         sharedWindow.makeKeyAndVisible()
     }
-    
+    */
 }

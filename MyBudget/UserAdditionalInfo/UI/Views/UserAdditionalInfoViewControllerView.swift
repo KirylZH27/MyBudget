@@ -23,6 +23,7 @@ final class UserAdditionalInfoViewControllerView: NiblessView {
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.setTitle("Save", for: .normal)
         btn.setTitleColor(.tintColor, for: .normal)
+        btn.backgroundColor = .red
         return btn
     }()
     
@@ -47,7 +48,10 @@ final class UserAdditionalInfoViewControllerView: NiblessView {
             userNameTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 40),
             userNameTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -40),
             saveButton.topAnchor.constraint(equalTo: userNameTextField.bottomAnchor, constant: 20),
-            saveButton.centerXAnchor.constraint(equalTo: centerXAnchor)
+            saveButton.centerXAnchor.constraint(equalTo: centerXAnchor),
+            saveButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            saveButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            saveButton.heightAnchor.constraint(equalToConstant: 45)
         ])
     }
 }
