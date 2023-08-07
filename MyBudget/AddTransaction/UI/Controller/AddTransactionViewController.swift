@@ -49,10 +49,11 @@ final class AddTransactionViewController: NiblessViewController {
     private func setupMainColor(){
         let mainColor = appColorGetter.getMainColor()
         contentView.keyBoard.saveTransactionButton.backgroundColor = mainColor
-        contentView.keyBoard.zeroStackView.arrangedSubviews.forEach { arrangeView in
+    /*    contentView.keyBoard.zeroStackView.arrangedSubviews.forEach { arrangeView in
             let buttonView = arrangeView as? KeyBoardButton
             buttonView?.backgroundColor = mainColor
         }
+     */
         contentView.keyBoard.mainStackView.arrangedSubviews.forEach { arrangeView in
             let stackView = arrangeView as? UIStackView
             stackView?.arrangedSubviews.forEach({ buttonArrangeView in

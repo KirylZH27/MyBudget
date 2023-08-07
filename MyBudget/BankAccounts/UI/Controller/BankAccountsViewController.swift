@@ -13,7 +13,7 @@ final class BankAccountsViewController: NiblessViewController {
     var contentView: BankAccountsViewControllerView {
         view as! BankAccountsViewControllerView
     }
-    
+    private let appColorGetter: AppColorGetter
     private let viewModel: BankAccountViewModel
     private var cancalable = Set<AnyCancellable>()
     private let addBankAccountViewControllerFactory: () -> AddBankAccountViewController
@@ -25,6 +25,7 @@ final class BankAccountsViewController: NiblessViewController {
         self.viewModel = viewModel
         self.addBankAccountViewControllerFactory = addBankAccountViewControllerFactory
         self.accountDescriptionViewControllerFactory = accountDescriptionViewControllerFactory
+        self.appColorGetter = UserDefaultAppColorDataSource()
         super.init()
     }
     override func loadView() {
@@ -42,6 +43,12 @@ final class BankAccountsViewController: NiblessViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         viewModel.getAllAccounts()
+        setupMainColor()
+    }
+    
+    private func setupMainColor(){
+        let mainColor = appColorGetter.getMainColor()
+        contentView.addBankAccountButton.backgroundColor = mainColor
     }
     
     private func addDelegates(){

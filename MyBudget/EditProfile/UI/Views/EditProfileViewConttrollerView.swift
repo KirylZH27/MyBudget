@@ -8,11 +8,13 @@
 import UIKit
 final class EditProfileViewConttrollerView: NiblessView {
     
-     let imageView: UIImageView = {
+    private let appColorGetter: AppColorGetter
+    
+     lazy var imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = UIImage(systemName: "person.fill")
-        imageView.tintColor = AppColors.green.value
+         imageView.tintColor = appColorGetter.getMainColor()
          imageView.isUserInteractionEnabled = true
         return imageView
     }()
@@ -43,10 +45,10 @@ final class EditProfileViewConttrollerView: NiblessView {
         return textField
     }()
     
-    let saveNewProfileInfoButton: UIButton = {
+    lazy var saveNewProfileInfoButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = AppColors.green.value
+        button.backgroundColor = appColorGetter.getMainColor()
         button.setTitle("Сохранить изменения", for: .normal)
         button.layer.cornerRadius = 12
         button.setTitleColor(.black, for: .normal)
@@ -54,6 +56,7 @@ final class EditProfileViewConttrollerView: NiblessView {
     }()
     
     override init(frame: CGRect) {
+        appColorGetter = UserDefaultAppColorDataSource()
         super.init(frame: frame)
         backgroundColor = .white
         layoutElements()

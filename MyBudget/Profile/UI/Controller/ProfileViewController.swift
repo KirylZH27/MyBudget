@@ -13,7 +13,12 @@ final class ProfileViewController: NiblessViewController {
     var contentView: ProfileViewControllerView {
         view as! ProfileViewControllerView
     }
+    private let appColorGetter: AppColorGetter
     
+    override init() {
+        self.appColorGetter = UserDefaultAppColorDataSource()
+        super.init()
+    }
     
     override func loadView() {
         view = ProfileViewControllerView()
@@ -23,6 +28,19 @@ final class ProfileViewController: NiblessViewController {
         super.viewDidLoad()
         addTargets()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupMainColor()
+    }
+    
+    private func setupMainColor(){
+        let mainColor = appColorGetter.getMainColor()
+        contentView.imageView.backgroundColor = mainColor
+        contentView.editProfileButton.backgroundColor = mainColor
+        contentView.signOutProfileButton.backgroundColor = mainColor
+    }
+    
     
     private func addTargets() {
         contentView.editProfileButton.addTarget(self, action: #selector(editProfileButtonWasPressed) , for: .touchUpInside)

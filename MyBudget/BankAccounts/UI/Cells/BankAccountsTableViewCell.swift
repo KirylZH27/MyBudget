@@ -11,11 +11,14 @@ class BankAccountsTableViewCell: UITableViewCell {
     
     static let id = String(describing: BankAccountsTableViewCell.self)
     
-    let personImageView: UIImageView = {
+    private let appColorGetter: AppColorGetter
+    private let transactionGetter: TransactionGetter = TransactionRealmManager()
+    
+    lazy var personImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = UIImage(systemName: "dollarsign.arrow.circlepath")
-        imageView.tintColor = AppColors.green.value
+        imageView.tintColor = appColorGetter.getMainColor()
         return imageView
     }()
     
@@ -38,10 +41,8 @@ class BankAccountsTableViewCell: UITableViewCell {
         return label
     }()
     
-    
-    private let transactionGetter: TransactionGetter = TransactionRealmManager()
-    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        appColorGetter = UserDefaultAppColorDataSource()
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         layoutElemets()
     }

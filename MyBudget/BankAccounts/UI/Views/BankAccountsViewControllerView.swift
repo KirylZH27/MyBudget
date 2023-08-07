@@ -8,16 +8,18 @@
 import UIKit
 final class BankAccountsViewControllerView: NiblessView {
     
+    private let appColorGetter: AppColorGetter
+    
     let totalBalanceView: BankAccountsTotalBalanceView = {
         let view = BankAccountsTotalBalanceView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    let addBankAccountButton: UIButton = {
+    lazy var addBankAccountButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = AppColors.green.value
+        button.backgroundColor = appColorGetter.getMainColor()
         button.setTitle("Добавить счет", for: .normal)
         button.layer.cornerRadius = 12
         button.setTitleColor(.black, for: .normal)
@@ -32,6 +34,7 @@ final class BankAccountsViewControllerView: NiblessView {
     }()
     
     override init(frame: CGRect) {
+        appColorGetter = UserDefaultAppColorDataSource()
         super.init(frame: frame)
         
         laoutElemets()

@@ -10,6 +10,8 @@ import FirebaseAuth
 import SDWebImage
 
 final class ProfileViewControllerView: NiblessView {
+    
+    private let appColorGetter: AppColorGetter
    
     private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -17,11 +19,11 @@ final class ProfileViewControllerView: NiblessView {
         return scrollView
     }()
     
-    private let imageView: UIImageView = {
+    lazy var imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = UIImage(systemName: "person.fill")
-        imageView.tintColor = AppColors.green.value
+        imageView.tintColor = appColorGetter.getMainColor()
         return imageView
     }()
     
@@ -68,20 +70,20 @@ final class ProfileViewControllerView: NiblessView {
         return label
     }()
    
-    let editProfileButton: UIButton = {
+    lazy var editProfileButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = AppColors.green.value
+        button.backgroundColor = appColorGetter.getMainColor()
         button.setTitle("Изменить профиль", for: .normal)
         button.layer.cornerRadius = 12
         button.setTitleColor(.black, for: .normal)
         return button
     }()
     
-    let signOutProfileButton: UIButton = {
+    lazy var signOutProfileButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = AppColors.green.value
+        button.backgroundColor = appColorGetter.getMainColor()
         button.setTitle("Выход из аккаунта", for: .normal)
         button.layer.cornerRadius = 12
         button.setTitleColor(.black, for: .normal)
@@ -92,8 +94,8 @@ final class ProfileViewControllerView: NiblessView {
     
     
     override init(frame: CGRect) {
+        appColorGetter = UserDefaultAppColorDataSource()
         super.init(frame: frame)
-        
         backgroundColor = .white
         layoutElements()
         setupInit()

@@ -8,6 +8,8 @@
 import UIKit
 final class AddBankAccountViewControllerView: NiblessView {
     
+    private let appColorGetter: AppColorGetter
+    
     private let navigationTittleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -67,10 +69,10 @@ final class AddBankAccountViewControllerView: NiblessView {
        return textField
    }()
     
-    let addAccountButton: UIButton = {
+    lazy var addAccountButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = AppColors.green.value
+        button.backgroundColor = appColorGetter.getMainColor()
         button.setTitle("Добавить", for: .normal)
         button.layer.cornerRadius = 12
         button.titleLabel?.font = UIFont(name: "AmericanTypewriter", size: 22)
@@ -85,6 +87,7 @@ final class AddBankAccountViewControllerView: NiblessView {
     }()
     
     override init(frame: CGRect) {
+        appColorGetter = UserDefaultAppColorDataSource()
         super.init(frame: frame)
         backgroundColor = .white
         
