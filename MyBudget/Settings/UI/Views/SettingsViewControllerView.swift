@@ -20,7 +20,8 @@ final class SettingsViewControllerView: NiblessView {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.backgroundColor = .white
         button.setTitle("Выбрать цвет", for: .normal)
-        button.layer.cornerRadius = 12
+        button.layer.cornerRadius = 8
+        button.layer.borderWidth = 1
         button.titleLabel?.font = AppFonts.AmericanBold.value(size: 22)
         button.setTitleColor(.black, for: .normal)
         return button
@@ -51,8 +52,8 @@ final class SettingsViewControllerView: NiblessView {
         addSubview(changeColorButton)
         NSLayoutConstraint.activate([
             changeColorButton.topAnchor.constraint(equalTo: tableView.bottomAnchor, constant: 20),
-            changeColorButton.leadingAnchor.constraint(equalTo: leadingAnchor),
-            changeColorButton.trailingAnchor.constraint(equalTo: trailingAnchor),
+            changeColorButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5),
+            changeColorButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5),
             changeColorButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -15)
         ])
     }

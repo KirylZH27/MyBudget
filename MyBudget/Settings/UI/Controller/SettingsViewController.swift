@@ -9,6 +9,7 @@ import UIKit
 final class SettingsViewController: NiblessViewController {
     
     var appColorSetter: AppColorSetter
+    private let appColorGetter: AppColorGetter
     
     var contentView: SettingsViewControllerView {
         view as! SettingsViewControllerView
@@ -16,6 +17,7 @@ final class SettingsViewController: NiblessViewController {
     
     init(appColorSetter: AppColorSetter = UserDefaultAppColorDataSource()) {
         self.appColorSetter = appColorSetter
+        self.appColorGetter = UserDefaultAppColorDataSource()
         super.init()
     }
     
@@ -29,6 +31,25 @@ final class SettingsViewController: NiblessViewController {
         
         addDelegates()
         addTargets()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupMainColor()
+    }
+    
+    private func setupMainColor(){
+        changeColorInCells()
+    }
+    
+    private func changeColorInCells(){
+        let mainColor = appColorGetter.getMainColor()
+        let visibleCells = contentView.tableView.visibleCells
+        visibleCells.forEach { cell in
+            let settingCell = cell as? SettingsTableViewCell
+            
+            settingCell?.settingImageView.tintColor = mainColor
+        }
     }
     
     private func addDelegates(){

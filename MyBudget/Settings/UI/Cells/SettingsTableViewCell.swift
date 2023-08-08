@@ -11,12 +11,14 @@ class SettingsTableViewCell: UITableViewCell {
     
     static let id = String(describing: SettingsTableViewCell.self)
     
-    let settingImageView: UIImageView = {
+    private let appColorGetter: AppColorGetter
+    
+    lazy var settingImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = UIImage(systemName: "dollarsign.square.fill")
-        imageView.tintColor = .white
-        imageView.backgroundColor = AppColors.green.value
+        imageView.tintColor = appColorGetter.getMainColor()
+        imageView.backgroundColor = .white
         imageView.layer.cornerRadius = 4
         return imageView
     }()
@@ -42,6 +44,7 @@ class SettingsTableViewCell: UITableViewCell {
     
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        appColorGetter = UserDefaultAppColorDataSource()
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         layoutElements()
     }
