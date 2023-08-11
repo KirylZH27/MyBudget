@@ -74,10 +74,6 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource{
         { return cell }
         return settingsCell
     }
-    
-  //  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-  //      return 60
-  //  }
 }
 
 extension SettingsViewController {
@@ -90,7 +86,5 @@ extension SettingsViewController: UIColorPickerViewControllerDelegate {
     func colorPickerViewController(_ viewController: UIColorPickerViewController, didSelect color: UIColor, continuously: Bool) {
         
         appColorSetter.saveMainColor(color)
-        
-        //MARK: - Сделать аллерт
     }
 }

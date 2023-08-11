@@ -17,6 +17,7 @@ final class AuthorizationViewModel {
         self.authorizationManager = authorizationManager
         self.userStore = userStore
     }
+    
     func requestGoogleAuthorization() {
         authorizationManager.requestAuthorization(in: .google) { [weak self] result in
             switch result {

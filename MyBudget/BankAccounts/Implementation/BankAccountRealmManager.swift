@@ -39,7 +39,6 @@ final class BankAccountRealmManager: BankAccountCreator, BankAccountGetter, Bank
     }
     
     func deleteBankAccount(bankAccount: BankAccount, completion: @escaping (Error?) -> Void) {
-        
         let bankAccountsRealm = Array(realm.objects(BankAccountRealm.self))
         guard let bankAccountRealm = bankAccountsRealm.filter({ $0.id == bankAccount.id }).first else { return }
         realm.writeAsync { [weak self] in

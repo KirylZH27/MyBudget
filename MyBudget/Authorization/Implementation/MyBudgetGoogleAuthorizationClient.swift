@@ -38,6 +38,4 @@ final class MyBudgetGoogleAuthorizationClient: GoogleAuthorizationClient {
             completion(.success(GoogleAuthorizationResult(idToken: idToken, accessToken: user.accessToken.tokenString)))
         }
     }
-    
-    
 }

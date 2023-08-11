@@ -66,35 +66,7 @@ final class UserAdditionalInfoViewController: NiblessViewController {
         }
     }
     
-    // MARK: - Private methods
     private func setupInit() {
         contentView.saveButton.addTarget(self, action: #selector(saveButtonAction), for: .touchUpInside)
     }
-    /*
-    private func showMainVC() {
-        let vc = makeMainViewController()
-        
-        navigationController?.setViewControllers([vc], animated: true)
-    }
-    
-    private func makeMainViewController() -> MainViewController {
-        let viewModel = MainViewModel()
-        
-        let tabBarControllerFactory = {
-            MyBudgetTabBarDependecyContainer(sharedMainViewModel: viewModel).makeTabBar()
-        }
-        
-        let transactionWasAddedAnimationViewControllerFactory = {
-            TransactionWasAddedAnimationViewController()
-        }
-        
-        let 
-        
-        let viewController = MainViewController(viewModel: viewModel,
-                                                tabBarControllerFactory: tabBarControllerFactory, transactionWasAddedAnimationViewControllerFactory: transactionWasAddedAnimationViewControllerFactory, authorizationViewControllerFactory: )
-        
-        return viewController
-    }
-     */
-    
 }

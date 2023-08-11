@@ -88,6 +88,7 @@ final class EditProfileViewConttrollerView: NiblessView {
             nameTextField.heightAnchor.constraint(equalToConstant: 40)
         ])
     }
+    
     private func layoutEmailTextField(){
         addSubview(emailTextField)
         NSLayoutConstraint.activate([
@@ -104,7 +105,6 @@ final class EditProfileViewConttrollerView: NiblessView {
             saveNewProfileInfoButton.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 70),
             saveNewProfileInfoButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 72),
             saveNewProfileInfoButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -72),
-         //   saveNewProfileInfoButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10)
             saveNewProfileInfoButton.heightAnchor.constraint(equalToConstant: 34)
         ])
     }

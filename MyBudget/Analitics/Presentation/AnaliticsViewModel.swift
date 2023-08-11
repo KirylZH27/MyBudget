@@ -109,5 +109,4 @@ final class AnaliticsViewModel {
         }
         return transactionsDictionary
     }
-    
 }

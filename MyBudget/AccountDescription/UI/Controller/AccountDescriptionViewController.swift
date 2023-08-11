@@ -13,7 +13,6 @@ final class AccountDescriptionViewController: NiblessViewController {
     private let viewModel: AccountDescriptionViewModel
     private var cancalable = Set<AnyCancellable>()
     
-    
     var contentView: AccountDescriptionViewControllerView {
         view as! AccountDescriptionViewControllerView
     }

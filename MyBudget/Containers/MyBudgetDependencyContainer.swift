@@ -11,29 +11,13 @@ import FirebaseAuth
 
 final class MyBudgetDependencyContainer {
     
-    // MARK: - Private properties
     private let sharedWindow: UIWindow
     private let navigationController = UINavigationController()
     
-    
-    
-    // MARK: - Inits
     init(sharedWindow: UIWindow) {
         self.sharedWindow = sharedWindow
     }
     
-    
-    // MARK: - Public methods
-    /*
-    func start() {
-        navigationController.isNavigationBarHidden = true
-        
-        setupWindow()
-        addLogoutObserver()
-    }
-    */
-    
-    // MARK: - Private properties
     func makeMainViewController() -> MainViewController {
         let userStore = FirebaseUserStore()
         let viewModel = MainViewModel(userStore: userStore)
@@ -105,36 +89,4 @@ final class MyBudgetDependencyContainer {
     private func createTabBarController(mainViewModel: MainViewModel) -> UITabBarController {
         MyBudgetTabBarDependecyContainer(sharedMainViewModel: mainViewModel).makeTabBar()
     }
-   /*
-    private func addLogoutObserver() {
-        Auth.auth().addStateDidChangeListener { auth, user in
-            if let user = user {
-                let userStore = self.createUserStore()
-                
-                userStore.checkIfUserExist(by: user.uid) { isUserExist in
-                    if isUserExist {
-                        let vc = self.makeMainViewController()
-                        
-                        self.navigationController.setViewControllers([vc], animated: true)
-                    } else {
-                        let viewModel = UserAdditionalInfoViewModel()
-                        let vc = UserAdditionalInfoViewController(viewModel: viewModel)
-                        
-                        self.navigationController.setViewControllers([vc], animated: true)
-                    }
-                }
-            } else {
-                let viewModel = MainViewModel()
-                let vc = self.createAuthorizationViewController(hideAuthorizationNavigationResponder: viewModel)
-                
-                self.navigationController.setViewControllers([vc], animated: true)
-            }
-        }
-    }
-    
-    private func setupWindow() {
-        sharedWindow.rootViewController = navigationController
-        sharedWindow.makeKeyAndVisible()
-    }
-    */
 }

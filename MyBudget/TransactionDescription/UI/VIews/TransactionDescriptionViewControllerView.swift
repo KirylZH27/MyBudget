@@ -21,7 +21,6 @@ final class TransactionDescriptionViewControllerView: NiblessView {
         return label
     }()
     
-    
     let transactionCategoryCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal

@@ -116,5 +116,4 @@ final class MyBudgetTabBarDependecyContainer {
         navigationController.tabBarItem.image = UIImage(systemName: "person.crop.circle")
         return navigationController
     }
-    
 }

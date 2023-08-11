@@ -9,22 +9,21 @@ import UIKit
 
 final class UserAdditionalInfoViewControllerView: NiblessView {
     
-    // MARK: - IBOutlets
     let userNameTextField: UITextField = {
-        let tf = UITextField()
-        tf.translatesAutoresizingMaskIntoConstraints = false
-        tf.placeholder = "User name"
-        tf.borderStyle = .roundedRect
-        return tf
+        let textfield = UITextField()
+        textfield.translatesAutoresizingMaskIntoConstraints = false
+        textfield.placeholder = "User name"
+        textfield.borderStyle = .roundedRect
+        return textfield
     }()
     
     let saveButton: UIButton = {
-        let btn = UIButton()
-        btn.translatesAutoresizingMaskIntoConstraints = false
-        btn.setTitle("Save", for: .normal)
-        btn.setTitleColor(.tintColor, for: .normal)
-        btn.backgroundColor = .red
-        return btn
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Save", for: .normal)
+        button.setTitleColor(.tintColor, for: .normal)
+        button.backgroundColor = .red
+        return button
     }()
     
     override init(frame: CGRect) {
@@ -34,7 +33,6 @@ final class UserAdditionalInfoViewControllerView: NiblessView {
         setupConstraints()
     }
     
-    // MARK: - Private methods
     private func setupInit() {
         backgroundColor = .white
     }
@@ -47,6 +45,7 @@ final class UserAdditionalInfoViewControllerView: NiblessView {
             userNameTextField.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 0),
             userNameTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 40),
             userNameTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -40),
+            
             saveButton.topAnchor.constraint(equalTo: userNameTextField.bottomAnchor, constant: 20),
             saveButton.centerXAnchor.constraint(equalTo: centerXAnchor),
             saveButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),

@@ -17,6 +17,7 @@ final class BankAccountsTotalBalanceView: NiblessView {
         label.textColor = .black
         return label
     }()
+    
     private let totalBalanceDescriptionLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false

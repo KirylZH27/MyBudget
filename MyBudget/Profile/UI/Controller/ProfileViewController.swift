@@ -43,7 +43,6 @@ final class ProfileViewController: NiblessViewController {
         contentView.signOutProfileButton.backgroundColor = mainColor
     }
     
-    
     private func addTargets() {
         contentView.editProfileButton.addTarget(self, action: #selector(editProfileButtonWasPressed) , for: .touchUpInside)
         contentView.signOutProfileButton.addTarget(self, action: #selector(signOutProfileButtonWasPressed), for: .touchUpInside)

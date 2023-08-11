@@ -154,7 +154,6 @@ final class AddBankAccountViewControllerView: NiblessView {
     private func layoutaddAccountButton() {
         addSubview(addAccountButton)
         NSLayoutConstraint.activate([
-           // addAccountButton.topAnchor.constraint(equalTo: currentBalanceTextField.bottomAnchor, constant: 140),
             addAccountButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 100),
             addAccountButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -100),
             addAccountButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -20),

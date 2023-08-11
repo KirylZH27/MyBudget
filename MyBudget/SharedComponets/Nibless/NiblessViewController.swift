@@ -8,7 +8,6 @@
 import UIKit
 open class NiblessViewController: UIViewController {
     
-    // MARK: - Methods
     public init() {
         super.init(nibName: nil, bundle: nil)
     }

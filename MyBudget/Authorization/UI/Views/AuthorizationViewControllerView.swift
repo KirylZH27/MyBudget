@@ -37,7 +37,6 @@ final class AuthorizationViewControllerView: NiblessView {
         return button
     }()
     
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .brown
@@ -77,9 +76,5 @@ final class AuthorizationViewControllerView: NiblessView {
             continueWithGoogleButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -80),
             continueWithGoogleButton.heightAnchor.constraint(equalToConstant: 50)
         ])
-
     }
-    
-    
-    
 }

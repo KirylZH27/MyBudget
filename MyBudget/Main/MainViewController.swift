@@ -39,7 +39,6 @@ final class MainViewController: NiblessViewController {
         view.backgroundColor = .white
         bindViewModel()
         viewModel.checkAuthorization()
-    
     }
     
     private func bindViewModel(){

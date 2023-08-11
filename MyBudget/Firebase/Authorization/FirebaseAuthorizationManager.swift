@@ -35,7 +35,6 @@ final class FirebaseAuthorizationManager: AuthorizationManager {
         self.auth = auth
     }
     
-    
     func requestAuthorization(in type: AuthorizationType, completion: @escaping (AuthorizationResult) -> Void) {
         switch type {
             case .google:

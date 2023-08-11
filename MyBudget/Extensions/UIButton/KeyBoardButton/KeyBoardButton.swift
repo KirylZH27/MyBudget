@@ -17,7 +17,6 @@ struct ModelKeyBoardButton {
 final class KeyBoardButton: UIButton {
     let typeButton: KeyBoardSymbol
     
-    
     init(model: ModelKeyBoardButton, type: KeyBoardSymbol) {
         self.typeButton = type
         super.init(frame: .zero)
@@ -35,7 +34,6 @@ final class KeyBoardButton: UIButton {
         self.setTitle(model.title, for: state)
         self.setTitleColor(model.titleColor, for: .normal)
         self.titleLabel?.font = model.font
-      //  self.setTitle(model.titleColor.withAlphaComponent(0.7), for: .highlighted)
     }
     
     override func layoutSubviews() {

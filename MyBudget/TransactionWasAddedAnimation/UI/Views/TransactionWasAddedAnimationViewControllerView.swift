@@ -9,7 +9,6 @@ import UIKit
 
 final class TransactionWasAddedAnimationViewControllerView: NiblessView {
     
-    
     let outerRingAnimationDuration: Double = 1.5
     let outerRingBorderWidth: CGFloat = 24
     let outerRingViewSide: CGFloat = 220

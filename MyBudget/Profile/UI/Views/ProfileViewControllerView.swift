@@ -59,7 +59,6 @@ final class ProfileViewControllerView: NiblessView {
         return label
     }()
 
-    
     private let emailLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -175,7 +174,6 @@ final class ProfileViewControllerView: NiblessView {
             nameLabel.topAnchor.constraint(equalTo: nameSignatureLabel.bottomAnchor, constant: 5),
             nameLabel.leadingAnchor.constraint(equalTo: scrollView.frameLayoutGuide.leadingAnchor, constant: 20),
             nameLabel.trailingAnchor.constraint(equalTo: scrollView.frameLayoutGuide.trailingAnchor, constant: -20)
-         //   nameLabel.bottomAnchor.constraint(equalTo: scrollView.contentLayoutGuide.bottomAnchor, constant: -10)
         ])
     }
     
@@ -193,8 +191,7 @@ final class ProfileViewControllerView: NiblessView {
         NSLayoutConstraint.activate([
             emailLabel.topAnchor.constraint(equalTo: emailSignatureLabel.bottomAnchor, constant: 5),
             emailLabel.leadingAnchor.constraint(equalTo: scrollView.frameLayoutGuide.leadingAnchor, constant: 20),
-            emailLabel.trailingAnchor.constraint(equalTo: scrollView.frameLayoutGuide.trailingAnchor, constant: -20),
-        //    emailLabel.bottomAnchor.constraint(equalTo: scrollView.contentLayoutGuide.bottomAnchor, constant: -10)
+            emailLabel.trailingAnchor.constraint(equalTo: scrollView.frameLayoutGuide.trailingAnchor, constant: -20)
         ])
     }
     
@@ -204,7 +201,6 @@ final class ProfileViewControllerView: NiblessView {
             editProfileButton.topAnchor.constraint(equalTo: emailLabel.bottomAnchor, constant: 75),
             editProfileButton.leadingAnchor.constraint(equalTo: scrollView.frameLayoutGuide.leadingAnchor, constant: 72),
             editProfileButton.trailingAnchor.constraint(equalTo: scrollView.frameLayoutGuide.trailingAnchor, constant: -72),
-        //    editProfileButton.bottomAnchor.constraint(equalTo: scrollView.contentLayoutGuide.bottomAnchor, constant: -10)
             editProfileButton.heightAnchor.constraint(equalToConstant: 34)
         ])
     }

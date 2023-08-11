@@ -13,8 +13,8 @@ final class TransactionDescriptionViewController: NiblessViewController {
     private let viewModel: TransactionDescriptionViewModel
     private let transactionValue: String
     private let transactionType: TransactionType
-    private var cancellable = Set<AnyCancellable>()
     private let transactionWasAddedAnimationNavigationResponder: TransactionWasAddedNavigationResponder
+    private var cancellable = Set<AnyCancellable>()
     
     var contentView: TransactionDescriptionViewControllerView {
         view as! TransactionDescriptionViewControllerView
@@ -44,12 +44,6 @@ final class TransactionDescriptionViewController: NiblessViewController {
     
     private func addTargets() {
         contentView.saveTransactionButton.addTarget(self, action: #selector(saveTransactionButtonWasPressed), for: .touchUpInside)
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(5)){
-        }
     }
     
     init(viewModel: TransactionDescriptionViewModel,transactionValue: String, transactionType: TransactionType,
@@ -128,7 +122,6 @@ extension TransactionDescriptionViewController: UICollectionViewDelegate, UIColl
         if collectionView == contentView.transactionCategoryCollectionView {
         }
         return CGSize(width: 170, height: 160)
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 protocol BankAccountGetter {
     func getAllBankAccounts(completion: @escaping ([BankAccount]) -> Void)
 }

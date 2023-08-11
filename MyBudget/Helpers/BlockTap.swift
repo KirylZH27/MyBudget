@@ -34,7 +34,6 @@ class BlockTap: UITapGestureRecognizer {
     }
 }
 
-
 extension UIView {
     
     public func addTapGesture(tapNumber: Int = 1,

@@ -30,7 +30,6 @@ open class ImagePicker: NSObject {
         self.pickerController.delegate = self
         self.pickerController.allowsEditing = true
         self.pickerController.mediaTypes = ["public.image"]
-//        self.pickerController.mediaTypes = ["public.image", "public.movie"]
     }
 
     private func action(for type: UIImagePickerController.SourceType, title: String) -> UIAlertAction? {
@@ -51,10 +50,6 @@ open class ImagePicker: NSObject {
         if let action = self.action(for: .camera, title: "Камера") {
             alertController.addAction(action)
         }
-        
-//        if let action = self.action(for: .savedPhotosAlbum, title: "Camera roll") {
-//            alertController.addAction(action)
-//        }
         
         if let action = self.action(for: .photoLibrary, title: "Фотогалерея") {
             alertController.addAction(action)
@@ -81,7 +76,7 @@ open class ImagePicker: NSObject {
 extension ImagePicker: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     public func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-//        self.pickerController(picker, didSelect: nil)
+        
         presentationController?.dismiss(animated: true, completion: nil)
         delegate?.didCancelled()
     }

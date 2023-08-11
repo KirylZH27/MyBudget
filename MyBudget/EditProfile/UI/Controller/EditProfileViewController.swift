@@ -143,8 +143,6 @@ extension EditProfileViewController {
         case .denied:
             openAppSettings()
         default:
-            // Not determined fill fall here - after first use, when is't neither authorized, nor denied
-            // we try to use camera, because system will ask itself for camera permissions
             selectImageFromLibrary()
         }
         
@@ -163,7 +161,6 @@ extension EditProfileViewController {
             }
         }
     }
-
 }
 
 

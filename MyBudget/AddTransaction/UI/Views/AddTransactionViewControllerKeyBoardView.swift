@@ -20,10 +20,8 @@ enum KeyBoardSymbol: String, CaseIterable {
     case zero = "0"
     case decimal
     case backspace
-    
 }
                     
-
 final class AddTransactionViewControllerKeyBoardView: NiblessView {
     
     private var button: [UIButton] = []
@@ -48,15 +46,7 @@ final class AddTransactionViewControllerKeyBoardView: NiblessView {
             distribution: .fillEqually,
             userInteraction: true)
         .setLayoutMargins(top: 40, left: 40, right: 40, bottom: 40)
-    /*
-    private let lastStackView = UIStackView()
-        .myStyleStack(
-            spacing: 17,
-            aligment: .fill,
-            axis: .horizontal,
-            distribution: .fillEqually,
-            userInteraction: true)
-    */
+
     let zeroStackView = UIStackView()
         .myStyleStack(
             spacing: 17,
@@ -164,7 +154,6 @@ final class AddTransactionViewControllerKeyBoardView: NiblessView {
     private func setViewHierarhies(){
         self.addSubview(mainStackView)
         containerStackView.addArrangedSubview(zeroStackView)
-        //containerStackView.addArrangedSubview(lastStackView)
         mainStackView.addArrangedSubview(containerStackView)
         zeroStackView.addArrangedSubview(decimalSeparatorButton)
         zeroStackView.addArrangedSubview(zeroButton)

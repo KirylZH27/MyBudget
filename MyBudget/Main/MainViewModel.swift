@@ -51,7 +51,6 @@ final class MainViewModel: HideAuthorizationNavigationResponder, TransactionWasA
         isPresentUserAdditionalInfo.send(false)
     }
     
-    
     func showUserAdditionalInfo() {
         isPresentUserAdditionalInfo.send(true)
     }

@@ -16,7 +16,6 @@
 		0A210E562A4F2EB200D5B750 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0A210E552A4F2EB200D5B750 /* GoogleService-Info.plist */; };
 		0A210E5D2A4F423700D5B750 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A210E5C2A4F423700D5B750 /* ProfileViewController.swift */; };
 		0A210E5F2A4F425D00D5B750 /* ProfileViewControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A210E5E2A4F425D00D5B750 /* ProfileViewControllerView.swift */; };
-		0A210E622A4F6D2A00D5B750 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A210E612A4F6D2A00D5B750 /* APIManager.swift */; };
 		0A210E672A4F702000D5B750 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A210E662A4F702000D5B750 /* UserModel.swift */; };
 		0A210E6E2A4F772F00D5B750 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A210E6D2A4F772F00D5B750 /* RealmManager.swift */; };
 		0A210E702A4F77A100D5B750 /* UserModelRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A210E6F2A4F77A000D5B750 /* UserModelRealm.swift */; };
@@ -122,7 +121,6 @@
 		0A210E552A4F2EB200D5B750 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0A210E5C2A4F423700D5B750 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		0A210E5E2A4F425D00D5B750 /* ProfileViewControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewControllerView.swift; sourceTree = "<group>"; };
-		0A210E612A4F6D2A00D5B750 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		0A210E662A4F702000D5B750 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		0A210E6D2A4F772F00D5B750 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		0A210E6F2A4F77A000D5B750 /* UserModelRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModelRealm.swift; sourceTree = "<group>"; };
@@ -262,7 +260,6 @@
 				0AE423C82A50298300311943 /* Authorization */,
 				0A210E682A4F767D00D5B750 /* RealmManager */,
 				0A210E632A4F6DB800D5B750 /* Models */,
-				0A210E602A4F697800D5B750 /* APIManager */,
 				0AF74EF22A4847950038D221 /* SharedComponets */,
 				0A210E572A4F41E600D5B750 /* Profile */,
 				0A475E042A52D2B100B397AC /* EditProfile */,
@@ -345,14 +342,6 @@
 				0A210E5E2A4F425D00D5B750 /* ProfileViewControllerView.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		0A210E602A4F697800D5B750 /* APIManager */ = {
-			isa = PBXGroup;
-			children = (
-				0A210E612A4F6D2A00D5B750 /* APIManager.swift */,
-			);
-			path = APIManager;
 			sourceTree = "<group>";
 		};
 		0A210E632A4F6DB800D5B750 /* Models */ = {
@@ -1253,7 +1242,6 @@
 				0AB7D0D32A63F369004A9EF9 /* AccountDescriptionViewControllerView.swift in Sources */,
 				0AFE736B2A55DFC300E21458 /* UserAdditionalInfoViewController.swift in Sources */,
 				0A77FF3D2A5ED302005D1615 /* AddTransactionViewControllerKeyBoardView.swift in Sources */,
-				0A210E622A4F6D2A00D5B750 /* APIManager.swift in Sources */,
 				0AF74EE12A483F7D0038D221 /* MyBudgetDependencyContainer.swift in Sources */,
 				0AFE73642A54996600E21458 /* SettingsTableViewCell.swift in Sources */,
 				0AF74F002A4849500038D221 /* BankAccountsViewController.swift in Sources */,

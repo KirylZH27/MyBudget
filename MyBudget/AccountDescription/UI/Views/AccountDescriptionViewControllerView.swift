@@ -74,6 +74,4 @@ final class AccountDescriptionViewControllerView: NiblessView {
             tableView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -10)
         ])
     }
-    
-    
 }

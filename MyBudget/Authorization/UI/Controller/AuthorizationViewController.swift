@@ -21,7 +21,7 @@ final class AuthorizationViewController: NiblessViewController {
     private let showUserAdditionalInfoNavigationResponder: ShowUserAditionalInfoNavigationResponder
     
     override func loadView() {
-//        super.loadView() // FIXME: not needed
+        super.loadView()
         view = AuthorizationViewControllerView()
     }
     
@@ -31,7 +31,6 @@ final class AuthorizationViewController: NiblessViewController {
         bindViewModel()
         addTargets()
     }
-    
     
     init(viewModel: AuthorizationViewModel, hideAuthorizationNavigationResponder: HideAuthorizationNavigationResponder, showUserAdditionalInfoNavigationResponder: ShowUserAditionalInfoNavigationResponder) {
         self.viewModel = viewModel

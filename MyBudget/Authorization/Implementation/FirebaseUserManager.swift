@@ -15,7 +15,6 @@ final class FirebaseUserManager: UserCreator {
         self.userStore = userStore
     }
     
-    
     func createUserIfNeeded(with user: UserModel, completion: @escaping (Result<Void, Error>) -> Void) {
         userStore.checkIfUserExist(by: user.id) { [weak self] isExist in
             if isExist {
@@ -25,6 +24,4 @@ final class FirebaseUserManager: UserCreator {
             }
         }
     }
-    
-    
 }
