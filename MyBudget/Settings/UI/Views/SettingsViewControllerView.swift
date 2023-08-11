@@ -33,7 +33,7 @@ final class SettingsViewControllerView: NiblessView {
         super.init(frame: frame)
         
         layoutElemets()
-        backgroundColor = .white
+        backgroundColor = AppColors.white.value
     }
     
     private func layoutElemets(){

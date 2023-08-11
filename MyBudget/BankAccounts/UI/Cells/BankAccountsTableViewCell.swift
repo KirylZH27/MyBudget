@@ -17,7 +17,8 @@ class BankAccountsTableViewCell: UITableViewCell {
     lazy var personImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = UIImage(systemName: "dollarsign.arrow.circlepath")
+        let image = UIImage(systemName: "dollarsign.arrow.circlepath")
+        imageView.image = image?.withRenderingMode(.alwaysTemplate)
         imageView.tintColor = appColorGetter.getMainColor()
         return imageView
     }()
@@ -57,9 +58,11 @@ class BankAccountsTableViewCell: UITableViewCell {
         
         switch bankAccount.type {
             case .cash:
-                personImageView.image = UIImage(systemName: "bitcoinsign.circle")
+                let image = UIImage(systemName: "bitcoinsign.circle")
+                personImageView.image = image?.withRenderingMode(.alwaysTemplate)
             case .card:
-                personImageView.image = UIImage(systemName: "creditcard")
+                let image = UIImage(systemName: "creditcard")
+                personImageView.image = image?.withRenderingMode(.alwaysTemplate)
         }
     }
     

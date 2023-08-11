@@ -34,7 +34,7 @@ final class AddTransactionViewControllerView: NiblessView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .white
+        backgroundColor = AppColors.white.value
  
         layoutElements()
     }

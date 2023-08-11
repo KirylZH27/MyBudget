@@ -58,7 +58,7 @@ final class EditProfileViewConttrollerView: NiblessView {
     override init(frame: CGRect) {
         appColorGetter = UserDefaultAppColorDataSource()
         super.init(frame: frame)
-        backgroundColor = .white
+        backgroundColor = AppColors.white.value
         layoutElements()
     }
     

@@ -10,7 +10,8 @@ import FirebaseAuth
 import SDWebImage
 
 final class ProfileViewControllerView: NiblessView {
-    
+   
+    var userModel: UserModel?
     private let appColorGetter: AppColorGetter
    
     private let scrollView: UIScrollView = {
@@ -89,13 +90,16 @@ final class ProfileViewControllerView: NiblessView {
         return button
     }()
     
-    var userModel: UserModel?
-    
+    let changeThemeModeSwitch: UISwitch = {
+        let switchUI = UISwitch()
+        switchUI.translatesAutoresizingMaskIntoConstraints = false
+        return switchUI
+    }()
     
     override init(frame: CGRect) {
         appColorGetter = UserDefaultAppColorDataSource()
         super.init(frame: frame)
-        backgroundColor = .white
+        backgroundColor = AppColors.white.value
         layoutElements()
         setupInit()
     }
@@ -137,6 +141,7 @@ final class ProfileViewControllerView: NiblessView {
         layoutEmailLabel()
         layoutEditProfileButton()
         layoutSignOutProfileButton()
+        layoutChangeThemeModeSwitch()
     }
     
     
@@ -214,6 +219,15 @@ final class ProfileViewControllerView: NiblessView {
             signOutProfileButton.trailingAnchor.constraint(equalTo: scrollView.frameLayoutGuide.trailingAnchor, constant: -100),
             signOutProfileButton.bottomAnchor.constraint(equalTo: scrollView.contentLayoutGuide.bottomAnchor, constant: -10),
             signOutProfileButton.heightAnchor.constraint(equalToConstant: 34)
+        ])
+    }
+    
+    private func layoutChangeThemeModeSwitch(){
+        scrollView.addSubview(changeThemeModeSwitch)
+        NSLayoutConstraint.activate([
+          //  changeThemeModeSwitch.leadingAnchor.constraint(equalTo: .trailingAnchor, constant: 30),
+            changeThemeModeSwitch.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
+            changeThemeModeSwitch.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 20)
         ])
     }
 }

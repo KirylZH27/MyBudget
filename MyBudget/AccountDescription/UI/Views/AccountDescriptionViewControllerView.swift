@@ -31,12 +31,13 @@ final class AccountDescriptionViewControllerView: NiblessView {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(AccountDescriptionTableViewCell.self, forCellReuseIdentifier: AccountDescriptionTableViewCell.id)
+        tableView.backgroundColor = .clear
         return tableView
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .white
+        backgroundColor = AppColors.white.value
         
         layoutElemets()
     }

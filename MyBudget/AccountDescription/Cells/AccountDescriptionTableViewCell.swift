@@ -14,8 +14,9 @@ class AccountDescriptionTableViewCell: UITableViewCell {
     let spendingElementImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = UIImage(systemName: "car")
-        imageView.tintColor = .brown
+        let image = UIImage(systemName: "car")
+        imageView.image = image?.withRenderingMode(.alwaysTemplate)
+        imageView.tintColor = AppColors.black.value
         return imageView
     }()
     
@@ -24,7 +25,7 @@ class AccountDescriptionTableViewCell: UITableViewCell {
         label.font = UIFont(name: "AmericanTypewriter-Bold", size: 20)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Transport"
-        label.textColor = .black
+        label.textColor = AppColors.black.value
         return label
     }()
     
@@ -43,7 +44,7 @@ class AccountDescriptionTableViewCell: UITableViewCell {
         label.font = UIFont(name: "AmericanTypewriter", size: 16)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "121"
-        label.textColor = .black
+        label.textColor = AppColors.black.value
         label.textAlignment = .right
         return label
     }()
@@ -66,16 +67,18 @@ class AccountDescriptionTableViewCell: UITableViewCell {
     }
     
     private func setupIconImage(category: TransactionCategory){
+        var image: UIImage?
         switch category {
             case .sallary:
-                spendingElementImageView.image = UIImage(named: "salary")
+                image = UIImage(named: "salary")
             case .trasport:
-                spendingElementImageView.image = UIImage(systemName: "bus")
+                image = UIImage(systemName: "bus")
             case .food:
-                spendingElementImageView.image = UIImage(named: "burger")
+                image = UIImage(named: "burger")
             case .car:
-                spendingElementImageView.image = UIImage(systemName: "car")
+                image = UIImage(systemName: "car")
         }
+        spendingElementImageView.image = image?.withRenderingMode(.alwaysTemplate)
     }
     
     private func setupTransactionTypeColor(type: TransactionType){

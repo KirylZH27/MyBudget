@@ -39,7 +39,7 @@ final class BankAccountsViewControllerView: NiblessView {
         
         laoutElemets()
         
-        backgroundColor = .white
+        backgroundColor = AppColors.white.value
     }
     
     private func laoutElemets() {

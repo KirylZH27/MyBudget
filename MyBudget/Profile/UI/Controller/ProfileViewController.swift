@@ -46,6 +46,7 @@ final class ProfileViewController: NiblessViewController {
     private func addTargets() {
         contentView.editProfileButton.addTarget(self, action: #selector(editProfileButtonWasPressed) , for: .touchUpInside)
         contentView.signOutProfileButton.addTarget(self, action: #selector(signOutProfileButtonWasPressed), for: .touchUpInside)
+        contentView.changeThemeModeSwitch.addTarget(self, action: #selector(switchWasPressed(target:)), for: .touchUpInside)
     }
     
 }
@@ -76,6 +77,18 @@ extension ProfileViewController {
             try? Auth.auth().signOut()
             self.signOutNavigationResponder.signOut()
         }
+    }
+    
+    @objc private func switchWasPressed(target: UISwitch){
+       
+        let appDelegate = UIApplication.shared.windows.first
+        
+        if target.isOn {
+            appDelegate?.overrideUserInterfaceStyle = .dark
+            return
+        }
+        appDelegate?.overrideUserInterfaceStyle = .light
+        return
     }
 }
 
