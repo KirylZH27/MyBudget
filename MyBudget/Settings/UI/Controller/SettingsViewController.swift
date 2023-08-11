@@ -72,6 +72,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: SettingsTableViewCell.id, for: indexPath)
         guard let settingsCell = cell as? SettingsTableViewCell else
         { return cell }
+        settingsCell.delegate = self
         return settingsCell
     }
 }
@@ -86,5 +87,13 @@ extension SettingsViewController: UIColorPickerViewControllerDelegate {
     func colorPickerViewController(_ viewController: UIColorPickerViewController, didSelect color: UIColor, continuously: Bool) {
         
         appColorSetter.saveMainColor(color)
+    }
+}
+
+extension SettingsViewController: SettingsTableViewCellDelegate {
+    func switchDidChangeValue(state isOn: Bool) {
+        let appDelegate = UIApplication.shared.windows.first
+        appDelegate?.overrideUserInterfaceStyle = isOn ? .dark : .light
+        
     }
 }

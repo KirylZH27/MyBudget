@@ -7,9 +7,15 @@
 
 import UIKit
 
+protocol SettingsTableViewCellDelegate: AnyObject{
+    func switchDidChangeValue(state isOn: Bool)
+}
+
 class SettingsTableViewCell: UITableViewCell {
     
     static let id = String(describing: SettingsTableViewCell.self)
+    
+    weak var delegate: SettingsTableViewCellDelegate?
     
     private let appColorGetter: AppColorGetter
     
@@ -41,6 +47,13 @@ class SettingsTableViewCell: UITableViewCell {
         return label
     }()
     
+    lazy var changeThemeModeSwitch: UISwitch = {
+        let switchUI = UISwitch()
+        switchUI.translatesAutoresizingMaskIntoConstraints = false
+        switchUI.addTarget(self, action: #selector(switchWasPressed(sender:)), for: .valueChanged)
+        return switchUI
+    }()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         appColorGetter = UserDefaultAppColorDataSource()
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -55,6 +68,7 @@ class SettingsTableViewCell: UITableViewCell {
         layoutSettingImageView()
         layoutSettingTypeLabel()
         layoutSettingSelectedElementLabel()
+        layoutChangeThemeModeSwitch()
     }
     
     private func layoutSettingImageView(){
@@ -62,7 +76,6 @@ class SettingsTableViewCell: UITableViewCell {
         NSLayoutConstraint.activate([
             settingImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
             settingImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,constant: 7),
-            settingImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
             settingImageView.widthAnchor.constraint(equalToConstant: 50),
             settingImageView.heightAnchor.constraint(equalToConstant: 50)
         ])
@@ -71,8 +84,7 @@ class SettingsTableViewCell: UITableViewCell {
         contentView.addSubview(settingTypeLabel)
         NSLayoutConstraint.activate([
             settingTypeLabel.leadingAnchor.constraint(equalTo: settingImageView.trailingAnchor, constant: 15),
-            settingTypeLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 15),
-            settingTypeLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -15)
+            settingTypeLabel.centerYAnchor.constraint(equalTo: settingImageView.centerYAnchor)
         ])
     }
     
@@ -80,9 +92,24 @@ class SettingsTableViewCell: UITableViewCell {
         contentView.addSubview(settingSelectedElementLabel)
         NSLayoutConstraint.activate([
             settingSelectedElementLabel.leadingAnchor.constraint(equalTo: settingTypeLabel.trailingAnchor, constant: 20),
-            settingSelectedElementLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 15),
-            settingSelectedElementLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -15),
+            settingSelectedElementLabel.centerYAnchor.constraint(equalTo: settingImageView.centerYAnchor),
             settingSelectedElementLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10)
         ])
+    }
+    
+    private func layoutChangeThemeModeSwitch(){
+        contentView.addSubview(changeThemeModeSwitch)
+        NSLayoutConstraint.activate([
+            changeThemeModeSwitch.topAnchor.constraint(equalTo: settingImageView.bottomAnchor, constant: 10),
+            changeThemeModeSwitch.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            changeThemeModeSwitch.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10)
+        ])
+    }
+}
+
+extension SettingsTableViewCell {
+    
+    @objc private func switchWasPressed(sender: UISwitch){
+        delegate?.switchDidChangeValue(state: sender.isOn)
     }
 }
