@@ -68,6 +68,9 @@
 		0AC30BA32A59B19B00CA9168 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC30BA22A59B19B00CA9168 /* ImagePicker.swift */; };
 		0AC30BA52A59B1A700CA9168 /* BlockTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC30BA42A59B1A700CA9168 /* BlockTap.swift */; };
 		0AC30BA72A59B88B00CA9168 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC30BA62A59B88B00CA9168 /* UIImage+Extension.swift */; };
+		0AC4DD722A87A93800DDD51D /* EnumSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC4DD712A87A93800DDD51D /* EnumSettings.swift */; };
+		0AC4DD742A87AA6D00DDD51D /* SettingsViewControllerTableViewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC4DD732A87AA6D00DDD51D /* SettingsViewControllerTableViewHeaderView.swift */; };
+		0AC4DD762A87BC9500DDD51D /* SettingsTableViewCellValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC4DD752A87BC9500DDD51D /* SettingsTableViewCellValue.swift */; };
 		0AE423CD2A502A3A00311943 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE423CC2A502A3A00311943 /* AuthorizationViewController.swift */; };
 		0AE423CF2A502A6000311943 /* AuthorizationViewControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE423CE2A502A6000311943 /* AuthorizationViewControllerView.swift */; };
 		0AE423D22A502A9C00311943 /* AuthorizationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE423D12A502A9C00311943 /* AuthorizationViewModel.swift */; };
@@ -173,6 +176,9 @@
 		0AC30BA22A59B19B00CA9168 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		0AC30BA42A59B1A700CA9168 /* BlockTap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockTap.swift; sourceTree = "<group>"; };
 		0AC30BA62A59B88B00CA9168 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		0AC4DD712A87A93800DDD51D /* EnumSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumSettings.swift; sourceTree = "<group>"; };
+		0AC4DD732A87AA6D00DDD51D /* SettingsViewControllerTableViewHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewControllerTableViewHeaderView.swift; sourceTree = "<group>"; };
+		0AC4DD752A87BC9500DDD51D /* SettingsTableViewCellValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCellValue.swift; sourceTree = "<group>"; };
 		0AE423CC2A502A3A00311943 /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
 		0AE423CE2A502A6000311943 /* AuthorizationViewControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewControllerView.swift; sourceTree = "<group>"; };
 		0AE423D12A502A9C00311943 /* AuthorizationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewModel.swift; sourceTree = "<group>"; };
@@ -740,6 +746,14 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		0AC4DD702A87A8FD00DDD51D /* EnumSettings */ = {
+			isa = PBXGroup;
+			children = (
+				0AC4DD712A87A93800DDD51D /* EnumSettings.swift */,
+			);
+			path = EnumSettings;
+			sourceTree = "<group>";
+		};
 		0AE423C82A50298300311943 /* Authorization */ = {
 			isa = PBXGroup;
 			children = (
@@ -920,6 +934,7 @@
 		0AF74EEC2A4846DB0038D221 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				0AC4DD702A87A8FD00DDD51D /* EnumSettings */,
 				0A16DDFE2A49D57C00604180 /* UI */,
 			);
 			path = Settings;
@@ -1009,6 +1024,7 @@
 			isa = PBXGroup;
 			children = (
 				0AFE73632A54996600E21458 /* SettingsTableViewCell.swift */,
+				0AC4DD752A87BC9500DDD51D /* SettingsTableViewCellValue.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1093,6 +1109,7 @@
 			isa = PBXGroup;
 			children = (
 				0AFF81622A4B337D006ACF1F /* SettingsViewControllerView.swift */,
+				0AC4DD732A87AA6D00DDD51D /* SettingsViewControllerTableViewHeaderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1250,6 +1267,7 @@
 				0AFE735F2A5493E900E21458 /* AppColors.swift in Sources */,
 				0AB7D0DF2A63FA96004A9EF9 /* TransactionDescriptionViewControllerView.swift in Sources */,
 				0AB7D0AA2A628BC5004A9EF9 /* Formatter.swift in Sources */,
+				0AC4DD742A87AA6D00DDD51D /* SettingsViewControllerTableViewHeaderView.swift in Sources */,
 				0AF74EF92A48486D0038D221 /* AddTransactionViewControllerView.swift in Sources */,
 				0AB7D0C02A62B780004A9EF9 /* BankAccountViewModel.swift in Sources */,
 				0A475E092A52D31100B397AC /* EditProfileViewController.swift in Sources */,
@@ -1281,9 +1299,11 @@
 				0AB7D0D12A63F35A004A9EF9 /* AccountDescriptionViewController.swift in Sources */,
 				0A34DA3F2A6006F600461D45 /* UIButton+Target.swift in Sources */,
 				0A7C976D2A7FAE1000544576 /* UserDefaultAppColorDataSource.swift in Sources */,
+				0AC4DD722A87A93800DDD51D /* EnumSettings.swift in Sources */,
 				0A7C97682A7FAD8800544576 /* AppColorGetter.swift in Sources */,
 				0AB7D0E42A63FD85004A9EF9 /* TransactionDescription.swift in Sources */,
 				0A14325D2A3F50C0007D9509 /* SceneDelegate.swift in Sources */,
+				0AC4DD762A87BC9500DDD51D /* SettingsTableViewCellValue.swift in Sources */,
 				0AA725D12A65885100B408C4 /* BankAccountsCollectionViewCell.swift in Sources */,
 				0AB7D0CB2A62BE3C004A9EF9 /* AddBankAccountViewModel.swift in Sources */,
 				0AB7D0EA2A63FFF8004A9EF9 /* TransactionGetter.swift in Sources */,

@@ -8,6 +8,7 @@
 import UIKit
 final class SettingsViewController: NiblessViewController {
     
+    var elemets: [EnumSettings] = EnumSettings.allCases
     var appColorSetter: AppColorSetter
     private let appColorGetter: AppColorGetter
     
@@ -50,6 +51,11 @@ final class SettingsViewController: NiblessViewController {
             
             settingCell?.settingImageView.tintColor = mainColor
         }
+        let visibleCellsValue = contentView.tableView.visibleCells
+        visibleCells.forEach{ cell in
+            let settingCellValue = cell as? SettingsTableViewCellValue
+            settingCellValue?.settingImageView.tintColor = mainColor
+        }
     }
     
     private func addDelegates(){
@@ -65,15 +71,43 @@ final class SettingsViewController: NiblessViewController {
 extension SettingsViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        3
+        1
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        elemets.count
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch section
+            {
+                case 0:
+                    return "Тема приложения"
+                case 1:
+                    return "Текущая валюта"
+                default:
+                    return ""
+            }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: SettingsTableViewCell.id, for: indexPath)
-        guard let settingsCell = cell as? SettingsTableViewCell else
-        { return cell }
-        settingsCell.delegate = self
-        return settingsCell
+        
+        switch indexPath.section {
+            case 0:
+                let cell = tableView.dequeueReusableCell(withIdentifier: SettingsTableViewCell.id, for: indexPath)
+                guard let settingsCell = cell as? SettingsTableViewCell else
+                { return cell }
+                settingsCell.delegate = self
+                return settingsCell
+            case 1:
+                let cell = tableView.dequeueReusableCell(withIdentifier: SettingsTableViewCellValue.id, for: indexPath)
+                guard let settingsThemeCell = cell as? SettingsTableViewCellValue else { return cell }
+                return settingsThemeCell
+            default:
+                let cell = tableView.dequeueReusableCell(withIdentifier: SettingsTableViewCellValue.id, for: indexPath)
+                guard let settingsThemeCell = cell as? SettingsTableViewCellValue else { return cell }
+                return settingsThemeCell
+        }
     }
 }
 

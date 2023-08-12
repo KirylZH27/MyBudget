@@ -12,6 +12,7 @@ final class SettingsViewControllerView: NiblessView {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(SettingsTableViewCell.self, forCellReuseIdentifier: SettingsTableViewCell.id)
+        tableView.register(SettingsTableViewCellValue.self, forCellReuseIdentifier: SettingsTableViewCellValue.id)
         return tableView
     }()
     

@@ -1,28 +1,21 @@
 //
-//  SettingsTableViewCell.swift
+//  SettingsTableViewCellTheme.swift
 //  MyBudget
 //
-//  Created by Кирилл Жогальский on 4.07.23.
+//  Created by Кирилл Жогальский on 12.08.23.
 //
 
 import UIKit
 
-protocol SettingsTableViewCellDelegate: AnyObject{
-    func switchDidChangeValue(state isOn: Bool)
-}
-
-class SettingsTableViewCell: UITableViewCell {
+class SettingsTableViewCellValue: UITableViewCell {
     
-    static let id = String(describing: SettingsTableViewCell.self)
-    
-    weak var delegate: SettingsTableViewCellDelegate?
-    
+    static let id = String(describing: SettingsTableViewCellValue.self)
     private let appColorGetter: AppColorGetter
     
     lazy var settingImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = UIImage(systemName: "moonphase.first.quarter")
+        imageView.image = UIImage(systemName: "dollarsign.square.fill")
         imageView.tintColor = appColorGetter.getMainColor()
         imageView.backgroundColor = AppColors.white.value
         imageView.layer.cornerRadius = 4
@@ -33,16 +26,18 @@ class SettingsTableViewCell: UITableViewCell {
         let label = UILabel()
         label.font = UIFont(name: "AmericanTypewriter-Bold", size: 18)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Светлая/Темная тема"
+        label.text = "Валюта по умолчанию"
         label.textColor = AppColors.black.value
         return label
     }()
     
-    lazy var changeThemeModeSwitch: UISwitch = {
-        let switchUI = UISwitch()
-        switchUI.translatesAutoresizingMaskIntoConstraints = false
-        switchUI.addTarget(self, action: #selector(switchWasPressed(sender:)), for: .valueChanged)
-        return switchUI
+    let settingSelectedElementLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont(name: "AmericanTypewriter-Bold", size: 18)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "BYN"
+        label.textColor = AppColors.black.value
+        return label
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -58,7 +53,7 @@ class SettingsTableViewCell: UITableViewCell {
     private func layoutElements(){
         layoutSettingImageView()
         layoutSettingTypeLabel()
-        layoutChangeThemeModeSwitch()
+       layoutSettingSelectedElementLabel()
     }
     
     private func layoutSettingImageView(){
@@ -79,19 +74,13 @@ class SettingsTableViewCell: UITableViewCell {
         ])
     }
     
-    private func layoutChangeThemeModeSwitch(){
-        contentView.addSubview(changeThemeModeSwitch)
+    private func layoutSettingSelectedElementLabel(){
+        contentView.addSubview(settingSelectedElementLabel)
         NSLayoutConstraint.activate([
-            
-            changeThemeModeSwitch.centerYAnchor.constraint(equalTo: settingImageView.centerYAnchor),
-            changeThemeModeSwitch.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10)
+            settingSelectedElementLabel.leadingAnchor.constraint(equalTo: settingTypeLabel.trailingAnchor, constant: 20),
+            settingSelectedElementLabel.centerYAnchor.constraint(equalTo: settingImageView.centerYAnchor),
+            settingSelectedElementLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10)
         ])
     }
-}
-
-extension SettingsTableViewCell {
     
-    @objc private func switchWasPressed(sender: UISwitch){
-        delegate?.switchDidChangeValue(state: sender.isOn)
-    }
 }
