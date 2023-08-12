@@ -17,7 +17,7 @@ final class TransactionDescriptionViewControllerView: NiblessView {
         label.text = "Выберите тип"
         label.textAlignment = .center
         label.font = UIFont(name: "AmericanTypewriter-Bold", size: 27)
-        label.textColor = .black
+        label.textColor = AppColors.black.value
         return label
     }()
     
@@ -28,6 +28,7 @@ final class TransactionDescriptionViewControllerView: NiblessView {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.register(TransactionCategoryCollectionViewCell.self, forCellWithReuseIdentifier: TransactionCategoryCollectionViewCell.id)
         collectionView.showsHorizontalScrollIndicator = false
+        collectionView.backgroundColor = .clear
         return collectionView
     }()
     
@@ -37,7 +38,7 @@ final class TransactionDescriptionViewControllerView: NiblessView {
         label.text = "Выберите счёт"
         label.textAlignment = .center
         label.font = UIFont(name: "AmericanTypewriter-Bold", size: 27)
-        label.textColor = .black
+        label.textColor = AppColors.black.value
         return label
     }()
     
@@ -48,6 +49,7 @@ final class TransactionDescriptionViewControllerView: NiblessView {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.register(BankAccountsCollectionViewCell.self, forCellWithReuseIdentifier: BankAccountsCollectionViewCell.id)
         collectionView.showsHorizontalScrollIndicator = false
+        collectionView.backgroundColor = .clear
         return collectionView
     }()
     
@@ -65,7 +67,7 @@ final class TransactionDescriptionViewControllerView: NiblessView {
     override init(frame: CGRect) {
         appColorGetter = UserDefaultAppColorDataSource()
         super.init(frame: frame)
-        backgroundColor = .white
+        backgroundColor = AppColors.white.value
         layoutElements()
     }
     

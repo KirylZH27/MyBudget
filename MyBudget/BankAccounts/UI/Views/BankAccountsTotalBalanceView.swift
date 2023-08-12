@@ -14,7 +14,7 @@ final class BankAccountsTotalBalanceView: NiblessView {
         label.text = "185 Br"
         label.textAlignment = .center
         label.font = UIFont(name: "AmericanTypewriter-Bold", size: 20)
-        label.textColor = .black
+        label.textColor = AppColors.black.value
         return label
     }()
     
@@ -23,7 +23,7 @@ final class BankAccountsTotalBalanceView: NiblessView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Общий баланс"
         label.textAlignment = .center
-        label.textColor = .black
+        label.textColor = AppColors.black.value
         return label
     }()
     

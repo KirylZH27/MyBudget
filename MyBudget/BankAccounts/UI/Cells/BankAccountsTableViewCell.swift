@@ -28,7 +28,7 @@ class BankAccountsTableViewCell: UITableViewCell {
         label.font = UIFont(name: "AmericanTypewriter-Bold", size: 20)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Cash"
-        label.textColor = .black
+        label.textColor = AppColors.black.value
         return label
     }()
     
@@ -37,7 +37,7 @@ class BankAccountsTableViewCell: UITableViewCell {
         label.font = UIFont(name: "AmericanTypewriter", size: 20)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "100"
-        label.textColor = .black
+        label.textColor = AppColors.black.value
         label.textAlignment = .right
         return label
     }()

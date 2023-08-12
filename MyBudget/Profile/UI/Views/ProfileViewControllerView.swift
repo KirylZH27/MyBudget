@@ -34,7 +34,7 @@ final class ProfileViewControllerView: NiblessView {
         label.text = "Имя пользователя:"
         label.numberOfLines = 0
         label.font = UIFont(name: "AmericanTypewriter-Bold", size: 22)
-        label.textColor = .black
+        label.textColor = AppColors.black.value
         label.textAlignment = .left
         return label
     }()
@@ -44,7 +44,7 @@ final class ProfileViewControllerView: NiblessView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
         label.font = UIFont(name: "AmericanTypewriter", size: 25)
-        label.textColor = .black
+        label.textColor = AppColors.black.value
         label.textAlignment = .left
         return label
     }()
@@ -55,7 +55,7 @@ final class ProfileViewControllerView: NiblessView {
         label.text = "Email пользователя:"
         label.numberOfLines = 0
         label.font = UIFont(name: "AmericanTypewriter-Bold", size: 22)
-        label.textColor = .black
+        label.textColor = AppColors.black.value
         label.textAlignment = .left
         return label
     }()
@@ -65,7 +65,7 @@ final class ProfileViewControllerView: NiblessView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
         label.font = UIFont(name: "AmericanTypewriter", size: 25)
-        label.textColor = .black
+        label.textColor = AppColors.black.value
         label.textAlignment = .left
         return label
     }()

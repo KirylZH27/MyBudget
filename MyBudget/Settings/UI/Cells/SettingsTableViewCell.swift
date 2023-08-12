@@ -24,7 +24,7 @@ class SettingsTableViewCell: UITableViewCell {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = UIImage(systemName: "dollarsign.square.fill")
         imageView.tintColor = appColorGetter.getMainColor()
-        imageView.backgroundColor = .white
+        imageView.backgroundColor = AppColors.white.value
         imageView.layer.cornerRadius = 4
         return imageView
     }()
@@ -34,7 +34,7 @@ class SettingsTableViewCell: UITableViewCell {
         label.font = UIFont(name: "AmericanTypewriter-Bold", size: 18)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Валюта по умолчанию"
-        label.textColor = .black
+        label.textColor = AppColors.black.value
         return label
     }()
     
@@ -43,7 +43,7 @@ class SettingsTableViewCell: UITableViewCell {
         label.font = UIFont(name: "AmericanTypewriter-Bold", size: 18)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "BYN"
-        label.textColor = .black
+        label.textColor = AppColors.black.value
         return label
     }()
     

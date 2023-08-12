@@ -14,7 +14,7 @@ final class AccountDescriptionViewControllerView: NiblessView {
         label.text = "5 Br"
         label.textAlignment = .center
         label.font = UIFont(name: "AmericanTypewriter-Bold", size: 24)
-        label.textColor = .black
+        label.textColor = AppColors.black.value
         return label
     }()
     
@@ -23,7 +23,7 @@ final class AccountDescriptionViewControllerView: NiblessView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Текущий баланс"
         label.textAlignment = .center
-        label.textColor = .black
+        label.textColor = AppColors.black.value
         return label
     }()
     

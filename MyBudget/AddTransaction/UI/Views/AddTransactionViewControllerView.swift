@@ -22,8 +22,8 @@ final class AddTransactionViewControllerView: NiblessView {
       let textField = UITextField()
        textField.translatesAutoresizingMaskIntoConstraints = false
        textField.placeholder = "Br 0"
-       textField.tintColor = .black
-       textField.backgroundColor = .white
+        textField.tintColor = AppColors.black.value
+        textField.backgroundColor = AppColors.white.value
        textField.layer.cornerRadius = 8
        textField.layer.borderWidth = 1
        textField.textAlignment = .center

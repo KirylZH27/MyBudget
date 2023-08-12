@@ -23,8 +23,8 @@ final class EditProfileViewConttrollerView: NiblessView {
        let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.placeholder = "Введите новое имя"
-        textField.tintColor = .black
-        textField.backgroundColor = .white
+        textField.tintColor = AppColors.black.value
+        textField.backgroundColor = AppColors.white.value
         textField.layer.cornerRadius = 8
         textField.layer.borderWidth = 1
         textField.textAlignment = .center
@@ -36,8 +36,8 @@ final class EditProfileViewConttrollerView: NiblessView {
        let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.placeholder = "Введите новый email"
-        textField.tintColor = .black
-        textField.backgroundColor = .white
+        textField.tintColor = AppColors.black.value
+        textField.backgroundColor = AppColors.white.value
         textField.layer.cornerRadius = 8
         textField.layer.borderWidth = 1
         textField.textAlignment = .center

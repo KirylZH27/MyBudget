@@ -16,7 +16,7 @@ final class AddBankAccountViewControllerView: NiblessView {
         label.numberOfLines = 0
         label.font = UIFont(name: "AmericanTypewriter-Bold", size: 30)
         label.text = "Добавить счет"
-        label.textColor = .black
+        label.textColor = AppColors.black.value
         label.textAlignment = .center
         return label
     }()
@@ -27,7 +27,7 @@ final class AddBankAccountViewControllerView: NiblessView {
         label.numberOfLines = 0
         label.font = UIFont(name: "AmericanTypewriter-Bold", size: 22)
         label.text = "Название счета"
-        label.textColor = .black
+        label.textColor = AppColors.black.value
         label.textAlignment = .left
         return label
     }()
@@ -36,8 +36,8 @@ final class AddBankAccountViewControllerView: NiblessView {
       let textField = UITextField()
        textField.translatesAutoresizingMaskIntoConstraints = false
        textField.placeholder = "Добавить название"
-       textField.tintColor = .black
-       textField.backgroundColor = .white
+        textField.tintColor = AppColors.black.value
+        textField.backgroundColor = AppColors.white.value
        textField.layer.cornerRadius = 8
        textField.layer.borderWidth = 1
        textField.textAlignment = .center
@@ -50,7 +50,7 @@ final class AddBankAccountViewControllerView: NiblessView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
         label.font = UIFont(name: "AmericanTypewriter-Bold", size: 22)
-        label.textColor = .black
+        label.textColor = AppColors.black.value
         label.text = "Текущий баланс"
         label.textAlignment = .left
         return label
@@ -60,8 +60,8 @@ final class AddBankAccountViewControllerView: NiblessView {
       let textField = UITextField()
        textField.translatesAutoresizingMaskIntoConstraints = false
        textField.placeholder = "Введите сумму средств на счете"
-       textField.tintColor = .black
-       textField.backgroundColor = .white
+        textField.tintColor = AppColors.black.value
+        textField.backgroundColor = AppColors.white.value
        textField.layer.cornerRadius = 8
        textField.layer.borderWidth = 1
        textField.textAlignment = .center
@@ -89,7 +89,7 @@ final class AddBankAccountViewControllerView: NiblessView {
     override init(frame: CGRect) {
         appColorGetter = UserDefaultAppColorDataSource()
         super.init(frame: frame)
-        backgroundColor = .white
+        backgroundColor = AppColors.white.value
         
         layoutElements()
     }
