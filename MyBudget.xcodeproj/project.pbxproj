@@ -20,6 +20,9 @@
 		0A210E6E2A4F772F00D5B750 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A210E6D2A4F772F00D5B750 /* RealmManager.swift */; };
 		0A210E702A4F77A100D5B750 /* UserModelRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A210E6F2A4F77A000D5B750 /* UserModelRealm.swift */; };
 		0A210E732A4F880000D5B750 /* BankAccountsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A210E722A4F880000D5B750 /* BankAccountsTableViewCell.swift */; };
+		0A2AFD332A882E0700D70A02 /* UserDefaultDarkModeStateDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2AFD322A882E0700D70A02 /* UserDefaultDarkModeStateDataSource.swift */; };
+		0A2AFD362A882E4B00D70A02 /* DarkModeSetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2AFD352A882E4B00D70A02 /* DarkModeSetter.swift */; };
+		0A2AFD382A882E6300D70A02 /* DarkModeGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2AFD372A882E6300D70A02 /* DarkModeGetter.swift */; };
 		0A34DA3F2A6006F600461D45 /* UIButton+Target.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A34DA3E2A6006F600461D45 /* UIButton+Target.swift */; };
 		0A475E092A52D31100B397AC /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A475E082A52D31100B397AC /* EditProfileViewController.swift */; };
 		0A475E0B2A52D32B00B397AC /* EditProfileViewConttrollerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A475E0A2A52D32B00B397AC /* EditProfileViewConttrollerView.swift */; };
@@ -71,6 +74,7 @@
 		0AC4DD722A87A93800DDD51D /* EnumSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC4DD712A87A93800DDD51D /* EnumSettings.swift */; };
 		0AC4DD742A87AA6D00DDD51D /* SettingsViewControllerTableViewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC4DD732A87AA6D00DDD51D /* SettingsViewControllerTableViewHeaderView.swift */; };
 		0AC4DD762A87BC9500DDD51D /* SettingsTableViewCellValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC4DD752A87BC9500DDD51D /* SettingsTableViewCellValue.swift */; };
+		0AE28BD12A88E504003888E1 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE28BD02A88E504003888E1 /* SettingsViewModel.swift */; };
 		0AE423CD2A502A3A00311943 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE423CC2A502A3A00311943 /* AuthorizationViewController.swift */; };
 		0AE423CF2A502A6000311943 /* AuthorizationViewControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE423CE2A502A6000311943 /* AuthorizationViewControllerView.swift */; };
 		0AE423D22A502A9C00311943 /* AuthorizationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE423D12A502A9C00311943 /* AuthorizationViewModel.swift */; };
@@ -128,6 +132,9 @@
 		0A210E6D2A4F772F00D5B750 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		0A210E6F2A4F77A000D5B750 /* UserModelRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModelRealm.swift; sourceTree = "<group>"; };
 		0A210E722A4F880000D5B750 /* BankAccountsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccountsTableViewCell.swift; sourceTree = "<group>"; };
+		0A2AFD322A882E0700D70A02 /* UserDefaultDarkModeStateDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultDarkModeStateDataSource.swift; sourceTree = "<group>"; };
+		0A2AFD352A882E4B00D70A02 /* DarkModeSetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeSetter.swift; sourceTree = "<group>"; };
+		0A2AFD372A882E6300D70A02 /* DarkModeGetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeGetter.swift; sourceTree = "<group>"; };
 		0A34DA3E2A6006F600461D45 /* UIButton+Target.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Target.swift"; sourceTree = "<group>"; };
 		0A475E082A52D31100B397AC /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		0A475E0A2A52D32B00B397AC /* EditProfileViewConttrollerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewConttrollerView.swift; sourceTree = "<group>"; };
@@ -179,6 +186,7 @@
 		0AC4DD712A87A93800DDD51D /* EnumSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumSettings.swift; sourceTree = "<group>"; };
 		0AC4DD732A87AA6D00DDD51D /* SettingsViewControllerTableViewHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewControllerTableViewHeaderView.swift; sourceTree = "<group>"; };
 		0AC4DD752A87BC9500DDD51D /* SettingsTableViewCellValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCellValue.swift; sourceTree = "<group>"; };
+		0AE28BD02A88E504003888E1 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		0AE423CC2A502A3A00311943 /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
 		0AE423CE2A502A6000311943 /* AuthorizationViewControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewControllerView.swift; sourceTree = "<group>"; };
 		0AE423D12A502A9C00311943 /* AuthorizationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewModel.swift; sourceTree = "<group>"; };
@@ -255,6 +263,7 @@
 		0A1432592A3F50C0007D9509 /* MyBudget */ = {
 			isa = PBXGroup;
 			children = (
+				0A2AFD302A882D8C00D70A02 /* SwitchStateDataSource */,
 				0A7C97652A7FAD4B00544576 /* AppColorDataSource */,
 				0AF6A3D52A7426FA0083291C /* TransactionWasAddedAnimation */,
 				0AB7D0D52A63FA02004A9EF9 /* TransactionDescription */,
@@ -389,6 +398,32 @@
 				0A210E722A4F880000D5B750 /* BankAccountsTableViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		0A2AFD302A882D8C00D70A02 /* SwitchStateDataSource */ = {
+			isa = PBXGroup;
+			children = (
+				0A2AFD312A882DCB00D70A02 /* Implementation */,
+				0A2AFD342A882E3000D70A02 /* Protocols */,
+			);
+			path = SwitchStateDataSource;
+			sourceTree = "<group>";
+		};
+		0A2AFD312A882DCB00D70A02 /* Implementation */ = {
+			isa = PBXGroup;
+			children = (
+				0A2AFD322A882E0700D70A02 /* UserDefaultDarkModeStateDataSource.swift */,
+			);
+			path = Implementation;
+			sourceTree = "<group>";
+		};
+		0A2AFD342A882E3000D70A02 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				0A2AFD352A882E4B00D70A02 /* DarkModeSetter.swift */,
+				0A2AFD372A882E6300D70A02 /* DarkModeGetter.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		0A475E042A52D2B100B397AC /* EditProfile */ = {
@@ -754,6 +789,14 @@
 			path = EnumSettings;
 			sourceTree = "<group>";
 		};
+		0AE28BCF2A88E4EC003888E1 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				0AE28BD02A88E504003888E1 /* SettingsViewModel.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
 		0AE423C82A50298300311943 /* Authorization */ = {
 			isa = PBXGroup;
 			children = (
@@ -934,6 +977,7 @@
 		0AF74EEC2A4846DB0038D221 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				0AE28BCF2A88E4EC003888E1 /* Presentation */,
 				0AC4DD702A87A8FD00DDD51D /* EnumSettings */,
 				0A16DDFE2A49D57C00604180 /* UI */,
 			);
@@ -1299,12 +1343,14 @@
 				0AB7D0D12A63F35A004A9EF9 /* AccountDescriptionViewController.swift in Sources */,
 				0A34DA3F2A6006F600461D45 /* UIButton+Target.swift in Sources */,
 				0A7C976D2A7FAE1000544576 /* UserDefaultAppColorDataSource.swift in Sources */,
+				0A2AFD362A882E4B00D70A02 /* DarkModeSetter.swift in Sources */,
 				0AC4DD722A87A93800DDD51D /* EnumSettings.swift in Sources */,
 				0A7C97682A7FAD8800544576 /* AppColorGetter.swift in Sources */,
 				0AB7D0E42A63FD85004A9EF9 /* TransactionDescription.swift in Sources */,
 				0A14325D2A3F50C0007D9509 /* SceneDelegate.swift in Sources */,
 				0AC4DD762A87BC9500DDD51D /* SettingsTableViewCellValue.swift in Sources */,
 				0AA725D12A65885100B408C4 /* BankAccountsCollectionViewCell.swift in Sources */,
+				0AE28BD12A88E504003888E1 /* SettingsViewModel.swift in Sources */,
 				0AB7D0CB2A62BE3C004A9EF9 /* AddBankAccountViewModel.swift in Sources */,
 				0AB7D0EA2A63FFF8004A9EF9 /* TransactionGetter.swift in Sources */,
 				0AB7D0BD2A62B5E1004A9EF9 /* BankAccountGetter.swift in Sources */,
@@ -1326,9 +1372,11 @@
 				0AFF81632A4B337D006ACF1F /* SettingsViewControllerView.swift in Sources */,
 				0AF74EE72A4844C40038D221 /* UiViewController + Extensions.swift in Sources */,
 				0AF6A3E12A7428EE0083291C /* TransactionWasAddedNavigationResponder.swift in Sources */,
+				0A2AFD382A882E6300D70A02 /* DarkModeGetter.swift in Sources */,
 				0AB7D0B82A62B2FE004A9EF9 /* BankAccount.swift in Sources */,
 				0A210E6E2A4F772F00D5B750 /* RealmManager.swift in Sources */,
 				0AC30BA52A59B1A700CA9168 /* BlockTap.swift in Sources */,
+				0A2AFD332A882E0700D70A02 /* UserDefaultDarkModeStateDataSource.swift in Sources */,
 				0AB7D0C62A62BDB2004A9EF9 /* AddBankAccountViewController.swift in Sources */,
 				0AB7D0B62A62B1FB004A9EF9 /* BankAccountCreator.swift in Sources */,
 				0AF74EDC2A483BEA0038D221 /* MainViewController.swift in Sources */,

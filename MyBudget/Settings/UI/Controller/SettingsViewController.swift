@@ -6,19 +6,19 @@
 //
 
 import UIKit
+import Combine
+
 final class SettingsViewController: NiblessViewController {
     
-    var elemets: [EnumSettings] = EnumSettings.allCases
-    var appColorSetter: AppColorSetter
-    private let appColorGetter: AppColorGetter
+    let viewModel: SettingsViewModel
+    private var cancalable = Set<AnyCancellable>()
     
     var contentView: SettingsViewControllerView {
         view as! SettingsViewControllerView
     }
     
-    init(appColorSetter: AppColorSetter = UserDefaultAppColorDataSource()) {
-        self.appColorSetter = appColorSetter
-        self.appColorGetter = UserDefaultAppColorDataSource()
+    init(viewModel: SettingsViewModel) {
+        self.viewModel = viewModel
         super.init()
     }
     
@@ -29,29 +29,37 @@ final class SettingsViewController: NiblessViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         addDelegates()
         addTargets()
+        bindViewModel()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setupMainColor()
+        viewModel.getMainColor()
+        viewModel.getDarkModeState()
     }
     
-    private func setupMainColor(){
-        changeColorInCells()
+    private func bindViewModel(){
+        
+        viewModel.darkModeState.receive(on: DispatchQueue.main).sink { [weak self] state in
+            let switchIndexPath = IndexPath(row: 0, section: 0)
+            let switchCell = self?.contentView.tableView.cellForRow(at: switchIndexPath) as? SettingsTableViewCell
+            switchCell?.changeThemeModeSwitch.isOn = state
+        }.store(in: &cancalable)
+        
+        viewModel.mainColor.receive(on: DispatchQueue.main).sink { [weak self] mainColor in
+            self?.changeColorInCells(mainColor: mainColor)
+        }.store(in: &cancalable)
     }
     
-    private func changeColorInCells(){
-        let mainColor = appColorGetter.getMainColor()
+    private func changeColorInCells(mainColor: UIColor){
         let visibleCells = contentView.tableView.visibleCells
         visibleCells.forEach { cell in
             let settingCell = cell as? SettingsTableViewCell
             
             settingCell?.settingImageView.tintColor = mainColor
         }
-        let visibleCellsValue = contentView.tableView.visibleCells
         visibleCells.forEach{ cell in
             let settingCellValue = cell as? SettingsTableViewCellValue
             settingCellValue?.settingImageView.tintColor = mainColor
@@ -75,7 +83,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        elemets.count
+        viewModel.elemets.count
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -120,14 +128,15 @@ extension SettingsViewController {
 extension SettingsViewController: UIColorPickerViewControllerDelegate {
     func colorPickerViewController(_ viewController: UIColorPickerViewController, didSelect color: UIColor, continuously: Bool) {
         
-        appColorSetter.saveMainColor(color)
+        viewModel.saveMainColor(mainColor: color)
+        viewModel.getMainColor()
     }
 }
 
 extension SettingsViewController: SettingsTableViewCellDelegate {
     func switchDidChangeValue(state isOn: Bool) {
-        let appDelegate = UIApplication.shared.windows.first
-        appDelegate?.overrideUserInterfaceStyle = isOn ? .dark : .light
+        viewModel.saveDarkModeState(isOn: isOn)
+        viewModel.changeDarkMode()
         
     }
 }

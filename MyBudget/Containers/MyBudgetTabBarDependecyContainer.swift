@@ -98,7 +98,10 @@ final class MyBudgetTabBarDependecyContainer {
     }
     
     private func createSettingsViewController() -> UINavigationController {
-        let viewController = SettingsViewController()
+        let appColorManager = UserDefaultAppColorDataSource()
+        let darkModeManager = UserDefaultDarkModeStateDataSource()
+        let settingViewModel = SettingsViewModel(appColorSetter: appColorManager, appColorGetter: appColorManager, darkModeSetter: darkModeManager, darkModeGetter: darkModeManager)
+        let viewController = SettingsViewController(viewModel: settingViewModel)
         viewController.navigationItem.title = "Настройки"
         let navigationController = UINavigationController(rootViewController: viewController)
         navigationController.tabBarItem.title = "Настройки"

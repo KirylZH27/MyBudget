@@ -11,6 +11,7 @@ import FirebaseAuth
 final class MainViewModel: HideAuthorizationNavigationResponder, TransactionWasAddedNavigationResponder, SignOutNavigationResponder, ShowUserAditionalInfoNavigationResponder, HideUserAdditionalInfoNavigationResponder {
     
     private let userStore: UserStore
+    private let darkModeGetter: DarkModeGetter
     
     private (set) var isPresentAuthorization = PassthroughSubject<Bool,Never>()
     private (set) var showTransactionWasAddedAnimation = PassthroughSubject<Bool, Never>()
@@ -18,6 +19,8 @@ final class MainViewModel: HideAuthorizationNavigationResponder, TransactionWasA
     
     init(userStore: UserStore) {
         self.userStore = userStore
+        self.darkModeGetter = UserDefaultDarkModeStateDataSource()
+        self.setDarkModeIfNeeded()
     }
     
     func hideAuthorization() {
@@ -55,4 +58,11 @@ final class MainViewModel: HideAuthorizationNavigationResponder, TransactionWasA
         isPresentUserAdditionalInfo.send(true)
     }
     
+    private func setDarkModeIfNeeded(){
+        DispatchQueue.main.asyncAfter(deadline: .now()){
+            let state = self.darkModeGetter.getDarkModeState()
+            let appDelegate = UIApplication.shared.windows.first
+            appDelegate?.overrideUserInterfaceStyle = state ? .dark : .light
+        }
+    }
 }
