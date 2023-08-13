@@ -18,7 +18,7 @@ final class TransactionDescriptionViewModel {
    // private (set) var categories: [TransactionCategory] = TransactionCategory.allCases
     private (set) var bankAccounts: [BankAccount] = []
     
-    var selectedCategory: TransactionCategory?
+    var selectedCategory: TransactionCategory2?
     var selectedBankAccount: BankAccount?
     
     init(bankAccountGetter: BankAccountGetter, transactionCreator: TransactionCreator) {

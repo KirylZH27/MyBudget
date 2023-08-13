@@ -35,6 +35,7 @@ final class BankAccountsViewController: NiblessViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.tintColor = AppColors.black.value
         addTargets()
         addDelegates()
         bindViewModel()

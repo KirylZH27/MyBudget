@@ -7,18 +7,18 @@
 
 import Foundation
 
-enum TransactionCategory: String, CaseIterable {
+enum TransactionCategory2: String, CaseIterable {
     case trasport = "Транспорт"
     case food = "Еда"
     case car = "Машина"
     case sallary = "Зарплата"
     
-  static func getExpemdetureCategories() -> [TransactionCategory]{
+  static func getExpemdetureCategories() -> [TransactionCategory2]{
         
         return [.trasport, .food, .car]
     }
     
- static func getIncomeCategories() -> [TransactionCategory]{
+ static func getIncomeCategories() -> [TransactionCategory2]{
           
      return [.sallary]
       }
@@ -29,6 +29,6 @@ struct TransactionDescription {
     let bankAccountId: String
     let value: String
     let type: TransactionType
-    let category: TransactionCategory
+    let category: TransactionCategory2
     let date: Date
 }

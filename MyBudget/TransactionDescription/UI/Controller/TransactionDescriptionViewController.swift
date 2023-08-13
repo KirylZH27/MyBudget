@@ -91,8 +91,8 @@ extension TransactionDescriptionViewController: UICollectionViewDelegate, UIColl
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == contentView.transactionCategoryCollectionView {
             switch transactionType {
-                case .income: return TransactionCategory.getIncomeCategories().count
-                case .expenditure: return TransactionCategory.getExpemdetureCategories().count
+                case .income: return TransactionCategory2.getIncomeCategories().count
+                case .expenditure: return TransactionCategory2.getExpemdetureCategories().count
             }
         }
         return viewModel.bankAccounts.count
@@ -104,10 +104,10 @@ extension TransactionDescriptionViewController: UICollectionViewDelegate, UIColl
             guard let collectionCell = cell as? TransactionCategoryCollectionViewCell else { return cell }
             switch transactionType {
                 case .income:
-                    let categories = TransactionCategory.getIncomeCategories()
+                    let categories = TransactionCategory2.getIncomeCategories()
                     collectionCell.setupCell(category: categories[indexPath.row])
                 case .expenditure:
-                    let categories = TransactionCategory.getExpemdetureCategories()
+                    let categories = TransactionCategory2.getExpemdetureCategories()
                     collectionCell.setupCell(category: categories[indexPath.row])
             }
             return collectionCell
@@ -128,10 +128,10 @@ extension TransactionDescriptionViewController: UICollectionViewDelegate, UIColl
         if collectionView == contentView.transactionCategoryCollectionView {
             switch transactionType {
                 case .income:
-                    let categories = TransactionCategory.getIncomeCategories()
+                    let categories = TransactionCategory2.getIncomeCategories()
                     viewModel.selectedCategory = categories[indexPath.row]
                 case .expenditure:
-                    let categories = TransactionCategory.getExpemdetureCategories()
+                    let categories = TransactionCategory2.getExpemdetureCategories()
                     viewModel.selectedCategory = categories[indexPath.row]
             }
         }else if collectionView == contentView.bankAccountsCollectionView{

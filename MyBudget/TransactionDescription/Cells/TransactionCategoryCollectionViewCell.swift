@@ -49,14 +49,14 @@ final class TransactionCategoryCollectionViewCell: UICollectionViewCell {
         layoutNameLabel()
     }
     
-    func setupCell(category: TransactionCategory){
+    func setupCell(category: TransactionCategory2){
         setupIconImage(category: category)
         nameLabel.text = category.rawValue
         contentView.backgroundColor = .brown
         contentView.layer.cornerRadius = 15
     }
     
-    private func setupIconImage(category: TransactionCategory){
+    private func setupIconImage(category: TransactionCategory2){
         switch category {
             case .sallary:
                 spendingElementImageView.image = UIImage(systemName: "bitcoinsign")

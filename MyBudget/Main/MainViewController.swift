@@ -17,8 +17,6 @@ final class MainViewController: NiblessViewController {
     private let userAdditionalInfoViewControllerFactory: () -> UserAdditionalInfoViewController
     private let authorizationViewControllerFactory: () -> AuthorizationViewController
     private var cancelable = Set<AnyCancellable>()
-   
-    private var currentAuthorizationNavigationController: UINavigationController?
     
     init(viewModel: MainViewModel,
          tabBarControllerFactory: @escaping () -> UITabBarController,

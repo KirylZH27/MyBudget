@@ -66,7 +66,7 @@ class AccountDescriptionTableViewCell: UITableViewCell {
         setupDateLabel(date: accountDescription.date)
     }
     
-    private func setupIconImage(category: TransactionCategory){
+    private func setupIconImage(category: TransactionCategory2){
         var image: UIImage?
         switch category {
             case .sallary:

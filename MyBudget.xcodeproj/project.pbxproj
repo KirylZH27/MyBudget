@@ -75,6 +75,11 @@
 		0AC4DD742A87AA6D00DDD51D /* SettingsViewControllerTableViewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC4DD732A87AA6D00DDD51D /* SettingsViewControllerTableViewHeaderView.swift */; };
 		0AC4DD762A87BC9500DDD51D /* SettingsTableViewCellValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC4DD752A87BC9500DDD51D /* SettingsTableViewCellValue.swift */; };
 		0AE28BD12A88E504003888E1 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE28BD02A88E504003888E1 /* SettingsViewModel.swift */; };
+		0AE28BD32A88F930003888E1 /* TransactionCategoryRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE28BD22A88F930003888E1 /* TransactionCategoryRealm.swift */; };
+		0AE28BD52A88FA64003888E1 /* TransactionCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE28BD42A88FA64003888E1 /* TransactionCategory.swift */; };
+		0AE28BD82A88FB0B003888E1 /* TransactionCategoryCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE28BD72A88FB0B003888E1 /* TransactionCategoryCreator.swift */; };
+		0AE28BDA2A88FB39003888E1 /* TransactionCategoryGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE28BD92A88FB39003888E1 /* TransactionCategoryGetter.swift */; };
+		0AE28BDC2A88FC86003888E1 /* TransactionCategoryRealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE28BDB2A88FC86003888E1 /* TransactionCategoryRealmManager.swift */; };
 		0AE423CD2A502A3A00311943 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE423CC2A502A3A00311943 /* AuthorizationViewController.swift */; };
 		0AE423CF2A502A6000311943 /* AuthorizationViewControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE423CE2A502A6000311943 /* AuthorizationViewControllerView.swift */; };
 		0AE423D22A502A9C00311943 /* AuthorizationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE423D12A502A9C00311943 /* AuthorizationViewModel.swift */; };
@@ -187,6 +192,11 @@
 		0AC4DD732A87AA6D00DDD51D /* SettingsViewControllerTableViewHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewControllerTableViewHeaderView.swift; sourceTree = "<group>"; };
 		0AC4DD752A87BC9500DDD51D /* SettingsTableViewCellValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCellValue.swift; sourceTree = "<group>"; };
 		0AE28BD02A88E504003888E1 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		0AE28BD22A88F930003888E1 /* TransactionCategoryRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCategoryRealm.swift; sourceTree = "<group>"; };
+		0AE28BD42A88FA64003888E1 /* TransactionCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCategory.swift; sourceTree = "<group>"; };
+		0AE28BD72A88FB0B003888E1 /* TransactionCategoryCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCategoryCreator.swift; sourceTree = "<group>"; };
+		0AE28BD92A88FB39003888E1 /* TransactionCategoryGetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCategoryGetter.swift; sourceTree = "<group>"; };
+		0AE28BDB2A88FC86003888E1 /* TransactionCategoryRealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCategoryRealmManager.swift; sourceTree = "<group>"; };
 		0AE423CC2A502A3A00311943 /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
 		0AE423CE2A502A6000311943 /* AuthorizationViewControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewControllerView.swift; sourceTree = "<group>"; };
 		0AE423D12A502A9C00311943 /* AuthorizationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewModel.swift; sourceTree = "<group>"; };
@@ -727,6 +737,8 @@
 				0AB7D0E72A63FF85004A9EF9 /* TransactionCreator.swift */,
 				0AB7D0E92A63FFF8004A9EF9 /* TransactionGetter.swift */,
 				0AF6A3D32A7406CB0083291C /* TransactionDeleter.swift */,
+				0AE28BD72A88FB0B003888E1 /* TransactionCategoryCreator.swift */,
+				0AE28BD92A88FB39003888E1 /* TransactionCategoryGetter.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -736,6 +748,8 @@
 			children = (
 				0AB7D0E32A63FD85004A9EF9 /* TransactionDescription.swift */,
 				0AB7D0E52A63FE43004A9EF9 /* TransactionDescriptionRealm.swift */,
+				0AE28BD22A88F930003888E1 /* TransactionCategoryRealm.swift */,
+				0AE28BD42A88FA64003888E1 /* TransactionCategory.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -744,6 +758,7 @@
 			isa = PBXGroup;
 			children = (
 				0AB7D0EC2A640116004A9EF9 /* TransactionRealmManager.swift */,
+				0AE28BDB2A88FC86003888E1 /* TransactionCategoryRealmManager.swift */,
 			);
 			path = Implementation;
 			sourceTree = "<group>";
@@ -1308,6 +1323,7 @@
 				0AF74F002A4849500038D221 /* BankAccountsViewController.swift in Sources */,
 				0AFE73712A55E05400E21458 /* UserAdditionalInfoViewModel.swift in Sources */,
 				0AB7D0AD2A628F80004A9EF9 /* String+Converter.swift in Sources */,
+				0AE28BDA2A88FB39003888E1 /* TransactionCategoryGetter.swift in Sources */,
 				0AFE735F2A5493E900E21458 /* AppColors.swift in Sources */,
 				0AB7D0DF2A63FA96004A9EF9 /* TransactionDescriptionViewControllerView.swift in Sources */,
 				0AB7D0AA2A628BC5004A9EF9 /* Formatter.swift in Sources */,
@@ -1355,6 +1371,8 @@
 				0AB7D0EA2A63FFF8004A9EF9 /* TransactionGetter.swift in Sources */,
 				0AB7D0BD2A62B5E1004A9EF9 /* BankAccountGetter.swift in Sources */,
 				0AF74EE42A4842070038D221 /* MyBudgetTabBarDependecyContainer.swift in Sources */,
+				0AE28BD32A88F930003888E1 /* TransactionCategoryRealm.swift in Sources */,
+				0AE28BDC2A88FC86003888E1 /* TransactionCategoryRealmManager.swift in Sources */,
 				0AF74EF12A48473F0038D221 /* AddTransactionViewController.swift in Sources */,
 				0AA725CC2A65372A00B408C4 /* AccountDescriptionTableViewCell.swift in Sources */,
 				0AFE737B2A55F01F00E21458 /* FirebaseUserStore.swift in Sources */,
@@ -1384,8 +1402,10 @@
 				0AB7D0A72A628B49004A9EF9 /* DisplayManager.swift in Sources */,
 				0AF6A3D42A7406CC0083291C /* TransactionDeleter.swift in Sources */,
 				0AE423D72A502EEE00311943 /* GoogleAuthorizationClient.swift in Sources */,
+				0AE28BD82A88FB0B003888E1 /* TransactionCategoryCreator.swift in Sources */,
 				0AFE73772A55EF0A00E21458 /* UserCreator.swift in Sources */,
 				0A629C0D2A81611400FD2464 /* SignOutNavigationResponder.swift in Sources */,
+				0AE28BD52A88FA64003888E1 /* TransactionCategory.swift in Sources */,
 				0AB7D0E62A63FE43004A9EF9 /* TransactionDescriptionRealm.swift in Sources */,
 				0AB7D0BB2A62B425004A9EF9 /* BankAccountRealmManager.swift in Sources */,
 				0AC30BA32A59B19B00CA9168 /* ImagePicker.swift in Sources */,
