@@ -24,7 +24,7 @@ final class ProfileViewControllerView: NiblessView {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = UIImage(systemName: "person.fill")
-        imageView.tintColor = appColorGetter.getMainColor()
+        imageView.tintColor = appColorGetter.mainColor
         return imageView
     }()
     
@@ -73,7 +73,7 @@ final class ProfileViewControllerView: NiblessView {
     lazy var editProfileButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = appColorGetter.getMainColor()
+        button.backgroundColor = appColorGetter.mainColor
         button.setTitle("Изменить профиль", for: .normal)
         button.layer.cornerRadius = 12
         button.setTitleColor(.black, for: .normal)
@@ -83,7 +83,7 @@ final class ProfileViewControllerView: NiblessView {
     lazy var signOutProfileButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = appColorGetter.getMainColor()
+        button.backgroundColor = appColorGetter.mainColor
         button.setTitle("Выход из аккаунта", for: .normal)
         button.layer.cornerRadius = 12
         button.setTitleColor(.black, for: .normal)

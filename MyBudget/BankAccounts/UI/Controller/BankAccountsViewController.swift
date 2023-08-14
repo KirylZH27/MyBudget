@@ -49,13 +49,13 @@ final class BankAccountsViewController: NiblessViewController {
     }
     
     private func setupMainColor(){
-        let mainColor = appColorGetter.getMainColor()
+        let mainColor = appColorGetter.mainColor
         contentView.addBankAccountButton.backgroundColor = mainColor
         changeColorInCells()
     }
     
     private func changeColorInCells(){
-        let mainColor = appColorGetter.getMainColor()
+        let mainColor = appColorGetter.mainColor
         let visibleCells = contentView.tableView.visibleCells
         visibleCells.forEach { cell in
             let bankAccountCell = cell as? BankAccountsTableViewCell

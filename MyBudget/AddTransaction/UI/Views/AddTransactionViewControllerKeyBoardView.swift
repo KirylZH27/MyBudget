@@ -58,7 +58,7 @@ final class AddTransactionViewControllerKeyBoardView: NiblessView {
     lazy var saveTransactionButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = appColorGetter.getMainColor()
+        button.backgroundColor = appColorGetter.mainColor
         button.setTitle("Добавить", for: .normal)
         button.layer.cornerRadius = 12
         button.titleLabel?.font = AppFonts.AmericanBold.value(size: 22)
@@ -104,7 +104,7 @@ final class AddTransactionViewControllerKeyBoardView: NiblessView {
         switch type {
             default:
                 let model = ModelKeyBoardButton(title: title,
-                                                backgroundColor: appColorGetter.getMainColor(),
+                                                backgroundColor: appColorGetter.mainColor,
                                                 titleColor: .black,
                                                 font: AppFonts.AmericanBold.value(size: 28))
                 button = KeyBoardButton(model: model, type: type)

@@ -39,7 +39,7 @@ final class TransactionWasAddedAnimationViewControllerView: NiblessView {
          let view = UIView()
          view.translatesAutoresizingMaskIntoConstraints = false
          view.layer.cornerRadius = insideViewSide / 2
-        view.backgroundColor = appColorGetter.getMainColor()
+        view.backgroundColor = appColorGetter.mainColor
         return view
      }()
     

@@ -23,7 +23,7 @@ class SettingsTableViewCell: UITableViewCell {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = UIImage(systemName: "moonphase.first.quarter")
-        imageView.tintColor = appColorGetter.getMainColor()
+        imageView.tintColor = appColorGetter.mainColor
         imageView.backgroundColor = AppColors.white.value
         imageView.layer.cornerRadius = 4
         return imageView

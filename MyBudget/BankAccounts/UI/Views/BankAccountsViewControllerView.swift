@@ -20,7 +20,7 @@ final class BankAccountsViewControllerView: NiblessView {
     lazy var addBankAccountButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = appColorGetter.getMainColor()
+        button.backgroundColor = appColorGetter.mainColor
         button.setTitle("Добавить счет", for: .normal)
         button.layer.cornerRadius = 12
         button.setTitleColor(.black, for: .normal)

@@ -15,7 +15,7 @@ final class EditProfileViewConttrollerView: NiblessView {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = UIImage(systemName: "person.fill")
-         imageView.tintColor = appColorGetter.getMainColor()
+         imageView.tintColor = appColorGetter.mainColor
          imageView.isUserInteractionEnabled = true
         return imageView
     }()
@@ -49,7 +49,7 @@ final class EditProfileViewConttrollerView: NiblessView {
     lazy var saveNewProfileInfoButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = appColorGetter.getMainColor()
+        button.backgroundColor = appColorGetter.mainColor
         button.setTitle("Сохранить изменения", for: .normal)
         button.layer.cornerRadius = 12
         button.setTitleColor(.black, for: .normal)

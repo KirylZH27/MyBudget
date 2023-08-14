@@ -8,5 +8,6 @@
 import UIKit
 
 protocol AppColorGetter {
-    func getMainColor () -> UIColor
+    var mainColor: UIColor { get }
+   // func getMainColor () -> UIColor
 }

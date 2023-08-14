@@ -38,7 +38,7 @@ final class ProfileViewController: NiblessViewController {
     }
     
     private func setupMainColor(){
-        let mainColor = appColorGetter.getMainColor()
+        let mainColor = appColorGetter.mainColor
         contentView.imageView.backgroundColor = mainColor
         contentView.editProfileButton.backgroundColor = mainColor
         contentView.signOutProfileButton.backgroundColor = mainColor

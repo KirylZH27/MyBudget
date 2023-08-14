@@ -56,7 +56,7 @@ final class TransactionDescriptionViewControllerView: NiblessView {
     lazy var saveTransactionButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = appColorGetter.getMainColor()
+        button.backgroundColor = appColorGetter.mainColor
         button.setTitle("Добавить транзакцию", for: .normal)
         button.layer.cornerRadius = 12
         button.titleLabel?.font = AppFonts.AmericanBold.value(size: 22)

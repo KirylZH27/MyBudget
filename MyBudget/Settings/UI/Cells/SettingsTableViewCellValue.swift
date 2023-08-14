@@ -16,7 +16,7 @@ class SettingsTableViewCellValue: UITableViewCell {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = UIImage(systemName: "dollarsign.square.fill")
-        imageView.tintColor = appColorGetter.getMainColor()
+        imageView.tintColor = appColorGetter.mainColor
         imageView.backgroundColor = AppColors.white.value
         imageView.layer.cornerRadius = 4
         return imageView

@@ -19,7 +19,7 @@ class BankAccountsTableViewCell: UITableViewCell {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         let image = UIImage(systemName: "dollarsign.arrow.circlepath")
         imageView.image = image?.withRenderingMode(.alwaysTemplate)
-        imageView.tintColor = appColorGetter.getMainColor()
+        imageView.tintColor = appColorGetter.mainColor
         return imageView
     }()
     

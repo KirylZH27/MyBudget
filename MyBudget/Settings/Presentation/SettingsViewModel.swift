@@ -28,7 +28,7 @@ final class SettingsViewModel {
     }
     
     func getMainColor(){
-        let mainColor = appColorGetter.getMainColor()
+        let mainColor = appColorGetter.mainColor
         self.mainColor.send(mainColor)
     }
 
