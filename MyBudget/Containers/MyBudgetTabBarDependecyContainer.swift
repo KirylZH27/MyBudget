@@ -42,8 +42,18 @@ final class MyBudgetTabBarDependecyContainer {
         let transactionCreator = TransactionRealmManager()
         let transactionCategoryManager = TransactionCategoryRealmManager()
         let viewModel = TransactionDescriptionViewModel(bankAccountGetter: bankAccountGetter, transactionCreator: transactionCreator, transactionCategoryGetter: transactionCategoryManager)
+        let addTransactionCategoryViewControllerFactory = {
+            self.createAddTransactionCategoryViewController()
+        }
         
-        let viewController = TransactionDescriptionViewController(viewModel: viewModel, transactionValue: transactionValue, transactionType: transactionType, transactionWasAddedAnimationNavigationResponder: sharedMainViewModel)
+        let viewController = TransactionDescriptionViewController(viewModel: viewModel, transactionValue: transactionValue, transactionType: transactionType, transactionWasAddedAnimationNavigationResponder: sharedMainViewModel, addTransactionCategoryViewControllerFactory: addTransactionCategoryViewControllerFactory)
+        return viewController
+    }
+    
+    private func createAddTransactionCategoryViewController() -> AddTransactionCategoryViewController {
+        let transactionCategoryCreator = TransactionCategoryRealmManager()
+        let viewModel = AddTransactionCategoryViewModel(transactionCategoryCreator: transactionCategoryCreator)
+        let viewController = AddTransactionCategoryViewController(viewModel: viewModel)
         return viewController
     }
     

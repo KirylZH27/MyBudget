@@ -10,6 +10,8 @@ import Combine
 
 final class TransactionDescriptionViewController: NiblessViewController {
    
+    private let addTransactionCategoryViewControllerFactory: () -> AddTransactionCategoryViewController
+    
     private let viewModel: TransactionDescriptionViewModel
     private let transactionValue: String
     private let transactionType: TransactionType
@@ -31,6 +33,7 @@ final class TransactionDescriptionViewController: NiblessViewController {
         addDelegates()
         bindViewModel()
         addTargets()
+        setupAddButton()
         
         viewModel.getBankAccounts()
         viewModel.getTransactionCategories(type: transactionType)
@@ -49,11 +52,12 @@ final class TransactionDescriptionViewController: NiblessViewController {
     }
     
     init(viewModel: TransactionDescriptionViewModel,transactionValue: String, transactionType: TransactionType,
-         transactionWasAddedAnimationNavigationResponder: TransactionWasAddedNavigationResponder) {
+         transactionWasAddedAnimationNavigationResponder: TransactionWasAddedNavigationResponder, addTransactionCategoryViewControllerFactory: @escaping () -> AddTransactionCategoryViewController) {
         self.viewModel = viewModel
         self.transactionType = transactionType
         self.transactionValue = transactionValue
         self.transactionWasAddedAnimationNavigationResponder = transactionWasAddedAnimationNavigationResponder
+        self.addTransactionCategoryViewControllerFactory = addTransactionCategoryViewControllerFactory
         super.init()
     }
     
@@ -74,10 +78,15 @@ final class TransactionDescriptionViewController: NiblessViewController {
             self?.contentView.transactionCategoryCollectionView.reloadData()
         }.store(in: &cancellable)
     }
+    
+    private func setupAddButton(){
+        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector( addButtonWasPressed))
+        navigationItem.rightBarButtonItem = addButton
+    }
 }
 
 extension TransactionDescriptionViewController{
-    @objc private func saveTransactionButtonWasPressed() {
+    @objc private func saveTransactionButtonWasPressed(){
         guard let category = self.viewModel.selectedCategory else { return }
         guard let bankAccount = self.viewModel.selectedBankAccount else { return }
         let transaction = TransactionDescription(id: UUID().uuidString,
@@ -87,6 +96,11 @@ extension TransactionDescriptionViewController{
                                                  categoryId: category.id,
                                                  date: Date())
         self.viewModel.createTransaction(transaction: transaction)
+    }
+    
+    @objc private func addButtonWasPressed(){
+        let addTransactionCategoryViewController = addTransactionCategoryViewControllerFactory()
+        navigationController?.pushViewController(addTransactionCategoryViewController, animated: true)
     }
 }
 

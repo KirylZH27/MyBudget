@@ -111,7 +111,8 @@ extension AddTransactionViewController {
    @objc private func saveTransactionButtonWasPressed(){
        guard let transitionValue = contentView.quantityMoneyTextField.text else { return }
        let transactionDescriptionViewController = transactionDescriptionViewControllerFactory(transactionType, transitionValue)
-       present(transactionDescriptionViewController, animated: true)
+       let navigationController = UINavigationController(rootViewController: transactionDescriptionViewController)
+       present(navigationController, animated: true)
     }
     
     @objc func transactionTypeWasChanged(_ sender: UISegmentedControl) {
