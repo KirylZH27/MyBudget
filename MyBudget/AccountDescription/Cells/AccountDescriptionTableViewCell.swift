@@ -11,6 +11,8 @@ class AccountDescriptionTableViewCell: UITableViewCell {
     
     static let id = String(describing: AccountDescriptionTableViewCell.self)
     
+    private let transactionCategoryGetter: TransactionCategoryGetter
+    
     let spendingElementImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -50,6 +52,7 @@ class AccountDescriptionTableViewCell: UITableViewCell {
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        self.transactionCategoryGetter = TransactionCategoryRealmManager()
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         layoutElemets()
     }
@@ -59,30 +62,23 @@ class AccountDescriptionTableViewCell: UITableViewCell {
     }
     
     func setupCell(accountDescription: TransactionDescription ){
-   /*
-        nameLabel.text =  accountDescription.category.rawValue
+        getCurrentCategory(by: accountDescription.categoryId)
         amountOfMoneyLabel.text = accountDescription.value
-        setupIconImage(category: accountDescription.category)
         setupTransactionTypeColor(type: accountDescription.type)
         setupDateLabel(date: accountDescription.date)
-    */
     }
-    /*
-    private func setupIconImage(category: TransactionCategory2){
-        var image: UIImage?
-        switch category {
-            case .sallary:
-                image = UIImage(named: "salary")
-            case .trasport:
-                image = UIImage(systemName: "bus")
-            case .food:
-                image = UIImage(named: "burger")
-            case .car:
-                image = UIImage(systemName: "car")
+    
+    private func getCurrentCategory(by id: String){
+        transactionCategoryGetter.getCategory(by: id) { transactionCategory in
+            self.setupIconImage(imageData: transactionCategory.imageData)
+            self.nameLabel.text = transactionCategory.name
         }
-        spendingElementImageView.image = image?.withRenderingMode(.alwaysTemplate)
     }
-     */
+    
+    private func setupIconImage(imageData: Data){
+        let image = UIImage(data: imageData)
+        spendingElementImageView.image = image?.withRenderingMode(.alwaysOriginal)
+    }
     
     private func setupTransactionTypeColor(type: TransactionType){
         switch type {
