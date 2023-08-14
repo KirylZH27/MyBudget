@@ -37,6 +37,4 @@ class TransactionDescriptionRealm: Object {
         self.category = category.rawValue
         self.date = date
     }
-    
-    
 }

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 protocol SignOutNavigationResponder{
     func signOut()
 }

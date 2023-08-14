@@ -97,8 +97,6 @@ final class AddTransactionViewControllerKeyBoardView: NiblessView {
         return button
     }()
     
-    
-    
     private func createButton(type: KeyBoardSymbol) -> UIButton {
         let button: KeyBoardButton
         let title = type.rawValue
@@ -179,7 +177,4 @@ final class AddTransactionViewControllerKeyBoardView: NiblessView {
             mainStackView.bottomAnchor.constraint(equalTo: saveTransactionButton.topAnchor, constant: -10)
         ])
     }
-    
-    
-    
 }

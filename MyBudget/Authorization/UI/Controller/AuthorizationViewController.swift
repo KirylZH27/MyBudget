@@ -27,7 +27,6 @@ final class AuthorizationViewController: NiblessViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
         bindViewModel()
         addTargets()
     }

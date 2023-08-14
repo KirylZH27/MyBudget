@@ -7,6 +7,7 @@
 
 import UIKit
 import AAInfographics
+
 final class AnaliticsViewControllerView: NiblessView {
     
     let totalChartView: AAChartView = {
@@ -19,7 +20,6 @@ final class AnaliticsViewControllerView: NiblessView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = AppColors.white.value
-        
         layoutElemnts()
     }
     

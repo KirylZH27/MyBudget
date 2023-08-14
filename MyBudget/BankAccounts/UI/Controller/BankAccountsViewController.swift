@@ -28,6 +28,7 @@ final class BankAccountsViewController: NiblessViewController {
         self.appColorGetter = UserDefaultAppColorDataSource()
         super.init()
     }
+    
     override func loadView() {
         super.loadView()
         view = BankAccountsViewControllerView()

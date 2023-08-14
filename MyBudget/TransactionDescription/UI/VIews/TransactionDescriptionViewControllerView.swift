@@ -124,5 +124,4 @@ final class TransactionDescriptionViewControllerView: NiblessView {
             saveTransactionButton.heightAnchor.constraint(equalToConstant: 45)
         ])
     }
-    
 }

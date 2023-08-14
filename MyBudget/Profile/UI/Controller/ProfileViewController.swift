@@ -28,6 +28,7 @@ final class ProfileViewController: NiblessViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.tintColor = AppColors.black.value
         addTargets()
     }
     
@@ -47,13 +48,11 @@ final class ProfileViewController: NiblessViewController {
         contentView.editProfileButton.addTarget(self, action: #selector(editProfileButtonWasPressed) , for: .touchUpInside)
         contentView.signOutProfileButton.addTarget(self, action: #selector(signOutProfileButtonWasPressed), for: .touchUpInside)
     }
-    
 }
 
 extension ProfileViewController {
     
     @objc private func editProfileButtonWasPressed() {
-        print("Изменен")
 
         let viewController = EditProfileViewController()
         

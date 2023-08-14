@@ -6,6 +6,7 @@
 //
 
 import UIKit
+
 final class AddBankAccountViewControllerView: NiblessView {
     
     private let appColorGetter: AppColorGetter
@@ -60,8 +61,8 @@ final class AddBankAccountViewControllerView: NiblessView {
       let textField = UITextField()
        textField.translatesAutoresizingMaskIntoConstraints = false
        textField.placeholder = "Введите сумму средств на счете"
-        textField.tintColor = AppColors.black.value
-        textField.backgroundColor = AppColors.white.value
+       textField.tintColor = AppColors.black.value
+       textField.backgroundColor = AppColors.white.value
        textField.layer.cornerRadius = 8
        textField.layer.borderWidth = 1
        textField.textAlignment = .center

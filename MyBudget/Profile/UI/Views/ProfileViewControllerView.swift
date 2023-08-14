@@ -107,7 +107,6 @@ final class ProfileViewControllerView: NiblessView {
             switch result {
             case .failure(let error):
                 ()
-                // FIXME: show error
             case .success(let userModel):
                 self?.userModel = userModel
                 self?.setupUser(userModel: userModel)
@@ -137,7 +136,6 @@ final class ProfileViewControllerView: NiblessView {
         layoutSignOutProfileButton()
     }
     
-    
     private func layoutScrollView(){
         addSubview(scrollView)
         NSLayoutConstraint.activate([
@@ -166,6 +164,7 @@ final class ProfileViewControllerView: NiblessView {
             nameSignatureLabel.trailingAnchor.constraint(equalTo: scrollView.frameLayoutGuide.trailingAnchor, constant: -20)
         ])
     }
+    
         private func layoutNamelabel(){
             scrollView.addSubview(nameLabel)
         NSLayoutConstraint.activate([

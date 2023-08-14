@@ -150,5 +150,4 @@ final class TransactionWasAddedAnimationViewControllerView: NiblessView {
             dollarImageView.heightAnchor.constraint(equalToConstant: dollarImageViewSide)
         ])
     }
-    
 }

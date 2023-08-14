@@ -15,13 +15,8 @@ final class EditProfileViewController: NiblessViewController {
         view as! EditProfileViewConttrollerView
     }
     
-    private lazy var imagePicker: ImagePicker = {
-        return ImagePicker(presentationController: self, delegate: self)
-    }()
-    
     var userModel: UserModel!
     var completion: ((UserModel) -> Void)?
-    
     
     override func loadView() {
         view = EditProfileViewConttrollerView()
@@ -29,13 +24,13 @@ final class EditProfileViewController: NiblessViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         addTargets()
         setupActions()
     }
     
-    // private func setUserInformation(profile: UserModel) {
-    //   }
+    private lazy var imagePicker: ImagePicker = {
+        return ImagePicker(presentationController: self, delegate: self)
+    }()
     
     private func selectImageFromLibrary() {
         imagePicker.present(from: contentView.imageView)
@@ -80,9 +75,8 @@ extension EditProfileViewController {
         
         userStore.save(user: newUserModel) { [weak self] result in
             switch result {
-            case .failure(let error):
+                case .failure(_):
                 ()
-                // FIXME: show error
             case .success(_):
                 print("Сохранил новое")
                 self?.completion?(newUserModel)
@@ -115,9 +109,8 @@ extension EditProfileViewController {
                               uid: uid) { result in
 
             switch result {
-            case .failure(let error):
+                case .failure(_):
                 ()
-                // FIXME: show error
             case .success(let url):
                 print("Сохранил новое")
                 self.contentView.imageView.image = selectedImage
@@ -131,9 +124,9 @@ extension EditProfileViewController {
         }
     }
     
-    /// Проверка прав доступа к камере
-    ///
-    /// Перед открывтием камеры каждый раз проверяет, есть ли к ней доступ, и если нет, то показывает сообщение с необходиомстью предоставить доступ
+    // MARK: Checking Camera Permissions
+    // MARK: Before opening the camera, each time it checks if there is access to it, and if not, it shows a message with the need to grant access
+    
    private func checkCameraPermissions() {
         let authStatus = AVCaptureDevice.authorizationStatus(for: .video)
 
@@ -163,8 +156,6 @@ extension EditProfileViewController {
     }
 }
 
-
-// MARK: - Extension: ImagePickerDelegate
 extension EditProfileViewController: ImagePickerDelegate {
     
     func didSelect(image: UIImage?) {
@@ -172,6 +163,5 @@ extension EditProfileViewController: ImagePickerDelegate {
     }
     
     func didCancelled() {
-
     }
 }

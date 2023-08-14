@@ -50,5 +50,4 @@ final class SettingsViewModel {
         let appDelegate = UIApplication.shared.windows.first
         appDelegate?.overrideUserInterfaceStyle = state ? .dark : .light
     }
-    
 }

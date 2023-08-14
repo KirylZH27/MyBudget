@@ -33,10 +33,18 @@ final class TransactionCategoryRealmManager: TransactionCategoryCreator, Transac
     }
     
     func getAllCategories(completion: @escaping ([TransactionCategory]) -> Void) {
-        
+        let categoriesRealmArray = Array(realm.objects(TransactionCategoryRealm.self))
+        let transanctionCategory = categoriesRealmArray.map {
+            TransactionCategory(id: $0.id, name: $0.name, imageData: $0.imageData, type: $0.typeEnum)}
+            completion(transanctionCategory)
     }
-    
+
     func getCategory(by id: String, completion: @escaping (TransactionCategory) -> Void) {
-        
+        let categoriesRealmArray = Array(realm.objects(TransactionCategoryRealm.self))
+        let filteredCategoriesRealm = categoriesRealmArray.filter {
+            $0.id == id }
+        let tansactionCategory = filteredCategoriesRealm.map{
+            TransactionCategory(id: $0.id, name: $0.name, imageData: $0.imageData, type: $0.typeEnum)}
+     //   completion(tansactionCategory)
     }
 }

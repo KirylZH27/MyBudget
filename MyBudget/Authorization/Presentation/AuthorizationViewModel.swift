@@ -9,6 +9,7 @@ import Foundation
 import Combine
 
 final class AuthorizationViewModel {
+    
     private let authorizationManager: AuthorizationManager
     private let userStore: UserStore
     private (set) var isPresentUserAdditional = PassthroughSubject<Bool,Never>()

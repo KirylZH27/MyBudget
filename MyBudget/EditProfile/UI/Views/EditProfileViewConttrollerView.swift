@@ -6,6 +6,7 @@
 //
 
 import UIKit
+
 final class EditProfileViewConttrollerView: NiblessView {
     
     private let appColorGetter: AppColorGetter

@@ -6,6 +6,6 @@
 //
 
 import Foundation
+
 final class UserAdditionalInfoViewModel {
-    
 }

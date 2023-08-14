@@ -10,11 +10,17 @@ import FirebaseAuth
 
 final class UserAdditionalInfoViewController: NiblessViewController {
     
+    var contentView: UserAdditionalInfoViewControllerView {
+        view as! UserAdditionalInfoViewControllerView
+    }
+    
     private let viewModel: UserAdditionalInfoViewModel
     private let hideUserAdditionalInfoNavigationResponder: HideUserAdditionalInfoNavigationResponder
     
-    var contentView: UserAdditionalInfoViewControllerView {
-        view as! UserAdditionalInfoViewControllerView
+    init(viewModel: UserAdditionalInfoViewModel, hideUserAdditionalInfoNavigationResponder: HideUserAdditionalInfoNavigationResponder) {
+        self.viewModel = viewModel
+        self.hideUserAdditionalInfoNavigationResponder = hideUserAdditionalInfoNavigationResponder
+        super.init()
     }
     
     override func loadView() {
@@ -23,14 +29,7 @@ final class UserAdditionalInfoViewController: NiblessViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupInit()
-    }
-    
-    init(viewModel: UserAdditionalInfoViewModel, hideUserAdditionalInfoNavigationResponder: HideUserAdditionalInfoNavigationResponder) {
-        self.viewModel = viewModel
-        self.hideUserAdditionalInfoNavigationResponder = hideUserAdditionalInfoNavigationResponder
-        super.init()
     }
     
     @objc private func saveButtonAction() {
@@ -57,9 +56,8 @@ final class UserAdditionalInfoViewController: NiblessViewController {
         
         userStore.create(user: userModel) { [weak self] result in
             switch result {
-            case .failure(let error):
+                case .failure(_):
                 ()
-                // FIXME: show error
             case .success(_):
                     self?.hideUserAdditionalInfoNavigationResponder.hideUserAdditionalInfo()
             }

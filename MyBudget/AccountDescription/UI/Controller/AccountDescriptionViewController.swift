@@ -31,7 +31,6 @@ final class AccountDescriptionViewController: NiblessViewController {
         super.viewDidLoad()
         bindViewModel()
         addDelegates()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -56,7 +55,6 @@ final class AccountDescriptionViewController: NiblessViewController {
             self?.viewModel.calculateTotalBalanse()
         }.store(in: &cancalable)
     }
-    
 }
 
 extension AccountDescriptionViewController: UITableViewDelegate, UITableViewDataSource {

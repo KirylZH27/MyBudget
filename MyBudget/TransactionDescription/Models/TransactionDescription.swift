@@ -13,7 +13,7 @@ enum TransactionCategory2: String, CaseIterable {
     case car = "Машина"
     case sallary = "Зарплата"
     
-  static func getExpemdetureCategories() -> [TransactionCategory2]{
+ static func getExpemdetureCategories() -> [TransactionCategory2]{
         
         return [.trasport, .food, .car]
     }

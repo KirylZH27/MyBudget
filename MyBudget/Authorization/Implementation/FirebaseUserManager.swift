@@ -9,6 +9,7 @@ import Foundation
 import FirebaseAuth
 
 final class FirebaseUserManager: UserCreator {
+    
     private let userStore: UserStore
     
     init(userStore: UserStore) {

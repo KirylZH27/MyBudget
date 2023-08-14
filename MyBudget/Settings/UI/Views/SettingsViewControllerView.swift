@@ -32,7 +32,6 @@ final class SettingsViewControllerView: NiblessView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         layoutElemets()
         backgroundColor = AppColors.white.value
     }

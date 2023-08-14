@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 protocol TransactionCategoryCreator{
     func createCategory(category: TransactionCategory)
 }

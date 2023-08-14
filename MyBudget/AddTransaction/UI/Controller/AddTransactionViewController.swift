@@ -82,7 +82,6 @@ final class AddTransactionViewController: NiblessViewController {
         
         guard !currentText.contains(character) else { return }
         contentView.quantityMoneyTextField.text = currentText + String(character)
-        
     }
     
     private func setupDelegates() {

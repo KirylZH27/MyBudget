@@ -6,6 +6,7 @@
 //
 
 import UIKit
+
 final class BankAccountsViewControllerView: NiblessView {
     
     private let appColorGetter: AppColorGetter
@@ -38,7 +39,6 @@ final class BankAccountsViewControllerView: NiblessView {
         super.init(frame: frame)
         
         laoutElemets()
-        
         backgroundColor = AppColors.white.value
     }
     

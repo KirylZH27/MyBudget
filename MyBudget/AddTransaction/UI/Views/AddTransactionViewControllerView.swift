@@ -6,6 +6,7 @@
 //
 
 import UIKit
+
 final class AddTransactionViewControllerView: NiblessView {
     
     let keyBoard = AddTransactionViewControllerKeyBoardView(frame: .zero)
@@ -22,20 +23,20 @@ final class AddTransactionViewControllerView: NiblessView {
       let textField = UITextField()
        textField.translatesAutoresizingMaskIntoConstraints = false
        textField.placeholder = "Br 0"
-        textField.tintColor = AppColors.black.value
-        textField.backgroundColor = AppColors.white.value
+       textField.tintColor = AppColors.black.value
+       textField.backgroundColor = AppColors.white.value
        textField.layer.cornerRadius = 8
        textField.layer.borderWidth = 1
        textField.textAlignment = .center
        textField.font = UIFont(name: "AmericanTypewriter", size: 40)
-        textField.isUserInteractionEnabled = false
+       textField.isUserInteractionEnabled = false
        return textField
    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
         backgroundColor = AppColors.white.value
- 
         layoutElements()
     }
     

@@ -16,7 +16,6 @@ final class MyBudgetTabBarDependecyContainer {
     }
     
     func makeTabBar() -> UITabBarController{
-        
         let addTtansactionsViewController = createAddTransactionViewController()
         let bankAccountsViewController = createBankAccountsViewController()
         let analiticsViewController = createAnaliticsViewController()

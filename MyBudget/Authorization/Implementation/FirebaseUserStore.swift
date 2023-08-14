@@ -88,11 +88,8 @@ final class FirebaseUserStore: UserStore {
         }
     }
     
-    /// Загрузить изображение в Firebase DataStorage и сохранить ссылку в профиле юзера
-    /// - Parameters:
-    ///   - imageData: Изображение в формате Data
-    ///   - model: enum - куда загружать фото
-    ///   - completion: В случае успеха вернет url - ссылка на изображение и error - nil
+    // MARK: Upload image to Firebase DataStorage and store link in user profile
+    
     func uploadImage(imageData: Data,
                      uid: String,
                      completion: @escaping (Result<String?, Error>) -> Void) {
@@ -104,14 +101,11 @@ final class FirebaseUserStore: UserStore {
         
         storageRef.putData(imageData, metadata: metaData) { metaData, error in
             if let error = error {
-                // Failed upload image
                 completion(.failure(error))
                 return
             } else if metaData == nil {
-                
                 return
             }
-            
             
             storageRef.downloadURL { url, error in
                 if let error = error {

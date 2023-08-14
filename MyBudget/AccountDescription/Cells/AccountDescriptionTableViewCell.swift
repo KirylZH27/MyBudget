@@ -113,6 +113,7 @@ class AccountDescriptionTableViewCell: UITableViewCell {
             spendingElementImageView.widthAnchor.constraint(equalToConstant: 65)
         ])
     }
+    
     private func layoutNameLabel(){
         contentView.addSubview(nameLabel)
         NSLayoutConstraint.activate([

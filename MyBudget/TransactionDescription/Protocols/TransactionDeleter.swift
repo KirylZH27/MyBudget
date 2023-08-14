@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 protocol TransactionDeleter {
     func deleteTransaction(transaction: TransactionDescription, completion: @escaping (Error?) -> Void)
 }

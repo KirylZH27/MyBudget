@@ -21,8 +21,6 @@ final class UserDefaultDarkModeStateDataSource: DarkModeGetter, DarkModeSetter {
     }
     
     func saveDarkModeState(state isOn: Bool) {
-
         userDefault.set(isOn, forKey: darkModeeKey)
-        
     }
 }

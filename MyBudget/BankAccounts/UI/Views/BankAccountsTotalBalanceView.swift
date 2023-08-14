@@ -6,6 +6,7 @@
 //
 
 import UIKit
+
 final class BankAccountsTotalBalanceView: NiblessView {
     
     let balanceLabel: UILabel = {
@@ -45,6 +46,7 @@ final class BankAccountsTotalBalanceView: NiblessView {
             balanceLabel.trailingAnchor.constraint(equalTo: trailingAnchor)
         ])
     }
+    
     private func layoutTotalBalanceDescriptionLabel() {
         addSubview(totalBalanceDescriptionLabel)
         NSLayoutConstraint.activate([

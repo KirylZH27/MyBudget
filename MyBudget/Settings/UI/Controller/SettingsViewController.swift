@@ -127,7 +127,6 @@ extension SettingsViewController {
 
 extension SettingsViewController: UIColorPickerViewControllerDelegate {
     func colorPickerViewController(_ viewController: UIColorPickerViewController, didSelect color: UIColor, continuously: Bool) {
-        
         viewModel.saveMainColor(mainColor: color)
         viewModel.getMainColor()
     }

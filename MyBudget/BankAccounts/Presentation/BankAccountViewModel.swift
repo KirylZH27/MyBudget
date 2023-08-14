@@ -45,7 +45,10 @@ final class BankAccountViewModel {
     }
     
     private func calculateTotalBalance(with transactions: [TransactionDescription]) {
-        let bankAccountIds = bankAccounts.map { $0.id } // получили все id аккаунтов, чтобы отображать все транзакции для этих аакаунтов
+        let bankAccountIds = bankAccounts.map { $0.id }
+        
+        // MARK: Got all account ids to display all transactions for these accounts
+        
         let transactionFilter = transactions.filter {bankAccountIds.contains($0.bankAccountId)}
         
         let incomeTransactions =  transactionFilter.filter{ $0.type == .income }
@@ -54,7 +57,7 @@ final class BankAccountViewModel {
         let incomeValues = incomeTransactions.compactMap{ Double($0.value) }
         let expenditureValues = expenditureTransactions.compactMap{ Double($0.value) }
         
-        let incomeSum = incomeValues.reduce(0,+) //  reduce - складываем все элемеенты массива
+        let incomeSum = incomeValues.reduce(0,+)
         let expenditureSum = expenditureValues.reduce(0,+)
         
         let totalTransactionBalance = incomeSum - expenditureSum

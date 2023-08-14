@@ -8,7 +8,6 @@
 import Foundation
 import Combine
 
-
 final class AccountDescriptionViewModel {
     
     private let transactionGetter: TransactionGetter
@@ -43,7 +42,9 @@ final class AccountDescriptionViewModel {
         let incomeValues = incomeTransactions.compactMap{ Double($0.value) }
         let expenditureValues = expenditureTransactions.compactMap{ Double($0.value) }
         
-        let incomeSum = incomeValues.reduce(0,+) //  reduce - складываем все элемеенты массива
+        // MARK: reduce - Sum all the elements of the array
+        
+        let incomeSum = incomeValues.reduce(0,+)
         let expenditureSum = expenditureValues.reduce(0,+)
         
         let totalTransactionsBalance = incomeSum - expenditureSum

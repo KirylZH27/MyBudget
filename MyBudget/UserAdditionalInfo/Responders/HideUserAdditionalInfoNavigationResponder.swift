@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 protocol HideUserAdditionalInfoNavigationResponder{
     func hideUserAdditionalInfo()
 }

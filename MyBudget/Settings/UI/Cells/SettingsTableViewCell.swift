@@ -71,6 +71,7 @@ class SettingsTableViewCell: UITableViewCell {
             settingImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10)
         ])
     }
+    
     private func layoutSettingTypeLabel(){
         contentView.addSubview(settingTypeLabel)
         NSLayoutConstraint.activate([

@@ -24,5 +24,4 @@ final class TransactionWasAddedAnimationViewController: NiblessViewController {
             self.parent?.remove(childViewController: self)
         }
     }
-    
 }

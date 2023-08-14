@@ -29,7 +29,6 @@ final class TransactionDescriptionViewController: NiblessViewController {
         super.viewDidLoad()
         addDelegates()
         bindViewModel()
-        
         viewModel.getBankAccounts()
         addTargets()
     }
@@ -69,7 +68,6 @@ final class TransactionDescriptionViewController: NiblessViewController {
             }
         }.store(in: &cancellable)
     }
-    
 }
 
 extension TransactionDescriptionViewController{

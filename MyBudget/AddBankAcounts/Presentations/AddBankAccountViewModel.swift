@@ -9,6 +9,7 @@ import Foundation
 import Combine 
 
 final class AddBankAccountViewModel {
+    
     private let bankAccountCreator: BankAccountCreator
     private (set) var isBankAccountCreated = PassthroughSubject<Bool, Never>()
     
