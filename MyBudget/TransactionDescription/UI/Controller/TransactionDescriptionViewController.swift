@@ -16,6 +16,7 @@ final class TransactionDescriptionViewController: NiblessViewController {
     private let transactionWasAddedAnimationNavigationResponder: TransactionWasAddedNavigationResponder
     private var cancellable = Set<AnyCancellable>()
     
+    
     var contentView: TransactionDescriptionViewControllerView {
         view as! TransactionDescriptionViewControllerView
     }
@@ -29,8 +30,10 @@ final class TransactionDescriptionViewController: NiblessViewController {
         super.viewDidLoad()
         addDelegates()
         bindViewModel()
-        viewModel.getBankAccounts()
         addTargets()
+        
+        viewModel.getBankAccounts()
+        viewModel.getTransactionCategories(type: transactionType)
     }
     
     private func addDelegates(){
@@ -67,6 +70,9 @@ final class TransactionDescriptionViewController: NiblessViewController {
                 self?.contentView.bankAccountsCollectionView.reloadData()
             }
         }.store(in: &cancellable)
+        viewModel.transactionCategoriesWasGetted.receive(on: DispatchQueue.main).sink { [weak self] _ in
+            self?.contentView.transactionCategoryCollectionView.reloadData()
+        }.store(in: &cancellable)
     }
 }
 
@@ -78,7 +84,7 @@ extension TransactionDescriptionViewController{
                                                  bankAccountId: bankAccount.id,
                                                  value: self.transactionValue,
                                                  type: self.transactionType,
-                                                 category: category,
+                                                 categoryId: category.id,
                                                  date: Date())
         self.viewModel.createTransaction(transaction: transaction)
     }
@@ -88,10 +94,7 @@ extension TransactionDescriptionViewController: UICollectionViewDelegate, UIColl
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == contentView.transactionCategoryCollectionView {
-            switch transactionType {
-                case .income: return TransactionCategory2.getIncomeCategories().count
-                case .expenditure: return TransactionCategory2.getExpemdetureCategories().count
-            }
+           return viewModel.transactionCategories.count
         }
         return viewModel.bankAccounts.count
     }
@@ -100,14 +103,7 @@ extension TransactionDescriptionViewController: UICollectionViewDelegate, UIColl
         if collectionView == self.contentView.transactionCategoryCollectionView {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TransactionCategoryCollectionViewCell.id, for: indexPath)
             guard let collectionCell = cell as? TransactionCategoryCollectionViewCell else { return cell }
-            switch transactionType {
-                case .income:
-                    let categories = TransactionCategory2.getIncomeCategories()
-                    collectionCell.setupCell(category: categories[indexPath.row])
-                case .expenditure:
-                    let categories = TransactionCategory2.getExpemdetureCategories()
-                    collectionCell.setupCell(category: categories[indexPath.row])
-            }
+            collectionCell.setupCell(category: viewModel.transactionCategories[indexPath.row])
             return collectionCell
         }  else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BankAccountsCollectionViewCell.id, for: indexPath)
@@ -117,21 +113,14 @@ extension TransactionDescriptionViewController: UICollectionViewDelegate, UIColl
         }
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if collectionView == contentView.transactionCategoryCollectionView {
-        }
+        
         return CGSize(width: 170, height: 160)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == contentView.transactionCategoryCollectionView {
-            switch transactionType {
-                case .income:
-                    let categories = TransactionCategory2.getIncomeCategories()
-                    viewModel.selectedCategory = categories[indexPath.row]
-                case .expenditure:
-                    let categories = TransactionCategory2.getExpemdetureCategories()
-                    viewModel.selectedCategory = categories[indexPath.row]
-            }
+            let selectedCategory = viewModel.transactionCategories[indexPath.row]
+            viewModel.selectedCategory = selectedCategory
         }else if collectionView == contentView.bankAccountsCollectionView{
             viewModel.selectedBankAccount = viewModel.bankAccounts[indexPath.row]
         }

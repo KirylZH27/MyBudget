@@ -59,13 +59,15 @@ class AccountDescriptionTableViewCell: UITableViewCell {
     }
     
     func setupCell(accountDescription: TransactionDescription ){
+   /*
         nameLabel.text =  accountDescription.category.rawValue
         amountOfMoneyLabel.text = accountDescription.value
         setupIconImage(category: accountDescription.category)
         setupTransactionTypeColor(type: accountDescription.type)
         setupDateLabel(date: accountDescription.date)
+    */
     }
-    
+    /*
     private func setupIconImage(category: TransactionCategory2){
         var image: UIImage?
         switch category {
@@ -80,6 +82,7 @@ class AccountDescriptionTableViewCell: UITableViewCell {
         }
         spendingElementImageView.image = image?.withRenderingMode(.alwaysTemplate)
     }
+     */
     
     private func setupTransactionTypeColor(type: TransactionType){
         switch type {

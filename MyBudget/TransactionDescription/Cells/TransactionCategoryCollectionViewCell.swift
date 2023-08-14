@@ -49,24 +49,16 @@ final class TransactionCategoryCollectionViewCell: UICollectionViewCell {
         layoutNameLabel()
     }
     
-    func setupCell(category: TransactionCategory2){
-        setupIconImage(category: category)
-        nameLabel.text = category.rawValue
+    func setupCell(category: TransactionCategory){
+        setupIconImage(imageData: category.imageData)
+        nameLabel.text = category.name
         contentView.backgroundColor = .brown
         contentView.layer.cornerRadius = 15
     }
     
-    private func setupIconImage(category: TransactionCategory2){
-        switch category {
-            case .sallary:
-                spendingElementImageView.image = UIImage(systemName: "bitcoinsign")
-            case .trasport:
-                spendingElementImageView.image = UIImage(systemName: "bus")
-            case .food:
-                spendingElementImageView.image = UIImage(systemName: "basket")
-            case .car:
-                spendingElementImageView.image = UIImage(systemName: "car")
-        }
+    private func setupIconImage(imageData: Data){
+        let image = UIImage(data: imageData)
+        spendingElementImageView.image = image
     }
     
     private func layoutSpendingElementImageView(){

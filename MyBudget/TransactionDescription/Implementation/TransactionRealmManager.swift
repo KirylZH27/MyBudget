@@ -28,7 +28,7 @@ final class TransactionRealmManager: TransactionCreator, TransactionGetter, Tran
                                                            bankAccountId: transaction.bankAccountId,
                                                            value: transaction.value,
                                                            type: transaction.type,
-                                                           category: transaction.category,
+                                                           categoryId: transaction.categoryId,
                                                            date: transaction.date)
         realm.writeAsync { [weak self] in
             self?.realm.add(transactionRealm)
@@ -40,13 +40,13 @@ final class TransactionRealmManager: TransactionCreator, TransactionGetter, Tran
     func getBankAccountTransaction(by id: String, completion: @escaping ([TransactionDescription]) -> Void) {
         let transactionsRealmArray = Array(realm.objects(TransactionDescriptionRealm.self))
         let filteredTransactionRealm = transactionsRealmArray.filter { $0.bankAccountId == id }
-        let transactionDesctiptions = filteredTransactionRealm.map { TransactionDescription(id: $0.id, bankAccountId: $0.bankAccountId, value: $0.value, type: $0.typeEnum, category: $0.categoryEnum, date: $0.date)}
+        let transactionDesctiptions = filteredTransactionRealm.map { TransactionDescription(id: $0.id, bankAccountId: $0.bankAccountId, value: $0.value, type: $0.typeEnum, categoryId: $0.categoryId, date: $0.date)}
      completion(transactionDesctiptions)
     }
     
     func getAllTransactions(completion: @escaping ([TransactionDescription]) -> Void) {
         let transactionsRealmArray = Array(realm.objects(TransactionDescriptionRealm.self))
-        let transactionDesctiptions = transactionsRealmArray.map { TransactionDescription(id: $0.id, bankAccountId: $0.bankAccountId, value: $0.value, type: $0.typeEnum, category: $0.categoryEnum, date: $0.date)}
+        let transactionDesctiptions = transactionsRealmArray.map { TransactionDescription(id: $0.id, bankAccountId: $0.bankAccountId, value: $0.value, type: $0.typeEnum, categoryId: $0.categoryId, date: $0.date)}
      completion(transactionDesctiptions)
     }
     
