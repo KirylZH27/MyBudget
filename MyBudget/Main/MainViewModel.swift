@@ -8,19 +8,26 @@
 import Foundation
 import Combine
 import FirebaseAuth
+
 final class MainViewModel: HideAuthorizationNavigationResponder, TransactionWasAddedNavigationResponder, SignOutNavigationResponder, ShowUserAditionalInfoNavigationResponder, HideUserAdditionalInfoNavigationResponder {
     
     private let userStore: UserStore
     private let darkModeGetter: DarkModeGetter
+    private let transactionCategoryGetter: TransactionCategoryGetter
+    private let transactionCategoryCreator: TransactionCategoryCreator
     
     private (set) var isPresentAuthorization = PassthroughSubject<Bool,Never>()
     private (set) var showTransactionWasAddedAnimation = PassthroughSubject<Bool, Never>()
     private (set) var isPresentUserAdditionalInfo = PassthroughSubject<Bool,Never>()
     
-    init(userStore: UserStore) {
+    init(userStore: UserStore, transactionCategoryGetter: TransactionCategoryGetter, transactionCategoryCreator: TransactionCategoryCreator) {
         self.userStore = userStore
         self.darkModeGetter = UserDefaultDarkModeStateDataSource()
+        self.transactionCategoryGetter = transactionCategoryGetter
+        self.transactionCategoryCreator = transactionCategoryCreator
+        
         self.setDarkModeIfNeeded()
+        self.createDefaultCategoriesIfNeeded()
     }
     
     func hideAuthorization() {
@@ -64,5 +71,32 @@ final class MainViewModel: HideAuthorizationNavigationResponder, TransactionWasA
             let appDelegate = UIApplication.shared.windows.first
             appDelegate?.overrideUserInterfaceStyle = state ? .dark : .light
         }
+    }
+    
+    private func createDefaultCategoriesIfNeeded(){
+        transactionCategoryGetter.getAllCategories(type: nil) { transactionCategories in
+            guard transactionCategories.isEmpty else { return }
+            
+            self.createDefaultIncomeCategories()
+            self.createDefaultExpenditureCategories()
+        }
+    }
+ 
+    private func createDefaultIncomeCategories(){
+        guard let salaryImageData = UIImage(named: "salary")?.jpegData(compressionQuality: 0.8) else { return }
+        let salaryCategory = TransactionCategory(id: UUID().uuidString,
+                                                  name: "Зарплата",
+                                                  imageData: salaryImageData,
+                                                 type: .income)
+        transactionCategoryCreator.createCategory(category: salaryCategory)
+    }
+    
+    private func createDefaultExpenditureCategories(){
+        guard let houseImageData = UIImage(named: "house")?.jpegData(compressionQuality: 0.8) else { return }
+        let houseCategory = TransactionCategory(id: UUID().uuidString,
+                                                  name: "Дом",
+                                                  imageData: houseImageData,
+                                                type: .expenditure)
+        transactionCategoryCreator.createCategory(category: houseCategory)
     }
 }

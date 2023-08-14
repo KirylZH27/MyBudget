@@ -20,7 +20,8 @@ final class MyBudgetDependencyContainer {
     
     func makeMainViewController() -> MainViewController {
         let userStore = FirebaseUserStore()
-        let viewModel = MainViewModel(userStore: userStore)
+        let transactionManager = createTransactionCategoryManager()
+        let viewModel = MainViewModel(userStore: userStore, transactionCategoryGetter: transactionManager, transactionCategoryCreator: transactionManager)
         
         let tabBarControllerFactory = {
             self.createTabBarController(mainViewModel: viewModel)
@@ -44,6 +45,11 @@ final class MyBudgetDependencyContainer {
                                                 authorizationViewControllerFactory: authorizationViewControllerFactory,
                                                 userAdditionalInfoViewControllerFactory: userAdditionalInfoViewControllerFactory)
         return viewController
+    }
+    
+    private func createTransactionCategoryManager() -> TransactionCategoryRealmManager{
+        let manager = TransactionCategoryRealmManager()
+        return manager
     }
     
     private func createAuthorizationViewController(hideUserAdditionalInfoNavigationResponder: HideAuthorizationNavigationResponder, showUserAdditionalInfoNavigationResponder: ShowUserAditionalInfoNavigationResponder) -> AuthorizationViewController {

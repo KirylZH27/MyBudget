@@ -8,6 +8,6 @@
 import Foundation
 
 protocol TransactionCategoryGetter {
-    func getAllCategories(completion: @escaping ([TransactionCategory]) -> Void )
+    func getAllCategories(type: TransactionType?,completion: @escaping ([TransactionCategory]) -> Void )
     func getCategory(by id: String, completion: @escaping (TransactionCategory) -> Void)
 }
