@@ -88,7 +88,7 @@ final class MainViewModel: HideAuthorizationNavigationResponder, TransactionWasA
                                                   name: "Зарплата",
                                                   imageData: salaryImageData,
                                                  type: .income)
-        transactionCategoryCreator.createCategory(category: salaryCategory)
+        transactionCategoryCreator.createCategory(category: salaryCategory, completion: {_ in})
     }
     
     private func createDefaultExpenditureCategories(){
@@ -97,6 +97,6 @@ final class MainViewModel: HideAuthorizationNavigationResponder, TransactionWasA
                                                   name: "Дом",
                                                   imageData: houseImageData,
                                                 type: .expenditure)
-        transactionCategoryCreator.createCategory(category: houseCategory)
+        transactionCategoryCreator.createCategory(category: houseCategory, completion: {_ in})
     }
 }

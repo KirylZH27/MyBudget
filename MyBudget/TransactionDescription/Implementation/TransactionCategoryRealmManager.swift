@@ -24,11 +24,13 @@ final class TransactionCategoryRealmManager: TransactionCategoryCreator, Transac
         }()
     
     
-    func createCategory(category: TransactionCategory) {
+    func createCategory(category: TransactionCategory, completion: @escaping (Error?) -> Void) {
         let realmCategory = TransactionCategoryRealm(id: category.id, name: category.name, imageData: category.imageData, type: category.type.rawValue)
         
         realm.writeAsync { [weak self] in
             self?.realm.add(realmCategory)
+        }onComplete: { error in
+            completion(error)
         }
     }
     

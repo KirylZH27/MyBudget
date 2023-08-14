@@ -36,6 +36,10 @@ final class TransactionDescriptionViewController: NiblessViewController {
         setupAddButton()
         
         viewModel.getBankAccounts()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         viewModel.getTransactionCategories(type: transactionType)
     }
     

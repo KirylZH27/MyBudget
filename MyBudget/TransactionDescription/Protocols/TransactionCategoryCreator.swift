@@ -8,5 +8,5 @@
 import Foundation
 
 protocol TransactionCategoryCreator{
-    func createCategory(category: TransactionCategory)
+    func createCategory(category: TransactionCategory, completion: @escaping (Error?) -> Void)
 }

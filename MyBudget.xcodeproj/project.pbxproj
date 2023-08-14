@@ -41,6 +41,7 @@
 		0AAE068D2A8A9DCA00141ABC /* AddTransactionCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAE068C2A8A9DCA00141ABC /* AddTransactionCategoryViewController.swift */; };
 		0AAE068F2A8A9DD700141ABC /* AddTransactionCategoryViewControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAE068E2A8A9DD700141ABC /* AddTransactionCategoryViewControllerView.swift */; };
 		0AAE06922A8A9DEF00141ABC /* AddTransactionCategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAE06912A8A9DEF00141ABC /* AddTransactionCategoryViewModel.swift */; };
+		0AAE06942A8AA2BA00141ABC /* AddTransactionCategoryImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAE06932A8AA2BA00141ABC /* AddTransactionCategoryImageCollectionViewCell.swift */; };
 		0AB7D0A32A62862E004A9EF9 /* KeyBoardDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB7D0A22A62862E004A9EF9 /* KeyBoardDelegate.swift */; };
 		0AB7D0A72A628B49004A9EF9 /* DisplayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB7D0A62A628B49004A9EF9 /* DisplayManager.swift */; };
 		0AB7D0AA2A628BC5004A9EF9 /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB7D0A92A628BC5004A9EF9 /* Formatter.swift */; };
@@ -159,6 +160,7 @@
 		0AAE068C2A8A9DCA00141ABC /* AddTransactionCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionCategoryViewController.swift; sourceTree = "<group>"; };
 		0AAE068E2A8A9DD700141ABC /* AddTransactionCategoryViewControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionCategoryViewControllerView.swift; sourceTree = "<group>"; };
 		0AAE06912A8A9DEF00141ABC /* AddTransactionCategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionCategoryViewModel.swift; sourceTree = "<group>"; };
+		0AAE06932A8AA2BA00141ABC /* AddTransactionCategoryImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionCategoryImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		0AB7D0A22A62862E004A9EF9 /* KeyBoardDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyBoardDelegate.swift; sourceTree = "<group>"; };
 		0AB7D0A62A628B49004A9EF9 /* DisplayManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayManager.swift; sourceTree = "<group>"; };
 		0AB7D0A92A628BC5004A9EF9 /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
@@ -571,6 +573,7 @@
 			isa = PBXGroup;
 			children = (
 				0AAE068E2A8A9DD700141ABC /* AddTransactionCategoryViewControllerView.swift */,
+				0AAE06932A8AA2BA00141ABC /* AddTransactionCategoryImageCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1352,6 +1355,7 @@
 				0AE423CD2A502A3A00311943 /* AuthorizationViewController.swift in Sources */,
 				0AF74EDE2A483C670038D221 /* MainViewModel.swift in Sources */,
 				0AF74F022A4849620038D221 /* BankAccountsViewControllerView.swift in Sources */,
+				0AAE06942A8AA2BA00141ABC /* AddTransactionCategoryImageCollectionViewCell.swift in Sources */,
 				0AE423CF2A502A6000311943 /* AuthorizationViewControllerView.swift in Sources */,
 				0ABBB3392A56C6B100AD1FA6 /* UserSignOut.swift in Sources */,
 				0A210E5D2A4F423700D5B750 /* ProfileViewController.swift in Sources */,

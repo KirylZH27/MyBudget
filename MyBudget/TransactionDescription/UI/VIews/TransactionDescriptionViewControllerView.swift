@@ -82,7 +82,7 @@ final class TransactionDescriptionViewControllerView: NiblessView {
     private func layoutExpenditureLabel(){
         addSubview(expenditureLabel)
         NSLayoutConstraint.activate([
-            expenditureLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 45),
+            expenditureLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 10),
             expenditureLabel.centerXAnchor.constraint(equalTo: centerXAnchor)
         ])
     }
