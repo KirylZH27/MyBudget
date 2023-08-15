@@ -53,5 +53,4 @@ final class AddTransactionCategoryImageCollectionViewCell: UICollectionViewCell{
             iconImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
         ])
     }
-    
 }

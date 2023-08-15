@@ -30,6 +30,7 @@ final class TransactionDescriptionViewController: NiblessViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.tintColor = AppColors.black.value
         addDelegates()
         bindViewModel()
         addTargets()

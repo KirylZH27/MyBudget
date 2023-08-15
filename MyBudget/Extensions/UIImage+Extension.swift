@@ -6,11 +6,10 @@
 //
 
 import UIKit
-// При выгрузки фотографии что бы уменьшить размер фото. Для аватара большая фотка не нужна, что бы место не занимать в хранилище
+// MARK: When uploading a photo to reduce the size of the photo. For an avatar, a large photo is not needed, so as not to take up space in the storage
 extension UIImage {
     
     func scale(newSize: CGSize, compressionQuality: CGFloat = 1) -> UIImage? {
-        // Reducing file size to a 10th
         var actualHeight: CGFloat = self.size.height
         var actualWidth: CGFloat = self.size.width
         
@@ -22,19 +21,16 @@ extension UIImage {
         
         if actualHeight > maxHeight || actualWidth > maxWidth {
             if imgRatio < maxRatio {
-                //adjust width according to maxHeight
                 imgRatio = maxHeight / actualHeight
                 actualWidth = imgRatio * actualWidth
                 actualHeight = maxHeight
             } else if imgRatio > maxRatio {
-                //adjust height according to maxWidth
                 imgRatio = maxWidth / actualWidth
                 actualHeight = imgRatio * actualHeight
                 actualWidth = maxWidth
             } else {
                 actualHeight = maxHeight
                 actualWidth = maxWidth
-                //compressionQuality = 1
             }
         }
         
@@ -51,7 +47,6 @@ extension UIImage {
         guard let imageData = img.jpegData(compressionQuality: compressionQuality) else {
             return nil
         }
-        
         return UIImage(data: imageData)
     }
     
@@ -68,7 +63,6 @@ extension UIImage {
             imageByte = self.jpegData(compressionQuality: compressQuality)?.count
             compressQuality -= 0.1
         }
-        
         return imageData
     }
 }

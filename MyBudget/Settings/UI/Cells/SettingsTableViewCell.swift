@@ -33,7 +33,7 @@ class SettingsTableViewCell: UITableViewCell {
         let label = UILabel()
         label.font = UIFont(name: "AmericanTypewriter-Bold", size: 18)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Светлая/Темная тема"
+        label.text = "Включить темную тему"
         label.textColor = AppColors.black.value
         return label
     }()

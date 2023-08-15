@@ -35,7 +35,6 @@ extension UIViewController {
     func remove(childViewController child: UIViewController?) {
         
         guard let child = child, child.parent != nil else { return }
-        
         child.willMove(toParent: nil)
         child.view.removeFromSuperview()
         child.removeFromParent()
@@ -44,17 +43,6 @@ extension UIViewController {
 
 extension UIViewController {
     
-    /// Показывает настраиваемый alert с текстом
-    /// - Parameters:
-    ///   - title: заголовок
-    ///   - message: сообщение
-    ///   - isCancelButton: нужна ли кнопка "отмена" или только "ок"
-    ///   - isOkDestructive: кнопка "Ок" красного цвета
-    ///   - okButtonName: название кнопки "Ок"
-    ///   - buttonsArray: добавить свой массив кнопок
-    ///   - preferredStyle: стиль отображения
-    ///   - sourceView: передать кнопку для отображения алерта около нее (для iPad)
-    ///   - completion: замыкание для кнопки "Ок"
     func showAlert(title: String,
                    message: String,
                    isCancelButton: Bool? = nil,
@@ -76,19 +64,6 @@ extension UIViewController {
                   completion: completion)
     }
     
-    /// Показывает настраиваемый alert с текстом
-    ///
-    /// По умолчанию всегда доступна одна кнопка "Ок"
-    ///
-    /// - Parameters:
-    ///   - type: .alert - это обычный алерт с title и message. .error - передается ошибка из которой берутся все данные (titile и message) для показа алерта
-    ///   - isCancelButton: нужна ли кнопка "отмена" или только "ок"
-    ///   - isOkDestructive: кнопка "Ок" красного цвета
-    ///   - okButtonName: название кнопки "Ок"
-    ///   - customButtons: добавить свой массив кнопок
-    ///   - preferredStyle: стиль отображения
-    ///   - sourceView: передать кнопку для отображения алерта около нее (для iPad)
-    ///   - completion: замыкание для кнопки "Ок"
     func showAlert(type: AlertType,
                    isCancelButton: Bool? = nil,
                    isOkDestructive: Bool? = nil,
@@ -144,7 +119,7 @@ extension UIViewController {
         
         var allButtons = [UIAlertAction]()
         
-        if let okButtonName = okButtonName { //}, !okButtonName!.isEmpty {  //}, isOkDestructive != nil, isOkDestructive! {
+        if let okButtonName = okButtonName {
             let name = okButtonName.isEmpty ? okDefaultName : okButtonName
             let style: UIAlertAction.Style = isOkDestructive == true ? .destructive : .default
             
@@ -153,13 +128,11 @@ extension UIViewController {
             })
         }
         
-        
         if !customButtons.isEmpty {
             allButtons += customButtons
         }
         
         if isCancelButton == true {
-            // Когда preferredStyle == .cancel, то две дефолыне кнопки Ок и Отмена меняются местами
             let style: UIAlertAction.Style = preferredStyle == .alert ? .default : .cancel
             
             allButtons.append(UIAlertAction(title: cancelDefaultName, style: style))
@@ -176,14 +149,11 @@ extension UIViewController {
         }
         
         addActionSheetForiPad(actionSheet: alert)
-        
         present(alert, animated: true)
     }
     
     enum AlertType {
-        /// Обычный Алерт с title и message
         case alert(title: String, message: String)
-        /// Title берется из error.errorDescription, а message из error.failureReason + error.recoverySuggestion
         case localizedError(LocalizedError)
         case NSError(NSError)
     }

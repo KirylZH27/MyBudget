@@ -13,7 +13,7 @@ final class TransactionCategoryCollectionViewCell: UICollectionViewCell {
     
     override var isSelected: Bool {
         didSet {
-            contentView.backgroundColor = isSelected ? .green : .brown
+            contentView.backgroundColor = isSelected ? .green : AppColors.white.value
         }
     }
     
@@ -31,7 +31,7 @@ final class TransactionCategoryCollectionViewCell: UICollectionViewCell {
         label.text = "Транспорт"
         label.textAlignment = .center
         label.font = UIFont(name: "AmericanTypewriter", size: 20)
-        label.textColor = .black
+        label.textColor = AppColors.black.value
         return label
     }()
     
@@ -52,7 +52,7 @@ final class TransactionCategoryCollectionViewCell: UICollectionViewCell {
     func setupCell(category: TransactionCategory){
         setupIconImage(imageData: category.imageData)
         nameLabel.text = category.name
-        contentView.backgroundColor = .brown
+        contentView.backgroundColor = AppColors.white.value
         contentView.layer.cornerRadius = 15
     }
     

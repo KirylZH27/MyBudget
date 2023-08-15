@@ -13,7 +13,7 @@ final class BankAccountsCollectionViewCell: UICollectionViewCell {
     
     override var isSelected: Bool {
         didSet {
-            contentView.backgroundColor = isSelected ? .green : .brown
+            contentView.backgroundColor = isSelected ? .green : AppColors.white.value
         }
     }
     
@@ -22,6 +22,7 @@ final class BankAccountsCollectionViewCell: UICollectionViewCell {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = UIImage(systemName: "case")
         imageView.layer.cornerRadius = 12
+        imageView.tintColor = AppColors.black.value
         return imageView
     }()
     
@@ -31,7 +32,7 @@ final class BankAccountsCollectionViewCell: UICollectionViewCell {
         label.text = "Зарплата"
         label.textAlignment = .center
         label.font = UIFont(name: "AmericanTypewriter", size: 20)
-        label.textColor = .black
+        label.textColor = AppColors.black.value
         return label
     }()
     
@@ -51,7 +52,7 @@ final class BankAccountsCollectionViewCell: UICollectionViewCell {
     
     func setupCell(bankAccount: BankAccount){
         nameLabel.text = bankAccount.name
-        contentView.backgroundColor = .brown
+        contentView.backgroundColor = AppColors.white.value
         contentView.layer.cornerRadius = 15
     }
     

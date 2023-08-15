@@ -10,7 +10,7 @@ import Combine
 
 final class AddTransactionCategoryViewModel{
     
-    var imageNames: [String] = ["restaurant", "shopping", "salary", "sport","vacation"]
+    var imageNames: [String] = ["restaurant", "shopping", "salary", "sport","vacation", "present", "otherExpenses", "lottery", "investment", "house", "hospital", "fuel", "entertainment", "education", "child", "burger", "animal"]
     var selectedImageName: String?
     var selectedTransactionType: TransactionType = .expenditure
     

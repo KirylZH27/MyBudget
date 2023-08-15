@@ -9,6 +9,8 @@ import UIKit
 
 final class AddTransactionCategoryViewControllerView: NiblessView {
     
+    private let appColorGetter: AppColorGetter
+    
     let nameTextField: UITextField = {
       let textField = UITextField()
        textField.translatesAutoresizingMaskIntoConstraints = false
@@ -43,7 +45,7 @@ final class AddTransactionCategoryViewControllerView: NiblessView {
     lazy var saveTransactionCategoryButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = AppColors.green.value
+        button.backgroundColor = appColorGetter.mainColor
         button.setTitle("Добавить", for: .normal)
         button.layer.cornerRadius = 12
         button.titleLabel?.font = AppFonts.AmericanBold.value(size: 22)
@@ -52,6 +54,7 @@ final class AddTransactionCategoryViewControllerView: NiblessView {
     }()
     
     override init(frame: CGRect) {
+        appColorGetter = UserDefaultAppColorDataSource()
         super.init(frame: frame)
         backgroundColor = AppColors.white.value
         layoutElements()
