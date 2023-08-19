@@ -86,7 +86,7 @@ extension AddTransactionCategoryViewController {
         
         guard let name = contentView.nameTextField.text, !name.isEmpty else { return }
         guard let imageName = viewModel.selectedImageName else { return }
-        guard let imageData = UIImage(named: imageName)?.jpegData(compressionQuality: 0.8) else { return }
+        guard let imageData = UIImage(named: imageName)?.pngData() else { return }
         
         viewModel.createTransactionCategory(name: name, imageData: imageData)
      }

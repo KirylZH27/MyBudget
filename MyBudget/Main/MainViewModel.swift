@@ -83,7 +83,7 @@ final class MainViewModel: HideAuthorizationNavigationResponder, TransactionWasA
     }
  
     private func createDefaultIncomeCategories(){
-        guard let salaryImageData = UIImage(named: "salary")?.jpegData(compressionQuality: 0.8) else { return }
+        guard let salaryImageData = UIImage(named: "salary")?.pngData() else { return }
         let salaryCategory = TransactionCategory(id: UUID().uuidString,
                                                   name: "Зарплата",
                                                   imageData: salaryImageData,
@@ -92,7 +92,7 @@ final class MainViewModel: HideAuthorizationNavigationResponder, TransactionWasA
     }
     
     private func createDefaultExpenditureCategories(){
-        guard let houseImageData = UIImage(named: "house")?.jpegData(compressionQuality: 0.8) else { return }
+        guard let houseImageData = UIImage(named: "house")?.pngData() else { return }
         let houseCategory = TransactionCategory(id: UUID().uuidString,
                                                   name: "Дом",
                                                   imageData: houseImageData,

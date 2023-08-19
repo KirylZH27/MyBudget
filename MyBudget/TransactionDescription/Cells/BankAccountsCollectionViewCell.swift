@@ -13,7 +13,7 @@ final class BankAccountsCollectionViewCell: UICollectionViewCell {
     
     override var isSelected: Bool {
         didSet {
-            contentView.backgroundColor = isSelected ? .green : AppColors.white.value
+            spendingElementImageView.tintColor = isSelected ? .green : AppColors.black.value
         }
     }
     
@@ -38,6 +38,7 @@ final class BankAccountsCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        backgroundColor = .clear
         layoutElemets()
     }
     

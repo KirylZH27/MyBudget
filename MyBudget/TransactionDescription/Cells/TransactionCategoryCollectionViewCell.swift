@@ -13,7 +13,7 @@ final class TransactionCategoryCollectionViewCell: UICollectionViewCell {
     
     override var isSelected: Bool {
         didSet {
-            contentView.backgroundColor = isSelected ? .green : AppColors.white.value
+            spendingElementImageView.tintColor = isSelected ? .green : AppColors.black.value
         }
     }
     
@@ -22,6 +22,7 @@ final class TransactionCategoryCollectionViewCell: UICollectionViewCell {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = UIImage(systemName: "car")
         imageView.layer.cornerRadius = 12
+        imageView.tintColor = AppColors.black.value
         return imageView
     }()
     
@@ -37,6 +38,7 @@ final class TransactionCategoryCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        backgroundColor = .clear
         layoutElemets()
     }
     
@@ -58,7 +60,7 @@ final class TransactionCategoryCollectionViewCell: UICollectionViewCell {
     
     private func setupIconImage(imageData: Data){
         let image = UIImage(data: imageData)
-        spendingElementImageView.image = image
+        spendingElementImageView.image = image?.withRenderingMode(.alwaysTemplate)
     }
     
     private func layoutSpendingElementImageView(){
@@ -76,7 +78,7 @@ final class TransactionCategoryCollectionViewCell: UICollectionViewCell {
         NSLayoutConstraint.activate([
             nameLabel.topAnchor.constraint(equalTo: spendingElementImageView.bottomAnchor, constant: 5),
             nameLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-            nameLabel.heightAnchor.constraint(equalToConstant: 20)
+            nameLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5)
         ])
     }
 }

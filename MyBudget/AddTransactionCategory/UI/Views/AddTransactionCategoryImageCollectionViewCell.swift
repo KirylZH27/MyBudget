@@ -18,6 +18,7 @@ final class AddTransactionCategoryImageCollectionViewCell: UICollectionViewCell{
     private let iconImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.tintColor = AppColors.black.value
         return imageView
     }()
     
@@ -34,7 +35,7 @@ final class AddTransactionCategoryImageCollectionViewCell: UICollectionViewCell{
     
     func setupCell(imageName: String){
         let image = UIImage(named: imageName)
-        iconImageView.image = image
+        iconImageView.image = image?.withRenderingMode(.alwaysTemplate)
     }
     
     private func setupBorder(){

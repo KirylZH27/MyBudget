@@ -77,7 +77,7 @@ class AccountDescriptionTableViewCell: UITableViewCell {
     
     private func setupIconImage(imageData: Data){
         let image = UIImage(data: imageData)
-        spendingElementImageView.image = image?.withRenderingMode(.alwaysOriginal)
+        spendingElementImageView.image = image?.withRenderingMode(.alwaysTemplate)
     }
     
     private func setupTransactionTypeColor(type: TransactionType){
